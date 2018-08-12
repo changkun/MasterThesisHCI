@@ -1,4 +1,4 @@
-# Automated User Interface Discovering for Arbitrary Web Application
+# Automated UI Discovering for Arbitrary Web Application
 
 This repository contains my master thesis for the Human-Computer Interaction degree at LMU.
 
