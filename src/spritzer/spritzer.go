@@ -10,13 +10,12 @@ import (
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/changkun/spritzer/models"
+	"github.com/changkun/spritzer/settings"
 
 	log "github.com/sirupsen/logrus"
 )
 
-const (
-	starting = "http://www.medien.ifi.lmu.de"
-)
+const ()
 
 func crawler(url string, value string) (map[string]string, error) {
 	// if url is recorded in dabase, fast return
@@ -25,8 +24,8 @@ func crawler(url string, value string) (map[string]string, error) {
 	}
 
 	// Save if should stop, also stop on file
-	ext := filepath.Ext(filepath.Base(strings.TrimPrefix(strings.Split(url, "?")[0], starting)))
-	if !strings.Contains(url, starting) || len(ext) > 1 {
+	ext := filepath.Ext(filepath.Base(strings.TrimPrefix(strings.Split(url, "?")[0], settings.Starting)))
+	if !strings.Contains(url, settings.Starting) || len(ext) > 1 {
 		node := models.Node{
 			URL:   url,
 			Value: value,
@@ -35,12 +34,15 @@ func crawler(url string, value string) (map[string]string, error) {
 		node.Save()
 		return map[string]string{}, nil
 	}
-	log.Info("extension: ", ext)
 
 	// Reading the page
 	response, err := http.Get(url)
 	if err != nil {
 		log.Errorf("get failed, url: %s", url)
+		return map[string]string{}, err
+	}
+	if response.StatusCode != http.StatusOK {
+		log.Errorf("bad url: %s, status code: %d", url, response.StatusCode)
 		return map[string]string{}, err
 	}
 	// Read source code
@@ -50,7 +52,6 @@ func crawler(url string, value string) (map[string]string, error) {
 		return map[string]string{}, err
 	}
 	response.Body.Close()
-
 	responseBody := ioutil.NopCloser(bytes.NewBuffer(sourceCode))
 	doc, err := goquery.NewDocumentFromReader(responseBody)
 	if err != nil {
@@ -82,24 +83,32 @@ func crawler(url string, value string) (map[string]string, error) {
 			return
 		}
 		var link string
-		// ./index.html
-		// /index.html
-		// index.html
-		// #index
-		// http://xxxx
-		if strings.HasPrefix(href, "http") {
+		if strings.HasPrefix(href, "http") { // http://xxxx/xxx
 			link = href
-		} else if strings.HasPrefix(href, "#") || strings.HasPrefix(href, ".") {
-			link = starting + "/" + href
-		} else if strings.HasPrefix(href, "/") {
-			link = starting + href
-		} else {
-			link = starting + "/" + href
+		} else if strings.HasPrefix(href, "#") || strings.HasPrefix(href, ".") { // #index  ./index.html
+			if strings.HasSuffix(url, "/") {
+				link = url + href
+			} else {
+				link = url + "/" + href
+			}
+		} else if strings.HasPrefix(href, "/") { // /index.html
+			if strings.HasSuffix(settings.Starting, "/") {
+				link = settings.Starting + href[1:]
+			} else {
+				link = settings.Starting + href
+			}
+		} else { // index.html
+			if strings.HasSuffix(url, "/") {
+				link = url + href
+			} else {
+				link = url + "/" + href
+			}
 		}
 		next = append(next, models.ChildPointer{
 			URL:   link,
 			Value: s.Text(),
 		})
+		log.Infof("link %s, text %s", link, s.Text())
 		ret[link] = s.Text()
 	})
 	// Maybe get others
@@ -142,6 +151,6 @@ func spider(tasks map[string]string) {
 
 func main() {
 	spider(map[string]string{
-		starting: "entry page",
+		settings.Starting: "entry page",
 	})
 }
