@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gink Labeling Tool</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/umd/locale/en.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <el-container>
+            <el-header class="header">
+                <h1 class="title">Gink Labeling Tool</h1>
+            </el-header>
+            <el-main class="major">
+                <p>Thank you for participating labeling a visiting path of web pages.</p>
+                <p>Your task is to describe what is</p>
+                <p style="text-indent: 20px"><strong>
+                    figure out what an user want to do when a visiting website with the fowlloing visiting steps.
+                </strong></p>
+                <p>Then click the save button below to get another task.</p>
+                <el-input type="textarea" :autosize="{minRows: 3}"
+                    placeholder="Please input your interpretation" v-model="manualDescription">
+                </el-input>
+                <el-button class="path" type="success" @click="saveActionPath" icon="el-icon-check">Save</el-button>
+                <el-button class="path" type="primary" @click="changeActionPath">Change Task</el-button>
+                <el-button class="path" type="info" @click="editCurrentNode" icon="el-icon-edit">Edit Current Step</el-button>
+                <el-dialog title="Edit Current Step Information" :visible.sync="dialogFormVisible">
+                    <el-form :model="currentNode">
+                        <p>URL: {{currentNode.url}}</p>
+                        <p>Description: {{currentNode.value}}</p>
+                        <el-form-item label="Metadata">
+                            <el-input v-model="currentNode.meta" auto-complete="off"></el-input>
+                        </el-form-item>
+                        <el-form-item label="Keywords">
+                            <el-input v-model="currentNode.keywords" auto-complete="off"></el-input>
+                        </el-form-item>
+                        <el-form-item label="Description">
+                            <el-input v-model="currentNode.manual_desc" auto-complete="off"></el-input>
+                        </el-form-item>
+                        <el-form-item label="Source Code">
+                            <el-input v-model="currentNode.source_code" type="textarea" :autosize="{maxRows: 3}" auto-complete="off"></el-input>
+                        </el-form-item>
+                    </el-form>
+                    <div slot="footer" class="dialog-footer">
+                        <el-button @click="dialogFormVisible = false">Cancel</el-button>
+                        <el-button type="primary" @click="saveCurrentNode">Save Step Infos</el-button>
+                    </div>
+                </el-dialog>
+                <p class="hint">
+                    * You can also visiting the URL and editing a single step information 
+                    if you find the description below is super confusing to you.
+                </p>
+                <el-tabs v-model="activeTab" @tab-click="tabClickHandler" type="card">
+                    <el-tab-pane v-for="(node, index) in nodes" :name="tabName(index)" :label="tabIndex(index)">
+
+                        <h4>URL:</h4>
+                        <p><a :href="node.url">{{node.url}}</a></p>
+
+                        <h4>Original Description: </h4>
+                        <p>{{node.value}}</p>
+
+                        <h4>Metadata:</h4>
+                        <p>{{node.meta}}</p>
+
+                        <h4>Keywords:</h4>
+                        <p>{{node.keywords}}</p>
+
+                        <h4>Manual Description: </h4>
+                        <p>{{node.manual_desc}}</p>
+
+                        <h4>Simplified Source Code:</h4>
+                        <pre class="source-code">
+                            {{ filterSourceCode(node.source_code) }}
+                        </pre>
+                    </el-tab-pane>
+                </el-tabs>
+            </el-main>
+        </el-container>
+    </div>
+<script src="app.js"></script>
+</body>
+</html>

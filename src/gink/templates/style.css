@@ -1,0 +1,34 @@
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+#app {
+    margin: 40px auto;
+    width: 1300px;
+}
+.title {
+    display: inline-block;
+}
+.major {
+    margin: 20px 0 20px;
+}
+.path {
+    margin: 20px 0px 20px;
+}
+.source-code {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    border-radius: 4px;
+    padding: 20px;
+    background-color:rgba(233, 233, 233, 0.925)
+}
+.hint {
+    color: rgb(252, 84, 84);
+    font-size: 13px;
+}
+.hide-clipboard {
+    position: absolute;
+    left: -9999px
+}
+.inputs {
+    margin-bottom: 20px;
+}
