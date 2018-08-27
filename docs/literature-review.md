@@ -18,6 +18,10 @@
 
 - [ ] ***** Dai, A. M., & Le, Q. V. (2015). Semi-supervised sequence learning. In Advances in neural information processing systems (pp. 3079-3087). https://arxiv.org/abs/1511.01432
 
+- [ ] Training a Deep Learning Language Model Using Keras and Tensorflow https://github.com/IBM/deep-learning-language-model/blob/master/README.md
+
+- [ ] Language Model on One Billion Word Benchmark https://github.com/tensorflow/models/tree/master/research/lm_1b
+
 ### User Behavior via Clickstream
 
 - [ ] Gündüz, Ş., & Özsu, M. T. (2003, August). A web page prediction model based on click-stream tree representation of user behavior. In Proceedings of the ninth ACM SIGKDD international conference on Knowledge discovery and data mining (pp. 535-540). ACM. http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.3.1067&rep=rep1&type=pdf
