@@ -27,6 +27,13 @@ new Vue({
       nodes: null,
       manualDescription: '',
       dialogFormVisible: false,
+      startDialogFormVisible: true,
+      person: {
+        email: null,
+        lmu: null,
+        age: null,
+        gender: null,
+      }
     }
   },
   created: function() {
@@ -60,7 +67,17 @@ new Vue({
       for (i = 0; i < self.nodes.length; i++) {
         urls.push(self.nodes[i].url)
       }
+      console.log("age: ", self.person.age)
+      self.person.age = parseInt(self.person.age, 10)
+      console.log("age: ", self.person.age)
+      if (!Number.isInteger(self.person.age)) {
+        self.person.age = 0
+      }
       SaveActionPath({
+        email: self.person.email,
+        lmu: self.person.lmu,
+        age: self.person.age,
+        gender: self.person.gender,
         path: urls,
         manual_desc: self.manualDescription
       }).then((response) => {
@@ -79,27 +96,44 @@ new Vue({
     editCurrentNode() {
       this.dialogFormVisible = true
     },
+    saveInfo() {
+      if (this.person.email === null &&
+          this.person.lmu === null && 
+          this.person.age === null && 
+          this.person.gender === null) {
+        this.$message.success("Thank you very much :)")
+        this.startDialogFormVisible = false
+        return
+      }
+      this.$message.success("Your informations are saved. Please don't refresh the page during your participation")
+      this.startDialogFormVisible = false
+    },
     saveCurrentNode() {
       const self = this
-
-      if (self.currentNode.meta.length < 5) {
-        self.$message.error("Your metadata is too short, please describe more :(")
-      }
-      self.currentNode.meta = [self.currentNode.meta]
-      if (self.currentNode.keywords.length < 5) {
-        self.$message.error("Your keywords are too less, please describe more :(")
-      }
-      self.currentNode.keywords = [self.currentNode.keywords]
-      if (self.currentNode.manual_desc.length < 5) {
-        self.$message.error("Your description is too short, please describe more :(")
+      node = JSON.parse(JSON.stringify(self.currentNode))
+      node.meta = []
+      node.keywords = []
+      if (Array.isArray(self.currentNode.meta)) {
+        node.meta = [].concat(self.currentNode.meta)
+      } else {
+        node.meta.push(self.currentNode.meta)
       }
 
-      SaveNode(self.currentNode).then((response) => {
-        console.log(response)
-        self.$message.success(response.message)
-        self.dialogFormVisible = false
+      if (Array.isArray(self.currentNode.keywords)) {
+        node.keywords = [].concat(self.currentNode.keywords)
+      } else {
+        node.keywords.push(self.currentNode.keywords)
+      }
+      SaveNode(node).then((response) => {
+        if (response.status === 200) {
+          self.$message.success("Editing success, thank you very much :)")
+          self.dialogFormVisible = false
+          return Promise.resolve(response)
+        }
+        return Promise.reject(response)
       }).catch((error) => {
-        self.$message.error(error.response.message)
+        console.log(error)
+        self.$message.error("Something went wrong, you cannot edit it.")
       })
     },
     tabName(index) {

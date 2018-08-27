@@ -1,12 +1,19 @@
 body {
+    margin: 0;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 #app {
-    margin: 40px auto;
-    width: 1300px;
+    margin: 0px auto;
+}
+.header {
+    height: 40px;
+    background-color: #409EFF;
 }
 .title {
-    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background-color: #409EFF;
+    color: white;
 }
 .major {
     margin: 20px 0 20px;
@@ -31,4 +38,7 @@ body {
 }
 .inputs {
     margin-bottom: 20px;
+}
+.el-dialog {
+    width: 90%;
 }

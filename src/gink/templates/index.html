@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gink Labeling Tool</title>
+    <title>The Gink Project</title>
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
@@ -17,20 +17,74 @@
     <div id="app" v-cloak>
         <el-container>
             <el-header class="header">
-                <h1 class="title">Gink Labeling Tool</h1>
+                <h1 class="title">The Gink Project</h1>
             </el-header>
             <el-main class="major">
-                <p>Thank you for participating labeling a visiting path of web pages.</p>
-                <p>Your task is to describe what is</p>
-                <p style="text-indent: 20px"><strong>
-                    figure out what an user want to do when a visiting website with the fowlloing visiting steps.
-                </strong></p>
-                <p>Then click the save button below to get another task.</p>
+                <el-dialog title="Welcome to Gink Task!" :visible.sync="startDialogFormVisible"
+                :lock-scroll="true"
+                :close-on-click-modal="false"
+                :close-on-press-escape="false"
+                :show-close="false"
+                >
+                    <p>
+                        In this Gink Project task, you see a sequence of 
+                        steps a user might take when visiting a website. 
+                        Each step is shown in a separate tab that you can access. 
+                        It includes information about the respective step, 
+                        such as the URL, meta-data and keywords.
+                    </p>
+                    <p>
+                        <strong>
+                            The sequence will be automatically refreshed once you saved your recent answer.
+                        </strong>
+                    </p>
+                    <p>
+                        With your participation, you have a chance to win one of 
+                        three 10 Euro Amazon gift cards (or 10 Euros in cash). 
+                        Your chances increase with your number of answers.
+                    </p>
+                    <p>Feel free to ask me any questions: hi[at]changkun.us</p>
+                    <el-form :model="person">
+                        <el-form-item label="Email (required if you want to take part in the lottery for the vouchers/cash)">
+                            <el-input v-model="person.email" autofocus auto-complete="off" placeholder="Please input your email here"></el-input>
+                        </el-form-item>
+                        <el-form-item label="Have you studied / Are you studying Media Informatics or Informatics at LMU Munich?">
+                            <br/>
+                            <el-radio v-model="person.lmu" label="Yes">Yes</el-radio>
+                            <el-radio v-model="person.lmu" label="No">No</el-radio>
+                        </el-form-item>
+                        <el-form-item label="Age">
+                            <el-input v-model="person.age" placeholder="Your age"></el-input>
+                        </el-form-item>
+                        <el-form-item label="Gender">
+                            <br/>
+                            <el-radio v-model="person.gender" label="male">Male</el-radio>
+                            <el-radio v-model="person.gender" label="female">Female</el-radio>
+                        </el-form-item>
+                    </el-form>
+                    <div slot="footer" class="dialog-footer">
+                        <el-button type="primary" @click="saveInfo">Done. Let's Go!</el-button>
+                    </div>
+                </el-dialog>
+                
+                <p>Please try to imagine</p>
+                <p style="text-indent: 20px">
+                    <strong>what a user</strong> 
+                    <strong style="text-decoration: underline;">could have wanted to do</strong> 
+                </p>
+                <p>write down your ideas in the text field below when pursuing these steps and</p>
+                <p style="text-indent: 20px">
+                        <strong style="text-decoration: underline;">write down your ideas</strong> 
+                        <strong>in the text field below.</strong>
+                    </p>
+                <p>You can also visit the URL and <strong style="text-decoration: underline;">adapt information about a step</strong> if you find something is missing or not accurate.</p>
+                <p>Then click on the save button to get to the next sequence.</p>
+                <p>Thank you for your participation!</p>
                 <el-input type="textarea" :autosize="{minRows: 3}"
                     placeholder="Please input your interpretation" v-model="manualDescription">
                 </el-input>
                 <el-button class="path" type="success" @click="saveActionPath" icon="el-icon-check">Save</el-button>
-                <el-button class="path" type="primary" @click="changeActionPath">Change Task</el-button>
+                <el-button class="path" type="primary" @click="changeActionPath">Change Sequence</el-button>
                 <el-button class="path" type="info" @click="editCurrentNode" icon="el-icon-edit">Edit Current Step</el-button>
                 <el-dialog title="Edit Current Step Information" :visible.sync="dialogFormVisible">
                     <el-form :model="currentNode">
@@ -54,15 +108,11 @@
                         <el-button type="primary" @click="saveCurrentNode">Save Step Infos</el-button>
                     </div>
                 </el-dialog>
-                <p class="hint">
-                    * You can also visiting the URL and editing a single step information 
-                    if you find the description below is super confusing to you.
-                </p>
                 <el-tabs v-model="activeTab" @tab-click="tabClickHandler" type="card">
                     <el-tab-pane v-for="(node, index) in nodes" :name="tabName(index)" :label="tabIndex(index)">
 
                         <h4>URL:</h4>
-                        <p><a :href="node.url">{{node.url}}</a></p>
+                        <p><a :href="node.url" target="_blank">{{node.url}}</a></p>
 
                         <h4>Original Description: </h4>
                         <p>{{node.value}}</p>

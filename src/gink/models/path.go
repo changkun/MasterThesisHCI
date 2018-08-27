@@ -8,6 +8,10 @@ import (
 
 // SupervisedActionPath .
 type SupervisedActionPath struct {
+	Email             string   `json:"email" bson:"email"`
+	LMU               string   `json:"lmu" bson:"lmu"`
+	Age               int      `json:"age" bson:"age"`
+	Gender            string   `json:"gender" bson:"gender"`
 	Path              []string `json:"path"        bson:"path"`
 	ManualDescription string   `json:"manual_desc" bson:"manual_desc"`
 }
