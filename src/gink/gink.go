@@ -24,8 +24,8 @@ func main() {
 
 	var wg sync.WaitGroup
 
+	wg.Add(1)
 	go func() {
-		wg.Add(1)
 		defer wg.Done()
 		if err := router.Run("0.0.0.0:12346"); err != nil {
 			logrus.Error(err)

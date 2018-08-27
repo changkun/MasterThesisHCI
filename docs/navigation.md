@@ -57,3 +57,10 @@ Key-text-nav
 }
 ```
 
+- counter
+- more label higher chance
+- emails
+- major / occupation / studies
+- age / gender
+- starting inputs --> tracking
+- email, running study for master thesis, parcitipants, study information, more label higher chance, question.
