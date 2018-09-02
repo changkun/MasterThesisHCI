@@ -1,6 +1,6 @@
 # Automated UI Discovering for Arbitrary Web Application
 
-This repository contains my master thesis for the Human-Computer Interaction degree at LMU.
+Human-Computer Interaction Master's thesis @ LMU
 
 ## Contents
 
@@ -10,8 +10,8 @@ This repository contains my master thesis for the Human-Computer Interaction deg
   - [`gink`](./src/gink) is a data labeling tool for `spritzer` crawled dataset.
 - Demo
 - [Docs](./docs)
+- [Paper](./paper)
 - External Projects
-- License
 
 ## Licenses
 

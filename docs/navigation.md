@@ -64,3 +64,6 @@ Key-text-nav
 - age / gender
 - starting inputs --> tracking
 - email, running study for master thesis, parcitipants, study information, more label higher chance, question.
+
+- shortest page --> postpone
+- transfer learning from language model --> generating keywords, --> maybe more labels

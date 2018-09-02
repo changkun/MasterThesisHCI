@@ -27,10 +27,10 @@ Then you can access the labeling tool on `localhost:12346/tool`.
 ```
   (external)   store to collection `node`
   spritzer ------------------------------> Database <--+
-                                              |       | write to collection
-                  fetch Action Path algorithm |       | `supervised` and `node` 
-                                              v       | if participant provided
-   user <---------------------------------> gink -----+
+                                              |        | write to collection
+                  fetch Action Path algorithm |        | `supervised` and `node` 
+                                              v        | if participant provided
+   user <---------------------------------> gink ------+
               Labeling an Action Path     (daemon)
 ```
 
