@@ -1,0 +1,1243 @@
+[
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studierende/",
+            "http://www.medien.ifi.lmu.de/studierende/vorlagen/",
+            "http://www.medien.ifi.lmu.de/studierende/vorlagen/../semesterplanung/",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "I think the user was looking for semester plans, which means the user might be fresh."
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.medien.ifi.lmu.de/lehre/lehre.xhtml#sem-ws1415"
+        ],
+        "manual_desc": "This sequence points to winter semester 14/15."
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.medien.ifi.lmu.de/lehre/lehre.xhtml#sem-ss07"
+        ],
+        "manual_desc": "The user was looking for lectures in the summer semester of 2007."
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/forschung/",
+            "http://www.medien.ifi.lmu.de/forschung/../studierende/",
+            "http://www.portal.uni-muenchen.de"
+        ],
+        "manual_desc": "The user is a newly enrolled student who was looking for the portal entry of LMU."
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/forschung/",
+            "http://www.medien.ifi.lmu.de/forschung/../studierende/",
+            "http://www.medien.ifi.lmu.de/forschung/../studierende/abschlussarbeiten/",
+            "http://www.ifi.lmu.de/"
+        ],
+        "manual_desc": "The sequence is very likely to represent a student who was looking for a thesis. However, it is quick unclear why the user going back to homepage, and we have nothing useful to identify whether the student was a bachelor student or master student."
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/../blog/",
+            "https://mediainformatics.wordpress.com/"
+        ],
+        "manual_desc": "The user was viewing the blog of LMU media informatics group."
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mt/",
+            "http://www.medien.ifi.lmu.de/mt/../ath/",
+            "http://www.medien.ifi.lmu.de/mt/../ath/../",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.medien.ifi.lmu.de/lehre/lehre.xhtml#sem-ss11"
+        ],
+        "manual_desc": "The user was viewing lectures (MT and ATH) held by LMU media informatics group, and he/she finally landed at a specific semester (SS17). I don't think this is a normal behavior."
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mt/",
+            "http://www.medien.ifi.lmu.de/mt/../swh/",
+            "http://www.medien.ifi.lmu.de/mt/../swh/../ath/",
+            "http://www.medien.ifi.lmu.de/mt/../swh/../ath/../ps/",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "visit the homepage of medien informatik"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/cg1/",
+            "http://www.medien.ifi.lmu.de/cg1/../../lehre.xhtml"
+        ],
+        "manual_desc": "visiting computer graphics 1 lecture home page"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/studiengang/",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/studiengang/../stundenplan/",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "the user was looking for study plan, it looks to be a user who wants to be a LMU student"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/./",
+            "http://www.medien.ifi.lmu.de/./mmp/",
+            "http://www.medien.ifi.lmu.de/./mmp/../dw1/",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "search the information of a specific lecture"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/team/",
+            "http://www.medien.ifi.lmu.de/team/../mailto/florian.alt/ifi.lmu.de"
+        ],
+        "manual_desc": "want to find the contact information of a specific person"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.medien.ifi.lmu.de/lehre/lehre.xhtml#sem-ss17"
+        ],
+        "manual_desc": "a student want to know what lecture will be given during the semester ss17"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.medien.ifi.lmu.de/lehre/../kontakt.xhtml"
+        ],
+        "manual_desc": "a student want to know the contact information of student office"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mmp/",
+            "http://www.medien.ifi.lmu.de/mmp/../pem2/",
+            "http://www.medien.ifi.lmu.de/mmp/../pem2/../dw2/",
+            "http://www.medien.ifi.lmu.de/mmp/../pem2/../dw2/../pvru/",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "A student want to know the detailed information about a specific lecture"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/forschung/",
+            "http://www.medien.ifi.lmu.de/forschung/../",
+            "http://mediainformatics.wordpress.com/"
+        ],
+        "manual_desc": "A student may want to find the wordpress of mediainformatics"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.medien.ifi.lmu.de/lehre/../sitemap.xhtml"
+        ],
+        "manual_desc": "a student wanted to find something but he failed, so he was angry and turned to the sitemap and searched the informaation one by one"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/./",
+            "http://www.medien.ifi.lmu.de/./team/florian.alt/"
+        ],
+        "manual_desc": "which type people is the user？"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studierende/",
+            "http://www.medien.ifi.lmu.de/studierende/studienordnung/",
+            "http://www.medien.ifi.lmu.de/studierende/studienordnung/./",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "what does the user search for？"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mt/",
+            "http://www.medien.ifi.lmu.de/mt/../p3d/",
+            "http://www.medien.ifi.lmu.de/mt/../p3d/../vrit/",
+            "http://www.ifi.lmu.de/"
+        ],
+        "manual_desc": "what does the user need？"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mt/",
+            "http://www.ifi.lmu.de/"
+        ],
+        "manual_desc": "how long does the user use this website？"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/",
+            "http://www.portal.uni-muenchen.de"
+        ],
+        "manual_desc": "what time does the user log in this website？"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/team/",
+            "http://www.medien.ifi.lmu.de/team/sarah.voelkel/"
+        ],
+        "manual_desc": "which one does the user like to browse？picture or word？"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studierende/",
+            "http://www.medien.ifi.lmu.de/studierende/../",
+            "http://www.medien.ifi.lmu.de/studierende/../mt/",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "how long is time interval that the user log in this website"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/./",
+            "http://www.medien.ifi.lmu.de/././",
+            "http://www.ifi.lmu.de/"
+        ],
+        "manual_desc": "the user may be a graduate student if he was looking for information about jobs"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/cg1/",
+            "http://www.ifi.lmu.de/"
+        ],
+        "manual_desc": "i think the user may be a professor，which he was just only browse the information about paper"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/team/",
+            "http://www.medien.ifi.lmu.de/team/../mailto/yuanting.liu/ifi.lmu.de"
+        ],
+        "manual_desc": "the user might write a thesis if he was looking for material about  same theme"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studierende/",
+            "http://www.medien.ifi.lmu.de/studierende/vorlagen/",
+            "http://www.medien.ifi.lmu.de/studierende/vorlagen/../lehrangebot/",
+            "http://www.medien.ifi.lmu.de/studierende/vorlagen/../lehrangebot/anwendungsfaecher/",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "the user might choose a professor as research supervisor if he was just only researching infomation abouts professors"
+    },
+    {
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/team/",
+            "http://www.medien.ifi.lmu.de/team/nadja.terzimehic/"
+        ],
+        "manual_desc": "the user might choose curriculums in\nthe next semester  if he was only check the detailed information about every  course"
+    },
+    {
+        "email": "bastisteer@t-online.de",
+        "lmu": "Yes",
+        "age": 28,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/forschung/",
+            "http://www.medien.ifi.lmu.de/forschung/../sitemap.xhtml"
+        ],
+        "manual_desc": "Find information about media informatics or a specified topic at the institute. Maybe he wants to write a thesis and needs informations about this process"
+    },
+    {
+        "email": "hi@changkun.us",
+        "lmu": "Yes",
+        "age": 25,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/forschung/",
+            "http://www.medien.ifi.lmu.de/forschung/publikationen/",
+            "http://www.medien.ifi.lmu.de/pubdb/publications/pub/meschtscherjakov2018chiworkshop/meschtscherjakov2018chiworkshop.bib"
+        ],
+        "manual_desc": "looking for a specific publication from medien informatik group"
+    },
+    {
+        "email": "hi@changkun.us",
+        "lmu": "Yes",
+        "age": 25,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/./",
+            "http://www.medien.ifi.lmu.de/./team/andreas.butz/"
+        ],
+        "manual_desc": "looking for professor's home page"
+    },
+    {
+        "email": "hi@changkun.us",
+        "lmu": "Yes",
+        "age": 25,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/",
+            "http://www.ifi.lmu.de/"
+        ],
+        "manual_desc": "No meaning at all, we need more information for this"
+    },
+    {
+        "email": "hi@changkun.us",
+        "lmu": "Yes",
+        "age": 25,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/forschung/",
+            "http://www.medien.ifi.lmu.de/forschung/../lehre/",
+            "http://www.medien.ifi.lmu.de/forschung/../lehre/lehre.xhtml#sem-ss17"
+        ],
+        "manual_desc": "looking for lecture list in ss17"
+    },
+    {
+        "email": "hi@changkun.us",
+        "lmu": "Yes",
+        "age": 25,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mmp/",
+            "http://www.medien.ifi.lmu.de/mmp/./",
+            "http://www.medien.ifi.lmu.de/mmp/./../",
+            "http://www.medien.ifi.lmu.de/mmp/./../cg1/",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "visiting lecture home page of computer graphics 1"
+    },
+    {
+        "email": "hi@changkun.us",
+        "lmu": "Yes",
+        "age": 25,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/team/",
+            "http://www.medien.ifi.lmu.de/team/../mailto/franziska.schwamb/ifi.lmu.de"
+        ],
+        "manual_desc": "getting the email of a person"
+    },
+    {
+        "email": "hi@changkun.us",
+        "lmu": "Yes",
+        "age": 25,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mt/",
+            "http://www.medien.ifi.lmu.de/mt/../mml/",
+            "http://www.medien.ifi.lmu.de/mt/../mml/../id/",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "checking lectures in ss 2018"
+    },
+    {
+        "email": "hi@changkun.us",
+        "lmu": "Yes",
+        "age": 25,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/forschung/",
+            "http://www.medien.ifi.lmu.de/forschung/partner/",
+            "http://www.medien.ifi.lmu.de/forschung/partner/./",
+            "http://www.portal.uni-muenchen.de"
+        ],
+        "manual_desc": "looking for research partner"
+    },
+    {
+        "email": "hi@changkun.us",
+        "lmu": "Yes",
+        "age": 25,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.medien.ifi.lmu.de/lehre/lehre.xhtml#sem-ss15"
+        ],
+        "manual_desc": "looking for lectures in ss15"
+    },
+    {
+        "email": "hi@changkun.us",
+        "lmu": "Yes",
+        "age": 25,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/forschung/",
+            "http://www.medien.ifi.lmu.de/forschung/publikationen/",
+            "http://www.medien.ifi.lmu.de/forschung/publikationen/detail?pub=alt2012mediacultures3",
+            "http://www.medien.ifi.lmu.de/forschung/publikationen/detail?pub=alt2012mediacultures3/./",
+            "http://www.portal.uni-muenchen.de"
+        ],
+        "manual_desc": "looking for specific publications"
+    },
+    {
+        "email": "hi@changkun.us",
+        "lmu": "Yes",
+        "age": 25,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studierende/",
+            "http://www.medien.ifi.lmu.de/studierende/../lehre/",
+            "http://www.medien.ifi.lmu.de/studierende/../lehre/../studierende/",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "an enrolled student looking for study information"
+    },
+    {
+        "email": "hi@changkun.us",
+        "lmu": "Yes",
+        "age": 25,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mt/",
+            "http://www.medien.ifi.lmu.de/mt/./",
+            "http://www.medien.ifi.lmu.de/mt/./../../../sitemap.xhtml"
+        ],
+        "manual_desc": "looking for sitemap of lmu medien informatik"
+    },
+    {
+        "email": "jupame@p-z-meyer.de",
+        "lmu": "No",
+        "age": 28,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studierende/",
+            "http://www.medien.ifi.lmu.de/studierende/vorlagen/",
+            "http://www.medien.ifi.lmu.de/studierende/vorlagen/./",
+            "http://www.ifi.lmu.de/"
+        ],
+        "manual_desc": "Search for information on where to study."
+    },
+    {
+        "email": "jupame@p-z-meyer.de",
+        "lmu": "No",
+        "age": 28,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mmp/",
+            "http://www.die-informatiker.net/topic/Medieninformatik/MMP_Multimedia-Programmierung_SoSe_2015/"
+        ],
+        "manual_desc": "Find out information about a certain seminar."
+    },
+    {
+        "email": "jupame@p-z-meyer.de",
+        "lmu": "No",
+        "age": 28,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/faq/",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/bewerbung/master/",
+            "http://www.ifi.lmu.de/"
+        ],
+        "manual_desc": "Know where to study, what to study, how to apply."
+    },
+    {
+        "email": "jupame@p-z-meyer.de",
+        "lmu": "No",
+        "age": 28,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/cg1/",
+            "http://www.medien.ifi.lmu.de/cg1/#uebung-tutorial",
+            "http://www.medien.ifi.lmu.de/cg1/#uebung-tutorial/../akf/",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "Information about a certain seminar."
+    },
+    {
+        "email": "jupame@p-z-meyer.de",
+        "lmu": "No",
+        "age": 28,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mmp/",
+            "http://www.medien.ifi.lmu.de/mmp/../dw1/",
+            "http://www.ifi.lmu.de/"
+        ],
+        "manual_desc": "Find out about this certain seminar."
+    },
+    {
+        "email": "jupame@p-z-meyer.de",
+        "lmu": "No",
+        "age": 28,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/forschung/",
+            "http://www.ifi.lmu.de/"
+        ],
+        "manual_desc": "Finding out what research topics are currently going on at the Medieninformatik department."
+    },
+    {
+        "email": "jupame@p-z-meyer.de",
+        "lmu": "No",
+        "age": 28,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studierende/",
+            "http://www.medien.ifi.lmu.de/studierende/./",
+            "http://www.medien.ifi.lmu.de/studierende/./studienordnung/",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "Finding out information about which courses to take."
+    },
+    {
+        "email": "jupame@p-z-meyer.de",
+        "lmu": "No",
+        "age": 28,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/../language.php/studieninteressierte/index.xhtml.en"
+        ],
+        "manual_desc": "Is it good to study at LMU?"
+    },
+    {
+        "email": "jupame@p-z-meyer.de",
+        "lmu": "No",
+        "age": 28,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.medien.ifi.lmu.de/lehre/lehre.xhtml#sem-ws1617"
+        ],
+        "manual_desc": "What courses could be taken?"
+    },
+    {
+        "email": "jupame@p-z-meyer.de",
+        "lmu": "No",
+        "age": 28,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mmp/",
+            "http://www.medien.ifi.lmu.de/mmp/../p3d/",
+            "http://www.medien.ifi.lmu.de/mmp/../p3d/../mmp/",
+            "http://www.die-informatiker.net/topic/Medieninformatik/MMP_Multimedia-Programmierung_SoSe_2015/"
+        ],
+        "manual_desc": "Infos about a certain seminar."
+    },
+    {
+        "email": "jupame@p-z-meyer.de",
+        "lmu": "No",
+        "age": 28,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mt/",
+            "http://www.medien.ifi.lmu.de/mt/../../../language.php/lehre/ss18/mt/index.xhtml.en"
+        ],
+        "manual_desc": "Info about the Medientechnik seminar."
+    },
+    {
+        "email": "jupame@p-z-meyer.de",
+        "lmu": "No",
+        "age": 28,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studierende/",
+            "http://www.medien.ifi.lmu.de/studierende/../studieninteressierte/faq/",
+            "http://www.uni-muenchen.de/studium/beratung/beratung_service/beratung_lmu/schulkontakte/tof/index.html"
+        ],
+        "manual_desc": "What courses do I need to take?"
+    },
+    {
+        "email": "jupame@p-z-meyer.de",
+        "lmu": "No",
+        "age": 28,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studierende/",
+            "http://www.medien.ifi.lmu.de/studierende/../studieninteressierte/faq/",
+            "http://www.medien.ifi.lmu.de/studierende/../studieninteressierte/faq/../erfahrungsberichte/",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "What courses do I need to take?"
+    },
+    {
+        "email": "jupame@p-z-meyer.de",
+        "lmu": "No",
+        "age": 28,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/cg1/",
+            "http://www.medien.ifi.lmu.de/cg1/../../../kontakt.xhtml"
+        ],
+        "manual_desc": "Information about this Seminar."
+    },
+    {
+        "email": "jupame@p-z-meyer.de",
+        "lmu": "No",
+        "age": 28,
+        "gender": "male",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mmp/",
+            "http://www.medien.ifi.lmu.de/mmp/../vrit/",
+            "http://www.medien.ifi.lmu.de/mmp/../vrit/../mmp/",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "Just browsing around the homepage."
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mmp/",
+            "http://www.medien.ifi.lmu.de/mmp/../mt/",
+            "http://www.medien.ifi.lmu.de/mmp/../mt/../",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.medien.ifi.lmu.de/lehre/lehre.xhtml#sem-ss10"
+        ],
+        "manual_desc": "Wanting to get information about media informatics at lmu"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/../",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.medien.ifi.lmu.de/lehre/./",
+            "http://www.medien.ifi.lmu.de/lehre/./lehre.xhtml#sem-ws1314"
+        ],
+        "manual_desc": "Visitor wants to get first impressions of media Informatics. Does know his direction of study but isn't sure yet. Maybe a bachelor or a pupil after graduating from high school/gymnasium. "
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.medien.ifi.lmu.de/lehre/../",
+            "http://www.medien.ifi.lmu.de/lehre/../studieninteressierte/",
+            "http://www.ifi.lmu.de/"
+        ],
+        "manual_desc": "Enrolled student informing himself about curses thought in SS18 at media informatics institute."
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/./",
+            "http://www.medien.ifi.lmu.de/./cg1/",
+            "http://www.medien.ifi.lmu.de/./cg1/../",
+            "http://www.medien.ifi.lmu.de/./cg1/../mmp/",
+            "http://www.die-informatiker.net/topic/Medieninformatik/MMP_Multimedia-Programmierung_SoSe_2015/"
+        ],
+        "manual_desc": "Visitor wants to get general information about media informatics at lmu"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/cg1/",
+            "http://www.medien.ifi.lmu.de/cg1/../",
+            "http://www.medien.ifi.lmu.de/cg1/../mmp/",
+            "http://www.ifi.lmu.de/"
+        ],
+        "manual_desc": "Enrolled student who is taking part at computergrafik 1 and wants to get more information about his curse or checking dates/ data. Interested student who can take part at this curse but isn't sure yet\n"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mt/",
+            "http://www.medien.ifi.lmu.de/mt/../p3d/",
+            "http://www.medien.ifi.lmu.de/mt/../p3d/../ps/",
+            "https://mimuc.slack.com"
+        ],
+        "manual_desc": "Enrolled student wanting to check data/ dates of his curse or wanting to inform about possible curse"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/team/",
+            "http://www.medien.ifi.lmu.de/team/../kontakt.xhtml"
+        ],
+        "manual_desc": "Looking for specific person to talk to or wanting to get first imoression of the employements at this institute"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/forschung/",
+            "http://www.medien.ifi.lmu.de/forschung/projekte/",
+            "http://www.medien.ifi.lmu.de/forschung/projekte/../techreports/",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "Current projects which are handled by mi, future market or bachelor thesis inspiration"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/./",
+            "http://www.medien.ifi.lmu.de/./sitemap.xhtml"
+        ],
+        "manual_desc": "Overview about everything you could want to know"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/studiengang/",
+            "http://www.ifi.lmu.de/"
+        ],
+        "manual_desc": "Pupil wanting to get information about his favourite degree curse or bachelor wanting to inform about master"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/./",
+            "http://www.portal.uni-muenchen.de"
+        ],
+        "manual_desc": "Enrolled student wanting to look up something administrative"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.medien.ifi.lmu.de/lehre/lehre.xhtml#sem-ss09"
+        ],
+        "manual_desc": "Information about curses of Ws09"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.medien.ifi.lmu.de/lehre/../language.php/lehre/index.xhtml-php.en"
+        ],
+        "manual_desc": "Information about Lectures in Ss18"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/team/",
+            "http://www.medien.ifi.lmu.de/team/sylvia.rothe/"
+        ],
+        "manual_desc": "Information about specific person sylvia rothe"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/nebenfach/",
+            "http://www.ifi.lmu.de/"
+        ],
+        "manual_desc": "Pupil wanting to get information about mi as minor subject"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/./",
+            "http://www.medien.ifi.lmu.de/./studierende/",
+            "http://www.medien.ifi.lmu.de/./studierende/../sitemap.xhtml"
+        ],
+        "manual_desc": "Assistance for enrolled srudents with normal student problemd"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studierende/",
+            "http://www.medien.ifi.lmu.de/studierende/pruefungsleistungen/",
+            "http://www.medien.ifi.lmu.de/studierende/pruefungsleistungen/../glossar/",
+            "http://alumni.ifi.lmu.de/"
+        ],
+        "manual_desc": "Student has already taken part at courses and wanting to get the credits of it for mi"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/./",
+            "http://www.facebook.com/LMU.Medieninformatik"
+        ],
+        "manual_desc": "Check fb page of mi for looking up online presence and \"coolness\""
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/cg1/",
+            "http://www.medien.ifi.lmu.de/cg1/../mml/",
+            "http://www.medien.ifi.lmu.de/cg1/../mml/../ath/",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "Looking up data or dates for course"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mmp/",
+            "http://www.medien.ifi.lmu.de/mmp/../ds/",
+            "http://www.medien.ifi.lmu.de/mmp/../ds/../../../sitemap.xhtml"
+        ],
+        "manual_desc": "Information about disputation seminar"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mt/",
+            "http://www.medien.ifi.lmu.de/mt/../pvru/",
+            "http://www.medien.ifi.lmu.de/mt/../pvru/../../lehre.xhtml"
+        ],
+        "manual_desc": "Informstion abozt vr praktikzm"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mt/",
+            "http://www.medien.ifi.lmu.de/mt/../ts/",
+            "http://www.medien.ifi.lmu.de/mt/../ts/../../../language.php/lehre/ss18/ts/index.xhtml.en"
+        ],
+        "manual_desc": "Information about tutor training"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/team/",
+            "http://www.medien.ifi.lmu.de/team/christian.mai/"
+        ],
+        "manual_desc": "Information about a specific petson christisn mai"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/./",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "Internal login screen, area where normals are prohibited"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.medien.ifi.lmu.de/lehre/lehre.xhtml#sem-ss08"
+        ],
+        "manual_desc": "Information about lectures of ss08"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.ifi.lmu.de/"
+        ],
+        "manual_desc": "Ingormstion about informatics at lmu"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.medien.ifi.lmu.de/lehre/lehre.xhtml#sem-ws0708"
+        ],
+        "manual_desc": "Information aboutlectures at ws0708"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/./",
+            "https://twitter.com/mimuc"
+        ],
+        "manual_desc": "Looking up mi on twitter for coolness of degree of course"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mt/",
+            "http://www.medien.ifi.lmu.de/mt/../evm/",
+            "http://www.medien.ifi.lmu.de/mt/../evm/../akf/",
+            "http://www.ifi.lmu.de/"
+        ],
+        "manual_desc": "Information about introduction of master "
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/cg1/",
+            "http://www.medien.ifi.lmu.de/cg1/#uebung-tutorial",
+            "http://www.medien.ifi.lmu.de/cg1/#uebung-tutorial/../../../kontakt.xhtml"
+        ],
+        "manual_desc": "Information about practise of cg1 ss18"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/cg1/",
+            "http://www.medien.ifi.lmu.de/cg1/../akf/",
+            "http://www.medien.ifi.lmu.de/cg1/../akf/../cg1/",
+            "http://www.medien.ifi.lmu.de/cg1/../akf/../cg1/../dw1/",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "Information about course digital photography"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mt/",
+            "http://www.medien.ifi.lmu.de/mt/../pem/",
+            "http://www.medien.ifi.lmu.de/mt/../pem/../evm/",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "Information about course for learning android development"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mmp/",
+            "http://www.medien.ifi.lmu.de/team/mohamed.khamis/"
+        ],
+        "manual_desc": "Information about mohamed khanis"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/forschung/",
+            "http://www.medien.ifi.lmu.de/forschung/publikationen/",
+            "http://www.medien.ifi.lmu.de/forschung/publikationen/detail?pub=pfleging2013callndrive",
+            "http://www.medien.ifi.lmu.de/forschung/publikationen/detail?pub=pfleging2013callndrive/../../sitemap.xhtml",
+            "http://www.medien.ifi.lmu.de/forschung/publikationen/detail?pub=pfleging2013callndrive/../../sitemap.xhtml/../projekte/",
+            "http://www.portal.uni-muenchen.de"
+        ],
+        "manual_desc": "Information about publications at this institute"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/team/",
+            "http://www.medien.ifi.lmu.de/team/Team-2018.jpg"
+        ],
+        "manual_desc": "Information about team of 2018"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/erfahrungsberichte/",
+            "http://www.medien.ifi.lmu.de/studieninteressierte/erfahrungsberichte/../stundenplan/",
+            "http://www.portal.uni-muenchen.de"
+        ],
+        "manual_desc": "Information about degree of course by enrolled students, getting first hand"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mmp/",
+            "http://www.medien.ifi.lmu.de/mmp/../hsuc/",
+            "http://www.medien.ifi.lmu.de/mmp/../hsuc/../ath/",
+            "http://www.ifi.lmu.de/"
+        ],
+        "manual_desc": "Information about hauptseminar"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.medien.ifi.lmu.de/lehre/lehre.xhtml#sem-ws1112"
+        ],
+        "manual_desc": "Information about lectures wd1112"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mt/",
+            "http://www.medien.ifi.lmu.de/mt/../mmi1/",
+            "http://www.medien.ifi.lmu.de/mt/../mmi1/../evm/",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "Information about human computer interaction"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/mt/",
+            "http://www.medien.ifi.lmu.de/mt/../hs/",
+            "http://www.medien.ifi.lmu.de/mt/../hs/../",
+            "https://www.medien.ifi.lmu.de/intern/"
+        ],
+        "manual_desc": "Information about srminar"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/team/",
+            "http://www.medien.ifi.lmu.de/team/yuanting.liu/"
+        ],
+        "manual_desc": "Information about specific person"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.medien.ifi.lmu.de/lehre/lehre.xhtml"
+        ],
+        "manual_desc": "Lecture overview of all years"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/team/",
+            "http://www.medien.ifi.lmu.de/team/../mailto/daniel.buschek/ifi.lmu.de"
+        ],
+        "manual_desc": "Mailto daniel buschek"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.medien.ifi.lmu.de/lehre/lehre.xhtml#sem-ws1011"
+        ],
+        "manual_desc": "Information about lecture ws1011"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/studierende/",
+            "http://www.medien.ifi.lmu.de/studierende/lehrangebot/",
+            "http://www.medien.ifi.lmu.de/studierende/lehrangebot/../../sitemap.xhtml"
+        ],
+        "manual_desc": "Course overview about mi"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.medien.ifi.lmu.de/lehre/lehre.xhtml#sem-ss14"
+        ],
+        "manual_desc": "Information about lectures of ss14"
+    },
+    {
+        "email": "fe.buchner@t-online.de",
+        "lmu": "Yes",
+        "age": 20,
+        "gender": "female",
+        "path": [
+            "http://www.medien.ifi.lmu.de",
+            "http://www.medien.ifi.lmu.de/lehre/",
+            "http://www.medien.ifi.lmu.de/lehre/lehre.xhtml#sem-ws0910"
+        ],
+        "manual_desc": "Information about mectures of ws0910"
+    }
+]

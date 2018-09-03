@@ -1,3 +1,4 @@
+package old
 
 func crawl(URL string, link chan string, finish chan bool) {
 	resp, err := http.Get(URL)
