@@ -8,9 +8,10 @@ Human-Computer Interaction Master's thesis @ LMU
   - [`crawler`](./src/crawler) is a proof of concept experiment for crawl **Action Path** of a website.
   - [`spritzer`](./src/spritzer) is the actual website **Action Path** crawler for learning task.
   - [`gink`](./src/gink) is a data labeling tool for `spritzer` crawled dataset.
+  - [`mortal`](./src/mortal) is a clickstream tracker and predictor.
 - Demo
 - [Docs](./docs)
-- [Paper](./paper)
+- [Thesis](./thesis)
 - External Projects
 
 ## Licenses
