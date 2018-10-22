@@ -90,7 +90,7 @@
                 var avatarElement = document.createElement("img");
                 avatarElement.src = this.options.avatar;
 
-                avatarElement.className = "avatar";
+                avatarElement.className = "toast-avatar";
 
                 if (this.options.positionLeft === true) {
 

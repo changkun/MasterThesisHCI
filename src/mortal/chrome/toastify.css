@@ -23,6 +23,7 @@
 }
 .toastify.on {
     opacity: 1;
+    color: #ffffff;
 }
 .toast-close {
     opacity: 0.4;
@@ -43,7 +44,7 @@
 .rounded {
     border-radius: 25px;
 }
-.avatar{
+.toast-avatar{
     width: 1.5em;
     height: 1.5em;
     margin: 0 5px;
