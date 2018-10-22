@@ -1,0 +1,26 @@
+{
+    "name": "Mortal Collector",
+    "version": "1.0",
+    "description": "Clickstream collection",
+  
+    "permissions": ["tabs", "declarativeContent", "storage"],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": true
+    },
+    "browser_action": 
+    {
+      "default_title": "Check all possible predictions",
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["toastify.js", "content.js"],
+        "css": ["toastify.css"],
+        "run_at": "document_start"
+      }
+    ],
+    "manifest_version": 2
+  }
+  
