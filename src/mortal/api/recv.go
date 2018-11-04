@@ -5,19 +5,18 @@ import (
 	"net/http"
 
 	"github.com/changkun/mortal/crawler"
-	"github.com/changkun/mortal/database"
+	"github.com/changkun/mortal/db"
 	"github.com/changkun/mortal/predictor"
-
 	"github.com/gin-gonic/gin"
 )
 
 // CollectRequest defines the request of progressive clickstream collection
 type CollectRequest struct {
-	UserID      string  `json:"user_id"`
-	PreviousURL string  `json:"previous_url"`
-	CurrentURL  string  `json:"current_url"`
-	StaySeconds float64 `json:"stay_seconds,string"`
-	Time        string  `json:"time"`
+	UserID      string  `json:"user_id" bson:"user_id"`
+	PreviousURL string  `json:"previous_url" bson:"previous_url"`
+	CurrentURL  string  `json:"current_url" bson:"current_url"`
+	StaySeconds float64 `json:"stay_seconds,string" bson:"stay_seconds"`
+	Time        string  `json:"time" bson:"time"`
 }
 
 // CollectResponse defines the response of progressive clickstream prediction
@@ -35,13 +34,20 @@ type CollectResponse struct {
 // Save ...
 func (c *CollectRequest) Save() {
 	// if domain not exit in database, explore the website
-	if database.IsDomainExist(c.CurrentURL) {
+	if db.IsDomainExist(c.CurrentURL) {
 		crawler.Explore(c.CurrentURL)
 	}
 
+	database := db.GetMongo()
+	defer db.Close()
+
+	if err := database.C(db.Raw).Insert(c); err != nil {
+		fmt.Println("insert err: ", err)
+		return
+	}
 	// save url embedding
 	// TODO:
-	fmt.Println("current click: ", c.CurrentURL)
+	fmt.Println("current click: ", c)
 }
 
 // Recv handles the request and response of a collect event

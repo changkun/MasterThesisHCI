@@ -22,6 +22,7 @@ function guid() {
 }
 chrome.runtime.onInstalled.addListener(function() {
   userID = guid();
+  localStorage.setItem('user_id', userID);
   lastURL = '';
 });
 
@@ -49,6 +50,10 @@ function postCollection(url, callback) {
   };
 
   request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+
+  if (userID === '') {
+    userID = localStorage.getItem('user_id')
+  }
 
   var data = {
     user_id: userID,
