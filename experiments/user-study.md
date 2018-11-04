@@ -10,14 +10,14 @@ You can perform the task in any order you like, but you have to achieve the goal
 | 3 |facebook.com|You are a facebook user, and you have a wide social. However you don't wants to see parenting information in your timeline, you wish to turn them off for a year from your timeline; then recently you start interested in ping pong, you want to join a related local group.| 1. looking for ad settings; 2. find |  |  |
 | 4 |twitter.com|You lost your phone and phone number, and you bought a new one. However the old phone number was registered in your twitter account, you want to change it for your account safety. Please find the entrace to change your phone number and password. Then you becomes curious on twitter's settings. You want to know how twitter use your data and prevent twitter collect your data.| 1. Change phone number; 2. change password; 3. find personality settings; |  |  |
 | 5 |medium.com|| 1. find tech related articles; 2. looking for websocket related articles; 3. find shared github repository |  |  |
-| 6 |bloomberg.com|You heared bloomberg reported a news about China use tiny chips infiltrate U.S companies. You wants to find the article, and what is the current status of the report.| 1. Find out the original article; 2. check related articles; 3. Find the latest article |  |  |
+| 6 |bloomberg.com|                                                              | 1. Find out the original article; 2. check related articles; 3. Find the latest article |  |  |
 | 7 |ifi.lmu.de|| 1. Official provided study plan; 2. Current offered courses in the upcoming semester; 3. Find out |  |  |
 | 8 |quora.com|???|  |  |  |
 | 9 |dribbble.com|Assume you were an UX designer, you like Dribbble because its a fantastic to get inspiration from there. Now, you are consiering looking for part-time freelance on Dribbble. The resiponsibility of the job should match for "educational product UX design"| 1. jobs list; 2. reading job descriptions; 3. focus on educational products |  |  |
 | 10 |arxiv.org|??? specific paper / specific topic / mobile health / explosive task / give topic / find five papers|  |  |  |
 | 11 |youtube.com|You want to be a Youtuber. You wants to know how to earn money from making videos, and what should you concern when you publishing a video.| 1. youtube profits guide; 2. youtube video making tutorial; 3. youtube copyright guide |  |  |
 | 11' |youtube.com|looking for videos / consider mainstream study (video) / find funny video send to your friend / find menu resipy videos /|  | | |
-| 12 |reddit.com|Assume your were a fan of Marvel comics, now you want to view some spoilers regarding a comming moive "Captain Marvel" and "The Avengers 4".| ??? |  |  |
+| 12 |reddit.com|| ??? |  |  |
 | 13 |google.com|| 1. find your settings 2. find your personality settings. 3. find ad recomendation personality settings |  |  |
 | 14 |google.com|You can't access your gmail. You want to findout whether gmail are current malfuntioning or not. Contact  instance messaging support.| 1. go to gmail; 2. find google service status monitoring; 3. looking for technical support. |  |  |
 | 15 |ielts.org|You want to register ielts test. Your task is to findout is your city has a place  for examination that close to you.  You want to know the requirements for the test and the registration entrace of IELTS test.| 1. find local authority; 2. find requirements; 3. find entrace of registration |  |  |
@@ -259,31 +259,53 @@ networkx
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 **Note: **
 
 - **You are not allowed to input URL on browser directly.**
 - **Keep pages open if they are required in the task, close the irrelevant pages when you don't need it.**
 - You are allowed to do anything, such as open multiple pages, use search engine and etc.
+- Close the browser when you finished the task and accomplished the requirement
 
 
 
 | ID   | Determined Goal Oriented Task                                | Fuzzy Goal Browsing Task                                     | Aimless Browsing Task                                        | Requirement                                                  | Starting page                             | Category                                 |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------------------- | ---------------------------------------- |
-|      |                                                              |                                                              |                                                              |                                                              |                                           |                                          |
 | 1    | Assume your smartphone was broken, you have 1200 euros as budget. You wants to buy an iPhone, a smart phone case, and a wireless charging dock. Adding them to your cart. | You want to buy three gifts for your best friend and give them to your firends to the birthday party. Add three items to the cart, open the cart when you finished. | Check your interested category, browsing items, add three items to cart within 5 min. | Keep the cart window open and close the others.              | www.amazon.com                            | shopping                                 |
 | 2    | You are comparing three most popular frontend desktop frameworks: Electron / NW.js / ReactNative Desktop. Your goal is to find out the latest release download link. | You were a senior developer. Your boss wants you write a report regarding the tends of current development techniques. You want to find the most three popular (top-3 stars) web backend Go frameworks and access their repository,  write their name down on a paper when you decided. | Browsing github and select three github repository your most interested in. | Keep the release download link page open and close the others. | www.github.com                            | development / productivity               |
 | 3    | You are looking for a copyleft **logo** for your cloud computing startup, find three candidate logo. | Find **three images** you like the most for these three animals: gopher, cat and dog. | Browsing on dribbble, select three images you like the most while you browsing dribbble. | Keep the selected image window open, and close the others.   | www.dribbble.com                          | information retrieve / productivity      |
-| 4    | You are a fresh medieninformatik student major in HCI program. You wants to find out recommended first semester study plan provided by the program, then select "Human-Computer Interaction II" opened in WS18/19 and check previous "Human-Computer Interaction I" opened in SS18 and SS17. | You are a fresh medieninformatik student. You wants to select three lectures, one seminar and one practicum for your study in WS18/19. | You are planning for the current semster study, select three lecture you interested in, one seminar for, and one practicum. | Keep the study plan pages open and close the others.         | www.medien.ifi.lmu.de                     | information retrieve / reference / study |
-| 5    | You are a international student who want to apply economics program  for your master study at LMU. Find the page for application requirement . |                                                              |                                                              |                                                              | https://www.en.uni-muenchen.de/index.html | information retrieve / reference / study |
-| 6    |                                                              |                                                              |                                                              |                                                              | www.youtube.com                           |                                          |
-| 7    |                                                              | Find the most recent published three overview paper regarding: affective computing, convolutional neural networks, |                                                              |                                                              | www.arxiv.org                             |                                          |
-| 8    |                                                              | You want to know how google profiling you based on your history. Find your personality profile that created by Google. |                                                              |                                                              | google.com                                |                                          |
-| 9    | You live in Munich, you want to participate to IELTS test next year on Feburary. Looking for the entrace to register the examination. You must keep seeking and stop when you selected the first track of Feburary test. |                                                              |                                                              |                                                              | ielts.org                                 |                                          |
-| 10   |                                                              | You realized medium.com is a nice place to post blog knowledge. Your boss want you develop a websocket based application via programming language Go, and you want to see how people share their knowledge on medium, your task is to find the most popular github repository relates to websocket that people shared on medium. | Browsing posts on medium, select three posts you like witin 5 min. |                                                              | medium.com                                |                                          |
-| 11   |                                                              |                                                              |                                                              |                                                              | www.facebook.com                          |                                          |
-| 12   |                                                              |                                                              |                                                              |                                                              | twitter.com                               |                                          |
-|      |                                                              |                                                              |                                                              |                                                              |                                           |                                          |
-|      |                                                              |                                                              |                                                              |                                                              |                                           |                                          |
+| 4    | You are a fresh medieninformatik student major in HCI program. You wants to find out recommended first semester study plan provided by the program, then select "Human-Computer Interaction II" opened in WS18/19 and check previous "Human-Computer Interaction I" opened in SS18 and SS17. | You are a fresh medieninformatik student. You wants to select three lectures, one seminar and one practicum for your study in WS18/19. | Browsing the website for 5 min.                              | Keep the study plan pages open and close the others.         | www.medien.ifi.lmu.de                     | information retrieve / reference / study |
+| 5    | You are a international student who want to apply economics program  for your master study at LMU. Find the page for application requirement . |                                                              | Browsing for 5 min.                                          |                                                              | https://www.en.uni-muenchen.de/index.html | information retrieve / reference / study |
+| 6    |                                                              |                                                              | Browsing on youtube for 5 min.                               |                                                              | www.youtube.com                           |                                          |
+| 7    |                                                              | Find the most recent published a overview paper for these three topics respectively: affective computing, convolutional neural networks, distributed consistency algorithm. | Browsing arxiv for 5 min.                                    |                                                              | www.arxiv.org                             |                                          |
+| 8    |                                                              | You want to know how google profiling you based on your history. Find your personality profile that created by Google. | Browsing google for 5 min.                                   |                                                              | google.com                                |                                          |
+| 9    | You live in Munich, you want to participate to IELTS test next year on Feburary. Looking for the entrace to register the examination. You must keep seeking and stop when you selected the first track of Feburary test. |                                                              | Browsing IELTS website for 5 min                             |                                                              | ielts.org                                 |                                          |
+| 10   | You realized medium.com is a nice place to post blog knowledge. Your boss want you develop a websocket based application via programming language Go, and you want to see how people share their knowledge on medium, your task is to find the most popular github repository relates to websocket that people shared on medium. |                                                              | Browsing posts on medium for 5 min.                          |                                                              | medium.com                                |                                          |
+| 11   | ????                                                         | ????                                                         | Browsing facebook for 5 min.                                 |                                                              | www.facebook.com                          |                                          |
+| 12   | ????                                                         | ????                                                         | Browsing twitter for 5 min.                                  |                                                              | twitter.com                               |                                          |
+|      | You somehow heared about Bloomberg reported a news about China use tiny chips infiltrate U.S companies. You wants to find the article | You want to find the relevant news regarding the progress of China use tiny chips infiltrate U.S companies. | Browsing news on bloomberg in 5 min.                         | Keep news window open if you like, close the others.         | https://www.bloomberg.com/europe          |                                          |
+| 13   | You are a fan of Marvel comics, you want to view some spoilers regarding a comming moive "The Avengers 4". Find latest three post that spoilers The Avengers 4. |                                                              | Browsing on reddit in 5 min                                  |                                                              | www.reddit.com                            |                                          |
 |      |                                                              |                                                              |                                                              |                                                              |                                           |                                          |
 |      |                                                              |                                                              |                                                              |                                                              |                                           |                                          |
 |      |                                                              |                                                              |                                                              |                                                              |                                           |                                          |
@@ -300,27 +322,27 @@ networkx
 
 ## User 1
 
-| Task ID | Timing | Difficulty (1-5) |
-| ------- | ------ | ---------------- |
-| 1-1     |        |                  |
-| 1-2     |        |                  |
-| 1-3     |        |                  |
-| 2-1     |        |                  |
-| 2-2     |        |                  |
-| 2-3     |        |                  |
-| 3-1     |        |                  |
-| 3-2     |        |                  |
-| 3-3     |        |                  |
-| 4-1     |        |                  |
-| 4-2     |        |                  |
-| 4-3     |        |                  |
-| 5-1     |        |                  |
-| 5-2     |        |                  |
-| 5-3     |        |                  |
-|         |        |                  |
-|         |        |                  |
-|         |        |                  |
-|         |        |                  |
+| Task ID | Timing | Difficulty (1-5) 1 very easy, 5 very difficult |
+| ------- | ------ | ---------------------------------------------- |
+| 1-1     |        |                                                |
+| 1-2     |        |                                                |
+| 1-3     |        |                                                |
+| 2-1     |        |                                                |
+| 2-2     |        |                                                |
+| 2-3     |        |                                                |
+| 3-1     |        |                                                |
+| 3-2     |        |                                                |
+| 3-3     |        |                                                |
+| 4-1     |        |                                                |
+| 4-2     |        |                                                |
+| 4-3     |        |                                                |
+| 5-1     |        |                                                |
+| 5-2     |        |                                                |
+| 5-3     |        |                                                |
+|         |        |                                                |
+|         |        |                                                |
+|         |        |                                                |
+|         |        |                                                |
 
 ## Questionnaire
 
@@ -332,11 +354,21 @@ networkx
 
 
 
-- Explain what is your purpose or motivation to acessing the website? For work/study or information browsering/amusing?
+- What is your most common purpose or motivation to acessing the website? Answer in one sentence for each of your top-5 websites.
 
 
 
-- Do you have a clear purpose when you actually access your top-5 websites? For example, when you login to youtube, are you looking for a specific video or just browsing. Answer the question for all of your top-10 websites, answer the most often one.
-2. **(For example, just browsing, looking for specific, motivations to go to the website, cook, just look cat video, both cases, report own, question, description situation why you use it, how, purpose? browsing behavior)**
-3. When you use search engine, do you save the website of result to your bookmarks? Why?
-4. Do you use browser plugin? What is your major browser? chrome/safari/ie or else?
+- Do you have a clear purpose when you access your top-5 websites? For example, when you login to youtube, are you looking for a specific video or just browsing. Answer the question for all of your top-10 websites, answer the most often case.
+
+
+
+- When you use search engine seeking for information you want, do you save the website of result to your bookmarks? Why? Answer your most common case.
+
+
+
+- What is your major browser? Do you use browser plugin? chrome/safari/ie or else?
+
+
+
+- Do you have feedbacks regarding the study? If so, write down bellow.
+
