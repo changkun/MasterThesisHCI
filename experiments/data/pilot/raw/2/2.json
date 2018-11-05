@@ -1,0 +1,366 @@
+[
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "",
+        "current_url": "https://github.com/",
+        "stay_seconds": 0,
+        "time": "2018-11-04T16:46:24Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/",
+        "current_url": "https://www.google.com/search?q=go+framework&oq=go+freamwot&aqs=chrome.1.69i57j0l5.11250j0j7&sourceid=chrome&ie=UTF-8",
+        "stay_seconds": 26.665,
+        "time": "2018-11-04T16:46:51Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.google.com/search?q=go+framework&oq=go+freamwot&aqs=chrome.1.69i57j0l5.11250j0j7&sourceid=chrome&ie=UTF-8",
+        "current_url": "https://github.com/",
+        "stay_seconds": 3.499,
+        "time": "2018-11-04T16:46:54Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/",
+        "current_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b?gi=7edfe37559d1",
+        "stay_seconds": 1.695,
+        "time": "2018-11-04T16:46:56Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b?gi=7edfe37559d1",
+        "current_url": "https://github.com/search?q=go",
+        "stay_seconds": 3.327,
+        "time": "2018-11-04T16:46:59Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/search?q=go",
+        "current_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b",
+        "stay_seconds": 9.23,
+        "time": "2018-11-04T16:47:08Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b",
+        "current_url": "https://github.com/astaxie/beego",
+        "stay_seconds": 12.063,
+        "time": "2018-11-04T16:47:21Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/astaxie/beego",
+        "current_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b",
+        "stay_seconds": 0.289,
+        "time": "2018-11-04T16:47:21Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b",
+        "current_url": "https://www.google.com/search?q=go+framework&oq=go+freamwot&aqs=chrome.1.69i57j0l5.11250j0j7&sourceid=chrome&ie=UTF-8",
+        "stay_seconds": 15.793,
+        "time": "2018-11-04T16:47:37Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.google.com/search?q=go+framework&oq=go+freamwot&aqs=chrome.1.69i57j0l5.11250j0j7&sourceid=chrome&ie=UTF-8",
+        "current_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b?gi=b8dc9fd5e1ed",
+        "stay_seconds": 4.314,
+        "time": "2018-11-04T16:47:41Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b?gi=b8dc9fd5e1ed",
+        "current_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b",
+        "stay_seconds": 23.548,
+        "time": "2018-11-04T16:48:04Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b",
+        "current_url": "https://github.com/gin-gonic/gin",
+        "stay_seconds": 0.008,
+        "time": "2018-11-04T16:48:05Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/gin-gonic/gin",
+        "current_url": "https://github.com/labstack/echo",
+        "stay_seconds": 1.025,
+        "time": "2018-11-04T16:48:06Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/labstack/echo",
+        "current_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b",
+        "stay_seconds": 0.325,
+        "time": "2018-11-04T16:48:06Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b",
+        "current_url": "https://github.com/labstack/echo",
+        "stay_seconds": 3.537,
+        "time": "2018-11-04T16:48:09Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/labstack/echo",
+        "current_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b",
+        "stay_seconds": 0.623,
+        "time": "2018-11-04T16:48:10Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b",
+        "current_url": "https://github.com/gobuffalo/buffalo",
+        "stay_seconds": 0.1,
+        "time": "2018-11-04T16:48:10Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/gobuffalo/buffalo",
+        "current_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b",
+        "stay_seconds": 3.266,
+        "time": "2018-11-04T16:48:13Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b",
+        "current_url": "https://github.com/kataras/iris",
+        "stay_seconds": 0.15,
+        "time": "2018-11-04T16:48:14Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/kataras/iris",
+        "current_url": "https://github.com/revel/revel",
+        "stay_seconds": 1.758,
+        "time": "2018-11-04T16:48:15Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/revel/revel",
+        "current_url": "https://github.com/kataras/iris",
+        "stay_seconds": 2.243,
+        "time": "2018-11-04T16:48:18Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/kataras/iris",
+        "current_url": "https://github.com/gobuffalo/buffalo",
+        "stay_seconds": 1.403,
+        "time": "2018-11-04T16:48:19Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/gobuffalo/buffalo",
+        "current_url": "https://github.com/labstack/echo",
+        "stay_seconds": 1.415,
+        "time": "2018-11-04T16:48:20Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/labstack/echo",
+        "current_url": "https://github.com/labstack/echo",
+        "stay_seconds": 1.118,
+        "time": "2018-11-04T16:48:21Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/labstack/echo",
+        "current_url": "https://github.com/astaxie/beego",
+        "stay_seconds": 2.434,
+        "time": "2018-11-04T16:48:24Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/astaxie/beego",
+        "current_url": "https://github.com/gin-gonic/gin",
+        "stay_seconds": 1.28,
+        "time": "2018-11-04T16:48:25Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/gin-gonic/gin",
+        "current_url": "https://github.com/kataras/iris",
+        "stay_seconds": 1.564,
+        "time": "2018-11-04T16:48:27Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/kataras/iris",
+        "current_url": "https://github.com/revel/revel",
+        "stay_seconds": 1.416,
+        "time": "2018-11-04T16:48:28Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/revel/revel",
+        "current_url": "https://github.com/kataras/iris",
+        "stay_seconds": 1.343,
+        "time": "2018-11-04T16:48:30Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/kataras/iris",
+        "current_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b",
+        "stay_seconds": 0.558,
+        "time": "2018-11-04T16:48:30Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b",
+        "current_url": "https://github.com/kataras/iris",
+        "stay_seconds": 1.499,
+        "time": "2018-11-04T16:48:32Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/kataras/iris",
+        "current_url": "https://github.com/labstack/echo",
+        "stay_seconds": 1.202,
+        "time": "2018-11-04T16:48:33Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/labstack/echo",
+        "current_url": "https://github.com/astaxie/beego",
+        "stay_seconds": 1.363,
+        "time": "2018-11-04T16:48:34Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/astaxie/beego",
+        "current_url": "https://github.com/gin-gonic/gin",
+        "stay_seconds": 1.122,
+        "time": "2018-11-04T16:48:35Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/gin-gonic/gin",
+        "current_url": "https://github.com/kataras/iris",
+        "stay_seconds": 1.754,
+        "time": "2018-11-04T16:48:37Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/kataras/iris",
+        "current_url": "https://github.com/astaxie/beego",
+        "stay_seconds": 3.391,
+        "time": "2018-11-04T16:48:40Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/astaxie/beego",
+        "current_url": "https://github.com/gin-gonic/gin",
+        "stay_seconds": 1.437,
+        "time": "2018-11-04T16:48:42Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/gin-gonic/gin",
+        "current_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b",
+        "stay_seconds": 0.788,
+        "time": "2018-11-04T16:48:43Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b",
+        "current_url": "https://github.com/search?q=go",
+        "stay_seconds": 1.283,
+        "time": "2018-11-04T16:48:44Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/search?q=go",
+        "current_url": "https://stackoverflow.com/",
+        "stay_seconds": 6.4,
+        "time": "2018-11-04T16:48:50Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://stackoverflow.com/",
+        "current_url": "https://stackoverflow.com/search?q=top+go+freamwork",
+        "stay_seconds": 8.32,
+        "time": "2018-11-04T16:48:59Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://stackoverflow.com/search?q=top+go+freamwork",
+        "current_url": "https://stackoverflow.com/search?q=top+go+framework",
+        "stay_seconds": 1.791,
+        "time": "2018-11-04T16:49:00Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://stackoverflow.com/search?q=top+go+framework",
+        "current_url": "https://stackoverflow.com/search?q=framework+with+go+language",
+        "stay_seconds": 15.807,
+        "time": "2018-11-04T16:49:16Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://stackoverflow.com/search?q=framework+with+go+language",
+        "current_url": "https://stackoverflow.com/search?q=+go+language",
+        "stay_seconds": 7.467,
+        "time": "2018-11-04T16:49:24Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://stackoverflow.com/search?q=+go+language",
+        "current_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b",
+        "stay_seconds": 7.542,
+        "time": "2018-11-04T16:49:31Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b",
+        "current_url": "https://github.com/kataras/iris",
+        "stay_seconds": 0.586,
+        "time": "2018-11-04T16:49:32Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/kataras/iris",
+        "current_url": "https://stackoverflow.com/search?q=+go+language",
+        "stay_seconds": 0.871,
+        "time": "2018-11-04T16:49:33Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://stackoverflow.com/search?q=+go+language",
+        "current_url": "https://github.com/kataras/iris",
+        "stay_seconds": 2.137,
+        "time": "2018-11-04T16:49:35Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/kataras/iris",
+        "current_url": "https://github.com/kataras/iris/blob/master/README_ZH.md",
+        "stay_seconds": 9.694,
+        "time": "2018-11-04T16:49:45Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/kataras/iris/blob/master/README_ZH.md",
+        "current_url": "https://github.com/kataras/iris",
+        "stay_seconds": 2.709,
+        "time": "2018-11-04T16:49:47Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/kataras/iris",
+        "current_url": "https://github.com/astaxie/beego",
+        "stay_seconds": 0.697,
+        "time": "2018-11-04T16:49:48Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/astaxie/beego",
+        "current_url": "https://github.com/gin-gonic/gin",
+        "stay_seconds": 6.991,
+        "time": "2018-11-04T16:49:55Z"
+    }
+]

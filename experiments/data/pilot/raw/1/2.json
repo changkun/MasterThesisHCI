@@ -1,0 +1,191 @@
+[
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "",
+        "current_url": "https://www.amazon.com/",
+        "stay_seconds": 0.0,
+        "time": "2018-11-04T16:28:44Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/",
+        "current_url": "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=basketball+shoes&sprefix=baske%2Caps%2C224&crid=2FKMTI79FRJ2M",
+        "stay_seconds": 25.446,
+        "time": "2018-11-04T16:29:09Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=basketball+shoes&sprefix=baske%2Caps%2C224&crid=2FKMTI79FRJ2M",
+        "current_url": "https://www.amazon.com/s/ref=nb_sb_ss_i_3_10?url=search-alias%3Daps&field-keywords=basketball+hoop&rh=i%3Aaps%2Ck%3Abasketball+hoop",
+        "stay_seconds": 26.706,
+        "time": "2018-11-04T16:29:36Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/s/ref=nb_sb_ss_i_3_10?url=search-alias%3Daps&field-keywords=basketball+hoop&rh=i%3Aaps%2Ck%3Abasketball+hoop",
+        "current_url": "https://www.amazon.com/s/ref=nb_sb_ss_i_8_10?url=search-alias%3Daps&field-keywords=basketball+shoes&sprefix=basketball%2Caps%2C224&crid=149YGANKZZW3C&rh=i%3Aaps%2Ck%3Abasketball+shoes",
+        "stay_seconds": 10.204,
+        "time": "2018-11-04T16:29:46Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/s/ref=nb_sb_ss_i_8_10?url=search-alias%3Daps&field-keywords=basketball+shoes&sprefix=basketball%2Caps%2C224&crid=149YGANKZZW3C&rh=i%3Aaps%2Ck%3Abasketball+shoes",
+        "current_url": "https://www.amazon.com/s/ref=sr_st_price-desc-rank?keywords=basketball+shoes&fst=as%3Aon&rh=k%3Abasketball+shoes%2Cn%3A7141123011&qid=1541348983&sort=price-desc-rank",
+        "stay_seconds": 16.129,
+        "time": "2018-11-04T16:30:02Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/s/ref=sr_st_price-desc-rank?keywords=basketball+shoes&fst=as%3Aon&rh=k%3Abasketball+shoes%2Cn%3A7141123011&qid=1541348983&sort=price-desc-rank",
+        "current_url": "https://www.amazon.com/Nike-Mens-Kobe-Challenge-Basketball/dp/B00RH2159O/ref=sr_1_2?s=apparel&ie=UTF8&qid=1541348988&sr=1-2&nodeID=7141123011&psd=1&keywords=basketball+shoes",
+        "stay_seconds": 1.524,
+        "time": "2018-11-04T16:30:04Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/Nike-Mens-Kobe-Challenge-Basketball/dp/B00RH2159O/ref=sr_1_2?s=apparel&ie=UTF8&qid=1541348988&sr=1-2&nodeID=7141123011&psd=1&keywords=basketball+shoes",
+        "current_url": "https://www.amazon.com/s/ref=sr_st_price-desc-rank?keywords=basketball+shoes&fst=as%3Aon&rh=k%3Abasketball+shoes%2Cn%3A7141123011&qid=1541348983&sort=price-desc-rank",
+        "stay_seconds": 22.605,
+        "time": "2018-11-04T16:30:27Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/s/ref=sr_st_price-desc-rank?keywords=basketball+shoes&fst=as%3Aon&rh=k%3Abasketball+shoes%2Cn%3A7141123011&qid=1541348983&sort=price-desc-rank",
+        "current_url": "https://www.amazon.com/NIKE-Metallic-Silver-Synthetic-Basketball/dp/B00LU0A84M/ref=sr_1_42?s=apparel&ie=UTF8&qid=1541349025&sr=1-42&nodeID=7141123011&psd=1&keywords=basketball+shoes",
+        "stay_seconds": 12.353,
+        "time": "2018-11-04T16:30:39Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/NIKE-Metallic-Silver-Synthetic-Basketball/dp/B00LU0A84M/ref=sr_1_42?s=apparel&ie=UTF8&qid=1541349025&sr=1-42&nodeID=7141123011&psd=1&keywords=basketball+shoes",
+        "current_url": "https://www.amazon.com/NIKE-Metallic-Silver-Synthetic-Basketball/dp/B00LU0A84M/ref=sr_1_42?s=apparel&ie=UTF8&qid=1541349025&sr=1-42&nodeID=7141123011&psd=1&keywords=basketball%2Bshoes&th=1&psc=1",
+        "stay_seconds": 8.761,
+        "time": "2018-11-04T16:30:48Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/NIKE-Metallic-Silver-Synthetic-Basketball/dp/B00LU0A84M/ref=sr_1_42?s=apparel&ie=UTF8&qid=1541349025&sr=1-42&nodeID=7141123011&psd=1&keywords=basketball%2Bshoes&th=1&psc=1",
+        "current_url": "https://www.amazon.com/gp/product/handle-buy-box/ref=dp_start-bbf_1_glance",
+        "stay_seconds": 0.872,
+        "time": "2018-11-04T16:30:49Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/gp/product/handle-buy-box/ref=dp_start-bbf_1_glance",
+        "current_url": "https://www.amazon.com/gp/huc/view.html?ie=UTF8&newItems=Cd89b7769-0f29-4163-b608-fd6cccea8e42%2C1",
+        "stay_seconds": 0.594,
+        "time": "2018-11-04T16:30:49Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/gp/huc/view.html?ie=UTF8&newItems=Cd89b7769-0f29-4163-b608-fd6cccea8e42%2C1",
+        "current_url": "https://www.amazon.com/s/ref=nb_sb_ss_c_1_3?url=search-alias%3Daps&field-keywords=basketball&sprefix=bas%2Caps%2C226&crid=1ASLWLD4I0YMT",
+        "stay_seconds": 10.003,
+        "time": "2018-11-04T16:30:59Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/s/ref=nb_sb_ss_c_1_3?url=search-alias%3Daps&field-keywords=basketball&sprefix=bas%2Caps%2C226&crid=1ASLWLD4I0YMT",
+        "current_url": "https://www.amazon.com/Spalding-NBA-Street-Basketball-Intermediate-x/dp/B00083HJ44/ref=sr_1_5?ie=UTF8&qid=1541349058&sr=8-5&keywords=basketball&dpID=51WdgdHkxDL&preST=_SY300_QL70_&dpSrc=srch",
+        "stay_seconds": 39.728,
+        "time": "2018-11-04T16:31:39Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/Spalding-NBA-Street-Basketball-Intermediate-x/dp/B00083HJ44/ref=sr_1_5?ie=UTF8&qid=1541349058&sr=8-5&keywords=basketball&dpID=51WdgdHkxDL&preST=_SY300_QL70_&dpSrc=srch",
+        "current_url": "https://www.amazon.com/gp/product/handle-buy-box/ref=dp_start-bbf_1_glance",
+        "stay_seconds": 7.492,
+        "time": "2018-11-04T16:31:46Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/gp/product/handle-buy-box/ref=dp_start-bbf_1_glance",
+        "current_url": "https://www.amazon.com/gp/huc/view.html?ie=UTF8&newItems=C46cd18b4-5746-41bd-b377-b2c565f4d672%2C1",
+        "stay_seconds": 0.748,
+        "time": "2018-11-04T16:31:47Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/gp/huc/view.html?ie=UTF8&newItems=C46cd18b4-5746-41bd-b377-b2c565f4d672%2C1",
+        "current_url": "https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=nintendo+&sprefix=nin%2Caps%2C234&crid=2HH9YTRZDBOWT",
+        "stay_seconds": 30.287,
+        "time": "2018-11-04T16:32:17Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=nintendo+&sprefix=nin%2Caps%2C234&crid=2HH9YTRZDBOWT",
+        "current_url": "https://www.amazon.com/s/ref=nb_sb_ss_i_1_11?url=search-alias%3Daps&field-keywords=sport+watches+&rh=i%3Aaps%2Ck%3Asport+watches+",
+        "stay_seconds": 50.72,
+        "time": "2018-11-04T16:33:08Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/s/ref=nb_sb_ss_i_1_11?url=search-alias%3Daps&field-keywords=sport+watches+&rh=i%3Aaps%2Ck%3Asport+watches+",
+        "current_url": "https://www.amazon.com/s/ref=nb_sb_ss_i_1_11?url=search-alias%3Daps&field-keywords=sport+watches+for+men&sprefix=sport+watch%2Caps%2C228&crid=96XY8OP5NNO1&rh=i%3Aaps%2Ck%3Asport+watches+for+men",
+        "stay_seconds": 11.518,
+        "time": "2018-11-04T16:33:20Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/s/ref=nb_sb_ss_i_1_11?url=search-alias%3Daps&field-keywords=sport+watches+for+men&sprefix=sport+watch%2Caps%2C228&crid=96XY8OP5NNO1&rh=i%3Aaps%2Ck%3Asport+watches+for+men",
+        "current_url": "https://www.amazon.com/ETEVON-Captain-Stylish-Outdoor-Silicone/dp/B072B73LJ9/ref=sr_1_60_sspa?ie=UTF8&qid=1541349176&sr=8-60-spons&keywords=sport+watches+for+men&psc=1",
+        "stay_seconds": 19.439,
+        "time": "2018-11-04T16:33:39Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/ETEVON-Captain-Stylish-Outdoor-Silicone/dp/B072B73LJ9/ref=sr_1_60_sspa?ie=UTF8&qid=1541349176&sr=8-60-spons&keywords=sport+watches+for+men&psc=1",
+        "current_url": "https://www.amazon.com/s/ref=nb_sb_ss_i_1_11?url=search-alias%3Daps&field-keywords=sport+watches+for+men&sprefix=sport+watch%2Caps%2C228&crid=96XY8OP5NNO1&rh=i%3Aaps%2Ck%3Asport+watches+for+men",
+        "stay_seconds": 15.266,
+        "time": "2018-11-04T16:33:54Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/s/ref=nb_sb_ss_i_1_11?url=search-alias%3Daps&field-keywords=sport+watches+for+men&sprefix=sport+watch%2Caps%2C228&crid=96XY8OP5NNO1&rh=i%3Aaps%2Ck%3Asport+watches+for+men",
+        "current_url": "https://www.amazon.com/s/ref=sr_st_price-asc-rank?keywords=sport+watches+for+men&rh=i%3Aaps%2Ck%3Asport+watches+for+men&qid=1541349233&sort=price-asc-rank",
+        "stay_seconds": 5.333,
+        "time": "2018-11-04T16:34:00Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/s/ref=sr_st_price-asc-rank?keywords=sport+watches+for+men&rh=i%3Aaps%2Ck%3Asport+watches+for+men&qid=1541349233&sort=price-asc-rank",
+        "current_url": "https://www.amazon.com/Invicta-Diver-Swiss-Quartz-Stainless/dp/B004805YJA/ref=sr_1_52_sspa?ie=UTF8&qid=1541349239&sr=8-52-spons&keywords=sport+watches+for+men&psc=1",
+        "stay_seconds": 26.4,
+        "time": "2018-11-04T16:34:26Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/Invicta-Diver-Swiss-Quartz-Stainless/dp/B004805YJA/ref=sr_1_52_sspa?ie=UTF8&qid=1541349239&sr=8-52-spons&keywords=sport+watches+for+men&psc=1",
+        "current_url": "https://www.amazon.com/s/ref=nb_sb_ss_c_1_5?url=search-alias%3Daps&field-keywords=casio+watch&sprefix=casio%2Caps%2C221&crid=1VWP4LOHU9I5G",
+        "stay_seconds": 11.854,
+        "time": "2018-11-04T16:34:38Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/s/ref=nb_sb_ss_c_1_5?url=search-alias%3Daps&field-keywords=casio+watch&sprefix=casio%2Caps%2C221&crid=1VWP4LOHU9I5G",
+        "current_url": "https://www.amazon.com/G-Shock-Combi-Military-Watch-Black/dp/B003WPUU0U/ref=sr_1_25?s=apparel&ie=UTF8&qid=1541349277&sr=1-25&nodeID=7141123011&psd=1&keywords=casio+watch",
+        "stay_seconds": 15.747,
+        "time": "2018-11-04T16:34:54Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/G-Shock-Combi-Military-Watch-Black/dp/B003WPUU0U/ref=sr_1_25?s=apparel&ie=UTF8&qid=1541349277&sr=1-25&nodeID=7141123011&psd=1&keywords=casio+watch",
+        "current_url": "https://www.amazon.com/Casio-G-Shock-GA100-1A2-Ana-Digi-Indicator/dp/B007V2ZZWS/ref=pd_sbs_241_5?_encoding=UTF8&pd_rd_i=B007V2ZZWS&pd_rd_r=8e671b2d-e04f-11e8-986d-830f368d3cf8&pd_rd_w=p8gPY&pd_rd_wg=GGX87&pf_rd_i=desktop-dp-sims&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=7d5d9c3c-5e01-44ac-97fd-261afd40b865&pf_rd_r=RXQY6SQXPJ4WGBJZFH2P&pf_rd_s=desktop-dp-sims&pf_rd_t=40701&psc=1&refRID=RXQY6SQXPJ4WGBJZFH2P",
+        "stay_seconds": 7.511,
+        "time": "2018-11-04T16:35:01Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/Casio-G-Shock-GA100-1A2-Ana-Digi-Indicator/dp/B007V2ZZWS/ref=pd_sbs_241_5?_encoding=UTF8&pd_rd_i=B007V2ZZWS&pd_rd_r=8e671b2d-e04f-11e8-986d-830f368d3cf8&pd_rd_w=p8gPY&pd_rd_wg=GGX87&pf_rd_i=desktop-dp-sims&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=7d5d9c3c-5e01-44ac-97fd-261afd40b865&pf_rd_r=RXQY6SQXPJ4WGBJZFH2P&pf_rd_s=desktop-dp-sims&pf_rd_t=40701&psc=1&refRID=RXQY6SQXPJ4WGBJZFH2P",
+        "current_url": "https://www.amazon.com/gp/product/handle-buy-box/ref=dp_start-bbf_1_glance",
+        "stay_seconds": 2.83,
+        "time": "2018-11-04T16:35:04Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/gp/product/handle-buy-box/ref=dp_start-bbf_1_glance",
+        "current_url": "https://www.amazon.com/gp/huc/view.html?ie=UTF8&newItems=Caf546b9d-1b97-4d5b-9c52-b0bd082ddc99%2C1",
+        "stay_seconds": 10.202,
+        "time": "2018-11-04T16:35:14Z"
+    }
+]

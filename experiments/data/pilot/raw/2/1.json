@@ -1,0 +1,226 @@
+[
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "",
+        "current_url": "https://github.com/",
+        "stay_seconds": 0.0,
+        "time": "2018-11-04T16:39:59Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/",
+        "current_url": "https://github.com/",
+        "stay_seconds": 20.971,
+        "time": "2018-11-04T16:40:20Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/",
+        "current_url": "https://github.com/search?q=electron",
+        "stay_seconds": 60.651,
+        "time": "2018-11-04T16:41:20Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/search?q=electron",
+        "current_url": "https://github.com/electron/electron",
+        "stay_seconds": 7.343,
+        "time": "2018-11-04T16:41:28Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/electron/electron",
+        "current_url": "https://github.com/electron/electron/blob/master/docs/tutorial/installation.md",
+        "stay_seconds": 16.431,
+        "time": "2018-11-04T16:41:44Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/electron/electron/blob/master/docs/tutorial/installation.md",
+        "current_url": "https://github.com/electron/electron",
+        "stay_seconds": 8.721,
+        "time": "2018-11-04T16:41:53Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/electron/electron",
+        "current_url": "https://github.com/electron/electron/releases",
+        "stay_seconds": 14.171,
+        "time": "2018-11-04T16:42:07Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/electron/electron/releases",
+        "current_url": "https://github.com/",
+        "stay_seconds": 9.013,
+        "time": "2018-11-04T16:42:16Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/",
+        "current_url": "https://github.com/search?q=nw.js",
+        "stay_seconds": 6.881,
+        "time": "2018-11-04T16:42:23Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/search?q=nw.js",
+        "current_url": "https://github.com/nwjs/nw.js",
+        "stay_seconds": 3.791,
+        "time": "2018-11-04T16:42:27Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/nwjs/nw.js",
+        "current_url": "https://github.com/nwjs/nw.js/releases",
+        "stay_seconds": 4.143,
+        "time": "2018-11-04T16:42:31Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/nwjs/nw.js/releases",
+        "current_url": "https://github.com/nwjs/nw.js/releases",
+        "stay_seconds": 5.539,
+        "time": "2018-11-04T16:42:36Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/nwjs/nw.js/releases",
+        "current_url": "https://github.com/nwjs/nw.js/search?q=react+native&unscoped_q=react+native",
+        "stay_seconds": 10.599,
+        "time": "2018-11-04T16:42:47Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/nwjs/nw.js/search?q=react+native&unscoped_q=react+native",
+        "current_url": "https://github.com/search?q=react+native",
+        "stay_seconds": 5.676,
+        "time": "2018-11-04T16:42:53Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/search?q=react+native",
+        "current_url": "https://github.com/facebook/react-native",
+        "stay_seconds": 3.72,
+        "time": "2018-11-04T16:42:56Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/facebook/react-native",
+        "current_url": "https://github.com/facebook/react-native/releases",
+        "stay_seconds": 4.42,
+        "time": "2018-11-04T16:43:01Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/facebook/react-native/releases",
+        "current_url": "https://github.com/facebook/react-native",
+        "stay_seconds": 2.857,
+        "time": "2018-11-04T16:43:04Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/facebook/react-native",
+        "current_url": "https://github.com/facebook/react-native/search?q=react-native+desktop&unscoped_q=react-native+desktop",
+        "stay_seconds": 7.107,
+        "time": "2018-11-04T16:43:11Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/facebook/react-native/search?q=react-native+desktop&unscoped_q=react-native+desktop",
+        "current_url": "https://github.com/search?q=react-native+desktop",
+        "stay_seconds": 4.06,
+        "time": "2018-11-04T16:43:15Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/search?q=react-native+desktop",
+        "current_url": "https://github.com/search?q=react+native",
+        "stay_seconds": 16.387,
+        "time": "2018-11-04T16:43:31Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/search?q=react+native",
+        "current_url": "https://github.com/facebook/react-native",
+        "stay_seconds": 10.056,
+        "time": "2018-11-04T16:43:41Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/facebook/react-native",
+        "current_url": "https://facebook.github.io/react-native/",
+        "stay_seconds": 4.36,
+        "time": "2018-11-04T16:43:45Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://facebook.github.io/react-native/",
+        "current_url": "https://facebook.github.io/react-native/versions",
+        "stay_seconds": 8.111,
+        "time": "2018-11-04T16:43:54Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://facebook.github.io/react-native/versions",
+        "current_url": "https://reactjs.org/",
+        "stay_seconds": 13.325,
+        "time": "2018-11-04T16:44:07Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://reactjs.org/",
+        "current_url": "https://facebook.github.io/react-native/versions",
+        "stay_seconds": 2.297,
+        "time": "2018-11-04T16:44:09Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://facebook.github.io/react-native/versions",
+        "current_url": "https://facebook.github.io/react-native/docs/building-from-source#download-links-for-android-ndk",
+        "stay_seconds": 5.284,
+        "time": "2018-11-04T16:44:15Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://facebook.github.io/react-native/docs/building-from-source#download-links-for-android-ndk",
+        "current_url": "https://facebook.github.io/react-native/versions",
+        "stay_seconds": 26.809,
+        "time": "2018-11-04T16:44:41Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://facebook.github.io/react-native/versions",
+        "current_url": "https://facebook.github.io/react-native/",
+        "stay_seconds": 0.651,
+        "time": "2018-11-04T16:44:42Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://facebook.github.io/react-native/",
+        "current_url": "https://github.com/facebook/react-native",
+        "stay_seconds": 1.191,
+        "time": "2018-11-04T16:44:43Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/facebook/react-native",
+        "current_url": "https://github.com/facebook/react-native#full-documentation",
+        "stay_seconds": 6.744,
+        "time": "2018-11-04T16:44:50Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/facebook/react-native#full-documentation",
+        "current_url": "https://facebook.github.io/react-native/",
+        "stay_seconds": 6.608,
+        "time": "2018-11-04T16:44:57Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://facebook.github.io/react-native/",
+        "current_url": "https://facebook.github.io/react-native/docs/getting-started",
+        "stay_seconds": 10.04,
+        "time": "2018-11-04T16:45:07Z"
+    }
+]

@@ -1,0 +1,247 @@
+[
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "",
+        "current_url": "https://github.com/",
+        "stay_seconds": 0.0,
+        "time": "2018-11-04T16:50:11Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/",
+        "current_url": "https://github.com/changkun",
+        "stay_seconds": 12.637,
+        "time": "2018-11-04T16:50:24Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun",
+        "current_url": "https://github.com/changkun?tab=repositories",
+        "stay_seconds": 29.824,
+        "time": "2018-11-04T16:50:54Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun?tab=repositories",
+        "current_url": "https://github.com/changkun/MasterThesisHCI",
+        "stay_seconds": 4.93,
+        "time": "2018-11-04T16:50:59Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun/MasterThesisHCI",
+        "current_url": "https://github.com/changkun?tab=repositories",
+        "stay_seconds": 4.065,
+        "time": "2018-11-04T16:51:03Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun?tab=repositories",
+        "current_url": "https://github.com/changkun?after=Y3Vyc29yOnYyOpK5MjAxOC0wNy0xOFQxNjo1MDo1MSswMjowMM4GEku0&tab=repositories",
+        "stay_seconds": 10.177,
+        "time": "2018-11-04T16:51:13Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun?after=Y3Vyc29yOnYyOpK5MjAxOC0wNy0xOFQxNjo1MDo1MSswMjowMM4GEku0&tab=repositories",
+        "current_url": "https://github.com/changkun?after=Y3Vyc29yOnYyOpK5MjAxNy0wNi0wNVQxMToxMjozMCswMjowMM4FkPWE&tab=repositories",
+        "stay_seconds": 31.463,
+        "time": "2018-11-04T16:51:45Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun?after=Y3Vyc29yOnYyOpK5MjAxNy0wNi0wNVQxMToxMjozMCswMjowMM4FkPWE&tab=repositories",
+        "current_url": "https://github.com/changkun/UniWorXMonitor/stargazers",
+        "stay_seconds": 7.235,
+        "time": "2018-11-04T16:51:52Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun/UniWorXMonitor/stargazers",
+        "current_url": "https://github.com/changkun?after=Y3Vyc29yOnYyOpK5MjAxNy0wNi0wNVQxMToxMjozMCswMjowMM4FkPWE&tab=repositories",
+        "stay_seconds": 4.313,
+        "time": "2018-11-04T16:51:56Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun?after=Y3Vyc29yOnYyOpK5MjAxNy0wNi0wNVQxMToxMjozMCswMjowMM4FkPWE&tab=repositories",
+        "current_url": "https://github.com/changkun?before=Y3Vyc29yOnYyOpK5MjAxNy0wNS0yOVQxNDoyNzoxMyswMjowMM4FKLO6&tab=repositories",
+        "stay_seconds": 13.012,
+        "time": "2018-11-04T16:52:09Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun?before=Y3Vyc29yOnYyOpK5MjAxNy0wNS0yOVQxNDoyNzoxMyswMjowMM4FKLO6&tab=repositories",
+        "current_url": "https://github.com/changkun/ss17-hc-disaster-monitoring",
+        "stay_seconds": 13.139,
+        "time": "2018-11-04T16:52:22Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun/ss17-hc-disaster-monitoring",
+        "current_url": "https://github.com/",
+        "stay_seconds": 10.904,
+        "time": "2018-11-04T16:52:33Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/",
+        "current_url": "https://github.com/changkun",
+        "stay_seconds": 7.367,
+        "time": "2018-11-04T16:52:41Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun",
+        "current_url": "https://github.com/changkun?tab=stars",
+        "stay_seconds": 2.418,
+        "time": "2018-11-04T16:52:43Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun?tab=stars",
+        "current_url": "https://github.com/changkun?after=Y3Vyc29yOnYyOpK5MjAxOC0wMy0xMlQwNzowMTo1NiswMTowMM4HAO-Y&tab=stars",
+        "stay_seconds": 17.537,
+        "time": "2018-11-04T16:53:01Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun?after=Y3Vyc29yOnYyOpK5MjAxOC0wMy0xMlQwNzowMTo1NiswMTowMM4HAO-Y&tab=stars",
+        "current_url": "https://github.com/changkun?after=Y3Vyc29yOnYyOpK5MjAxNy0wOC0yOVQwOTowNjo1NyswMjowMM4Fzef_&tab=stars",
+        "stay_seconds": 7.894,
+        "time": "2018-11-04T16:53:08Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun?after=Y3Vyc29yOnYyOpK5MjAxNy0wOC0yOVQwOTowNjo1NyswMjowMM4Fzef_&tab=stars",
+        "current_url": "https://github.com/changkun?after=Y3Vyc29yOnYyOpK5MjAxNy0wMS0wNVQxMDozODozMiswMTowMM4EjpUZ&tab=stars",
+        "stay_seconds": 6.227,
+        "time": "2018-11-04T16:53:15Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun?after=Y3Vyc29yOnYyOpK5MjAxNy0wMS0wNVQxMDozODozMiswMTowMM4EjpUZ&tab=stars",
+        "current_url": "https://github.com/changkun?after=Y3Vyc29yOnYyOpK5MjAxNy0wOC0yOVQwOTowNjo1NyswMjowMM4Fzef_&tab=stars",
+        "stay_seconds": 1.099,
+        "time": "2018-11-04T16:53:16Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun?after=Y3Vyc29yOnYyOpK5MjAxNy0wOC0yOVQwOTowNjo1NyswMjowMM4Fzef_&tab=stars",
+        "current_url": "https://github.com/changkun?after=Y3Vyc29yOnYyOpK5MjAxNy0wMS0wNVQxMDozODozMiswMTowMM4EjpUZ&tab=stars",
+        "stay_seconds": 2.464,
+        "time": "2018-11-04T16:53:18Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun?after=Y3Vyc29yOnYyOpK5MjAxNy0wMS0wNVQxMDozODozMiswMTowMM4EjpUZ&tab=stars",
+        "current_url": "https://github.com/changkun?after=Y3Vyc29yOnYyOpK5MjAxNi0wNS0yOFQxMjo1OToxNyswMjowMM4DlGfj&tab=stars",
+        "stay_seconds": 5.155,
+        "time": "2018-11-04T16:53:23Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun?after=Y3Vyc29yOnYyOpK5MjAxNi0wNS0yOFQxMjo1OToxNyswMjowMM4DlGfj&tab=stars",
+        "current_url": "https://github.com/changkun?after=Y3Vyc29yOnYyOpK5MjAxNy0wMS0wNVQxMDozODozMiswMTowMM4EjpUZ&tab=stars",
+        "stay_seconds": 2.751,
+        "time": "2018-11-04T16:53:26Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun?after=Y3Vyc29yOnYyOpK5MjAxNy0wMS0wNVQxMDozODozMiswMTowMM4EjpUZ&tab=stars",
+        "current_url": "https://github.com/issues",
+        "stay_seconds": 19.486,
+        "time": "2018-11-04T16:53:46Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/issues",
+        "current_url": "https://github.com/issues?q=assignee%3Achangkun+is%3Aopen",
+        "stay_seconds": 5.001,
+        "time": "2018-11-04T16:53:51Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/issues?q=assignee%3Achangkun+is%3Aopen",
+        "current_url": "https://github.com/",
+        "stay_seconds": 4.291,
+        "time": "2018-11-04T16:53:55Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/",
+        "current_url": "https://github.com/?q=blog",
+        "stay_seconds": 9.142,
+        "time": "2018-11-04T16:54:04Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/?q=blog",
+        "current_url": "https://github.com/changkun/blog",
+        "stay_seconds": 0.593,
+        "time": "2018-11-04T16:54:05Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun/blog",
+        "current_url": "https://github.com/changkun/hexo-generator-restful",
+        "stay_seconds": 14.215,
+        "time": "2018-11-04T16:54:19Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun/hexo-generator-restful",
+        "current_url": "https://github.com/changkun/blog",
+        "stay_seconds": 8.506,
+        "time": "2018-11-04T16:54:27Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun/blog",
+        "current_url": "https://github.com/changkun/blog/tree/master/source",
+        "stay_seconds": 7.578,
+        "time": "2018-11-04T16:54:35Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun/blog/tree/master/source",
+        "current_url": "https://github.com/changkun/blog/tree/master/source/_posts",
+        "stay_seconds": 4.529,
+        "time": "2018-11-04T16:54:39Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun/blog/tree/master/source/_posts",
+        "current_url": "https://github.com/changkun/blog/tree/master/source",
+        "stay_seconds": 10.856,
+        "time": "2018-11-04T16:54:50Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun/blog/tree/master/source",
+        "current_url": "https://github.com/changkun/blog/tree/master/source/categories",
+        "stay_seconds": 2.578,
+        "time": "2018-11-04T16:54:53Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun/blog/tree/master/source/categories",
+        "current_url": "https://github.com/changkun/blog/tree/master/source",
+        "stay_seconds": 2.101,
+        "time": "2018-11-04T16:54:55Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun/blog/tree/master/source",
+        "current_url": "https://github.com/changkun/blog",
+        "stay_seconds": 4,
+        "time": "2018-11-04T16:54:59Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://github.com/changkun/blog",
+        "current_url": "https://github.com/?q=blog",
+        "stay_seconds": 5.424,
+        "time": "2018-11-04T16:55:04Z"
+    }
+]

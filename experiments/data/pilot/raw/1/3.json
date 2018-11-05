@@ -1,0 +1,114 @@
+[
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "",
+        "current_url": "https://www.amazon.com/ref=nav_logo",
+        "stay_seconds": 0.0,
+        "time": "2018-11-04T16:35:27Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/ref=nav_logo",
+        "current_url": "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=kindle",
+        "stay_seconds": 10.077,
+        "time": "2018-11-04T16:35:43Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=kindle",
+        "current_url": "https://www.google.com/search?q=books+for+kindlw&oq=books+for+kindlw&aqs=chrome..69i57j0l5.3137j0j7&sourceid=chrome&ie=UTF-8",
+        "stay_seconds": 18.417,
+        "time": "2018-11-04T16:36:02Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.google.com/search?q=books+for+kindlw&oq=books+for+kindlw&aqs=chrome..69i57j0l5.3137j0j7&sourceid=chrome&ie=UTF-8",
+        "current_url": "https://www.amazon.com/Kindle-eBooks/b?ie=UTF8&node=154606011",
+        "stay_seconds": 4.56,
+        "time": "2018-11-04T16:36:06Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/Kindle-eBooks/b?ie=UTF8&node=154606011",
+        "current_url": "https://www.amazon.com/s/ref=nb_sb_noss?url=node%3D154606011&field-keywords=javascript",
+        "stay_seconds": 18.712,
+        "time": "2018-11-04T16:36:25Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/s/ref=nb_sb_noss?url=node%3D154606011&field-keywords=javascript",
+        "current_url": "https://www.amazon.com/s/ref=nb_sb_noss?url=node%3D154606011&field-keywords=javascript",
+        "stay_seconds": 15.404,
+        "time": "2018-11-04T16:36:40Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/s/ref=nb_sb_noss?url=node%3D154606011&field-keywords=javascript",
+        "current_url": "https://www.amazon.com/Modern-JavaScript-Collection-Aurelio-Rosa-ebook/dp/B07DHYM4ZW/ref=sr_1_1_sspa?s=digital-text&ie=UTF8&qid=1541349383&sr=1-1-spons&keywords=javascript&psc=1",
+        "stay_seconds": 10.569,
+        "time": "2018-11-04T16:36:51Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/Modern-JavaScript-Collection-Aurelio-Rosa-ebook/dp/B07DHYM4ZW/ref=sr_1_1_sspa?s=digital-text&ie=UTF8&qid=1541349383&sr=1-1-spons&keywords=javascript&psc=1",
+        "current_url": "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=kindle",
+        "stay_seconds": 18.884,
+        "time": "2018-11-04T16:37:10Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=kindle",
+        "current_url": "https://www.amazon.com/ref=nav_logo",
+        "stay_seconds": 3.107,
+        "time": "2018-11-04T16:37:13Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/ref=nav_logo",
+        "current_url": "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=kindle",
+        "stay_seconds": 2.873,
+        "time": "2018-11-04T16:37:16Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=kindle",
+        "current_url": "https://www.amazon.com/MoKo-Paperwhite-Thinnest-Lightest-Versions/dp/B00CSW4BGW/ref=sr_1_17?ie=UTF8&qid=1541349342&sr=8-17&keywords=kindle",
+        "stay_seconds": 6.104,
+        "time": "2018-11-04T16:37:22Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/MoKo-Paperwhite-Thinnest-Lightest-Versions/dp/B00CSW4BGW/ref=sr_1_17?ie=UTF8&qid=1541349342&sr=8-17&keywords=kindle",
+        "current_url": "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=kindle",
+        "stay_seconds": 52.218,
+        "time": "2018-11-04T16:38:14Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=kindle",
+        "current_url": "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=moko+case+for+kindle&rh=i%3Aaps%2Ck%3Amoko+case+for+kindle",
+        "stay_seconds": 12.352,
+        "time": "2018-11-04T16:38:26Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=moko+case+for+kindle&rh=i%3Aaps%2Ck%3Amoko+case+for+kindle",
+        "current_url": "https://www.amazon.com/Kindle-Tri-Fold-Leather-Covers-generation/dp/B0773F9FMS/ref=sr_1_21_sspa?ie=UTF8&qid=1541349506&sr=8-21-spons&keywords=moko+case+for+kindle&psc=1",
+        "stay_seconds": 9.637,
+        "time": "2018-11-04T16:38:36Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/Kindle-Tri-Fold-Leather-Covers-generation/dp/B0773F9FMS/ref=sr_1_21_sspa?ie=UTF8&qid=1541349506&sr=8-21-spons&keywords=moko+case+for+kindle&psc=1",
+        "current_url": "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=moko+case+for+kindle&rh=i%3Aaps%2Ck%3Amoko+case+for+kindle",
+        "stay_seconds": 14.796,
+        "time": "2018-11-04T16:38:51Z"
+    },
+    {
+        "user_id": "bb721388-f56d-6798-4ede-1803c1a27700",
+        "previous_url": "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=moko+case+for+kindle&rh=i%3Aaps%2Ck%3Amoko+case+for+kindle",
+        "current_url": "https://www.amazon.com/MoKo-Paperwhite-Thinnest-Lightest-Versions/dp/B00CSW4BGW/ref=sr_1_5?ie=UTF8&qid=1541349529&sr=8-5&keywords=moko+case+for+kindle&dpID=61o8-ZvSkeL&preST=_SX300_QL70_&dpSrc=srch",
+        "stay_seconds": 5.8,
+        "time": "2018-11-04T16:38:57Z"
+    }
+]
