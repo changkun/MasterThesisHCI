@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="app.css">
+    <script src="./d3.js"></script>
+    <script src="./data.js"></script>
+</head>
+<body>
+<p>
+    <label for="nclickstream" style="display: inline-block; text-align: right">
+        number of clicks = <span id="nclickstream-value">…</span>
+    </label>
+    <input id="nclickstream" type="range" min="1" max="10">
+</p>
+
+<div id="graph">
+</div>
+
+<script>
+const input = document.getElementById("nclickstream")
+input.setAttribute("max", clickstream.length)
+</script>
+<script src="app.js"></script>
+</body>
+</html>
