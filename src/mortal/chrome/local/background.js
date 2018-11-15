@@ -3,7 +3,7 @@
 /**
  * Global variables for collecting events
  */
-const server = 'http://0.0.0.0:12346/api/v1/recv'
+const server = 'http://0.0.0.0:12346/api/v1/collect'
 
 /**
  * Variables initialized after plugin installed
