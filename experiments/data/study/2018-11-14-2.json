@@ -1,4 +1,5 @@
-[{"user_id":2,"previous_url":"https://www.amazon.com/","current_url":"https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps\u0026field-keywords=books+phsics","stay_seconds":20.808,"time":"2018-11-14T16:20:35Z"},
+[
+{"user_id":2,"previous_url":"https://www.amazon.com/","current_url":"https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps\u0026field-keywords=books+phsics","stay_seconds":20.808,"time":"2018-11-14T16:20:35Z"},
 {"user_id":2,"previous_url":"https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps\u0026field-keywords=books+phsics","current_url":"https://www.amazon.com/s/ref=a9_asi_1?rh=i%3Aaps%2Ck%3Abooks+physics\u0026keywords=books+physics\u0026ie=UTF8\u0026qid=1542212434","stay_seconds":2.613,"time":"2018-11-14T16:20:38Z"},
 {"user_id":2,"previous_url":"https://www.amazon.com/s/ref=a9_asi_1?rh=i%3Aaps%2Ck%3Abooks+physics\u0026keywords=books+physics\u0026ie=UTF8\u0026qid=1542212434","current_url":"https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps\u0026field-keywords=books+physics+biographies\u0026rh=i%3Aaps%2Ck%3Abooks+physics+biographies","stay_seconds":10.824,"time":"2018-11-14T16:20:49Z"},
 {"user_id":2,"previous_url":"https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps\u0026field-keywords=books+physics+biographies\u0026rh=i%3Aaps%2Ck%3Abooks+physics+biographies","current_url":"https://www.amazon.com/Jazz-Physics-Between-Structure-Universe/dp/0465034993/ref=sr_1_9?ie=UTF8\u0026qid=1542212449\u0026sr=8-9\u0026keywords=books+physics+biographies","stay_seconds":23.174,"time":"2018-11-14T16:21:12Z"},
@@ -250,4 +251,5 @@
 {"user_id":2,"previous_url":"https://dribbble.com/search?q=ant","current_url":"https://dribbble.com/shots/3015647-Melitakas","stay_seconds":12.389,"time":"2018-11-14T17:37:10Z"},
 {"user_id":2,"previous_url":"https://dribbble.com/shots/3015647-Melitakas","current_url":"https://dribbble.com/search?q=ant","stay_seconds":7.93,"time":"2018-11-14T17:37:18Z"},
 {"user_id":2,"previous_url":"https://dribbble.com/search?q=ant","current_url":"https://dribbble.com/search?q=ant\u0026s=latest","stay_seconds":34.727,"time":"2018-11-14T17:37:53Z"},
-{"user_id":2,"previous_url":"https://dribbble.com/search?q=ant\u0026s=latest","current_url":"https://github.com/","stay_seconds":3223.459,"time":"2018-11-14T18:31:36Z"}]
+{"user_id":2,"previous_url":"https://dribbble.com/search?q=ant\u0026s=latest","current_url":"https://github.com/","stay_seconds":3223.459,"time":"2018-11-14T18:31:36Z"}
+]
