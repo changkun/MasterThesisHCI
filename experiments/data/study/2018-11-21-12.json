@@ -1,3 +1,60 @@
+[
+    {
+        "task_id": 1,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 2,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 3,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 4,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 5,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 6,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 7,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 8,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 9,
+        "clickstream": [
+            
+        ]
+    }
+]
+
 [{"user_id":12,"previous_url":"https://www.amazon.com/","current_url":"https://www.amazon.com/Nintendo-Switch-Neon-Red-Blue-Joy/dp/B01MUAGZ49/ref=br_asw_pdt-1?pf_rd_m=ATVPDKIKX0DER\u0026pf_rd_s=\u0026pf_rd_r=AFA8Y8R5HD9H1RV3AK4B\u0026pf_rd_t=36701\u0026pf_rd_p=f8585743-c043-4665-80a7-0cc5fe97d596\u0026pf_rd_i=desktop","stay_seconds":5.204,"time":"2018-11-21T12:07:41Z"},
 {"user_id":12,"previous_url":"https://www.amazon.com/Nintendo-Switch-Neon-Red-Blue-Joy/dp/B01MUAGZ49/ref=br_asw_pdt-1?pf_rd_m=ATVPDKIKX0DER\u0026pf_rd_s=\u0026pf_rd_r=AFA8Y8R5HD9H1RV3AK4B\u0026pf_rd_t=36701\u0026pf_rd_p=f8585743-c043-4665-80a7-0cc5fe97d596\u0026pf_rd_i=desktop","current_url":"https://www.amazon.com/gp/product/handle-buy-box/ref=dp_start-bbf_1_glance","stay_seconds":2.73,"time":"2018-11-21T12:07:44Z"},
 {"user_id":12,"previous_url":"https://www.amazon.com/gp/product/handle-buy-box/ref=dp_start-bbf_1_glance","current_url":"https://www.amazon.com/gp/huc/view.html?ie=UTF8\u0026increasedItems=Caab258e1-cadd-4df1-a214-791b36dd5598\u0026newItems=Caab258e1-cadd-4df1-a214-791b36dd5598%2C1","stay_seconds":3.929,"time":"2018-11-21T12:07:48Z"},
@@ -31,6 +88,7 @@
 {"user_id":12,"previous_url":"https://www.amazon.com/s/ref=gbph_ftr_m-3_0aa5_page_2?url=search-alias%3Daps\u0026field-keywords=cyber+monday+deals+2018\u0026sprefix=cyber%2Caps%2C215\u0026crid=353O1NZYU5K47\u0026gb_f_CBFDOTD=dealStates:AVAILABLE%252CWAITLIST%252CWAITLISTFULL,dealTypes:DEAL_OF_THE_DAY,page:2,sortOrder:BY_SCORE,dealsPerPage:8\u0026pf_rd_p=beb29361-151d-4bd2-bd73-1e5e8f350aa5\u0026pf_rd_s=merchandised-search-3\u0026pf_rd_t=101\u0026pf_rd_i=5550342011\u0026pf_rd_m=ATVPDKIKX0DER\u0026pf_rd_r=7C7RGEFKKXJAZYQFMET4\u0026ie=UTF8","current_url":"https://www.amazon.com/gp/cart/view.html?ref=nav_cart","stay_seconds":8.332,"time":"2018-11-21T12:19:35Z"},
 {"user_id":12,"previous_url":"https://www.amazon.com/gp/cart/view.html?ref=nav_cart","current_url":"https://www.amazon.com/ap/signin?_encoding=UTF8\u0026openid.assoc_handle=amazon_checkout_us\u0026openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select\u0026openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select\u0026openid.mode=checkid_setup\u0026openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0\u0026openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0\u0026openid.pape.max_auth_age=0\u0026openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fbuy%2Fsignin%2Fhandlers%2Fcontinue.html%3Fie%3DUTF8%26cartItemIds%3D%26eGCApp%3D%26hasWorkingJavascript%3D0%26isEGCOrder%3D0%26isFresh%3D0%26oldCustomerId%3D%26oldPurchaseId%3D%26preInitiateCustomerId%3D%26purchaseInProgress%3D%26ref_%3Dcart_signin_submit%26siteDesign%3D\u0026pageId=amazon_checkout_us\u0026showRmrMe=0\u0026siteState=isRegularCheckout.1%7CIMBMsgs.%7CisRedirect.0|isToBeGiftWrapped.1|isToBeGiftWrappedBefore.1","stay_seconds":3.114,"time":"2018-11-21T12:19:38Z"},
 {"user_id":12,"previous_url":"https://www.amazon.com/ap/signin?_encoding=UTF8\u0026openid.assoc_handle=amazon_checkout_us\u0026openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select\u0026openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select\u0026openid.mode=checkid_setup\u0026openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0\u0026openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0\u0026openid.pape.max_auth_age=0\u0026openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fbuy%2Fsignin%2Fhandlers%2Fcontinue.html%3Fie%3DUTF8%26cartItemIds%3D%26eGCApp%3D%26hasWorkingJavascript%3D0%26isEGCOrder%3D0%26isFresh%3D0%26oldCustomerId%3D%26oldPurchaseId%3D%26preInitiateCustomerId%3D%26purchaseInProgress%3D%26ref_%3Dcart_signin_submit%26siteDesign%3D\u0026pageId=amazon_checkout_us\u0026showRmrMe=0\u0026siteState=isRegularCheckout.1%7CIMBMsgs.%7CisRedirect.0|isToBeGiftWrapped.1|isToBeGiftWrappedBefore.1","current_url":"https://www.amazon.com/","stay_seconds":64.665,"time":"2018-11-21T12:20:43Z"},
+
 {"user_id":12,"previous_url":"https://www.amazon.com/","current_url":"https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps\u0026field-keywords=iphone+6s","stay_seconds":15.639,"time":"2018-11-21T12:20:59Z"},
 {"user_id":12,"previous_url":"https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps\u0026field-keywords=iphone+6s","current_url":"https://www.amazon.com/Apple-iPhone-Plus-Unlocked-Phone/dp/B01LXU4VO7/ref=sr_1_1_sspa?s=wireless\u0026ie=UTF8\u0026qid=1542802857\u0026sr=1-1-spons\u0026keywords=iphone+6s\u0026psc=1","stay_seconds":26.597,"time":"2018-11-21T12:21:25Z"},
 {"user_id":12,"previous_url":"https://www.amazon.com/Apple-iPhone-Plus-Unlocked-Phone/dp/B01LXU4VO7/ref=sr_1_1_sspa?s=wireless\u0026ie=UTF8\u0026qid=1542802857\u0026sr=1-1-spons\u0026keywords=iphone+6s\u0026psc=1","current_url":"https://www.amazon.com/dp/B076MP43X5","stay_seconds":14.978,"time":"2018-11-21T12:21:40Z"},
@@ -73,6 +131,7 @@
 {"user_id":12,"previous_url":"https://www.amazon.com/gp/huc/view.html?ie=UTF8\u0026newItems=Cfc3c6a9f-31ff-4c47-9fdf-2334b2b2be33%2C1","current_url":"https://www.amazon.com/gp/cart/view.html/ref=lh_cart_vc_btn","stay_seconds":1.891,"time":"2018-11-21T12:30:58Z"},
 {"user_id":12,"previous_url":"https://www.amazon.com/gp/cart/view.html/ref=lh_cart_vc_btn","current_url":"https://www.amazon.com/ap/signin?_encoding=UTF8\u0026openid.assoc_handle=amazon_checkout_us\u0026openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select\u0026openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select\u0026openid.mode=checkid_setup\u0026openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0\u0026openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0\u0026openid.pape.max_auth_age=0\u0026openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fbuy%2Fsignin%2Fhandlers%2Fcontinue.html%3Fie%3DUTF8%26cartItemIds%3D%26eGCApp%3D%26hasWorkingJavascript%3D0%26isEGCOrder%3D0%26isFresh%3D0%26oldCustomerId%3D%26oldPurchaseId%3D%26preInitiateCustomerId%3D%26purchaseInProgress%3D%26ref_%3Dcart_signin_submit%26siteDesign%3D\u0026pageId=amazon_checkout_us\u0026showRmrMe=0\u0026siteState=isRegularCheckout.1%7CIMBMsgs.%7CisRedirect.0|isToBeGiftWrapped.1|isToBeGiftWrappedBefore.1","stay_seconds":13.573,"time":"2018-11-21T12:31:11Z"},
 {"user_id":12,"previous_url":"https://www.amazon.com/ap/signin?_encoding=UTF8\u0026openid.assoc_handle=amazon_checkout_us\u0026openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select\u0026openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select\u0026openid.mode=checkid_setup\u0026openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0\u0026openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0\u0026openid.pape.max_auth_age=0\u0026openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fbuy%2Fsignin%2Fhandlers%2Fcontinue.html%3Fie%3DUTF8%26cartItemIds%3D%26eGCApp%3D%26hasWorkingJavascript%3D0%26isEGCOrder%3D0%26isFresh%3D0%26oldCustomerId%3D%26oldPurchaseId%3D%26preInitiateCustomerId%3D%26purchaseInProgress%3D%26ref_%3Dcart_signin_submit%26siteDesign%3D\u0026pageId=amazon_checkout_us\u0026showRmrMe=0\u0026siteState=isRegularCheckout.1%7CIMBMsgs.%7CisRedirect.0|isToBeGiftWrapped.1|isToBeGiftWrappedBefore.1","current_url":"https://www.amazon.com/","stay_seconds":45.128,"time":"2018-11-21T12:31:57Z"},
+
 {"user_id":12,"previous_url":"https://www.amazon.com/","current_url":"https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps\u0026field-keywords=birthday+gifts+for+men","stay_seconds":17.359,"time":"2018-11-21T12:32:14Z"},
 {"user_id":12,"previous_url":"https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps\u0026field-keywords=birthday+gifts+for+men","current_url":"https://www.amazon.com/RAK-Magnetic-Wristband-Magnets-Holding/dp/B01HRCU3SW/ref=sr_1_11_sspa?ie=UTF8\u0026qid=1542803533\u0026sr=8-11-spons\u0026keywords=birthday+gifts+for+men\u0026psc=1","stay_seconds":105.953,"time":"2018-11-21T12:34:00Z"},
 {"user_id":12,"previous_url":"https://www.amazon.com/RAK-Magnetic-Wristband-Magnets-Holding/dp/B01HRCU3SW/ref=sr_1_11_sspa?ie=UTF8\u0026qid=1542803533\u0026sr=8-11-spons\u0026keywords=birthday+gifts+for+men\u0026psc=1","current_url":"https://www.amazon.com/gp/product/handle-buy-box/ref=dp_start-bbf_1_glance","stay_seconds":12.922,"time":"2018-11-21T12:34:13Z"},
@@ -86,6 +145,7 @@
 {"user_id":12,"previous_url":"https://www.amazon.com/gp/product/handle-buy-box/ref=dp_start-bbf_1_glance","current_url":"https://www.amazon.com/gp/huc/view.html?ie=UTF8\u0026newItems=Cafa402a5-5016-4c4d-8ec8-045a09b333d9%2C1","stay_seconds":7.467,"time":"2018-11-21T12:36:40Z"},
 {"user_id":12,"previous_url":"https://www.amazon.com/gp/huc/view.html?ie=UTF8\u0026newItems=Cafa402a5-5016-4c4d-8ec8-045a09b333d9%2C1","current_url":"https://www.amazon.com/ap/signin?_encoding=UTF8\u0026openid.assoc_handle=amazon_checkout_us\u0026openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select\u0026openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select\u0026openid.mode=checkid_setup\u0026openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0\u0026openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0\u0026openid.pape.max_auth_age=0\u0026openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fbuy%2Fsignin%2Fhandlers%2Fcontinue.html%3Fie%3DUTF8%26cartItemIds%3D%26eGCApp%3D%26hasWorkingJavascript%3D0%26isEGCOrder%3D0%26isFresh%3D0%26oldCustomerId%3D%26oldPurchaseId%3D%26preInitiateCustomerId%3D%26purchaseInProgress%3D%26ref_%3Dcart_signin_submit%26siteDesign%3D\u0026pageId=amazon_checkout_us\u0026showRmrMe=0\u0026siteState=isRegularCheckout.1%7CIMBMsgs.%7CisRedirect.0","stay_seconds":0.889,"time":"2018-11-21T12:36:40Z"},
 {"user_id":12,"previous_url":"https://www.amazon.com/ap/signin?_encoding=UTF8\u0026openid.assoc_handle=amazon_checkout_us\u0026openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select\u0026openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select\u0026openid.mode=checkid_setup\u0026openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0\u0026openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0\u0026openid.pape.max_auth_age=0\u0026openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fbuy%2Fsignin%2Fhandlers%2Fcontinue.html%3Fie%3DUTF8%26cartItemIds%3D%26eGCApp%3D%26hasWorkingJavascript%3D0%26isEGCOrder%3D0%26isFresh%3D0%26oldCustomerId%3D%26oldPurchaseId%3D%26preInitiateCustomerId%3D%26purchaseInProgress%3D%26ref_%3Dcart_signin_submit%26siteDesign%3D\u0026pageId=amazon_checkout_us\u0026showRmrMe=0\u0026siteState=isRegularCheckout.1%7CIMBMsgs.%7CisRedirect.0","current_url":"https://medium.com/","stay_seconds":55.103,"time":"2018-11-21T12:37:36Z"},
+
 {"user_id":12,"previous_url":"https://medium.com/","current_url":"https://medium.com/s/story/muellers-art-of-war-5b2cb14ad181","stay_seconds":31.074,"time":"2018-11-21T12:38:07Z"},
 {"user_id":12,"previous_url":"https://medium.com/s/story/muellers-art-of-war-5b2cb14ad181","current_url":"https://medium.com/","stay_seconds":192.628,"time":"2018-11-21T12:41:19Z"},
 {"user_id":12,"previous_url":"https://medium.com/","current_url":"https://medium.com/topic/technology","stay_seconds":18.906,"time":"2018-11-21T12:41:38Z"},

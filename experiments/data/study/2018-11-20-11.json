@@ -1,3 +1,60 @@
+[
+    {
+        "task_id": 1,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 2,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 3,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 4,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 5,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 6,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 7,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 8,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 9,
+        "clickstream": [
+            
+        ]
+    }
+]
+
 [{"user_id":11,"previous_url":"https://www.amazon.com/","current_url":"https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dfashion-mens-intl-ship\u0026field-keywords=nike+sneaker","stay_seconds":46.751,"time":"2018-11-20T17:08:01Z"},
 {"user_id":11,"previous_url":"https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dfashion-mens-intl-ship\u0026field-keywords=nike+sneaker","current_url":"https://www.amazon.com/stores/page/5CB08949-B3D4-407E-AA73-B8791EDAC739?store_ref=SB_A0531077WNE1PD36GAB4\u0026pf_rd_m=ATVPDKIKX0DER\u0026pf_rd_p=3ff6092e-8451-438b-8278-7e94064b4d42\u0026pf_rd_s=desktop-sx-top-slot\u0026pf_rd_t=301\u0026pf_rd_i=nike+sneakers\u0026hsa_cr_id=6814312200001\u0026lp_slot=auto-sparkle-hsa-tetris\u0026lp_asins=B072QFGVMX,B072MFRKZW,B072QFQ3SW\u0026lp_mat_key=sneakers\u0026lp_query=nike%2520sneakers","stay_seconds":6.624,"time":"2018-11-20T17:08:08Z"},
 {"user_id":11,"previous_url":"https://www.amazon.com/stores/page/5CB08949-B3D4-407E-AA73-B8791EDAC739?store_ref=SB_A0531077WNE1PD36GAB4\u0026pf_rd_m=ATVPDKIKX0DER\u0026pf_rd_p=3ff6092e-8451-438b-8278-7e94064b4d42\u0026pf_rd_s=desktop-sx-top-slot\u0026pf_rd_t=301\u0026pf_rd_i=nike+sneakers\u0026hsa_cr_id=6814312200001\u0026lp_slot=auto-sparkle-hsa-tetris\u0026lp_asins=B072QFGVMX,B072MFRKZW,B072QFQ3SW\u0026lp_mat_key=sneakers\u0026lp_query=nike%2520sneakers","current_url":"https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dfashion-mens-intl-ship\u0026field-keywords=nike+sneaker","stay_seconds":2.286,"time":"2018-11-20T17:08:10Z"},

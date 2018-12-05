@@ -1,3 +1,60 @@
+[
+    {
+        "task_id": 1,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 2,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 3,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 4,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 5,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 6,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 7,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 8,
+        "clickstream": [
+            
+        ]
+    },
+    {
+        "task_id": 9,
+        "clickstream": [
+            
+        ]
+    }
+]
+
 [{"user_id":10,"previous_url":"https://www.amazon.com/","current_url":"https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps\u0026field-keywords=iphone+xs","stay_seconds":17.617,"time":"2018-11-20T14:48:27Z"},
 {"user_id":10,"previous_url":"https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps\u0026field-keywords=iphone+xs","current_url":"https://www.amazon.com/s/s/ref=sr_nr_p_n_feature_nine_bro_0?fst=as%3Aoff\u0026rh=i%3Aaps%2Ck%3Aiphone+xs%2Cp_n_feature_nine_browse-bin%3A17290046011\u0026keywords=iphone+xs\u0026ie=UTF8\u0026qid=1542725305\u0026rnid=2488708011","stay_seconds":5.721,"time":"2018-11-20T14:48:33Z"},
 {"user_id":10,"previous_url":"https://www.amazon.com/s/s/ref=sr_nr_p_n_feature_nine_bro_0?fst=as%3Aoff\u0026rh=i%3Aaps%2Ck%3Aiphone+xs%2Cp_n_feature_nine_browse-bin%3A17290046011\u0026keywords=iphone+xs\u0026ie=UTF8\u0026qid=1542725305\u0026rnid=2488708011","current_url":"https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Delectronics-intl-ship\u0026field-keywords=iphone+xs\u0026rh=i%3Aelectronics-intl-ship%2Ck%3Aiphone+xs","stay_seconds":19.036,"time":"2018-11-20T14:48:52Z"},
