@@ -2,7 +2,6 @@
 {
     "task_id": 1,
     "clickstream": [
-        {"user_id":1,"previous_url":"","current_url":"https://www.amazon.com/","stay_seconds":26.214,"time":"2018-12-03T19:44:19Z"},
         {"user_id":1,"previous_url":"https://www.amazon.com/","current_url":"https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps\u0026field-keywords=iphone","stay_seconds":10.712,"time":"2018-12-03T19:54:19Z"},
         {"user_id":1,"previous_url":"https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps\u0026field-keywords=iphone","current_url":"https://www.amazon.com/s/ref=nb_sb_noss?url=node%3D7072561011\u0026field-keywords=iphone+xs\u0026rh=n%3A7072561011%2Ck%3Aiphone+xs","stay_seconds":6.099,"time":"2018-12-03T19:54:25Z"},
         {"user_id":1,"previous_url":"https://www.amazon.com/s/ref=nb_sb_noss?url=node%3D7072561011\u0026field-keywords=iphone+xs\u0026rh=n%3A7072561011%2Ck%3Aiphone+xs","current_url":"https://www.amazon.com/dp/B07K97BQDF?aaxitk=-4xrXScSzTERtOjYce.QXQ\u0026pd_rd_i=B07K97BQDF\u0026pf_rd_m=ATVPDKIKX0DER\u0026pf_rd_p=3ff6092e-8451-438b-8278-7e94064b4d42\u0026pf_rd_s=desktop-sx-top-slot\u0026pf_rd_t=301\u0026pf_rd_i=iphone+xs\u0026hsa_cr_id=2701984980301\u0026sb-ci-n=productDescription\u0026sb-ci-v=Apple%20iPhone%20XR%20(64GB)%20-%20(PRODUCT)RED%20%5BLocked%20to%20Simple%20Mobile%20Prepaid%5D","stay_seconds":8.317,"time":"2018-12-03T19:54:34Z"},
@@ -37,7 +36,6 @@
 {
     "task_id": 2,
     "clickstream": [
-        {"user_id":1,"previous_url":"","current_url":"https://www.amazon.com/","stay_seconds":26.214,"time":"2018-12-03T19:59:19Z"},
         {"user_id":1,"previous_url":"https://www.amazon.com/","current_url":"https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps\u0026field-keywords=lego","stay_seconds":6.467,"time":"2018-12-03T19:59:26Z"},
         {"user_id":1,"previous_url":"https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps\u0026field-keywords=lego","current_url":"https://www.amazon.com/LEGO-Technic-Building-Engineering-Collectible/dp/B07C8L9CRJ/ref=sr_1_19?s=toys-and-games\u0026ie=UTF8\u0026qid=1543867164\u0026sr=1-19\u0026keywords=lego","stay_seconds":9.293,"time":"2018-12-03T19:59:35Z"},
         {"user_id":1,"previous_url":"https://www.amazon.com/LEGO-Technic-Building-Engineering-Collectible/dp/B07C8L9CRJ/ref=sr_1_19?s=toys-and-games\u0026ie=UTF8\u0026qid=1543867164\u0026sr=1-19\u0026keywords=lego","current_url":"https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps\u0026field-keywords=lego","stay_seconds":12.257,"time":"2018-12-03T19:59:47Z"},
@@ -67,7 +65,6 @@
 {
     "task_id": 3,
     "clickstream": [
-        {"user_id":1,"previous_url":"https://www.amazon.com/ap/signin?_encoding=UTF8\u0026openid.assoc_handle=amazon_checkout_us\u0026openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select\u0026openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select\u0026openid.mode=checkid_setup\u0026openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0\u0026openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0\u0026openid.pape.max_auth_age=0\u0026openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fbuy%2Fsignin%2Fhandlers%2Fcontinue.html%3Fie%3DUTF8%26cartItemIds%3D%26eGCApp%3D%26hasWorkingJavascript%3D0%26isEGCOrder%3D0%26isFresh%3D0%26oldCustomerId%3D%26oldPurchaseId%3D%26preInitiateCustomerId%3DA3S8F68VBMKV8I%26purchaseInProgress%3D%26ref_%3Dcart_signin_submit%26siteDesign%3D\u0026pageId=amazon_checkout_us\u0026showRmrMe=1\u0026siteState=isRegularCheckout.1%7CIMBMsgs.%7CisRedirect.0","current_url":"https://www.amazon.com/","stay_seconds":15.152,"time":"2018-12-03T20:02:24Z"},
         {"user_id":1,"previous_url":"https://www.amazon.com/","current_url":"https://www.amazon.com/s/browse/ref=nav_shopall-export_nav_mw_sbd_intl_video_games?_encoding=UTF8\u0026node=16225016011","stay_seconds":6.969,"time":"2018-12-03T20:02:31Z"},
         {"user_id":1,"previous_url":"https://www.amazon.com/s/browse/ref=nav_shopall-export_nav_mw_sbd_intl_video_games?_encoding=UTF8\u0026node=16225016011","current_url":"https://www.amazon.com/Red-Dead-Redemption-2-PlayStation-4/dp/B01M5DZ525/ref=lp_16225016011_1_4?s=videogames-intl-ship\u0026ie=UTF8\u0026qid=1543867350\u0026sr=1-4","stay_seconds":7.808,"time":"2018-12-03T20:02:39Z"},
         {"user_id":1,"previous_url":"https://www.amazon.com/Red-Dead-Redemption-2-PlayStation-4/dp/B01M5DZ525/ref=lp_16225016011_1_4?s=videogames-intl-ship\u0026ie=UTF8\u0026qid=1543867350\u0026sr=1-4","current_url":"https://www.amazon.com/Red-Dead-Redemption-2-PlayStation-4/dp/B01M5DZ525/ref=lp_16225016011_1_4?s=videogames-intl-ship\u0026ie=UTF8\u0026qid=1543867350\u0026sr=1-4\u0026th=1","stay_seconds":2.315,"time":"2018-12-03T20:02:42Z"},
@@ -130,7 +127,6 @@
 {
     "task_id": 4,
     "clickstream": [
-        {"user_id":1,"previous_url":"https://www.google.de/search?q=concurrent+programming+algorithms+principles+and+foundations\u0026oq=concurrent+programming+al\u0026aqs=chrome.2.69i57j69i60j0l4.9303j0j7\u0026sourceid=chrome\u0026ie=UTF-8","current_url":"https://medium.com/","stay_seconds":28.976,"time":"2018-12-03T20:12:47Z"},
         {"user_id":1,"previous_url":"https://medium.com/","current_url":"https://medium.com/@damjancvetkovdimitrov/these-photos-are-why-i-m-trapped-in-tokyo-forever-now-1a0ea980bcc5","stay_seconds":33.937,"time":"2018-12-03T20:13:21Z"},
         {"user_id":1,"previous_url":"https://medium.com/@damjancvetkovdimitrov/these-photos-are-why-i-m-trapped-in-tokyo-forever-now-1a0ea980bcc5","current_url":"https://medium.com/search?q=tokyo","stay_seconds":29.402,"time":"2018-12-03T20:13:50Z"},
         {"user_id":1,"previous_url":"https://medium.com/search?q=tokyo","current_url":"https://medium.com/@ianlynam/tokyo-travel-destinations-c79e3874095f","stay_seconds":17.399,"time":"2018-12-03T20:14:08Z"},
@@ -180,7 +176,6 @@
 {
     "task_id": 5,
     "clickstream": [
-        {"user_id":1,"previous_url":"https://medium.com/search?q=osaka%20travel","current_url":"https://medium.com/","stay_seconds":18.386,"time":"2018-12-03T20:20:44Z"},
         {"user_id":1,"previous_url":"https://medium.com/","current_url":"https://medium.com/beautiful-communication/the-orion-standard-issue-china-travel-kit-aaa503366588","stay_seconds":14.821,"time":"2018-12-03T20:20:58Z"},
         {"user_id":1,"previous_url":"https://medium.com/beautiful-communication/the-orion-standard-issue-china-travel-kit-aaa503366588","current_url":"https://translate.google.com/","stay_seconds":16.168,"time":"2018-12-03T20:21:15Z"},
         {"user_id":1,"previous_url":"https://translate.google.com/","current_url":"https://translate.google.com/#view=home\u0026op=translate\u0026sl=auto\u0026tl=en\u0026text=Hygiene","stay_seconds":1.083,"time":"2018-12-03T20:21:16Z"},
@@ -216,7 +211,6 @@
 {
     "task_id": 6,
     "clickstream": [
-        {"user_id":1,"previous_url":"https://medium.com/search?q=chinese%20cities","current_url":"https://medium.com/","stay_seconds":25.59,"time":"2018-12-03T20:29:10Z"},
         {"user_id":1,"previous_url":"https://medium.com/","current_url":"https://syslog.ravelin.com/further-dangers-of-large-heaps-in-go-7a267b57d487?source=extreme_main_feed---------3-58--------------------1543868950000\u0026gi=4e4383e260a4","stay_seconds":10.092,"time":"2018-12-03T20:29:20Z"},
         {"user_id":1,"previous_url":"https://syslog.ravelin.com/further-dangers-of-large-heaps-in-go-7a267b57d487?source=extreme_main_feed---------3-58--------------------1543868950000\u0026gi=4e4383e260a4","current_url":"https://medium.com/","stay_seconds":3.144,"time":"2018-12-03T20:29:23Z"},
         {"user_id":1,"previous_url":"https://medium.com/","current_url":"https://syslog.ravelin.com/further-dangers-of-large-heaps-in-go-7a267b57d487","stay_seconds":2.011,"time":"2018-12-03T20:29:25Z"},
@@ -238,7 +232,6 @@
 {
     "task_id": 7,
     "clickstream": [
-        {"user_id":1,"previous_url":"https://medium.com/@euryugasaki/i-doubt-your-first-example-is-wrong-b392b3617c0c","current_url":"https://dribbble.com/","stay_seconds":32.54,"time":"2018-12-03T20:39:30Z"},
         {"user_id":1,"previous_url":"https://dribbble.com/","current_url":"https://dribbble.com/search?q=cloud+computing","stay_seconds":5.405,"time":"2018-12-03T20:39:36Z"},
         {"user_id":1,"previous_url":"https://dribbble.com/search?q=cloud+computing","current_url":"https://dribbble.com/shots/3896213-Community-Icons","stay_seconds":4.133,"time":"2018-12-03T20:39:40Z"},
         {"user_id":1,"previous_url":"https://dribbble.com/shots/3896213-Community-Icons","current_url":"https://dribbble.com/search?q=cloud+computing","stay_seconds":1.59,"time":"2018-12-03T20:39:42Z"},
@@ -265,7 +258,6 @@
 {
     "task_id": 8,
     "clickstream": [
-        {"user_id":1,"previous_url":"https://dribbble.com/shots/624073-Brainstorm-Logo","current_url":"http://dribble.com/","stay_seconds":20.436,"time":"2018-12-03T20:42:44Z"},
         {"user_id":1,"previous_url":"http://dribble.com/","current_url":"https://dribbble.com/","stay_seconds":5.406,"time":"2018-12-03T20:42:50Z"},
         {"user_id":1,"previous_url":"https://dribbble.com/","current_url":"https://dribbble.com/search?q=dog","stay_seconds":5.417,"time":"2018-12-03T20:42:55Z"},
         {"user_id":1,"previous_url":"https://dribbble.com/search?q=dog","current_url":"https://dribbble.com/search?q=cat","stay_seconds":4.139,"time":"2018-12-03T20:42:59Z"},
@@ -337,7 +329,6 @@
 {
     "task_id": 9,
     "clickstream": [
-        {"user_id":1,"previous_url":"https://dribbble.com/shots/4751287-Ant-Fly","current_url":"https://dribbble.com/","stay_seconds":16.956,"time":"2018-12-03T20:48:01Z"},
         {"user_id":1,"previous_url":"https://dribbble.com/","current_url":"https://dribbble.com/designers/friends","stay_seconds":4.064,"time":"2018-12-03T20:48:05Z"},
         {"user_id":1,"previous_url":"https://dribbble.com/designers/friends","current_url":"https://dribbble.com/suggestions","stay_seconds":2.131,"time":"2018-12-03T20:48:07Z"},
         {"user_id":1,"previous_url":"https://dribbble.com/suggestions","current_url":"https://dribbble.com/shots/4907323-Saver-redesigned","stay_seconds":2.375,"time":"2018-12-03T20:48:10Z"},

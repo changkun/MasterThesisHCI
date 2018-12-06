@@ -1,7 +1,7 @@
 import json
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
+# import matplotlib.pyplot as plt
+# import seaborn as sns
 
 def load_clickstream_length():
     data = np.zeros((21, 9))
@@ -72,7 +72,58 @@ def compute_url_overlap_rate(task_id):
                 url_map[key] = 1
                 continue
             url_map[key] += 1
-    return len(url_map) / count
+    return url_map, len(url_map) / count
 
-for task_id in range(0, 9):
-    print(f'task {task_id} clickstream overlap rate: ', 1 - compute_url_overlap_rate(task_id))
+def compute_url_overlap_rate_all():
+    for task_id in range(0, 9):
+        _, rate = compute_url_overlap_rate(task_id)
+        print(f'task {task_id} clickstream overlap rate: ', 1 - rate)
+
+import keras
+from keras.preprocessing import text
+
+def compute_url_word_sequence():
+    clickstream =  load_clickstream(1, 1)
+    for obj in clickstream:
+        print(text.text_to_word_sequence(obj['current_url']))
+
+# url_map, rate = compute_url_overlap_rate(1)
+# print(json.dumps(url_map, sort_keys=True, indent=4))
+
+
+def compute_url_embedding(task_id):
+    total = {}
+    for user_id in range(1, 22):
+        clickstream = load_clickstream(user_id, task_id)
+        for obj in clickstream:
+            previous = obj['previous_url']
+            if previous in total:
+                current = obj['current_url']
+                if current in total[previous]:
+                    total[previous][current] += 1
+                else:
+                    total[previous][current] = 1
+            else:
+                total[previous] = {}
+    with open(f'embeddings/{task_id}.json', 'w+') as f:
+        f.write(json.dumps(total, indent=4))
+
+# for task_id in range(0, 9):
+#     compute_url_embedding(task_id)
+
+from seq2vec import Seq2VecHash
+
+def compute_url_embedding2(user_id):
+    clickstream = load_clickstream(user_id, 1)
+    urls = []
+    for obj in clickstream:
+        urls.append(obj['current_url'])
+    transformer = Seq2VecHash(vector_length=30)
+    result = transformer.transform(urls)
+    return result
+
+from sklearn import (manifold, datasets, decomposition, ensemble,
+                     discriminant_analysis, random_projection)
+
+for user_id in range(1, 22):
+    result = compute_url_embedding2(user_id)
