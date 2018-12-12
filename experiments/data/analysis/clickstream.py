@@ -125,5 +125,8 @@ def compute_url_embedding2(user_id):
 from sklearn import (manifold, datasets, decomposition, ensemble,
                      discriminant_analysis, random_projection)
 
-for user_id in range(1, 22):
-    result = compute_url_embedding2(user_id)
+# for user_id in range(1, 22):
+#     result = compute_url_embedding2(user_id)
+
+
+from gensim.models import Word2Vec
