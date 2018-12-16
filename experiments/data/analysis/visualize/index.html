@@ -18,31 +18,55 @@ text {
 }
 
 </style>
-<svg width="960" height="600"></svg>
+<svg width="900" height="860"></svg>
 <script src="d3.v4.min.js"></script>
-<script src="clickstream.js"></script>
+<script src="js/clickstream-21-3.js"></script>
 <script>
 
 var svg = d3.select("svg"),
     width = +svg.attr("width"),
     height = +svg.attr("height");
 
+svg.append("rect")
+    .attr("fill", "none")
+    .attr("pointer-events", "all")
+    .attr("width", width)
+    .attr("height", height)
+    .call(d3.zoom()
+        .scaleExtent([1, 8])
+        .on("zoom", () => {
+            g.attr("transform", d3.event.transform);
+        }));
+
 var color = d3.scaleOrdinal(d3.schemeCategory20);
 
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function(d) { 
-        console.log('fff', d)
-        return d.id; }))
+        return d.id; 
+    }))
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2));
 
+svg.append("svg:defs").selectAll("marker")
+    .data(["end"])      // Different link/path types can be defined here
+  .enter().append("svg:marker")    // This section adds in the arrows
+    .attr("id", String)
+    .attr("viewBox", "0 -5 10 10")
+    .attr("refX", 15)
+    .attr("refY", 0.5)
+    .attr("markerWidth", 2)
+    .attr("markerHeight", 2)
+    .attr("orient", "auto")
+  .append("svg:path")
+    .attr("d", "M0,-5L10,0L0,5");
 
 var link = svg.append("g")
     .attr("class", "links")
-.selectAll("line")
-.data(graph.links)
-.enter().append("line")
-    .attr("stroke-width", function(d) { return Math.sqrt(d.stay_seconds); });
+    .selectAll("line")
+    .data(graph.links)
+    .enter().append("line")
+    .attr("marker-end", "url(#end)")
+    .attr("stroke-width", function(d) { return 1; /*Math.sqrt(d.stay_seconds);*/ });
 
 var node = svg.append("g")
     .attr("class", "nodes")
@@ -64,13 +88,13 @@ var circles = node.append("circle")
 
 var lables = node.append("text")
     .text(function(d) {
-    return d.index;
+        return d.id;
     })
     .attr('x', 6)
-    .attr('y', 3);
+    .attr('y', 3)
 
 node.append("title")
-    .text(function(d) { return d.index; });
+    .text(function(d) { return d.id; });
 
 simulation
     .nodes(graph.nodes)

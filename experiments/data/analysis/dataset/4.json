@@ -19,8 +19,7 @@
             {"user_id":4,"previous_url":"https://www.amazon.com/dp/B00Z7S7FR6/ref=psdc_3081461011_t4_B01K6PAZ1M","current_url":"https://www.amazon.com/dp/B00Z7S7FR6/ref=psdc_3081461011_t4_B01K6PAZ1M#","stay_seconds":6.569,"time":"2018-11-15T15:43:49Z"},
             {"user_id":4,"previous_url":"https://www.amazon.com/dp/B00Z7S7FR6/ref=psdc_3081461011_t4_B01K6PAZ1M#","current_url":"https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps\u0026field-keywords=apple+iphone+8+wireless+charging+dock","stay_seconds":16.344,"time":"2018-11-15T15:44:05Z"},
             {"user_id":4,"previous_url":"https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps\u0026field-keywords=apple+iphone+8+wireless+charging+dock","current_url":"https://www.amazon.com/Anker-PowerWave-Wireless-Qi-Certified-Compatible/dp/B078TDLHY9/ref=sr_1_20?ie=UTF8\u0026qid=1542296644\u0026sr=8-20\u0026keywords=apple+iphone+8+wireless+charging+dock","stay_seconds":27.821,"time":"2018-11-15T15:44:33Z"},
-            {"user_id":4,"previous_url":"https://www.amazon.com/Anker-PowerWave-Wireless-Qi-Certified-Compatible/dp/B078TDLHY9/ref=sr_1_20?ie=UTF8\u0026qid=1542296644\u0026sr=8-20\u0026keywords=apple+iphone+8+wireless+charging+dock","current_url":"https://www.amazon.com/ap/signin?_encoding=UTF8\u0026openid.assoc_handle=amazon_checkout_us\u0026openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select\u0026openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select\u0026openid.mode=checkid_setup\u0026openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0\u0026openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0\u0026openid.pape.max_auth_age=0\u0026openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fbuy%2Fsignin%2Fhandlers%2Fcontinue.html%3Fie%3DUTF8%26cartItemIds%3D%26eGCApp%3D%26hasWorkingJavascript%3D0%26isEGCOrder%3D0%26isFresh%3D%26oldCustomerId%3D0%26oldPurchaseId%3D%26preInitiateCustomerId%3D%26purchaseInProgress%3D%26ref_%3Dcart_signin_submit%26siteDesign%3D\u0026pageId=amazon_checkout_us\u0026showRmrMe=0\u0026siteState=isRegularCheckout.1%7CIMBMsgs.%7CisRedirect.1\u0026suppressSignInRadioButtons=0","stay_seconds":44.738,"time":"2018-11-15T15:45:18Z"},
-            {"user_id":4,"previous_url":"https://www.amazon.com/ap/signin?_encoding=UTF8\u0026openid.assoc_handle=amazon_checkout_us\u0026openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select\u0026openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select\u0026openid.mode=checkid_setup\u0026openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0\u0026openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0\u0026openid.pape.max_auth_age=0\u0026openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fbuy%2Fsignin%2Fhandlers%2Fcontinue.html%3Fie%3DUTF8%26cartItemIds%3D%26eGCApp%3D%26hasWorkingJavascript%3D0%26isEGCOrder%3D0%26isFresh%3D%26oldCustomerId%3D0%26oldPurchaseId%3D%26preInitiateCustomerId%3D%26purchaseInProgress%3D%26ref_%3Dcart_signin_submit%26siteDesign%3D\u0026pageId=amazon_checkout_us\u0026showRmrMe=0\u0026siteState=isRegularCheckout.1%7CIMBMsgs.%7CisRedirect.1\u0026suppressSignInRadioButtons=0","current_url":"https://www.amazon.com/","stay_seconds":134.441,"time":"2018-11-15T15:47:32Z"}
+            {"user_id":4,"previous_url":"https://www.amazon.com/Anker-PowerWave-Wireless-Qi-Certified-Compatible/dp/B078TDLHY9/ref=sr_1_20?ie=UTF8\u0026qid=1542296644\u0026sr=8-20\u0026keywords=apple+iphone+8+wireless+charging+dock","current_url":"https://www.amazon.com/ap/signin?_encoding=UTF8\u0026openid.assoc_handle=amazon_checkout_us\u0026openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select\u0026openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select\u0026openid.mode=checkid_setup\u0026openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0\u0026openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0\u0026openid.pape.max_auth_age=0\u0026openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fbuy%2Fsignin%2Fhandlers%2Fcontinue.html%3Fie%3DUTF8%26cartItemIds%3D%26eGCApp%3D%26hasWorkingJavascript%3D0%26isEGCOrder%3D0%26isFresh%3D%26oldCustomerId%3D0%26oldPurchaseId%3D%26preInitiateCustomerId%3D%26purchaseInProgress%3D%26ref_%3Dcart_signin_submit%26siteDesign%3D\u0026pageId=amazon_checkout_us\u0026showRmrMe=0\u0026siteState=isRegularCheckout.1%7CIMBMsgs.%7CisRedirect.1\u0026suppressSignInRadioButtons=0","stay_seconds":44.738,"time":"2018-11-15T15:45:18Z"}
         ]
     },
     {
@@ -132,8 +131,7 @@
             {"user_id":4,"previous_url":"https://medium.com/@kitashirakawa0721/you-must-be-tired-of-tokyo-kyoto-osaka-d4aaedea373e","current_url":"https://medium.com/search?q=travel%20tokyo%20kyoto%20osaka","stay_seconds":21.386,"time":"2018-11-15T16:17:48Z"},
             {"user_id":4,"previous_url":"https://medium.com/search?q=travel%20tokyo%20kyoto%20osaka","current_url":"https://medium.com/search?q=tokyo%20kyoto%20osaka","stay_seconds":34.16,"time":"2018-11-15T16:18:22Z"},
             {"user_id":4,"previous_url":"https://medium.com/search?q=tokyo%20kyoto%20osaka","current_url":"https://jw-webmagazine.com/japan-food-guide-7e99357f8152?source=search_post---------1","stay_seconds":1.439,"time":"2018-11-15T16:18:24Z"},
-            {"user_id":4,"previous_url":"https://jw-webmagazine.com/japan-food-guide-7e99357f8152?source=search_post---------1","current_url":"https://jw-webmagazine.com/japan-food-guide-7e99357f8152","stay_seconds":53.503,"time":"2018-11-15T16:19:17Z"},
-            {"user_id":4,"previous_url":"https://jw-webmagazine.com/japan-food-guide-7e99357f8152","current_url":"https://medium.com/","stay_seconds":119.533,"time":"2018-11-15T16:21:17Z"}
+            {"user_id":4,"previous_url":"https://jw-webmagazine.com/japan-food-guide-7e99357f8152?source=search_post---------1","current_url":"https://jw-webmagazine.com/japan-food-guide-7e99357f8152","stay_seconds":53.503,"time":"2018-11-15T16:19:17Z"}
         ]
     },
     {
@@ -149,8 +147,7 @@
             {"user_id":4,"previous_url":"https://medium.com/travel-in-china/search?q=tourism%20china","current_url":"https://medium.com/sixth-tone/the-once-pristine-paradise-fighting-a-tide-of-tourism-aea022e253e0","stay_seconds":34.919,"time":"2018-11-15T16:29:56Z"},
             {"user_id":4,"previous_url":"https://medium.com/sixth-tone/the-once-pristine-paradise-fighting-a-tide-of-tourism-aea022e253e0","current_url":"https://medium.com/","stay_seconds":92.396,"time":"2018-11-15T16:31:28Z"},
             {"user_id":4,"previous_url":"https://medium.com/","current_url":"https://medium.com/s/thenewnew/can-killer-robots-help-save-the-great-barrier-reef-8805d125d321","stay_seconds":74.257,"time":"2018-11-15T16:32:43Z"},
-            {"user_id":4,"previous_url":"https://medium.com/s/thenewnew/can-killer-robots-help-save-the-great-barrier-reef-8805d125d321","current_url":"https://medium.com/s/thenewnew","stay_seconds":64.352,"time":"2018-11-15T16:33:47Z"},
-            {"user_id":4,"previous_url":"https://medium.com/s/thenewnew","current_url":"https://medium.com/","stay_seconds":13.2,"time":"2018-11-15T16:34:00Z"}
+            {"user_id":4,"previous_url":"https://medium.com/s/thenewnew/can-killer-robots-help-save-the-great-barrier-reef-8805d125d321","current_url":"https://medium.com/s/thenewnew","stay_seconds":64.352,"time":"2018-11-15T16:33:47Z"}
         ]
     },
     {
@@ -164,8 +161,7 @@
             {"user_id":4,"previous_url":"https://medium.com/membership?source=upgrade_membership---post_limit--d53dfa8951b0","current_url":"https://medium.com/@abbeyfatica/negative-sideline-parent-d53dfa8951b0","stay_seconds":10.576,"time":"2018-11-15T16:36:39Z"},
             {"user_id":4,"previous_url":"https://medium.com/@abbeyfatica/negative-sideline-parent-d53dfa8951b0","current_url":"https://medium.com/topic/sports","stay_seconds":21.015,"time":"2018-11-15T16:37:00Z"},
             {"user_id":4,"previous_url":"https://medium.com/topic/sports","current_url":"https://medium.com/@idioan/fifa-striving-for-a-virtual-world-44aa0beaa456?source=topic_page---------33------------------1","stay_seconds":59.053,"time":"2018-11-15T16:37:59Z"},
-            {"user_id":4,"previous_url":"https://medium.com/@idioan/fifa-striving-for-a-virtual-world-44aa0beaa456?source=topic_page---------33------------------1","current_url":"https://medium.com/@idioan/fifa-striving-for-a-virtual-world-44aa0beaa456","stay_seconds":202.862,"time":"2018-11-15T16:41:22Z"},
-            {"user_id":4,"previous_url":"https://medium.com/@idioan/fifa-striving-for-a-virtual-world-44aa0beaa456","current_url":"https://dribbble.com/","stay_seconds":47.857,"time":"2018-11-15T16:42:10Z"}
+            {"user_id":4,"previous_url":"https://medium.com/@idioan/fifa-striving-for-a-virtual-world-44aa0beaa456?source=topic_page---------33------------------1","current_url":"https://medium.com/@idioan/fifa-striving-for-a-virtual-world-44aa0beaa456","stay_seconds":202.862,"time":"2018-11-15T16:41:22Z"}
         ]
     },
     {
@@ -208,8 +204,7 @@
             {"user_id":4,"previous_url":"https://dribbble.com/search?q=cloud+logo","current_url":"https://dribbble.com/shots/5103336-bird-cloud-fun","stay_seconds":29.806,"time":"2018-11-15T16:49:59Z"},
             {"user_id":4,"previous_url":"https://dribbble.com/shots/5103336-bird-cloud-fun","current_url":"https://dribbble.com/search?q=cloud+logo","stay_seconds":15.789,"time":"2018-11-15T16:50:15Z"},
             {"user_id":4,"previous_url":"https://dribbble.com/search?q=cloud+logo","current_url":"https://dribbble.com/shots/3473521-Dreams-balloons-cloud-heart-tree-logo-design-symbol","stay_seconds":2.73,"time":"2018-11-15T16:50:18Z"},
-            {"user_id":4,"previous_url":"https://dribbble.com/shots/3473521-Dreams-balloons-cloud-heart-tree-logo-design-symbol","current_url":"https://dribbble.com/search?q=cloud+logo","stay_seconds":17.52,"time":"2018-11-15T16:50:35Z"},
-            {"user_id":4,"previous_url":"https://dribbble.com/search?q=cloud+logo","current_url":"https://dribbble.com/","stay_seconds":38.191,"time":"2018-11-15T16:51:14Z"}
+            {"user_id":4,"previous_url":"https://dribbble.com/shots/3473521-Dreams-balloons-cloud-heart-tree-logo-design-symbol","current_url":"https://dribbble.com/search?q=cloud+logo","stay_seconds":17.52,"time":"2018-11-15T16:50:35Z"}
         ]
     },
     {
@@ -257,8 +252,7 @@
             {"user_id":4,"previous_url":"https://dribbble.com/search?q=cat+black+white","current_url":"https://dribbble.com/shots/2810423-Friendship","stay_seconds":14.872,"time":"2018-11-15T16:56:22Z"},
             {"user_id":4,"previous_url":"https://dribbble.com/shots/2810423-Friendship","current_url":"https://dribbble.com/search?q=cat+black+white","stay_seconds":5.592,"time":"2018-11-15T16:56:27Z"},
             {"user_id":4,"previous_url":"https://dribbble.com/search?q=cat+black+white","current_url":"https://dribbble.com/shots/4888575-Elegant-Kitty","stay_seconds":2.854,"time":"2018-11-15T16:56:30Z"},
-            {"user_id":4,"previous_url":"https://dribbble.com/shots/4888575-Elegant-Kitty","current_url":"https://dribbble.com/search?q=cat+black+white","stay_seconds":8.187,"time":"2018-11-15T16:56:38Z"},
-            {"user_id":4,"previous_url":"https://dribbble.com/search?q=cat+black+white","current_url":"https://dribbble.com/","stay_seconds":22.248,"time":"2018-11-15T16:57:01Z"}
+            {"user_id":4,"previous_url":"https://dribbble.com/shots/4888575-Elegant-Kitty","current_url":"https://dribbble.com/search?q=cat+black+white","stay_seconds":8.187,"time":"2018-11-15T16:56:38Z"}
         ]
     },
     {
@@ -291,8 +285,7 @@
             {"user_id":4,"previous_url":"https://dribbble.com/shots/605774-Dribbble","current_url":"https://dribbble.com/havoc","stay_seconds":22.108,"time":"2018-11-15T17:01:27Z"},
             {"user_id":4,"previous_url":"https://dribbble.com/havoc","current_url":"https://dribbble.com/shots/1107718-Quick-icons-sketch","stay_seconds":8.716,"time":"2018-11-15T17:01:36Z"},
             {"user_id":4,"previous_url":"https://dribbble.com/shots/1107718-Quick-icons-sketch","current_url":"https://dribbble.com/shots/1107718-Quick-icons-sketch/attachments/139875","stay_seconds":10.444,"time":"2018-11-15T17:01:46Z"},
-            {"user_id":4,"previous_url":"https://dribbble.com/shots/1107718-Quick-icons-sketch/attachments/139875","current_url":"https://dribbble.com/shots/1107718-Quick-icons-sketch","stay_seconds":7.386,"time":"2018-11-15T17:01:54Z"},
-            {"user_id":4,"previous_url":"https://dribbble.com/shots/1107718-Quick-icons-sketch","current_url":"https://www.amazon.com/","stay_seconds":527.992,"time":"2018-11-15T17:10:41Z"}
+            {"user_id":4,"previous_url":"https://dribbble.com/shots/1107718-Quick-icons-sketch/attachments/139875","current_url":"https://dribbble.com/shots/1107718-Quick-icons-sketch","stay_seconds":7.386,"time":"2018-11-15T17:01:54Z"}
         ]
     }
 ]
