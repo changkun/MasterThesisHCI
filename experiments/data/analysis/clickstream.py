@@ -1,7 +1,8 @@
 import json
 import numpy as np
-# import matplotlib.pyplot as plt
-# import seaborn as sns
+import keras
+from keras.preprocessing import text
+from seq2vec import Seq2VecHash, Seq2Seq
 
 def load_clickstream_length():
     data = np.zeros((21, 9))
@@ -22,44 +23,6 @@ def clickstream_length_normalize():
     mat_length = mat_length / mat_length.sum(axis=1)[:, None]
     return mat_length
 
-def difficulty_normalize():
-    difficulty = np.array([
-        [2, 1, 2, 2, 4, 1, 2, 3, 2],
-        [2, 2, 1, 2, 3, 1, 1, 5, 1],
-        [3, 2, 2, 2, 5, 3, 3, 1, 3],
-        [3, 4, 2, 2, 5, 2, 3, 3, 2],
-        [2, 1, 3, 3, 5, 3, 2, 1, 3],
-        [2, 2, 1, 3, 4, 1, 1, 3, 2],
-        [3, 4, 2, 3, 5, 3, 4, 3, 2],
-        [1, 1, 1, 3, 5, 2, 2, 1, 1],
-        [2, 3, 2, 2, 5, 2, 3, 1, 1],
-        [1, 3, 2, 2, 3, 2, 2, 3, 3],
-        [2, 2, 3, 1, 4, 5, 1, 2, 3],
-        [3, 2, 1, 3, 4, 1, 3, 2, 2],
-        [4, 1, 3, 5, 4, 2, 2, 2, 1],
-        [2, 2, 2, 2, 3, 1, 2, 2, 1],
-        [5, 1, 3, 2, 4, 1, 4, 2, 3],
-        [1, 2, 1, 1, 3, 1, 1, 1, 1],
-        [3, 1, 1, 3, 4, 3, 2, 2, 3],
-        [2, 2, 1, 2, 3, 1, 3, 2, 2],
-        [3, 2, 2, 2, 2, 1, 1, 1, 2],
-        [1, 3, 2, 3, 5, 1, 2, 3, 2],
-        [3, 3, 2, 3, 5, 4, 2, 3, 5]
-    ])
-    difficulty_norm = difficulty/difficulty.sum(axis=1)[:,None] # norm
-    return difficulty_norm
-
-def plot_length_mult_diff():
-    mat_clickstream_length = clickstream_length_normalize()
-    mat_task_difficulty = difficulty_normalize()
-    Q = np.multiply(mat_clickstream_length, mat_task_difficulty)
-    rows = [x for x in range(0, Q.shape[0])]
-    fig = plt.figure(figsize=(10,10))
-    ax = fig.add_subplot(111)
-    cax = ax.matshow(Q, cmap='RdBu_r')
-    fig.colorbar(cax)
-    plt.show()
-
 def compute_url_overlap_rate(task_id):
     count = 0
     url_map = dict()
@@ -79,8 +42,7 @@ def compute_url_overlap_rate_all():
         _, rate = compute_url_overlap_rate(task_id)
         print(f'task {task_id} clickstream overlap rate: ', 1 - rate)
 
-import keras
-from keras.preprocessing import text
+
 
 def compute_url_word_sequence():
     clickstream =  load_clickstream(1, 1)
@@ -91,7 +53,7 @@ def compute_url_word_sequence():
 # print(json.dumps(url_map, sort_keys=True, indent=4))
 
 
-def compute_url_embedding(task_id):
+def compute_url_mapping(task_id):
     total = {}
     for user_id in range(1, 22):
         clickstream = load_clickstream(user_id, task_id)
@@ -111,22 +73,59 @@ def compute_url_embedding(task_id):
 # for task_id in range(0, 9):
 #     compute_url_embedding(task_id)
 
-from seq2vec import Seq2VecHash
 
-def compute_url_embedding2(user_id):
-    clickstream = load_clickstream(user_id, 1)
+
+
+vec_len = 30
+
+def compute_url_embedding(user_id, task_id):
+    clickstream = load_clickstream(user_id, task_id)
     urls = []
     for obj in clickstream:
-        urls.append(obj['current_url'])
-    transformer = Seq2VecHash(vector_length=30)
-    result = transformer.transform(urls)
+        urls.append(obj['previous_url'])
+    transformer = Seq2VecHash(vec_len=vec_len)
+    result = transformer(urls)
+    print('clickstream: ', result)
     return result
 
-from sklearn import (manifold, datasets, decomposition, ensemble,
-                     discriminant_analysis, random_projection)
+def main():
+    sos = np.zeros((1, vec_len))
+    coi = np.zeros((1, vec_len)) - 1
+    eos = np.zeros((1, vec_len)) - 10
+    pad = np.zeros((1, vec_len)) - 100
 
-# for user_id in range(1, 22):
-#     result = compute_url_embedding2(user_id)
+    max_length = 0
+    sentences = []
+    for user_id in range(1, 22):
+        for task_id in range(0, 9):
 
+            clickstream = compute_url_embedding(user_id, task_id)
+            pos = clickstream.shape[0]//2
 
-from gensim.models import Word2Vec
+            clickstream = np.insert(clickstream, pos, coi, 0)
+            clickstream = np.insert(clickstream, 0, sos, 0)
+            clickstream = np.insert(clickstream, clickstream.shape[0], eos, 0)
+
+            length_sentence = clickstream.shape[0]
+            if length_sentence > max_length:
+                max_length = length_sentence
+            
+            sentences.append(clickstream)
+
+    print('max_y:', max_length)
+
+    for idx, sentence in enumerate(sentences):
+        padnum = max_length - sentence.shape[0] + 1
+        pads = np.repeat(pad, padnum, axis=0)
+        sentences[idx] = np.concatenate((sentence, pads), axis=0)
+
+    sentences = np.stack(sentences)
+    print(sentences.shape)
+
+    # model = Seq2Seq(output_dim=xx.shape[2], hidden_dim=42, output_length=xx.shape[2], input_shape=(xx.shape[1], xx.shape[2]), peek=True, depth=2, teacher_force=True)
+    # model.compile(loss='mse', optimizer='rmsprop')
+    # model.fit([xx, yy], yy, epochs=1)
+
+if __name__ == "__main__":
+    main()
+

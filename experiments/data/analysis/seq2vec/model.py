@@ -161,17 +161,21 @@ def Seq2Seq(output_dim, output_length, batch_input_shape=None,
     return model
 
 
-input_length = 5
-input_dim = 3
+# input_length = 5
+# input_dim = 3
 
-output_length = 3
-output_dim = 4
+# output_length = 3
+# output_dim = 4
 
-samples = 100
-hidden_dim = 24
+# samples = 100
+# hidden_dim = 24
 
-x = np.random.random((samples, input_length, input_dim))
-y = np.random.random((samples, output_length, output_dim))
-model = Seq2Seq(output_dim=output_dim, hidden_dim=hidden_dim, output_length=output_length, input_shape=(input_length, input_dim), peek=True, depth=2, teacher_force=True)
-model.compile(loss='mse', optimizer='rmsprop')
-model.fit([x, y], y, epochs=1)
+# x = np.random.random((samples, input_length, input_dim))
+# y = np.random.random((samples, output_length, output_dim))
+# print(x.shape)
+# print(y.shape)
+# print([x,y])
+# print(y)
+# model = Seq2Seq(output_dim=output_dim, hidden_dim=hidden_dim, output_length=output_length, input_shape=(input_length, input_dim), peek=True, depth=2, teacher_force=True)
+# model.compile(loss='mse', optimizer='rmsprop')
+# model.fit([x, y], y, epochs=1)
