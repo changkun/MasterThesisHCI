@@ -65,9 +65,10 @@ def get_data_translate():
 
 from keras.preprocessing.sequence import pad_sequences
 from keras.utils.np_utils import to_categorical
-from keras.layers import Input, Dense, Embedding, GRU, TimeDistributed
+from keras.layers import Input, Dense, Embedding, GRU, TimeDistributed, LSTM
 from keras.models import Model
 from keras.callbacks import TensorBoard, ModelCheckpoint, EarlyStopping
+from keras.regularizers import l2
 
 
 original = pad_sequences(get_data(), value=0, maxlen=50)
@@ -88,20 +89,20 @@ encoder_states = state_h
 
 decoder_inputs = Input(shape=(None,), name="DecoderInput_1")
 embedded_decoder_inputs = Embedding(num_encoder_tokens, latent_dim, mask_zero=True)(decoder_inputs)
-decoder_lstm = GRU(latent_dim, return_sequences=True, return_state=True)
+decoder_lstm = GRU(latent_dim, return_sequences=True, return_state=True, kernel_regularizer=l2(0.0000001), activity_regularizer=l2(0.0000001))
 x, _ = decoder_lstm(embedded_decoder_inputs, initial_state=encoder_states)
 decoder_dense = TimeDistributed(Dense(num_decoder_tokens, activation='softmax'))
 decoder_outputs = decoder_dense(x)
 
 model = Model([encoder_inputs, decoder_inputs], decoder_outputs)
-model.compile(optimizer='adam', loss='categorical_crossentropy')
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 model.fit([original, translate], trans_onehot,
     batch_size=batch_size,
     epochs=epochs,
-    # validation_split=0.1,
+    validation_split=0.5,
     callbacks=[
         TensorBoard(log_dir="./logs"),
         ModelCheckpoint(filepath="model.h5", verbose=1, save_weights_only=True, save_best_only=True),
-        EarlyStopping(monitor="loss", patience=10)
+        # EarlyStopping(monitor="loss", patience=10)
     ]
 )

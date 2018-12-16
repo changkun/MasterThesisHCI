@@ -18,9 +18,9 @@ text {
 }
 
 </style>
-<svg width="900" height="860"></svg>
+<svg width="1900" height="1860"></svg>
 <script src="d3.v4.min.js"></script>
-<script src="js/clickstream-21-3.js"></script>
+<script src="js/clickstream-task-2.js"></script>
 <script>
 
 var svg = d3.select("svg"),
@@ -76,7 +76,8 @@ var node = svg.append("g")
 
 var circles = node.append("circle")
     .attr("r", function(d) {
-        return d.stay_seconds;
+        // return d.stay_seconds;
+        return Math.sqrt(d.stay_seconds);
     })
     .attr("fill", function(d) { 
         return color(d.group); 
@@ -88,13 +89,13 @@ var circles = node.append("circle")
 
 var lables = node.append("text")
     .text(function(d) {
-        return d.id;
+        return d.label;
     })
     .attr('x', 6)
     .attr('y', 3)
 
 node.append("title")
-    .text(function(d) { return d.id; });
+    .text(function(d) { return d.label; });
 
 simulation
     .nodes(graph.nodes)
