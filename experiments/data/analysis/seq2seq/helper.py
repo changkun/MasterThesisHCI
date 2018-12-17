@@ -1,5 +1,8 @@
 import json
+import random
 import numpy as np
+from datetime import datetime
+now = datetime.now()
 
 def load_clickstream(user_id, task_id):
     with open(f'../dataset/{user_id}.json') as f:
@@ -37,13 +40,15 @@ num_encoder_tokens = len(vocabs)
 num_decoder_tokens = len(vocabs)
 padding_length = 29
 latent_dim = 20
-batch_size = 16
+batch_size = 150
 epochs = 2000
 eos = 0
 sos = 1
 pad = 2
 coi = 3
 mis = 4
+
+rand = 0
 
 def get_data():
     sentences = []
@@ -52,7 +57,8 @@ def get_data():
             sentence = load_a_sentence(user_id, task_id)
             tokenized = [sos] + [vocabs.get(word, mis) for word in sentence][:padding_length-1] + [coi]
             sentences.append(tokenized)
-    return sentences
+    rand = random.randint(0, len(sentences))
+    return sentences[rand:] + sentences[:rand]
 
 def get_data_translate():
     sentences = []
@@ -61,23 +67,24 @@ def get_data_translate():
             sentence = load_a_sentence(user_id, task_id)
             tokenized = [vocabs.get(word, mis) for word in sentence][padding_length:] + [eos]
             sentences.append(tokenized)
-    return sentences
+    return sentences[rand:] + sentences[:rand]
 
-from keras.preprocessing.sequence import pad_sequences
-from keras.utils.np_utils import to_categorical
-from keras.layers import Input, Dense, Embedding, GRU, TimeDistributed, LSTM
-from keras.models import Model
-from keras.callbacks import TensorBoard, ModelCheckpoint, EarlyStopping
-from keras.regularizers import l2
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.utils import to_categorical, normalize
+from tensorflow.keras.layers import Input, Dense, Embedding, GRU, TimeDistributed, LSTM
+from tensorflow.keras.models import Model
+from tensorflow.keras.callbacks import TensorBoard, ModelCheckpoint, EarlyStopping, TerminateOnNaN
+from tensorflow.keras.regularizers import l2
 
 
 original = pad_sequences(get_data(), value=0, maxlen=50)
 translate = pad_sequences(get_data_translate(), value=0, maxlen=50)
 trans_onehot = np.array([to_categorical(line, num_classes=num_decoder_tokens) for line in translate])
-print(original.shape)
-print(trans_onehot.shape)
 
-
+# original = normalize(original)
+# translate = normalize(translate)
+# print(original)
+# print(translate)
 
 encoder_inputs = Input(shape=(None,), name="EncoderInput_1")
 embedded_encoder_inputs = Embedding(num_encoder_tokens, latent_dim, mask_zero=True)(encoder_inputs)
@@ -95,14 +102,20 @@ decoder_dense = TimeDistributed(Dense(num_decoder_tokens, activation='softmax'))
 decoder_outputs = decoder_dense(x)
 
 model = Model([encoder_inputs, decoder_inputs], decoder_outputs)
+try:
+    model.load_weights('model.h5')
+except OSError:
+    pass
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 model.fit([original, translate], trans_onehot,
     batch_size=batch_size,
     epochs=epochs,
-    validation_split=0.5,
+    validation_split=0.1,
+    shuffle=True,
     callbacks=[
-        TensorBoard(log_dir="./logs"),
-        ModelCheckpoint(filepath="model.h5", verbose=1, save_weights_only=True, save_best_only=True),
-        # EarlyStopping(monitor="loss", patience=10)
+        TensorBoard(log_dir="./logs/" + now.strftime("%Y%m%d-%H%M%S") + "/"),
+        TerminateOnNaN(),
+        ModelCheckpoint(filepath="model.h5", verbose=1, save_weights_only=True, save_best_only=False, period=3),
+        # EarlyStopping(monitor="loss", patience=10),
     ]
 )
