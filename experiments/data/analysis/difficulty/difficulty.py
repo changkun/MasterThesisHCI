@@ -1,10 +1,14 @@
 import numpy as np
 from scipy import stats
+from sklearn import svm
 from sklearn.preprocessing import normalize
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, cohen_kappa_score
+from sklearn.manifold import TSNE
+from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 import seaborn as sns
+from mpl_toolkits.mplot3d import Axes3D
 
 norm = True
 # norm = False
@@ -289,7 +293,7 @@ def significant_tests():
     for t in tests:
         mannwhitneyu_test(t['name1'], t['name2'], t['data1'], t['data2'])
 
-significant_tests()
+
 
 # H0: data from same distribution
 # H1: data not from same distribution
@@ -321,6 +325,10 @@ significant_tests()
 # duration_goal   v.s. duration_exploring:reject H0, p:  0.000461548309969623
 # duration_fuzzy  v.s. duration_goal:     accept H0, p:  0.3145335442741327
 
+# difficulty: fuzzy > goal > explore
+# (difficulty, length of clickstream, time duration of clickstream)
+
+
 
 # -------------------------------------------------------------------------------------
 
@@ -333,9 +341,7 @@ significant_tests()
 # idx = [6,7,8]
 # idx = [0,  2]
 
-
-
-def get_data(idx):
+def get_data_by_task_id(idx):
     x = difficulty[:,idx].flatten()
     y = visit_length[:,idx].flatten()
     z = visit_duration[:,idx].flatten()
@@ -348,57 +354,109 @@ def get_data(idx):
     colorlabel = np.concatenate((colors[np.newaxis].T, labels[np.newaxis].T), axis=1)
     return data, colorlabel
 
-def plot_3d(x, y, z, colors, lables):
-    from mpl_toolkits.mplot3d import Axes3D
-    fig = plt.figure()
-    ax = fig.add_subplot(111, projection='3d')
-    for i, l in enumerate(types):
-        xx = [value for index, value in enumerate(x) if labels[index] == l]
-        yy = [value for index, value in enumerate(y) if labels[index] == l]
-        zz = [value for index, value in enumerate(z) if labels[index] == l]
-        cc = [value for index, value in enumerate(colors) if labels[index] == l]
-        if len(xx) > 0:
-            ax.scatter(xx, yy, zz, c=cc, marker=markers[i], label=l)
-        ax.legend()
-    plt.show()
-
-
-def plot_tsne(data, labels, path):
-    from sklearn.manifold import TSNE
-    from sklearn.decomposition import PCA
-    X_tsne = TSNE(n_components=2).fit_transform(data)
+def plot_2d(x, y, labels, path, xlabel, ylabel, xlim, ylim):
     fig = plt.figure()
     ax = fig.add_subplot(111)
     for i, l in enumerate(types):
-        xx = [value for index, value in enumerate(X_tsne[:,0]) if labels[:,1][index] == l]
-        yy = [value for index, value in enumerate(X_tsne[:,1]) if labels[:,1][index] == l]
+        xx = [value for index, value in enumerate(x) if labels[:,1][index] == l]
+        yy = [value for index, value in enumerate(y) if labels[:,1][index] == l]
         cc = [value for index, value in enumerate(labels[:,0]) if labels[:,1][index] == l]
         if len(xx) > 0:
             ax.scatter(xx, yy, c=cc, marker=markers[i], label=l)
     ax.legend()
+    plt.xlim(xlim)
+    plt.ylim(ylim)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
     plt.savefig(path)
+    plt.close(fig)
 
-def plot_amazon():
-    data, colorlabel = get_data([0,1,2])
-    xtrain, xtest, ytrain, ytest = train_test_split(data, colorlabel, test_size=0.0, random_state=42)
-    for i in range(0, 10):
-        plot_tsne(xtrain, ytrain, f'tsne-{i}-amazon.png')
-def plot_medium():
-    data, colorlabel = get_data([3,4,5])
-    xtrain, xtest, ytrain, ytest = train_test_split(data, colorlabel, test_size=0.0, random_state=42)
-    for i in range(0, 10):
-        plot_tsne(xtrain, ytrain, f'tsne-{i}-medium.png')
-def plot_dribbble():
-    data, colorlabel = get_data([6,7,8])
-    xtrain, xtest, ytrain, ytest = train_test_split(data, colorlabel, test_size=0.0, random_state=42)
-    for i in range(0, 10):
-        plot_tsne(xtrain, ytrain, f'tsne-{i}-dribbble.png')
+def plot_2dtsne(data, labels, path):
+    X_tsne = TSNE(n_components=2).fit_transform(data)
+    amin = np.amin(X_tsne)
+    amax = np.amax(X_tsne)
+    plot_2d(X_tsne[:,0],X_tsne[:,1], labels, path, '', '', (amin, amax), (amin, amax))
 
+def plot_2d_len_dur(idx, category):
+    data, colorlabel = get_data_by_task_id(idx)
+    xtrain, xtest, ytrain, ytest = train_test_split(data, colorlabel, test_size=0.0, random_state=42)
+    plot_2d(xtrain[:,1],xtrain[:,2], ytrain, 
+    f'2d-len-dur-{category}.png', 'visited pages of a clickstream', 
+    'time of duration of a clickstream', (0, 1), (0, 1))
+
+def plot_2d_dif_len(idx, category):
+    data, colorlabel = get_data_by_task_id(idx)
+    xtrain, xtest, ytrain, ytest = train_test_split(data, colorlabel, test_size=0.0, random_state=42)
+    plot_2d(xtrain[:,0],xtrain[:,1], ytrain, 
+    f'2d-dif-len-{category}.png', 'difficulty of a task', 
+    'visited pages of a clickstream', (0, 1), (0, 1))
+
+def plot_2d_dif_dur(idx, category):
+    data, colorlabel = get_data_by_task_id(idx)
+    xtrain, xtest, ytrain, ytest = train_test_split(data, colorlabel, test_size=0.0, random_state=42)
+    plot_2d(xtrain[:,0],xtrain[:,2], ytrain, 
+    f'2d-dif-dur-{category}.png', 'difficulty of a task', 
+    'time of duration of clickstream of the task', (0, 1), (0, 1))
+
+def plot_tsne(idx, category):
+    data, colorlabel = get_data_by_task_id(idx)
+    xtrain, xtest, ytrain, ytest = train_test_split(data, colorlabel, test_size=0.0, random_state=42)
+    plot_2dtsne(xtrain, ytrain, f'tsne-{category}.png')
+
+def plot_3d(data, labels, path, xlabel, ylabel, zlabel):
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    for i, l in enumerate(types):
+        xx = [value for index, value in enumerate(data[:,0]) if labels[:,1][index] == l]
+        yy = [value for index, value in enumerate(data[:,1]) if labels[:,1][index] == l]
+        zz = [value for index, value in enumerate(data[:,2]) if labels[:,1][index] == l]
+        cc = [value for index, value in enumerate(labels[:,0]) if labels[:,1][index] == l]
+        if len(xx) > 0:
+            ax.scatter(xx, yy, zz, c=cc, marker=markers[i], label=l)
+        ax.legend()
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
+    ax.set_zlabel(zlabel)
+    ax.set_xlim((0,1))
+    ax.set_ylim((0,1))
+    ax.set_zlim((0,1))
+    plt.savefig(path)
+    plt.close(fig)
+
+def plot_3draw(idx, category):
+    data, colorlabel = get_data_by_task_id(idx)
+    xtrain, xtest, ytrain, ytest = train_test_split(data, colorlabel, test_size=0.0, random_state=42)
+    plot_3d(xtrain, ytrain, f'3d-len-dur-{category}.png', 'task difficulty', 'visited pages of a clickstream', 'time of duration of a clickstream')
+
+def plot_features():
+    idxs_by_type = {
+        'amazon':   [0,1,2],
+        'medium':   [3,4,5],
+        'dribbble': [6,7,8]
+    }
+    idxs_by_website = {
+        'goal':   [0,3,6],
+        'fuzzy':   [1,4,7],
+        'exploring': [2,5,8]
+    }
+
+    for category, idx in idxs_by_type.items():
+        plot_2d_len_dur(idx, category)
+        plot_2d_dif_len(idx, category)
+        plot_2d_dif_dur(idx, category)
+        plot_tsne(idx, category)
+        plot_3draw(idx, category)
+
+    for category, idx in idxs_by_website.items():
+        plot_2d_len_dur(idx, category)
+        plot_2d_dif_len(idx, category)
+        plot_2d_dif_dur(idx, category)
+        plot_tsne(idx, category)
+        plot_3draw(idx, category)
 
 def learn_svm_f1(data, labels):
-    from sklearn import svm
     while True:
-        xtrain, xtest, ytrain, ytest = train_test_split(data, labels, test_size=0.5, random_state=42)
+        xtrain, xtest, ytrain, ytest = train_test_split(data, labels, test_size=0.2)
         if len(list(set(ytrain[:, 1]))) < 3 or len(list(set(ytest[:, 1]))) < 3:
             continue
         clf = svm.SVC(kernel='rbf', gamma='scale')
@@ -407,31 +465,119 @@ def learn_svm_f1(data, labels):
         v = cohen_kappa_score(ytest[:, 1], ypred)
         return v
 
-x, y = get_data([0,1,2])
-print(learn_svm_f1(x, y))
+def clf_report(data, labels):
+    while True:
+        xtrain, xtest, ytrain, ytest = train_test_split(data, labels, test_size=0.5)
+        if len(list(set(ytrain[:, 1]))) < 3 or len(list(set(ytest[:, 1]))) < 3:
+            continue
+        clf = svm.SVC(kernel='rbf', gamma='scale')
+        clf.fit(xtrain, ytrain[:, 1])
+        ypred = clf.predict(xtest)
+        v = classification_report(ytest[:, 1], ypred)
+        return v
 
-x, y = get_data([3,4,5])
-print(learn_svm_f1(x, y))
 
-x, y = get_data([6,7,8])
-print(learn_svm_f1(x, y))
+def clf():
+    idxs_by_type = [
+        [0,1,2],
+        [3,4,5],
+        [6,7,8]
+    ]
+    idxs_by_website = [
+        [0,3,6],
+        [1,4,7],
+        [2,5,8]
+    ]
+    for idx in idxs_by_type:
+        x, y = get_data_by_task_id(idx)
+        print(clf_report(x, y))
+    for idx in idxs_by_website:
+        x, y = get_data_by_task_id(idx)
+        print(clf_report(x, y))
+
+    # classify goal/fuzzy/explore
+    # 0.027624309392265234
+    # 0.276595744680851
+    # 0.0
+    # 
+    # classify amazon/dribble/medium
+    # 0.30434782608695654
+    # 0.26881720430107525
+    # 0.0
+
+def main():
+    # significant_tests()
+    plot_features()
+    # clf()
 
 
-x, y = get_data([0,3,6])
-print(learn_svm_f1(x, y))
+# 结论：
 
-x, y = get_data([1,4,7])
-print(learn_svm_f1(x, y))
+# - difficulty: fuzzy > goal > exploring
+# - productivity: 1 - predict precition of goal-oriented task
+# - 
 
-x, y = get_data([2,5,8])
-print(learn_svm_f1(x, y))
+#                 tp / (tp + fp)
+#                              tp / (tp + fn)       The number of occurrences of each label in y_true.
+#                   precision    recall  f1-score   support
 
-# cross-category
-# 0.027624309392265234
-# 0.276595744680851
-# 0.0
-# 
-# cross-subjects
-# 0.30434782608695654
-# 0.26881720430107525
-# 0.0
+# exploring_amazon       1.00      0.75      0.86         4
+#     fuzzy_amazon       0.22      0.67      0.33         3
+#      goal_amazon       0.00      0.00      0.00         6
+
+#        micro avg       0.38      0.38      0.38        13
+#        macro avg       0.41      0.47      0.40        13
+#     weighted avg       0.36      0.38      0.34        13
+
+#                   precision    recall  f1-score   support
+
+# exploring_medium       0.67      0.80      0.73         5
+#     fuzzy_medium       0.75      1.00      0.86         3
+#      goal_medium       0.67      0.40      0.50         5
+
+#        micro avg       0.69      0.69      0.69        13
+#        macro avg       0.69      0.73      0.69        13
+#     weighted avg       0.69      0.69      0.67        13
+
+#                     precision    recall  f1-score   support
+
+# exploring_dribbble       0.50      0.50      0.50         4
+#     fuzzy_dribbble       1.00      0.20      0.33         5
+#      goal_dribbble       0.38      0.75      0.50         4
+
+#          micro avg       0.46      0.46      0.46        13
+#          macro avg       0.62      0.48      0.44        13
+#       weighted avg       0.65      0.46      0.44        13
+
+#                precision    recall  f1-score   support
+
+#   goal_amazon       0.62      0.83      0.71         6
+# goal_dribbble       0.50      0.33      0.40         3
+#   goal_medium       1.00      0.75      0.86         4
+
+#     micro avg       0.69      0.69      0.69        13
+#     macro avg       0.71      0.64      0.66        13
+#  weighted avg       0.71      0.69      0.69        13
+
+#                 precision    recall  f1-score   support
+
+#   fuzzy_amazon       0.50      0.17      0.25         6
+# fuzzy_dribbble       0.33      0.67      0.44         3
+#   fuzzy_medium       0.60      0.75      0.67         4
+
+#      micro avg       0.46      0.46      0.46        13
+#      macro avg       0.48      0.53      0.45        13
+#   weighted avg       0.49      0.46      0.42        13
+
+#                     precision    recall  f1-score   support
+
+#   exploring_amazon       0.67      0.50      0.57         4
+# exploring_dribbble       0.50      0.75      0.60         4
+#   exploring_medium       1.00      0.80      0.89         5
+
+#          micro avg       0.69      0.69      0.69        13
+#          macro avg       0.72      0.68      0.69        13
+#       weighted avg       0.74      0.69      0.70        13
+
+if __name__ == "__main__":
+    main()
