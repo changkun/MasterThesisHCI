@@ -18,6 +18,12 @@ class SimpleRNNCell(RNNCell):
         h = add([Dense(output_dim)(x), Dense(output_dim, use_bias=False)(h_tm1)])
         h = Activation('tanh')(h)
         return Model([x, h_tm1], [h, h])
+#               as a tensor + duration scalar
+# clickstream -+-> three class
+#              |
+#  + duration -+
+
+
 
 
 class GRUCell(RNNCell):

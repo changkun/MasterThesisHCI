@@ -2,42 +2,58 @@
 \usepackage{package/lmuthesis}
 
 \prof{Prof.\ Dr.\ Heinrich Hu{\ss}mann}
-\title{Automated UI Discovering for Web Application}
+\title{}
 \author{Changkun Ou}
 \email{hi@changkun.us}
 \bearbeitungszeitraum{1.7.2018 bis 31.1.2019}
 \betreuer{Malin Eiband and Dr. Daniel Buschek}
-\aufgabenstellung{
-    \begin{description}
-        \item[Problem Statement] Under standing user behavior helps designer optimize 
-        their product user experiences. At the same time, user benefits more productive 
-        from it. Since user intents are elusive, changeable and sometimes even undetermined, 
-        predict their behavior usually difficult and impoissible. In most cases, a user may 
-        performs a series of wasted actions before reach an intent destination. 
-        Nevertheless, user intents becomes clear step by step after performs a series of 
-        actions in a given context. 
-        \item[Scope of the Thesis] To tackle the aforementioned challenges, the objective of this thesis is to develop a system that tracking user actions within a website, 
-        As a first step, literature review ...
-        Based on the literature review, a intent model should be developed ...
-        Then a system should implements the ...
-        Nevertheless, user intents becomes clear step by step after performs a series of actions in a given context. 
-        \item[Tasks] conduct a literature review to identify (research) question that simulates user input and predicts user ...
-        \item[Requirements] asdfasdf
-        \item[Keywords] asdfasdf
-    \end{description}
-}
+% \aufgabenstellung{
+%     \begin{description}
+%         \item[Problem Statement] Under standing user behavior helps designer optimize 
+%         their product user experiences. At the same time, user benefits more productive 
+%         from it. Since user intents are elusive, changeable and sometimes even undetermined, 
+%         predict their behavior usually difficult and impoissible. In most cases, a user may 
+%         performs a series of wasted actions before reach an intent destination. 
+%         Nevertheless, user intents becomes clear step by step after performs a series of 
+%         actions in a given context. 
+%         \item[Scope of the Thesis] To tackle the aforementioned challenges, the objective of this thesis is to develop a system that tracking user actions within a website, 
+%         As a first step, literature review ...
+%         Based on the literature review, a intent model should be developed ...
+%         Then a system should implements the ...
+%         Nevertheless, user intents becomes clear step by step after performs a series of actions in a given context. 
+%         \item[Tasks] conduct a literature review to identify (research) question that simulates user input and predicts user ...
+%         \item[Requirements] asdfasdf
+%         \item[Keywords] asdfasdf
+%     \end{description}
+% }
 \acknoledgement{
     Thansk to everyone.
 }
 \abstract{
-    This is a abstract.
+    Clickstream research emerges since the end of last century and has proliferated in the heart of our Internet world. 
+    Trades, public opinions, and almost every traces are precisely recorded on server side log files. 
+    The fundamental interaction between client and server stands immutably, 
+    despite the fact that mobile devices have governed our daily life.
+    In this thesis, we first established a lab study and collected clickstream data of individuals with manually designed nine different web browsing task for three mainstream websites. 
+    Each website has three types of tasks, including goal-oriented, fuzzy and exploring browsing task.
+    A collected clickstream of a subject is consists of a timestamp based URL and the time duration of a single URL.
+    Based on the type of data, we proposed a generic modern clickstream model to characterize client-side user behavior.
+    By analyzing the subject traces from our lab study, we seek to archive these goals:
+    1) Understanding: to extract the common patterns between subjects and optimize the visiting clickstream pattern for a new user.
+    2) Prediction: with given client clickstream, present the future click path more than one step.
+    3) Classification: to separate and report whether a user is exploring on the web.
+    To archive these goals, we developed a browser plugin as a possible application that predicts the future possible
+    click under a visiting session and provides a score that indicates the probability of exploring.
+    Furthermore, we generalize the design of our model and plugin communication protocol and
+    discussed the possibility of formalizing them as standard Web APIs.
+    To the best of our knowledge, this is the first client-side user clickstream study.
 }
 
 \begin{document}
 
 \makecover
-\makeaufgabenstellung
-\makededication
+% \makeaufgabenstellung
+% \makededication
 \makeabstract
 \maketoc
 

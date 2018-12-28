@@ -2924,3 +2924,8 @@ https://www.amazon.com/dp/B075312HXS/ref=sspa_dk_detail_6?th=1
 https://www.amazon.com/PowerBear-iPhone-Silicone-Absorption-Scratch/dp/B076VSN29H/ref=pd_sim_107_2?_encoding=UTF8&pd_rd_i=B076VSN29H&pd_rd_r=f3665e4f-e8ef-11e8-8ab7-d7d92181ecc1&pd_rd_w=hElco&pd_rd_wg=5sImq&pf_rd_i=desktop-dp-sims&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=18bb0b78-4200-49b9-ac91-f141d61a1780&pf_rd_r=GB9AT6NWFCM7FN8YDPBN&pf_rd_s=desktop-dp-sims&pf_rd_t=40701&psc=1&refRID=GB9AT6NWFCM7FN8YDPBN
 https://www.amazon.com/dp/B01IBGYZX2?aaxitk=xrA8wKZ.hUf-i78.NnV4Jw&pd_rd_i=B01IBGYZX2&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=3ff6092e-8451-438b-8278-7e94064b4d42&pf_rd_s=desktop-sx-top-slot&pf_rd_t=301&pf_rd_i=wardrobe+closet&hsa_cr_id=9297978930301&sb-ci-n=productDescription&sb-ci-v=KOUSI%20Portable%20Clothes%20Closet%20Wardrobe%20Bedroom%20Armoire%20Dresser%20Cube%20Storage%20Organizer%2C%20Capacious%20%26%20Customizable%2C%20White%2C%205%20Cubes%261%20Hanging%20Section
 https://www.amazon.com/s/ref=sr_pg_2?rh=n%3A16225019011%2Cn%3A1040658&page=2&bbn=16225019011&ie=UTF8&qid=1542733948
+
+
+### only use vocabs from user clickstream
+### compare two set of vocabs (+++)
+### 

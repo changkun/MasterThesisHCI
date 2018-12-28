@@ -38,7 +38,9 @@ type Link struct {
 	StaySeconds float64 `json:"stay_seconds"`
 }
 
-const taskid = 9
+// Change node property: length to the point
+
+const taskid = 1
 
 func main() {
 	target := Target{}
@@ -50,7 +52,7 @@ func main() {
 		group int
 		stay  float64
 	}{}
-	for userid := 1; userid < 5; userid++ {
+	for userid := 1; userid < 22; userid++ {
 
 		raw, err := ioutil.ReadFile(fmt.Sprintf("../dataset/%d.json", userid))
 		if err != nil {
@@ -135,5 +137,5 @@ func main() {
 		panic(err)
 	}
 
-	ioutil.WriteFile(fmt.Sprintf("js/clickstream-task-%d.js", taskid), []byte("var graph = "+string(b)), 0777)
+	ioutil.WriteFile(fmt.Sprintf("js/clickstream-task-%d-all.js", taskid), []byte("var graph = "+string(b)), 0777)
 }

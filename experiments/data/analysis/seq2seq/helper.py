@@ -45,17 +45,20 @@ vocabs = load_vocabs()
 id_vocab = {value: key for key, value in vocabs.items()}
 num_encoder_tokens = len(vocabs)
 num_decoder_tokens = len(vocabs)
-max_total = 30
-max_origin = 20
+max_total = 100
+max_origin = 50
 max_translate = max_total - max_origin
 latent_dim = 20
-batch_size = 32
+batch_size = 128
 epochs = 2000
 eos = 0
 sos = 1
 pad = 2
 coi = 3
 mis = 4
+
+# data augmentation
+# try all length window, give comparasion
 
 def get_data():
     sentences = []
