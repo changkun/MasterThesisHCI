@@ -2,7 +2,7 @@
 \usepackage{package/lmuthesis}
 
 \prof{Prof.\ Dr.\ Heinrich Hu{\ss}mann}
-\title{}
+\title{Understanding User Clickstream}
 \author{Changkun Ou}
 \email{hi@changkun.us}
 \bearbeitungszeitraum{1.7.2018 bis 31.1.2019}
@@ -27,18 +27,19 @@
 %     \end{description}
 % }
 \acknoledgement{
-    The author would like to thank Malin Eiband and Dr. Daniel Buschek for their greate and important discussion, suggestion around
-    the topic selection, model statements as well as their pacient of given guidance of the thesis.
+    The author would like to thank Malin Eiband and Dr. Daniel Buschek for their great and constructive discussion, suggestion around
+    thesis topic selection, model statements as well as their pacient of given guidance of the thesis.
 }
 \abstract{
     Early clickstream research emerges since the end of last century and has proliferated in the heart of our Internet world. 
     Trades, public opinions, and almost every traces are precisely recorded on server side log files. 
     The fundamental interaction between client and server stands immutably, 
     despite the fact that mobile devices have governed our daily life.
-    In this thesis, we first established a lab study and collected clickstream data of individuals with manually designed nine different web browsing task for three mainstream websites. 
+    In this thesis, we proposed an action path translation model to characterize user action path behavior on the Web, as known as client-side clickstream.
+    To justify our model, we first established a lab study and collected clickstream data of individuals with manually designed nine different web browsing task 
+    for three mainstream websites.
     Each website has three types of tasks, including goal-oriented, fuzzy and exploring browsing task.
     A collected clickstream of a subject is consists of a timestamp based URL and the time duration of a single URL.
-    Based on the type of data, we proposed a generic modern clickstream model to characterize client-side user behavior.
     By analyzing the subject traces from our lab study, we seek to archive these goals:
     1) Understanding: to extract the common patterns between subjects and optimize the visiting clickstream pattern for a new user.
     2) Prediction: with given client clickstream, present the future click path more than one step.
@@ -59,17 +60,16 @@
 \maketoc
 \listoffigures
 \listoftables
-
+\cleardoublepage
 
 \input{contents/ch01-intro}
 \input{contents/ch02-related}
-\input{contents/ch03-experiment}
-\input{contents/ch04-model}
-\input{contents/ch05-implementation}
-\input{contents/ch06-analysis}
-\input{contents/ch07-applications}
-\input{contents/ch08-conclusion}
-\input{contents/ch09-appendix}
+\input{contents/ch03-model}
+\input{contents/ch04-experiment}
+\input{contents/ch05-analysis}
+\input{contents/ch06-applications}
+\input{contents/ch07-conclusion}
+\input{contents/ch08-appendix}
 
 \input{literature/bib.tex}
 \end{document}

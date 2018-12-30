@@ -1,6 +1,7 @@
 all: clean
-	latexmk -silent -pdf thesis.tex
+	latexmk -pdf thesis.tex
 	latexmk -c
+	make clean
 .PHONY: all
 
 clean:

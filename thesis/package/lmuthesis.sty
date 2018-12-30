@@ -16,7 +16,16 @@
 \usepackage{makecell}
 \usepackage{float}
 \usepackage{rotating}
-% \usepackage{coloremoji}
+
+% break urls
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+\usepackage{breakurl}
+
+% TODO: comment here after finished
+\usepackage{draftwatermark}
+\SetWatermarkText{DRAFT}
+\SetWatermarkScale{1}
 
 \usepackage{color}
 \definecolor{darkred}{rgb}{.25,0,0}
@@ -25,6 +34,7 @@
 \definecolor{darkcyan}{rgb}{0,.15,.15}
 \definecolor{bbbbb}{HTML}{00008B}
 \usepackage[
+    breaklinks=true,
     plainpages=false,
     bookmarks=true,
     bookmarksopen=true,

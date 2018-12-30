@@ -1,0 +1,117 @@
+\section{Clickstream and Action-Path Models}
+\label{ch:model}
+
+In this chapter, we first formalize few concepts and metrics in clickstream data,
+and then describe a proposed clickstream model named \emph{Action-Path model} 
+based on recurrent nerual network that models a client side clickstream behavior. 
+The action path is slightly different than clickstream since 
+a user may uses \emph{back button} or \emph{switch browser tabs} then jumps to visited web pages 
+or parallel web pages, say performed a visit action.
+A server side clickstream does not containing such detailed level of user clickstream. 
+The term \emph{action path} is a generalized concept of clickstream, which replaces individual URLs 
+to user actions (with backbutton and browser tab switch effects) in a browser.
+
+For a convinience of discussion, we indiscriminate the use of 
+term \emph{action path} and \emph{clickstream} in
+this chapter to indicate a series of user actions.
+
+\subsection{Completion Effeciency}
+
+An action path of a visiting session starts from a starting page and ends on a exiting page.
+Since we consider the effect of browser back button and browser tab swtich, previous page could
+easily be visited twice, if a user clicked the back button. Therefore, a page may directs
+to multiple pages. \emph{For instance, an action path could degrade to a linked list if a user
+click through to different pages without using back button and switching tabs; or an action
+path could become a 1-to-n bipartite graph if a user use back button back to previous page
+after clicked a page.}
+
+As a result, we define the \emph{completion effeciency} based on shortest path from starting page
+to exiting page, and stay duration of the action path. 
+
+Let an action path is represented on directed cyclic graph, each node represents a visited page,
+each edge has a weight that represents the stady duration of its tail node.
+Assume the total stay duration of the shortest path from starting page to existing page
+is $d_s$, and the total stay duration of the action path is $D$, 
+the number of nodes in the shortest path is $n_s$, the total nodes 
+in an action path is $N$, the \emph{completion effeciency $E$} is defined 
+as follows equation \ref{eqn:completion-effeciency}:
+
+\begin{align}
+\label{eqn:completion-effeciency}
+\begin{split}
+    E = w_1 \frac{n_s}{N} + w_2 \frac{d_s}{D}\\
+    w_1 + w_2 = 1
+\end{split}
+\end{align}
+
+where $w_1$, $w_2$ are hyperparameters to balancing the importance of action path 
+and stay duration. According to the duscussion of two special case of action path,
+it is easy to prove the range of $E$ is $(0, 1]$. As a complement, we define \emph{zero
+completion efficiency} if and only if a user cannot complete a clickstream. Therefore
+we have the range of $E$ is $[0, 1]$.
+
+\textbf{Remark 1}. The definition of completion effeciency uses the term of shortest path,
+which is the problem of finding a path between the starting page and exiting page
+ in a action path (directed cyclic graph) such taht the sum of
+the stay duration of its constitunent pages in minimized.
+The problem can be solved by Dijkstra's algorithm \cite{dijkstra1959note}.
+
+\textbf{Remark 2}. An action path may increases with more nodes (pages) over time.
+The starting page of an action path is always the first page when browser was opened.
+However, one can always treat the current visited page is the exiting page due to we
+do not know when an user will exit browsing over time. Consequently, $E$ is changing over
+browsing.
+
+\subsection{Clickstream Overlap Ratio}
+
+
+
+\subsection{URL2Vec Embedding}
+
+
+
+\subsection{Action-Path Model}
+
+Recurrent Neural Network (RNN) was describe by Werbos \cite{werbos1990rnn} and 
+Rumelhart et al. \cite{Rumelhart:1988:LRB:65669.104451}, the original RNN 
+generalize feedforward neural network for sequence based data.
+
+Given a sequence of input $(i_1, i_2, ..., i_T)$, the original RNN computes a
+sequence of outputs $(o_1, o_2, ..., o_T)$ by interating the activation function \ref{eqn:bptt}:
+
+\begin{align}
+\label{eqn:bptt}
+\begin{split}
+    o_t = W_{oh} \sigma \left( W_{hi}i_{t} + W_{hh}i_{t-1}\right), t=1,2,...,T
+\end{split}
+\end{align}
+
+where $\sigma(x) = \frac{1}{1+\exp\{-x\}}$,
+and $W_{oh}, W_{hh}, W_{hi}$ are weight parameters between output, hidden and input layers.
+
+The original RNN transfers and maps a sequence to another sequence if and only if the inputs
+and the outputs are aligned with equal length. Apparently, the major issue of the original RNN
+is the model cannot address a problem if inputs and outputs provided in different length with 
+complicated and non-monotonic relationships.
+
+Stutskever et al. \cite{DBLP:journals/corr/SutskeverVL14} present a general end-to-end approach
+to sequence learning and estimates the conditional probability of 
+$p(o_1, o_2, ..., o_{T'} | i_1, i_2, ..., i_T)$ where $(i_1, i_2, ..., i_T)$ is an input sequence,
+$(o_1, o_2, ..., o_{T'})$ is a corresponding output sequence, and $T$ is not required to be equal with $T'$.
+Our model convey similar idea from it.
+
+An \emph{Action Path} from user $i$ in session $j$ is consist of 
+a sequence of URLs $(U^{ij}_1, U^{ij}_2, ..., U^{ij}_n)$ 
+and a sequence of time duration $(d^{ij}_1, d^{ij}_2, ..., d^{ij}_n)$, since each URL 
+has a corresponding number that represents the time duration of a user spent on the given page.
+
+\subsection{Action Path Optimization}
+
+$\text{arg}\max_{y} p(o_1, o_2, ..., o_{T'} | i_1, i_2, ..., i_T)$
+
+
+
+% - 阐述基于 RNN 的点击流模型，介绍如何通过这个模型对点击流进行预测，这个预测结果包括后续整个点击流的预测，
+% - 模型需要能够对整条点击流进行一个评估，这个评估包含了
+
+\cleardoublepage
