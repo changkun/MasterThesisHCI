@@ -9,7 +9,29 @@ a user may uses \emph{back button} or \emph{switch browser tabs} then jumps to v
 or parallel web pages, say performed a visit action.
 A server side clickstream does not containing such detailed level of user clickstream. 
 The term \emph{action path} is a generalized concept of clickstream, which replaces individual URLs 
-to user actions (with backbutton and browser tab switch effects) in a browser.
+to user actions (with backbutton and browser tab switch effects) in a browser. Figure \ref{fig:clickstream}
+illustrates an simplified version of action path that compares vanilla clickstream.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/clickstream}
+    \caption{A simple action path. A user starts from the starting page, and performed
+    a series of page click actions, ends on a exiting page. 
+    The server side records clickstream in the following order:
+    / $\rightarrow$ /a $\rightarrow$ /out $\rightarrow$ /a/c $\rightarrow$ /a/d $\rightarrow$ /goal.
+    However the actual user actions are: 
+    / $\rightarrow$ /a $\rightarrow$ /out $\rightarrow$ /a $\rightarrow$ /a/c $\rightarrow$ /a/d 
+    $\rightarrow$ /a/c $\rightarrow$ /a $\rightarrow$ / $\rightarrow$ /goal. 
+    The records on server side lost interaction details between users and browsers.
+    Node that /out is a distraction page in the graph, 
+    which may located in a different website (e.g. advertisement), 
+    and dashed arrorws are wasted user
+    actions. The /goal page may not clear in the beginning of the clickstream, one can generate
+    a shortcut optimization navigation to the /goal page while more clickstream context
+    be presented, i.e. an optimized user actions is 
+    / $\rightarrow$ /a $\rightarrow$ /a/c $\rightarrow$ /a/d $\rightarrow$ /goal.}
+    \label{fig:clickstream}
+\end{figure}
 
 For a convinience of discussion, we indiscriminate the use of 
 term \emph{action path} and \emph{clickstream} in
@@ -23,10 +45,30 @@ easily be visited twice, if a user clicked the back button. Therefore, a page ma
 to multiple pages. \emph{For instance, an action path could degrade to a linked list if a user
 click through to different pages without using back button and switching tabs; or an action
 path could become a 1-to-n bipartite graph if a user use back button back to previous page
-after clicked a page.}
+after clicked a page,} as shown in Figure \ref{fig:sim-action-path}.
 
 As a result, we define the \emph{completion effeciency} based on shortest path from starting page
 to exiting page, and stay duration of the action path. 
+
+\begin{figure}[H]
+    \centering
+
+\begin{subfigure}[b]{0.55\textwidth}
+    \includegraphics[width=1\textwidth]{figures/linked-list}
+    \caption{}
+    \label{fig:sim-action-1}
+\end{subfigure}
+    
+\begin{subfigure}[b]{0.23\textwidth}
+    \includegraphics[width=1\textwidth]{figures/1ton}
+    \caption{}
+    \label{fig:sim-action-2}
+\end{subfigure}
+
+\caption{Two special case of an action path: linked list action path \ref{fig:sim-action-1}, and 
+1-to-n bipartite graph action path \ref{fig:sim-action-2}.}
+\label{fig:sim-action-path}
+\end{figure}
 
 Let an action path is represented on directed cyclic graph, each node represents a visited page,
 each edge has a weight that represents the stady duration of its tail node.
@@ -66,9 +108,45 @@ browsing.
 
 
 
-\subsection{URL2Vec Embedding}
+\subsection{\emph{url2vec} Embedding}
 
+The distributed representations word2vec model achieve better performance in natural language processing,
+Mikolov et al. \cite{DBLP:journals/corr/abs-1301-3781} introduced 
+continous bag-of-word (CBOW) and skip-gram model as an efficient method for learning high-quality
+vector representation of words, and CBOW is faster while skip-gram is slower but get better
+performance for infrequent words. We convey similar idea from these models and propose our
+\emph{url2vec} model for client side clickstream data.
 
+The purpose of url2vec model is to construct URL representations to better predict 
+the surrounding URLs in a clickstream. Briefly, given a clickstream of urls 
+$\text{URL}_1, \text{URL}_2, ..., \text{URL}_T$, the objective of url2vec is to maximize the average
+log softmax probability
+
+\begin{align}
+\label{eqn:url2vecprob}
+\begin{split}
+    \frac{1}{T}\sum^{T}_{t=1}\sum_{-c \leq i \leq c, i \neq 0} {\log{p(\text{URL}_{t+i} | \text{URL}_t)}}\\
+    \log{p(\text{URL}_{t+i} | \text{URL}_t)} = \frac{
+        \exp{(v_{\text{URL}_{t+i}} ^\top v_{\text{URL}_t})}
+    }{
+        \sum_{\text{all URLs}} {\exp{(v_{\text{URL}_{t+i}} ^\top v_{\text{URL}_t})}}
+    }
+\end{split}
+\end{align}
+
+where $c$ is the size of embedding context, which is a function of starting page,
+$v_{\text{URL}_t}$ is one-hot encoded representation of input URLs, and 
+$v_{\text{URL}_{t+i}}$ is the vector embedding of output representations.
+
+\textbf{Remark 1}. This model described by equation \ref{eqn:url2vecprob} is actually
+a three layer neural network: input layer of one-hot encoded URLs, a hidden layer of
+feature representation and an output layer share weights to the learned embeddings of 
+input URLs.
+
+\textbf{Remark 2}. The probability in \ref{eqn:url2vecprob} is impractical due to
+$\nabla \log{p(\text{URL}_{t+i} | \text{URL}_t)}$ is as large as $10^5$ to $10^7$,
+two numerical optimizations based on Hofmann Tree and Negative Sampling are proposed 
+by Mikolv et al. \cite{mikolv2013embedding}.
 
 \subsection{Action-Path Model}
 
@@ -100,10 +178,120 @@ $p(o_1, o_2, ..., o_{T'} | i_1, i_2, ..., i_T)$ where $(i_1, i_2, ..., i_T)$ is 
 $(o_1, o_2, ..., o_{T'})$ is a corresponding output sequence, and $T$ is not required to be equal with $T'$.
 Our model convey similar idea from it.
 
-An \emph{Action Path} from user $i$ in session $j$ is consist of 
-a sequence of URLs $(U^{ij}_1, U^{ij}_2, ..., U^{ij}_n)$ 
+An \emph{action path} from user $i$ in session $j$ consist of 
+a sequence of \emph{url2vec} embedded vectors $(U^{ij}_1, U^{ij}_2, ..., U^{ij}_n)$ 
 and a sequence of time duration $(d^{ij}_1, d^{ij}_2, ..., d^{ij}_n)$, since each URL 
-has a corresponding number that represents the time duration of a user spent on the given page.
+has a corresponding number that represents the time duration of a user spent on a given page.
+
+\subsubsection{Context Encoder}
+
+Our action path model consist a context encoder and a context decoder. Context encoder
+encodes URLs one by one and produces a context tensor that encodes the historical user actions, 
+shown in Figure \ref{fig:encoder}. In the encoder, we insert a starting mark "<SOA>" (\emph{Start of Action})
+as a sign of start feeding URLs, and a trigger mark "<COI>" (\emph{Change of Intention}) as
+a sign to trigger decoder to decodes encoded context tensor.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/encoder}
+    \caption{Context encoder of Action Path Model. In the encoder, 
+    a starting mark "<SOA>" is used as a sign of start feeding URLs, 
+    and a trigger mark "<COI>" as
+    a sign to trigger decoder to decodes encoded context tensor.
+    The trigger mark is automatically inserted after the $k$-th URL in the end
+    of encoder model over time, $k$ is increasing over time.
+    In addition, the recurrent unit is not detailly describeed in the figure but afterwards.}
+    \label{fig:encoder}
+\end{figure}
+
+\subsubsection{Context Decoder}
+
+Context decoder decodes the context tensor produced by encoder. We feed a prediction mark
+"<SOP>" (\emph{Start of Prediction})as a sign to initiate the decoding of encoded context.
+In the end of decoder, decoder produces an ending mark "<EOA>" (\emph{End of Action}) that
+terminates the decoding process.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/decoder}
+    \caption{Context decoder of Action Path Model. In the decoder, 
+    a prediction mark "<SOP>" is used to initiate decoding process, 
+    and an ending mark "<EOA>" as a sign to terminate decode process.
+    The output of decoder is uses a softmax intermediate operation to magnify and normalize
+    the probability of predicted URL embedding, and a argmax operation is used for decode
+    back to one-hot encoded vector.
+    In addition, the recurrent unit is not detailly describeed in the figure but afterwards.}
+    \label{fig:decoder}
+\end{figure}
+
+\subsubsection{Recurrent Unit}
+
+The recurrent unit in the Action Path model is not as standard as original Long Short-term Memory unit (LSTM)
+\cite{hochreiter1997lstm} or Gated Recurrent unit (GRU) \cite{DBLP:journals/corr/ChoMGBSB14}.
+
+When using LSTM as recurrent unit, we feed time duration $(d^{ij}_1, d^{ij}_2, ..., d^{ij}_n)$
+into input gate $I_t$, and others (forget gate $F_t$, output gate $O_t$, memory cell $C_t$ and hidden state $h_t$) 
+remains the same:
+
+\begin{align}
+\label{eqn:lstm}
+\begin{split}
+    I_t =& \sigma ( P^{(I)} U^{ij}_t + Q^{(I)} h_{t-1} + \frac{d^{ij}_t}{d^{ij}_t + 1}) ) \\
+    F_t =& \sigma ( P^{(F)} U^{ij}_t + Q^{(F)} h_{t-1} + b^{(F)}) \\
+    O_t =& \sigma ( P^{(O)} U^{ij}_t + Q^{(O)} h_{t-1} ) \\
+    C_t =& F^{(t)} \circ C_{t-1} + I_t \circ \tanh (P^{(C)} U^{ij}_t + Q^{(C)} h_{t-1}) \\
+    h_t =& O_t \circ \tanh (C_t)
+\end{split}
+\end{align}
+
+where $t = 1, 2, ..., n; P^{(I)}, Q^{(I)}, P^{(F)}, Q^{(F)}, P^{(O)}, Q^{(O)}$ are shared weight parameters, 
+$b^{(F)}$ is a bias in forget gate $F_t$,
+$\circ$ represents element-wise product of two matrices.
+
+When using GRU as recurrent unit, we feed time duration $(d^{ij}_1, d^{ij}_2, ..., d^{ij}_n)$
+in to update gate $Z_t$, and others (reset gate $R_t$, hidden state $h_t$) stay the same:
+
+\begin{align}
+\label{eqn:lstm}
+\begin{split}
+    Z_t =& \sigma ( P^{(Z)} U^{ij}_t + Q^{(Z)} h_{t-1} + \frac{d^{ij}_t}{d^{ij}_t + 1} ) \\
+    R_t =& \sigma ( P^{(R)} U^{ij}_t + Q^{(R)} h_{t-1} ) \\
+    h_t =& ( 1 - Z_t ) \circ \tanh ( P^{(H)} U^{ij}_t + Q^{(H)} h_{t-1} ) + Z_t \circ h_{t-1}
+\end{split}
+\end{align}
+
+where $t = 1, 2, ..., n; P^{(Z)}, Q^{(Z)}, P^{(R)}, Q^{(R)}, P^{(H)}, Q^{(H)}$ are shared weight parameters, 
+$\circ$ represents element-wise product of two matrices.
+
+\textbf{Remark 1}. The units we described in this section is neither LSTM nor GRU since
+the input gate $I_t$ or update gate $Z_t$ introduces time duration $d^{ij}_t$ as input,
+which completely different than introduce learnable bias in these gates. It is worth mentioning that
+adding bias to the gates are helpful to improve learning performance in LSTM
+ \cite{Jozefowicz:2015:EER:3045118.3045367}, we also use the trick in our model.
+
+\textbf{Remark 2}. The term $\frac{d^{ij}_t}{d^{ij}_t + 1}$ is a squashing mechanism,
+it normalizes $d^{ij}_t$ from $(0, \infty)$ to $(0, 1)$.
+
+\subsubsection{Ending Mark Interpretation}
+
+In context decoder, we mentioned an ending mark "<EOA>" that indicates the termination 
+decoding process. However, the ending mark is different than other marks, since in practice,
+"<EOA>" is represented in different symbols of categorical clickstream, which as a label to
+involve classification of user actions.
+
+Assume action paths are labeled by ont-hot encoded ending marks 
+$\text{EOA}_1, \text{EOA}_2, ..., \text{EOA}_m$ and the last output
+of decoder hidden state is $h_n$, we have:
+
+\begin{align}
+\label{eqn:lstm}
+\begin{split}
+    \hat{y} =& \text{argmax} (\text{softmax} (W^{(M)} h_n)) \\
+    \hat{y} \in& \{ \text{EOA}_1, \text{EOA}_2, ..., \text{EOA}_m \}
+\end{split}
+\end{align}
+
+where $W^{(M)}$ is a weight parameter, and $m$ is the number of ending mark categories.
 
 \subsection{Action Path Optimization}
 
