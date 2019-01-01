@@ -4,7 +4,7 @@
 The lab study took place during the last two weeks of November, from 14/11/2018 to 29/11/2018
 in Frauenlobstrasse 7a, a faculty building of Ludwig-Maximillians-Universitaet Muenchen.
 Data was collected from the mainstream browser Google Chrome on a self provided 
-desktop computer and a laptop. All 21 subjects are recruit anonymously and randomly.
+desktop computer and a laptop.
 
 The following of this chapter, we present the process of our lab study then construe the purpose 
 of context given web browsing tasks for our subjects.
@@ -13,27 +13,29 @@ of context given web browsing tasks for our subjects.
 % - 为搜集任务的设计进行辩护，为什么任务是合理的，clickstream 和 searchstream 之间有什么区别
 % - 在这里陈述搜集到的实验结果，包括 subjects 的总体数据
 
-\subsection{Pilot Study}
-
-Initially, we developed a web crawler that downloaded the entire medien computer science website 
-\footnote{\url{https://medien.ifi.lmu.de}}
-.... TODO: discuss how we go here.
-
-\subsection{Study}
-
-In our lab study, we selected three mainstream websites, Amazon/Medium/Dribbble 
+In lab study, we select three mainstream websites, Amazon/Medium/Dribbble 
 that covers categories for shopping, media consuming and design brainstorming. 
-We manually designed nine reasonable (discussed in section \ref{sec:select-tasks})
+We manually designed nine reasonable (discussed in section \ref{sec:task-design})
 context-given browsing tasks (three for each website) in total to our subjects.
-Each task requires participant start from the homdpage of a given website, and
+Each task requires participant start from a starting page of a given website, and
 all tasks do not restrict participants use the given website, but also allow they 
 access websites outside the landing page to help they complete the task.
-Participants start browsing after they completely understand the requirements of each task.
-To simulate a real case, there is no interruption and question answering during the task.
+Participants start browsing after they completely understand the requirements of each task,
+and no interruption or question answering during the task
+except exceeding time limit of a task, however subjects can either acquire more time to accomplish
+the task or give up directly.
 
-\subsubsection{Environment}
+The study is designed as a within-subject study, thus every participant performs all tasks.
+To eliminate the learning effect due to the long time of using same websites, 
+we use Latin square \cite{cochran1950experimental} 
+for the device and tasks participation order to our participants.
 
-The lab study uses two self provided device: a desktop computer and a mobile laptop.
+21 participants with a mean age of 23.04 (standard deviation of 3.216, min=18 and max=19) 
+took part in the study, 10 male and 11 female, whom are recruit anonymously and randomly via a mailing list.
+
+\subsection{Environment}
+
+The lab study uses two self provided devices: a desktop computer and a mobile laptop.
 The reason of choose two morphology of computing device is our study requires recording
 a complete clickstream of during the study.
 
@@ -43,15 +45,13 @@ can overpass system permission to privilge, the user behavior between iOS and An
 is still completely different with different models. Subjects shows abnormal behavior when they
 use a newly provided device. Therefore we stick our study environment to desktop devices, 
 which empower us easily collects the clickstream data from plugin-supported browsers.
-To eliminate the learning effect of computing devices, we use Latin square \cite{cochran1950experimental} 
-for the participation order of desktop and laptop to our subjects.
 
-Considering the usage share of all browsers on the market, till the month we runs our study (November),
-Google Chrome wins the usage share of desktop browsers with 61.75\% shares, and Apple Safari only shares
-15.12\% of the market. Clearly, Google Chrome dominant the desktop web browser. 
+Although all modern browsers support plugin development, however considering the usage share of all browsers on the market,
+Google Chrome obtains 61.7\% market shares of desktop browsers, and Apple Safari only shares
+15.0\% of the market \cite{wiki2018share}. Clearly, Google Chrome dominant the desktop web browser.
 
 Therefore, we decide to use Chrome to establish our plugin of data collection.
-A quesionaire after our lab study indicates the browsers usage share of all subjects, 
+The quesionaire after our lab study indicates the browsers usage share of all subjects, 
 as shown in Table \ref{table:sharesubjects}, which further supports our decision of 
 browser selection.
 
@@ -71,42 +71,209 @@ browser selection.
     \label{table:sharesubjects}
 \end{table}
 
-\subsubsection{Context-given Websites}
+% \subsection{Context-given Websites}
 
-In our study, we gathered various websites covering most of the categories that people do
-on the Internet: Social Networks, Shopping, Email, Media Consuming, Search, Production 
-and etc \cite{lori2018internet, lori2017internet}. All selected website are listed 
-in Table \ref{table:websites}.
+% In our study, we gathered various websites covering most of the categories that people do
+% on the Internet: Social Networks, Shopping, Email, Media Consuming, Search, Production 
+% and etc \cite{lori2018internet, lori2017internet}. All selected website are listed 
+% in Table \ref{table:websites}.
 
-\begin{table}[H]
-    \small
-    \centering
-    \setlength{\belowcaptionskip}{10pt}
-    \caption{Browser Usage Shares of Lab Study Subjects}
-    \begin{tabular}{ccccc}
-          \toprule
-        & \textbf{Google Chrome} & \textbf{Apple Safari} & \textbf{Mozilla Firefox} & \textbf{Microsoft Edge} \\
-          \hline
-          Number     & 11 & 5 & 3 & 2 \\
-          Percentage & 52.38\% & 23.81\% & 14.29\% & 9.52\% \\
-          \bottomrule
-    \end{tabular}
-    \label{table:sharesubjects}
-\end{table}
+% \begin{enumerate}
+%     \item social network: facebook / twitter / weibo
+%     \item shopping: amazon.com / ebay.com
+%     \item search: google.com / bing.com / baidu.com
+%     \item media: medium.com
+%     \item development: github.com
+%     \item design dribbble.com
+%     \item study medien.ifi.lmu.de
+%     \item study en.uni-muenchen.de
+%     \item streaming media youtube.com
+%     \item research arxiv.com
+%     \item study ielts.org
+%     \item media bloomberg.com/europe
+%     \item social community reddit.com
+% \end{enumerate}
 
-\subsubsection{Designed Tasks}
-\label{sec:select-tasks}
+% \begin{table}[H]
+%     \small
+%     \centering
+%     \setlength{\belowcaptionskip}{10pt}
+%     \caption{Browser Usage Shares of Lab Study Subjects}
+%     \begin{tabular}{ccccc}
+%           \toprule
+%         & \textbf{Google Chrome} & \textbf{Apple Safari} & \textbf{Mozilla Firefox} & \textbf{Microsoft Edge} \\
+%           \hline
+%           Number     & 11 & 5 & 3 & 2 \\
+%           Percentage & 52.38\% & 23.81\% & 14.29\% & 9.52\% \\
+%           \bottomrule
+%     \end{tabular}
+%     \label{table:sharesubjects}
+% \end{table}
+
+% \subsection{Pilot Study}
+
+% Initially, we developed a web crawler that downloaded the entire medien computer science website 
+% \footnote{\url{https://medien.ifi.lmu.de}}
+% .... TODO: discuss how we go here?
+
+\subsection{Tasks Design}
+\label{sec:task-design}
 
 Before we explain the design reason of our context-given browsing task, we first present
-and discusses the common three types of daily browsing.
+and discusses the common three types of daily browsing behavior: goal-oriented, exploring and fuzzy. 
 
-\textbf{Goal-oriented Task}: Typically, an Internet user opens the browser for information retrieve
-for bussiness work, school study, literature research and reasons that made the person has
-clear purpose.
+\textbf{Goal-oriented Task}: A user opens a browser caused by a determined purpose for bussiness work, communication,
+school study, literature research and etc.
+For instance, a college student has a goal of downloading latest lecture slide, the student then
+access college website and navigates to the lecture homepage. Finally, the student exit 
+browsing after download the slides.
 
-\textbf{Exploring Task}: A user visits the browser aimlessly, explores and consumes the content
-lies on the Web.
+\textbf{Exploring Task}: A user opens a browser aimlessly, the person explores and consumes the content
+on the Web. For instance, a person who accesses an utility web application, he/she explores
+what functions are provided and what he/she can do while using the application.
 
-\textbf{Fuzzy Task}: 
+\textbf{Fuzzy Task}: A user opens a browser with a fuzzy expectation, the clearness of the access purpose
+is less than goal-oriented task but stronger than exploring task.
+For instance, a researcher heared a new technique proposed in other field that may influence he/she's study, 
+then the person opens a search engine to seek existing follow up researches.
+
+Note that these three type of tasks sometimes implies the familiarity of a user to the website.
+
+We designed 35 browsing tasks, after conduct a pilot study, 
+9 tasks are selected for three websites: Amazon.com, Medium.com and Dribbble.com because of the following reasons:
+
+\begin{enumerate}
+    \item These three websites all have coresponding tasks to the three type of browsing behavior;
+    \item Each of the task can be finished around 5 to 10 minutes;
+    \item All these websites are mainstream websites, they do not require 
+        massive professional domain knowledge for using.
+\end{enumerate}
+
+The unselected tasks are listed in Appendix \ref{appendix:unselected}.
+
+\subsubsection{Goal-oriented Task}
+
+We designed and selected an appropriate goal-oriented task for selected websites respectively,
+and each task is designed with three determined goal.
+
+\begin{itemize}
+    \item \textbf{Amazon.com}: \emph{Assume your smartphone was broken and you have 1200 euros 
+    as your budget. You want to buy an iPhone, a protection case, and a wireless 
+    charging dock. Look for these items and add them to your cart.}
+
+        This task contains three determined purpose since a subject is required to add three items
+        to the cart. There are few hidden consideration behind the task, which makes the task
+        more realistic: a) There is a budget of this task, which requires subjects must consider the
+        price of items instead of simply add the first recommended item to cart; 
+        b) the starting page is amazon.com instead of amazon.de. This decision requires
+        subjects must also consider the currency rate between US dollars and Euros for budget.
+        c) There are some items cannot be shipped to Germany (the study took place in Germany).
+        As a result, subjects cannot add these items to cart and they should find other alternatives.
+
+    \item \textbf{Medium.com}: \emph{Assume you were making plans for your summer vacation. 
+        You want to visit Tokyo, Kyoto, and Osaka. You want to find out what kind of experience other people made 
+        when traveling to these three places in Japan. Your task is to find three posts 
+        for traveling tips regarding these cities. Elevate a post if it is one of your choices.}
+
+        This task contains three determined purpose since there are three fixed traveling destination.
+        The task also implies few considerations that increase the required interaction of the task to subjects:
+        a) The website only offers English version, some Japanese character may appear in an article,
+        thus, a translation util may be used while the study;
+        b) An article may apears numerous noun, such as toponym. Search engine may used while the study;
+        c) the articles, those require a membership to unlock reading, cannot be elevated. 
+
+
+    \item \textbf{Dribbble.com}: \emph{You are hired to a Cloud Computing startup company. You get an assignment to 
+        designing the logo of the company. Search for existing logos for inspiration and 
+        download three candidate logos you like the most.}
+
+        The task also has three determined prupose since subjects are quired to download three candicate trademarks.
+        While the participation, subjects still need take few implicit facts in to account:
+        a) Subjects who unfamiliar with the term "Cloud Computing" need visit other explainations to figure out
+        the vision and mission of this type of company, and subjects whom already familiar with the term
+        still need to compares the designed made by other competitors.
+        b) Subjects should aware some of the designs shared on the website are not suitable for trademark or icon design.
+\end{itemize}
+
+\subsubsection{Exploring Task}
+
+Exploring tasks do not provides any deterministic objective. All websites has a designed exploring task
+for subjects.
+
+\begin{itemize}
+    \item \textbf{Amazon.com}: \emph{Look for a product category that you are interested in and start browsing. 
+        Add any items to your cart that you would like to buy.}
+
+        This task contains three determined purpose since a subject is required to add three items
+        to the cart. There are few hidden consideration behind the task, which makes the task
+        more realistic: a) There is a budget of this task, which requires subjects must consider the
+        price of items instead of simply add the first recommended item to cart; 
+        b) the starting page is amazon.com instead of amazon.de. This decision requires
+        subjects must also consider the currency rate between US dollars and Euros for budget.
+        c) There are some items cannot be shipped to Germany (the study took place in Germany).
+        As a result, subjects cannot add these items to cart and they should find other alternatives.
+
+    \item \textbf{Medium.com}: \emph{Visit a category you are interested in and elevate the post you like.}
+
+        This task contains three determined purpose since there are three fixed traveling destination.
+        The task also implies few considerations that increase the required interaction of the task to subjects:
+        a) The website only offers English version, some Japanese character may appear in an article,
+        thus, a translation util may be used while the study;
+        b) An article may apears numerous noun, such as toponym. Search engine may used while the study;
+        c) the articles, those require a membership to unlock reading, cannot be elevated. 
+
+
+    \item \textbf{Dribbble.com}: \emph{Explore dribbble and download images you like the most while you browse.}
+
+        The task also has three determined prupose since subjects are quired to download three candicate trademarks.
+        While the participation, subjects still need take few implicit facts in to account:
+        a) Subjects who unfamiliar with the term "Cloud Computing" need visit other explainations to figure out
+        the vision and mission of this type of company, and subjects whom already familiar with the term
+        still need to compares the designed made by other competitors.
+        b) Subjects should aware some of the designs shared on the website are not suitable for trademark or icon design.
+\end{itemize}
+
+\subsubsection{Fuzzy Task}
+
+Each of our selected websites also has an fuzzy task respectively, and there are three major goals per task.
+
+\begin{itemize}
+    \item \textbf{Amazon.com}: \emph{You want to buy a gift for your best friend as a birthday present.
+        Add three items to your cart.}
+
+        This task contains three determined purpose since a subject is required to add three items
+        to the cart. There are few hidden consideration behind the task, which makes the task
+        more realistic: a) There is a budget of this task, which requires subjects must consider the
+        price of items instead of simply add the first recommended item to cart; 
+        b) the starting page is amazon.com instead of amazon.de. This decision requires
+        subjects must also consider the currency rate between US dollars and Euros for budget.
+        c) There are some items cannot be shipped to Germany (the study took place in Germany).
+        As a result, subjects cannot add these items to cart and they should find other alternatives.
+
+    \item \textbf{Medium.com}: \emph{Assume you got an occasion to visit China for business. 
+        You are free to travel to China for a week. 
+        You want to make a travel plan for touring China within a week. Your task is to find out what kind 
+        of experience other how people made when going to secondary cities or towns in China, then decide 
+        on three cities you want to visit (excluding  Beijing, Shanghai, Guangzhou, and Shenzhen). 
+        Elevate if a post helped you make a decision.}
+
+        This task contains three determined purpose since there are three fixed traveling destination.
+        The task also implies few considerations that increase the required interaction of the task to subjects:
+        a) The website only offers English version, some Japanese character may appear in an article,
+        thus, a translation util may be used while the study;
+        b) An article may apears numerous noun, such as toponym. Search engine may used while the study;
+        c) the articles, those require a membership to unlock reading, cannot be elevated. 
+
+
+    \item \textbf{Dribbble.com}: \emph{You are preparing a presentation and need one picture for each of these animals: 
+    cat, dog, and ant. Download the three pictures you like the most.}
+
+        The task also has three determined prupose since subjects are quired to download three candicate trademarks.
+        While the participation, subjects still need take few implicit facts in to account:
+        a) Subjects who unfamiliar with the term "Cloud Computing" need visit other explainations to figure out
+        the vision and mission of this type of company, and subjects whom already familiar with the term
+        still need to compares the designed made by other competitors.
+        b) Subjects should aware some of the designs shared on the website are not suitable for trademark or icon design.
+\end{itemize}
 
 \cleardoublepage

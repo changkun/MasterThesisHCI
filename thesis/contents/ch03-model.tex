@@ -4,9 +4,9 @@
 In this chapter, we first formalize few concepts and metrics in clickstream data,
 and then describe a proposed clickstream model named \emph{Action-Path model} 
 based on recurrent nerual network that models a client side clickstream behavior. 
-The action path is slightly different than clickstream since 
+The action path is different than clickstream since 
 a user may uses \emph{back button} or \emph{switch browser tabs} then jumps to visited web pages 
-or parallel web pages, say performed a visit action.
+or parallel web pages, namely, a user performed a visit action.
 A server side clickstream does not containing such detailed level of user clickstream. 
 The term \emph{action path} is a generalized concept of clickstream, which replaces individual URLs 
 to user actions (with backbutton and browser tab switch effects) in a browser. Figure \ref{fig:clickstream}
@@ -71,7 +71,7 @@ to exiting page, and stay duration of the action path.
 \end{figure}
 
 Let an action path is represented on directed cyclic graph, each node represents a visited page,
-each edge has a weight that represents the stady duration of its tail node.
+and each edge has a weight that represents the stady duration of its tail node.
 Assume the total stay duration of the shortest path from starting page to existing page
 is $d_s$, and the total stay duration of the action path is $D$, 
 the number of nodes in the shortest path is $n_s$, the total nodes 
@@ -104,13 +104,20 @@ However, one can always treat the current visited page is the exiting page due t
 do not know when an user will exit browsing over time. Consequently, $E$ is changing over
 browsing.
 
-\subsection{Clickstream Overlap Ratio}
+% TODO: 考虑是否还需要这个
+% \subsection{Clickstream Overlap Ratio}
 
-
+% Clickstreams can be overlapped one another, a simple overlapping can be formalized
+% via a ratio of common pages and total pages in two clickstreams.
+% Nevertheless the major concern of this method does not considering the completion effeciency
+% of an action path. Completion effeciency seperates the importance of pages to two parts:
+% pages distribute in the shortest path between starting page and exiting page, say Type-I page, 
+% as well as pages do not distribute in the shortest path, say Type-II page.
 
 \subsection{\emph{url2vec} Embedding}
 
-The distributed representations word2vec model achieve better performance in natural language processing,
+The distributed representation of word2vec models achieve better performance 
+in natural language processing,
 Mikolov et al. \cite{DBLP:journals/corr/abs-1301-3781} introduced 
 continous bag-of-word (CBOW) and skip-gram model as an efficient method for learning high-quality
 vector representation of words, and CBOW is faster while skip-gram is slower but get better
@@ -149,6 +156,8 @@ two numerical optimizations based on Hofmann Tree and Negative Sampling are prop
 by Mikolv et al. \cite{mikolv2013embedding}.
 
 \subsection{Action-Path Model}
+
+% - 阐述基于 RNN 的点击流模型，介绍如何通过这个模型对点击流进行预测，这个预测结果包括后续整个点击流的预测
 
 Recurrent Neural Network (RNN) was describe by Werbos \cite{werbos1990rnn} and 
 Rumelhart et al. \cite{Rumelhart:1988:LRB:65669.104451}, the original RNN 
@@ -218,11 +227,16 @@ terminates the decoding process.
     a prediction mark "<SOP>" is used to initiate decoding process, 
     and an ending mark "<EOA>" as a sign to terminate decode process.
     The output of decoder is uses a softmax intermediate operation to magnify and normalize
-    the probability of predicted URL embedding, and a argmax operation is used for decode
-    back to one-hot encoded vector.
+    the probability of predicted URL embedding.
     In addition, the recurrent unit is not detailly describeed in the figure but afterwards.}
     \label{fig:decoder}
 \end{figure}
+
+Note that the decoder model in training phase and prediction phase is different.
+In training phase, teacher forcing algorithm \cite{williams1989learning} is use, it supplying observed user actions as inputs.
+In the testing phase, decoder uses the output from recurrent unit as input, shown through 
+dashed lines in Figure \ref{fig:decoder}.
+
 
 \subsubsection{Recurrent Unit}
 
@@ -295,11 +309,59 @@ where $W^{(M)}$ is a weight parameter, and $m$ is the number of ending mark cate
 
 \subsection{Action Path Optimization}
 
-$\text{arg}\max_{y} p(o_1, o_2, ..., o_{T'} | i_1, i_2, ..., i_T)$
+In traditional classification models, the arguments of the maxima (argmax) is used to select
+labels with highest probability, scilicet, argmax selects predicted pages with highest probability
+of user action from decoder outputs. However, this method is under the condition of all outputs
+are independent in probability, which is not suitable to our senario.
 
+In previous sections, our model feeds an input clickstream $(U^{ij}_1, U^{ij}_2, ..., U^{ij}_t)$,
+and produce an output $(o_1, o_2, ..., o_{m})$ that expect close to actual clickstream $(U^{ij}_{t+1}, U^{ij}_{t+2}, ..., U^{ij}_n)$.
+Then the probability of expected clickstream is 
+a conditional probability under the input clickstream, i.e. we need to maximize
+$$\operatorname*{argmax}_{o} p( o_1, o_2, ..., o_{m} | U^{ij}_1, U^{ij}_2, ..., U^{ij}_t ).$$
 
+Heuristic approach can solve the optimization problem efficiently, namely beam search \cite{DBLP:journals/corr/abs-1211-3711}. 
+In each step of decoder output, we reserve the top-$k$ best combinations of pages and eliminate the rest of
+pages from evaluation, and finally selects $k$ best clickstreams.
+The pseudocode is given in Algorithm \ref{algo:optimize}.
 
-% - 阐述基于 RNN 的点击流模型，介绍如何通过这个模型对点击流进行预测，这个预测结果包括后续整个点击流的预测，
-% - 模型需要能够对整条点击流进行一个评估，这个评估包含了
+~\\
+
+\begin{algorithm}[H]
+\label{algo:optimize}
+\SetAlgoLined
+\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+\Input{Decoder outputs $(o_1, o_2, ..., o_{m})$,\\
+        Number of candidates $k$}
+\Output{k clickstream candidates with highest probability}
+\Begin{
+    Initialize empty $\text{clickstreams}$ list \\
+    \For{$o$ $\in$ $(o_1, o_2, ..., o_{m})$}{
+    Initialize empty $candidates$ list \\
+    \For{$\text{clickstream}$ $\in$ $\text{clickstreams}$}{
+        \For{page $\in$ $o$)}{
+            candidates.append([clickstream.append(page), $p(\text{clickstream}) * p(\text{page})$]) \\
+        }
+    }
+    ordered = descending order sort candidates by score \\
+    clickstreams = ordered[:k]
+    }
+}
+\caption{Output Clickstream Search}
+\end{algorithm}
+
+~\\
+
+\textbf{Remark}. The algorithm produces an heuristic output 
+with given clickstream context. Combining with \emph{url2vec} model, the prediction
+can heuristically optimize the click path of a specific user since the embeddings are trained 
+over all possible action path. For instance, a distraction advertisement page will not appear
+after optimization because the embedding of advertisement page is far from a desired page
+if embeddings are learned correctly.
+
+% \\
+
+% This chapter proposed several models that characterized a method to modeling user actions
+% on the Web.
 
 \cleardoublepage
