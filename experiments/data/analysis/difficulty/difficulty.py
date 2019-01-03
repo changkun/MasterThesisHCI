@@ -87,6 +87,10 @@ difficulty = np.array([
     [3, 3, 2, 3, 5, 4, 2, 3, 5]
 ])
 if norm:
+    # minimum = np.min(difficulty)
+    # maximim = np.max(difficulty)
+    # difficulty -= minimum
+    # difficulty = difficulty / (maximim - minimum)
     difficulty = normalize(difficulty)
 
 visit_length = np.array([
@@ -134,6 +138,10 @@ visit_length = np.array([
     [37, 25, 36, 15, 31, 25, 14, 12, 30]
 ])
 if norm:
+    # minimum = np.min(visit_length)
+    # maximim = np.max(visit_length)
+    # visit_length -= minimum
+    # visit_length = visit_length / (maximim - minimum)
     visit_length = normalize(visit_length)
 
 visit_duration = np.array([
@@ -181,19 +189,69 @@ visit_duration = np.array([
     [602.858, 408.209, 569.714, 516.607, 591.927, 506.952, 231.242, 292.754, 527.989]
 ])
 if norm:
+    # minimum = np.min(visit_duration)
+    # maximim = np.max(visit_duration)
+    # visit_duration -= minimum
+    # visit_duration = visit_duration / (maximim - minimum)
     visit_duration = normalize(visit_duration)
+
+task_efficiency = np.array([
+    [0.3914, 0.8349, 0.1734, 0.2953, 0.3652, 0.7073, 0.3013, 0.1555, 0.0236],
+    [0.3493, 0.2230, 0.1203, 0.5413, 0.3363, 0.1909, 0.2000, 0.2789, 0.1092],
+    [0.3773, 0.3828, 0.2194, 0.9510, 0.3523, 0.1459, 0.5178, 0.3354, 0.1486],
+    [0.8519, 0.0132, 0.9356, 0.2619, 0.2424, 0.6350, 0.1307, 0.2108, 0.4437],
+    [0.6763, 1.0000, 0.1768, 0.2941, 0.4139, 0.1838, 0.1653, 0.2085, 0.3438],
+    [0.4058, 0.6904, 0.8488, 0.3307, 0.6835, 0.3035, 0.4376, 0.2549, 0.1480],
+    [0.1710, 0.3889, 0.1416, 0.3463, 0.3185, 0.3787, 0.2169, 0.3026, 0.1248],
+    [0.9092, 0.4515, 0.3546, 0.9096, 0.1097, 0.6171, 0.3828, 0.2620, 0.0227],
+    [0.2801, 0.0622, 0.5126, 0.1507, 0.4041, 0.1580, 0.2030, 0.3736, 0.2147],
+    [0.9185, 0.9085, 0.5782, 0.7907, 0.5268, 0.7795, 0.4011, 0.3871, 0.3176],
+    [0.6170, 0.4798, 0.4606, 0.9997, 0.3488, 0.2315, 0.3725, 0.3466, 0.9038],
+    [0.2540, 0.4503, 0.2221, 0.3174, 0.2557, 0.2100, 0.3249, 0.4583, 0.2513],
+    [0.2862, 0.3142, 0.4412, 0.5925, 0.3559, 0.5147, 0.3730, 0.3280, 0.1573],
+    [0.4749, 0.3633, 0.4239, 0.5136, 0.6098, 0.3792, 0.1011, 0.6635, 0.3289],
+    [0.2866, 0.5425, 0.3245, 0.2327, 0.1987, 0.1608, 0.1386, 0.2576, 0.2490],
+    [0.3820, 0.6696, 0.2078, 0.2347, 0.2221, 0.2549, 0.2753, 0.4002, 0.9433],
+    [0.7425, 0.3004, 0.4946, 0.5096, 0.2195, 0.7292, 0.6073, 0.4422, 0.2136],
+    [0.7876, 0.6121, 0.9163, 0.2514, 1.0000, 0.1442, 0.3904, 0.3788, 0.2986],
+    [0.4303, 0.1888, 0.5342, 1.0000, 0.6691, 0.3953, 0.4746, 0.3520, 0.5817],
+    [0.3187, 0.6652, 0.2073, 0.2853, 0.6462, 0.1147, 0.3896, 0.2477, 0.0901],
+    [0.3369, 0.7462, 0.6191, 0.7516, 0.5547, 0.3175, 0.0625, 0.4585, 0.3451],
+])
+if norm:
+    # minimum = np.min(task_efficiency)
+    # maximim = np.max(task_efficiency)
+    # task_efficiency -= minimum
+    # task_efficiency = task_efficiency / (maximim - minimum)
+    task_efficiency = normalize(task_efficiency)
 
 task_goal = difficulty.T[[0, 3, 6]].T
 task_fuzzy = difficulty.T[[1, 4, 7]].T
 task_exploring = difficulty.T[[2, 5, 8]].T
 
+# task_goal = task_efficiency.T[[0, 3, 6]].T
+# task_fuzzy = task_efficiency.T[[1, 4, 7]].T
+# task_exploring = task_efficiency.T[[2, 5, 8]].T
+
+print('mean efficiency_goal: ', np.mean(task_goal))
+print('mean efficiency_fuzzy: ', np.mean(task_fuzzy))
+print('mean efficiency_exploring: ', np.mean(task_exploring))
+
 length_goal = visit_length.T[[0, 3, 6]].T
 length_fuzzy = visit_length.T[[1, 4, 7]].T
 length_exploring = visit_length.T[[2, 5, 8]].T
 
+print('mean length_goal: ', np.mean(length_goal))
+print('mean length_fuzzy: ', np.mean(length_fuzzy))
+print('mean length_exploring: ', np.mean(length_exploring))
+
 duration_goal = visit_duration.T[[0, 3, 6]].T
 duration_fuzzy = visit_duration.T[[1, 4, 7]].T
 duration_exploring = visit_duration.T[[2, 5, 8]].T
+
+print('mean duration_goal: ', np.mean(duration_goal))
+print('mean duration_fuzzy: ', np.mean(duration_fuzzy))
+print('mean duration_exploring: ', np.mean(duration_exploring))
 
 # From same distribution
 
@@ -325,10 +383,17 @@ def significant_tests():
 # duration_goal   v.s. duration_exploring:reject H0, p:  0.000461548309969623
 # duration_fuzzy  v.s. duration_goal:     accept H0, p:  0.3145335442741327
 
-# difficulty: fuzzy > goal > explore
+# mean length_goal:  0.2585755837403175
+# mean length_fuzzy:  0.3098150772361861
+# mean length_exploring:  0.33711495680528586
+# mean duration_goal:  0.28224403385520425
+# mean duration_fuzzy:  0.28587927211314296
+# mean duration_exploring:  0.35275456730571414
+
 # (difficulty, length of clickstream, time duration of clickstream)
-
-
+# difficulty: explore < goal < fuzzy
+# length:     goal < {exploring, fuzzy}
+# duration:   {goal, fuzzy} < {exploring}
 
 # -------------------------------------------------------------------------------------
 
@@ -343,10 +408,13 @@ def significant_tests():
 
 def get_data_by_task_id(idx):
     x = difficulty[:,idx].flatten()
+    xx = task_efficiency[:,idx].flatten()
     y = visit_length[:,idx].flatten()
     z = visit_duration[:,idx].flatten()
     w = np.multiply(y, 1/z)
-    data = np.concatenate((x[np.newaxis].T,y[np.newaxis].T,z[np.newaxis].T), axis=1)
+    data = np.concatenate((
+        x[np.newaxis].T,y[np.newaxis].T,z[np.newaxis].T,xx[np.newaxis].T
+    ), axis=1)
     data_avg = np.concatenate((x[np.newaxis].T,w[np.newaxis].T), axis=1)
 
     colors = task_color[:,idx].flatten()
@@ -354,7 +422,7 @@ def get_data_by_task_id(idx):
     colorlabel = np.concatenate((colors[np.newaxis].T, labels[np.newaxis].T), axis=1)
     return data, colorlabel
 
-def plot_2d(x, y, labels, path, xlabel, ylabel, xlim, ylim):
+def plot_2d(x, y, labels, path, xlabel, ylabel, xlim, ylim, title):
     fig = plt.figure()
     ax = fig.add_subplot(111)
     for i, l in enumerate(types):
@@ -363,6 +431,7 @@ def plot_2d(x, y, labels, path, xlabel, ylabel, xlim, ylim):
         cc = [value for index, value in enumerate(labels[:,0]) if labels[:,1][index] == l]
         if len(xx) > 0:
             ax.scatter(xx, yy, c=cc, marker=markers[i], label=l)
+    ax.set_title(title, y=1.0)
     ax.legend()
     plt.xlim(xlim)
     plt.ylim(ylim)
@@ -375,28 +444,32 @@ def plot_2dtsne(data, labels, path):
     X_tsne = TSNE(n_components=2).fit_transform(data)
     amin = np.amin(X_tsne)
     amax = np.amax(X_tsne)
-    plot_2d(X_tsne[:,0],X_tsne[:,1], labels, path, '', '', (amin, amax), (amin, amax))
+    plot_2d(X_tsne[:,0],X_tsne[:,1], labels, path, '', '', (amin, amax), (amin, amax),
+    "t-SNE visualization")
 
 def plot_2d_len_dur(idx, category):
     data, colorlabel = get_data_by_task_id(idx)
     xtrain, xtest, ytrain, ytest = train_test_split(data, colorlabel, test_size=0.0, random_state=42)
     plot_2d(xtrain[:,1],xtrain[:,2], ytrain, 
-    f'2d-len-dur-{category}.png', 'visited pages of a clickstream', 
-    'time of duration of a clickstream', (0, 1), (0, 1))
+    f'2d-len-dur-{category}.png', 'number of actions in a clickstream', 
+    'total time duration of a clickstream', (0, 1), (0, 1),
+    "")
 
 def plot_2d_dif_len(idx, category):
     data, colorlabel = get_data_by_task_id(idx)
     xtrain, xtest, ytrain, ytest = train_test_split(data, colorlabel, test_size=0.0, random_state=42)
     plot_2d(xtrain[:,0],xtrain[:,1], ytrain, 
-    f'2d-dif-len-{category}.png', 'difficulty of a task', 
-    'visited pages of a clickstream', (0, 1), (0, 1))
+    f'2d-dif-len-{category}.png', 'subjective difficulty score', 
+    'visited pages of a clickstream', (0, 1), (0, 1),
+    "")
 
 def plot_2d_dif_dur(idx, category):
     data, colorlabel = get_data_by_task_id(idx)
     xtrain, xtest, ytrain, ytest = train_test_split(data, colorlabel, test_size=0.0, random_state=42)
     plot_2d(xtrain[:,0],xtrain[:,2], ytrain, 
-    f'2d-dif-dur-{category}.png', 'difficulty of a task', 
-    'time of duration of clickstream of the task', (0, 1), (0, 1))
+    f'2d-dif-dur-{category}.png', 'subjective difficulty score', 
+    'total time duration of clickstream of the task', (0, 1), (0, 1),
+    "")
 
 def plot_tsne(idx, category):
     data, colorlabel = get_data_by_task_id(idx)
@@ -420,13 +493,15 @@ def plot_3d(data, labels, path, xlabel, ylabel, zlabel):
     ax.set_xlim((0,1))
     ax.set_ylim((0,1))
     ax.set_zlim((0,1))
+    # plt.show()
+    # plt.close()
     plt.savefig(path)
     plt.close(fig)
 
 def plot_3draw(idx, category):
     data, colorlabel = get_data_by_task_id(idx)
     xtrain, xtest, ytrain, ytest = train_test_split(data, colorlabel, test_size=0.0, random_state=42)
-    plot_3d(xtrain, ytrain, f'3d-len-dur-{category}.png', 'task difficulty', 'visited pages of a clickstream', 'time of duration of a clickstream')
+    plot_3d(xtrain, ytrain, f'3d-len-dur-{category}.png', 'subjective difficulty score', 'number of actions in a clickstream', 'total time duration of a clickstream')
 
 def plot_features():
     idxs_by_type = {
@@ -506,9 +581,9 @@ def clf():
     # 0.0
 
 def main():
-    # significant_tests()
+    significant_tests()
     plot_features()
-    # clf()
+    clf()
 
 
 # 结论：

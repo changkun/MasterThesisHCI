@@ -1,14 +1,17 @@
 \section{Evaluation and Discussion}
 \label{ch:eval}
 
-In the chapter of evaluation, we conduct two track of analysis to our collected data, including
-quantitative analysis and qualitative analysis. The data is collected from 21 subjects, 
-and 189 clickstream data in total. Each clickstream contains page-level data with a stay duration
-of a specific page. A clickstream also has a subjective difficulty score voted by each 
-of participants.
+In this chapter, we conduct evaluations to our collected data.
+The data is collected from 21 subjects, and 189 clickstream data are collected in total. 
+Each clickstream contains action-level data with a stay duration
+of a specific page, for instance, we still collect an URL as a step of clickstream 
+if a participant uses back button rollback to a previous visited page without requesting server. 
+A clickstream also has a subjective difficulty score from questionaire (shown in Appendix \ref{appendix:b}) 
+after the completion of each task.
 
-\subsection{Quantitative: Subjective Task Difficulty}
+\subsection{Subjective Task Difficulty}
 
+This section discusses the subjective task difficulty qualitatively and quantitatively.
 Figure \ref{fig:difficulty} illusrates a normalized (raw scores are listed in 
 Appendix \ref{appendix:c} Table \ref{table:diff}) subjective difficulty score 
 with respect to all tasks.
@@ -22,38 +25,78 @@ with respect to all tasks.
     Medium Exploring Task, Dribbble Goal Oriented Task, Dribbble Fuzzy Task and Dribbble Exploring Task
     respectively.
     From this heat map, we clearly observes Medium Fuzzy Task is the most difficulty task
-    according to the subjects voted subjective difficulty, a significant test confirmed this observation.}
+    according to the subjects voted subjective difficulty, a significant test confirmed this observation.
+    Further, Mann-Whitney U significant test justifies our result.}
     \label{fig:difficulty}
 \end{figure}
 
 To generalize the task difficulty, the null hypothesis ($H_0$): the difficulty of fuzzy task is not greater
 than exploring task and alternative hypothesis ($H_1$): the difficulty of fuzzy task is greater than
-exploring task. We conduct non-parametric one-tailed Kolmogorov-Smirnov test
-\cite{massey1951kolmogorov}, under null hypothesis, $p=2.54\times 10^{-5} < 0.05$, reject $H_0$.
+exploring task. We conduct non-parametric one-tailed Mann-Whitney U test \cite{mann1947test}, 
+under null hypothesis, $p=2.54\times 10^{-5} < 0.05$, reject $H_0$.
 Similarly, we compare difficulty score on goal oriented task and exploring task (with corresponding hypothesis, 
 $p=0.00534 < 0.05$), difficulty score on fuzzy task and goal oriented task (with corresponding hypothesis, 
 $p=0.0145 < 0.05$), all rejects $H_0$. Therefore we concludes the task difficulty is ordered
-as follows: \emph{difficulty of fuzzy task $>$ difficulty of goal oriented task $>$ difficulty of exploring task.}
+as follows: \emph{difficulty of fuzzy task $>$ difficulty of goal oriented task $>$ difficulty of exploring task},
+which means exploring tasks have lower effort in clickstream, and effort of doing fuzzy task gains highest effort.
 
-\subsubsection{t-SNE}
+\subsection{Browsing Behavior Classification}
 
-\subsubsection{Prediction Accuracy}
+As discussed in section \ref{sec:task-design}, we described three type of browsing behavior. 
+In this section, we provides two type of evaluations to interpret the browsing behavior classification.
 
-\subsubsection{F1}
+First, we evaluate the indication of general features browsing behavior,
+features including difficulty of task, number of actions in a clickstream as well as the total stay duration in a clickstream.
+Then we evaluate our action path model by using the action-level clickstream data and stay duration of each page,
+which was described in section \ref{sec:recurrent-unit} and \ref{sec:mark-interpretation}.
 
+\subsubsection{Interpretation of General Features}
 
-\subsection{Rationality of Designed Tasks}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/amazon-general}
+    \includegraphics[width=0.45\textwidth]{figures/medium-general}
+    \includegraphics[width=0.45\textwidth]{figures/dribbble-general}
+    \caption{XXXXX}
+    \label{fig:general}
+\end{figure}
 
+TODO:
+
+\subsection{Intepretation of Action Path}
+
+To use full capacity of our data, this section uses the entire clickstream and its corresponding
+page-level stay time duration as input, three ending mark (<EOA\_GOAL>, <EOA\_FUZZY>, and <EOA\_EXPLORE>) 
+as classification outputs, and then implements a single GRU layer action path model 
+to classify the three type of tasks.
+
+Our training parameters are: 
+The GRU latent dimension is 10, training process feeds 151 clickstreams and 
+propagates 500 epochs with batch size of 32.
+In the end of training, we use Adam optimizer, evaluate on 38 clickstreams and 
+archieved 100\% accuracy on our validation set.
+
+The validation loss during the training is as shown in Figure \ref{fig:class-loss}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/class-loss}
+    \caption{Categorical Cross-Entropy Validation loss curve while 500 epoches. The curves indicates the training process
+    is not an overfitting since the loss is not increasing.}
+    \label{fig:class-loss}
+\end{figure}
+
+One can observed that the training process is not an overfit, and the validation loss is 
+still not increase after 500 epoches, thus, single GRU layer action path model 
+remains a large expressive performance (100\% of three class classification in this dataset) 
+when we have more data.
+
+In addition, the action path model feeds the entire clickstream and time duration as inputs, 
+therfore the entire clickstream contains informations regarding the number of visit actions
+as well as completion effeciency and etc.
 
 \subsection{Explored Model Architecture Comparasion}
 
 \subsection{Action Path Visualization}
-
-
-\subsection{Discussion}
-
-% 分析实验结果，对比的实验结果包括：
-
-%  任务本身的分析，对任务的难度进行讨论
 
 \cleardoublepage

@@ -226,19 +226,21 @@ terminates the decoding process.
     \caption{Context decoder of Action Path Model. In the decoder, 
     a prediction mark "<SOP>" is used to initiate decoding process, 
     and an ending mark "<EOA>" as a sign to terminate decode process.
-    The output of decoder is uses a softmax intermediate operation to magnify and normalize
+    The output of decoder uses a softmax intermediate operation to magnify and normalize
     the probability of predicted URL embedding.
     In addition, the recurrent unit is not detailly describeed in the figure but afterwards.}
     \label{fig:decoder}
 \end{figure}
 
 Note that the decoder model in training phase and prediction phase is different.
-In training phase, teacher forcing algorithm \cite{williams1989learning} is use, it supplying observed user actions as inputs.
+In the training phase, teacher forcing algorithm \cite{williams1989learning} is used, 
+it supplying observed user actions as inputs.
 In the testing phase, decoder uses the output from recurrent unit as input, shown through 
 dashed lines in Figure \ref{fig:decoder}.
 
 
 \subsubsection{Recurrent Unit}
+\label{sec:recurrent-unit}
 
 The recurrent unit in the Action Path model is not as standard as original Long Short-term Memory unit (LSTM)
 \cite{hochreiter1997lstm} or Gated Recurrent unit (GRU) \cite{DBLP:journals/corr/ChoMGBSB14}.
@@ -287,6 +289,7 @@ adding bias to the gates are helpful to improve learning performance in LSTM
 it normalizes $d^{ij}_t$ from $(0, \infty)$ to $(0, 1)$.
 
 \subsubsection{Ending Mark Interpretation}
+\label{sec:mark-interpretation}
 
 In context decoder, we mentioned an ending mark "<EOA>" that indicates the termination 
 decoding process. However, the ending mark is different than other marks, since in practice,
@@ -317,8 +320,16 @@ are independent in probability, which is not suitable to our senario.
 In previous sections, our model feeds an input clickstream $(U^{ij}_1, U^{ij}_2, ..., U^{ij}_t)$,
 and produce an output $(o_1, o_2, ..., o_{m})$ that expect close to actual clickstream $(U^{ij}_{t+1}, U^{ij}_{t+2}, ..., U^{ij}_n)$.
 Then the probability of expected clickstream is 
-a conditional probability under the input clickstream, i.e. we need to maximize
-$$\operatorname*{argmax}_{o} p( o_1, o_2, ..., o_{m} | U^{ij}_1, U^{ij}_2, ..., U^{ij}_t ).$$
+a conditional probability under the input clickstream, i.e. we need to solve an optimization problem
+
+\begin{align}
+\label{eqn:lstm}
+\begin{split}
+    & \operatorname*{argmax}_{o} p( o_1, o_2, ..., o_{m} | U^{ij}_1, U^{ij}_2, ..., U^{ij}_t ) \\
+   =& \operatorname*{argmax}_{o} \prod_{k=1}^{m} p(o_{k} | U^{ij}_1, ..., U^{ij}_t, o_1, ..., o_{k-1}) \\
+   =& \operatorname*{argmax}_{o} \sum_{k=1}^{m} \log p(o_{k} | U^{ij}_1, ..., U^{ij}_t, o_1, ..., o_{k-1})
+\end{split}
+\end{align}
 
 Heuristic approach can solve the optimization problem efficiently, namely beam search \cite{DBLP:journals/corr/abs-1211-3711}. 
 In each step of decoder output, we reserve the top-$k$ best combinations of pages and eliminate the rest of
@@ -340,7 +351,7 @@ The pseudocode is given in Algorithm \ref{algo:optimize}.
     Initialize empty $candidates$ list \\
     \For{$\text{clickstream}$ $\in$ $\text{clickstreams}$}{
         \For{page $\in$ $o$)}{
-            candidates.append([clickstream.append(page), $p(\text{clickstream}) * p(\text{page})$]) \\
+            candidates.append([clickstream.append(page), $log(p(\text{clickstream})) + log(p(\text{page}))$]) \\
         }
     }
     ordered = descending order sort candidates by score \\
