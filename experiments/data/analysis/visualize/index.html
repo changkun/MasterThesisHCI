@@ -8,8 +8,8 @@
 }
 
 .nodes circle {
-  stroke: #fff;
-  stroke-width: 1.5px;
+  stroke: #444;
+  stroke-width: 2.5px;
 }
 
 text {
@@ -18,11 +18,11 @@ text {
 }
 
 </style>
-<svg width="1900" height="1860"></svg>
+<svg width="980" height="860"></svg>
 <button id="generate">Save as SVG</button>
 <script src="d3.v4.min.js"></script>
-<!-- <script src="js/clickstream-task-2.js"></script> -->
-<script src="js/clickstream-1-4.js"></script>
+<script src="js/clickstream-task-4.js"></script>
+<!-- <script src="js/clickstream-2-2.js"></script> -->
 <script src="https://fastcdn.org/FileSaver.js/1.1.20151003/FileSaver.min.js"></script>
 <script>
 
@@ -40,7 +40,7 @@ svg.append("svg:defs").append("svg:marker")
     .attr("id", "arrow")
     .attr("viewBox", "0 -5 10 10")
     .attr('refX', -20)//so that it comes towards the center.
-    .attr("markerWidth", 5)
+    .attr("markerWidth", 8)
     .attr("markerHeight", 5)
     .attr("orient", "auto")
   .append("svg:path")
@@ -74,19 +74,45 @@ var circles = node.append("circle")
         // return d.stay_seconds;
         return Math.sqrt(d.stay_seconds);
     })
-    .attr("fill", function(d) {
+    .attr("fill", function(d, i) {
+        return '#118531' // lmu color
+
         if (d.common_node === true) {
             return '#000000'
         }
-        // switch (d.group) {
-        //     case 1:
-        //         return 'red'
-        //     case 2:
-        //         return 'green'
-        //     case 3:
-        //         return 'blue'
-        // }
-        return color(d.group); 
+        console.log(d.group%4)
+        switch (d.group%4) {
+            case 0:
+                return '#1f77b4'
+            case 1:
+                return '#2ca02c'
+            case 2:
+                return '#ff9896'
+            case 3:
+                return '#8c564b'
+        }
+        console.log(color(i))
+        // return color(1) // goal
+        // return '#ff7f0e'; // fuzzy
+        return '#9467bd'; // exploring
+
+
+        // #1f77b4
+        // #aec7e8
+        // #ff7f0e
+        // #ffbb78
+        // #2ca02c
+        // #98df8a
+        // #d62728
+        // #ff9896
+        // #9467bd
+        // #c5b0d5
+        // #8c564b
+        // #c49c94
+        // #e377c2
+        // #f7b6d2
+        // #7f7f7f
+        // #c7c7c7
     })
     .call(d3.drag()
         .on("start", dragstarted)

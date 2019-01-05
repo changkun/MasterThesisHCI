@@ -133,7 +133,7 @@ log softmax probability
 \label{eqn:url2vecprob}
 \begin{split}
     \frac{1}{T}\sum^{T}_{t=1}\sum_{-c \leq i \leq c, i \neq 0} {\log{p(\text{URL}_{t+i} | \text{URL}_t)}}\\
-    \log{p(\text{URL}_{t+i} | \text{URL}_t)} = \frac{
+    p(\text{URL}_{t+i} | \text{URL}_t) = \frac{
         \exp{(v_{\text{URL}_{t+i}} ^\top v_{\text{URL}_t})}
     }{
         \sum_{\text{all URLs}} {\exp{(v_{\text{URL}_{t+i}} ^\top v_{\text{URL}_t})}}

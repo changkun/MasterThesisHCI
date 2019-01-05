@@ -12,7 +12,7 @@ after the completion of each task.
 \subsection{Subjective Task Difficulty}
 
 This section discusses the subjective task difficulty qualitatively and quantitatively.
-Figure \ref{fig:difficulty} illusrates a normalized (raw scores are listed in 
+Figure \ref{fig:difficulty} illustrates a normalized (raw scores are listed in 
 Appendix \ref{appendix:c} Table \ref{table:diff}) subjective difficulty score 
 with respect to all tasks.
 
@@ -47,23 +47,23 @@ In this section, we provides two type of evaluations to interpret the browsing b
 
 First, we evaluate the indication of general features browsing behavior,
 features including difficulty of task, number of actions in a clickstream as well as the total stay duration in a clickstream.
-Then we evaluate our action path model by using the action-level clickstream data and stay duration of each page,
+Then we implements our action path model by using the action-level clickstream data and stay duration of each page,
 which was described in section \ref{sec:recurrent-unit} and \ref{sec:mark-interpretation}.
 
-\subsubsection{Interpretation of General Features}
+\subsubsection{Interpretation based on General Features}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/amazon-general}
-    \includegraphics[width=0.45\textwidth]{figures/medium-general}
-    \includegraphics[width=0.45\textwidth]{figures/dribbble-general}
+    \includegraphics[width=0.49\textwidth]{figures/amazon-general}
+    \includegraphics[width=0.49\textwidth]{figures/medium-general}
+    \includegraphics[width=0.49\textwidth]{figures/dribbble-general}
     \caption{XXXXX}
     \label{fig:general}
 \end{figure}
 
 TODO:
 
-\subsection{Intepretation of Action Path}
+\subsubsection{Intepretation based on Action Path}
 
 To use full capacity of our data, this section uses the entire clickstream and its corresponding
 page-level stay time duration as input, three ending mark (<EOA\_GOAL>, <EOA\_FUZZY>, and <EOA\_EXPLORE>) 
@@ -81,8 +81,8 @@ The validation loss during the training is as shown in Figure \ref{fig:class-los
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{figures/class-loss}
-    \caption{Categorical Cross-Entropy Validation loss curve while 500 epoches. The curves indicates the training process
-    is not an overfitting since the loss is not increasing.}
+    \caption{Categorical Cross-Entropy Validation loss curve while 500 epoches. 
+    The curves indicates the training process is not an overfitting since the loss is not increasing.}
     \label{fig:class-loss}
 \end{figure}
 
@@ -93,10 +93,27 @@ when we have more data.
 
 In addition, the action path model feeds the entire clickstream and time duration as inputs, 
 therfore the entire clickstream contains informations regarding the number of visit actions
-as well as completion effeciency and etc.
+as well as completion effeciency and etc. Consequently, we conclude that the model works
+perfectly on the classification of three different browsing behavior. Since our experiment is
+only designed for three type of behavior, and the learning curve
+shows the model still has capacity to classify more precise categories of browsing behavior,
+perform a future investigation may be significance.
 
-\subsection{Explored Model Architecture Comparasion}
+\subsection{Optimal Action Path Context}
+
+This section we evaluates our model with limited action path context, where the feeding action path
+are limited based on a split ratio. For instance, if a split ratio is 0.8 then we feed 80\% of 
+an action path into the model, then predict the rest of 20\% actions. Figure \ref{} illustrates
+the best accuracy we archieved for when use different split ratio.
+
 
 \subsection{Action Path Visualization}
+
+This section visualizes the actual action path of users and discusses the behavior qualitatively.
+Note that we collected 189 clickstream in total, which is not possible to illustrate all of them
+in the thesis, we selected three typical clickstreams to discuss and provided a visualization tool
+to help readers to explore them.
+
+
 
 \cleardoublepage

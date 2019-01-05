@@ -84,7 +84,7 @@ func main() {
 		stay   float64
 		common bool
 	}{}
-	for _, userid := range users {
+	for userIndex, userid := range users {
 
 		raw, err := ioutil.ReadFile(fmt.Sprintf("../dataset/%d.json", userid))
 		if err != nil {
@@ -112,7 +112,7 @@ func main() {
 				}{
 					index:  index,
 					label:  fmt.Sprintf("%d", label),
-					group:  userid, // 按用户分组
+					group:  userIndex, // 按用户分组
 					stay:   obj.StaySeconds,
 					common: false, // 首次添加的节点不是公共节点
 				}
@@ -130,7 +130,7 @@ func main() {
 				// 将停留时间增加到原有节点上，如果当前的 stream id
 				v.stay = v.stay + obj.StaySeconds
 				// v.label += fmt.Sprintf(",%d", label)
-				if userid != v.group {
+				if userIndex != v.group {
 					v.common = true
 				}
 			}
@@ -147,7 +147,7 @@ func main() {
 				}{
 					index:  index,
 					label:  fmt.Sprintf("%d", label),
-					group:  userid,
+					group:  userIndex,
 					stay:   obj.StaySeconds,
 					common: false,
 				}
@@ -164,7 +164,7 @@ func main() {
 			} else { // old node
 				v.stay += obj.StaySeconds
 				// v.label += fmt.Sprintf(",%d", label)
-				if userid != v.group {
+				if userIndex != v.group {
 					v.common = true
 				}
 			}

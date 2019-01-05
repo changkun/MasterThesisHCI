@@ -20,9 +20,9 @@ def generate_vocabs():
     vocabs = list(set(sentences))
     with open('vocabs.txt', 'w+') as f:
         specials = [
-            '<SOA>', '<COI>', '<SOP>', 
+            '<PAD>', '<SOA>', '<COI>', '<SOP>', 
             '<EOA_GOAL>', '<EOA_FUZZY>', '<EOS_EXPLORE>',
-            '<PAD>', '<MIS>'
+            '<MIS>'
         ]
         f.writelines('\n'.join(specials))
         f.writelines('\n'.join(vocabs))

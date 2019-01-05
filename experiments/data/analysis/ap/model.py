@@ -37,7 +37,7 @@ class PlotLosses(keras.callbacks.Callback):
         # plt.legend()
         plt.xlabel('training epochs')
         plt.ylabel('categorical crossentropy validation loss')
-        plt.savefig('save.png')
+        plt.savefig(f'save-{now.strftime("%Y%m%d-%H%M%S")}.png')
         
 plot_losses = PlotLosses()
 
@@ -69,18 +69,67 @@ num_decoder_tokens = len(vocabs)
 
 # hyperparams
 latent_dim = 10
-split_ratio = 0.99
+split_ratio = 0.98
 batch_size = 32
-epochs = 500
+epochs = 1500
+
+
+# Layer (type)                    Output Shape         Param #     Connected to
+# ==================================================================================================
+# ContextEncoderInputRaw (InputLa (None, None)         0
+# __________________________________________________________________________________________________
+# ContextDecoderInputRaw (InputLa (None, None)         0
+# __________________________________________________________________________________________________
+# embedding_1 (Embedding)         (None, None, 10)     28730       ContextEncoderInputRaw[0][0]
+# __________________________________________________________________________________________________
+# embedding_2 (Embedding)         (None, None, 10)     28730       ContextDecoderInputRaw[0][0]
+# __________________________________________________________________________________________________
+# gru_1 (GRU)                     [(None, 10), (None,  630         embedding_1[0][0]
+# __________________________________________________________________________________________________
+# gru_2 (GRU)                     [(None, None, 10), ( 630         embedding_2[0][0]
+#                                                                  gru_1[0][1]
+# __________________________________________________________________________________________________
+# time_distributed_1 (TimeDistrib (None, None, 2873)   31603       gru_2[0][0]
+# ==================================================================================================
+# Total params: 90,323
+# Trainable params: 90,323
+# Non-trainable params: 0
+# __________________________________________________________________________________________________
+#
+# split_ratio:  val_acc   acc   test_acc
+#        0.05,: 0.3644, 0.4147, 0.1698,
+#        0.10,: 0.3138, 0.3505, 0.1292,
+#        0.15,: 0.3315, 0.3717, 0.1416,
+#        0.20,: 0.3272, 0.3692, 0.1415,
+#        0.25,: 0.3845, 0.4426, 0.1211,
+#        0.30,: 0.3567, 0.3956, 0.1690,
+#        0.35,: 0.3879, 0.4343, 0.1713,
+#        0.40,: 0.3019, 0.3483, 0.0890,
+#        0.45,: 0.3725, 0.4257, 0.1427,
+#        0.50,: 0.3407, 0.3891, 0.1165,
+#        0.55,: 0.3809, 0.4271, 0.1680,
+#        0.60,: 0.4178, 0.4685, 0.1904,
+#        0.65,: 0.3960, 0.4540, 0.1450,
+#        0.70,: 0.4543, 0.5130, 0.2015,
+#        0.75,: 0.4906, 0.5602, 0.1707,
+#        0.80,: 0.5549, 0.6307, 0.2227,
+#        0.85,: 0.5445, 0.5994, 0.2927,
+#        0.90,: 0.6257, 0.7012, 0.2794,
+#        0.95,: 0.6783, 0.9253, 0.4459,
+#        0.96,: 0.6121, 0.6363, 0.4948,
+#        0.97,: 0.7298, 0.7739, 0.5234, i.e. max-3-step future
+#        0.98,: 0.7248, 0.7616, 0.5526,
+#        0.99,: 0.9947, 1.0000, 0.9737, i.e. 3-class-classification 
+
 
 # special tokens
-soa = 0
-coi = 1
-sop = 2
-eoa_goal    = 3
-eoa_fuzzy   = 4
-eoa_explore = 5
-pad = 6
+pad = 0
+soa = 1
+coi = 2
+sop = 3
+eoa_goal    = 4
+eoa_fuzzy   = 5
+eoa_explore = 6
 mis = 7
 
 # consts about data
@@ -132,7 +181,7 @@ input_d = pad_sequences(input_d, value = 1, maxlen=int(max_length*split_ratio))
 # input_s = np.multiply(input_s, input_d)
 
 output_s = pad_sequences(output_s, value = pad, maxlen=max_length - int(max_length*(split_ratio)), padding='post')
-output_s = np.concatenate((np.ones((output_s.shape[0], 1)) * sop, output_s), axis=1)
+# output_s = np.concatenate((np.ones((output_s.shape[0], 1)) * sop, output_s), axis=1)
 
 output_s_one_shot = np.array([to_categorical(line, num_classes=num_decoder_tokens) for line in output_s])
 output_d = pad_sequences(output_d, value = 0, maxlen=max_length - int(max_length*(split_ratio)), padding='post')
@@ -140,6 +189,8 @@ output_d = pad_sequences(output_d, value = 0, maxlen=max_length - int(max_length
 print(input_s.shape, input_d.shape, output_s.shape, output_d.shape)
 print('input sentence size: ', int(max_length*split_ratio))
 print('output sentence size: ', int(max_length*(1-split_ratio)))
+print('example input:', input_s[0])
+print('example output:', output_s[0])
 
 def build_model(load_old = False):
     encoder_input = Input(shape=(None,), name='ContextEncoderInputRaw')
@@ -167,7 +218,7 @@ def build_model(load_old = False):
     decoder_model = Model([decoder_input] + [decoder_state_input_h], [decoder_outputs] + [decoder_state_h])
     return model, encoder_model, decoder_model
 
-load_old = True
+load_old = False
 model, encoder, decoder = build_model(load_old=load_old)
 model.summary()
 
@@ -180,8 +231,8 @@ if not load_old:
             callbacks=[
                 TensorBoard(log_dir=f'./logs/{now.strftime("%Y%m%d-%H%M%S")}/'),
                 TerminateOnNaN(),
-                ModelCheckpoint(filepath=f'model.h5', verbose=1, save_weights_only=True, save_best_only=True, period=3),
-                EarlyStopping(monitor="val_loss", patience=10),
+                ModelCheckpoint(filepath=f'model-{now.strftime("%Y%m%d-%H%M%S")}.h5', verbose=1, save_weights_only=True, save_best_only=True, period=3),
+                EarlyStopping(monitor="val_loss", patience=epochs),
                 plot_losses,
             ])
 
@@ -207,7 +258,7 @@ def decode_sequence(input_seq):
         output_tokens, h = decoder.predict([target_seq] + [states_value])
         # Sample a token
         sampled_token_index = np.argmax(output_tokens[0, -1, :])
-        print('output_token: ', sampled_token_index)
+        # print('output_token: ', sampled_token_index)
 
         predicted_url = id_vocab[sampled_token_index]
         decoded_sentence.append(predicted_url)
@@ -224,18 +275,6 @@ def decode_sequence(input_seq):
         # Update states
         states_value = h
     return decoded_sentence
-
-for idx in range(2):
-    input_seq = input_s[idx:idx+1]
-    print('input seq: ', input_seq)
-    output_seq = decode_sequence(input_seq)
-    print('\n')
-    print(output_seq)
-
-for input_seq in input_s:
-    output_seq = decode_sequence(input_seq)
-    print('\n')
-    print(output_seq)
 
 def search(decoder, src_input, k=1, sequence_max_len=25):
     # (log(1), initialize_of_zeros)
@@ -263,6 +302,12 @@ def search(decoder, src_input, k=1, sequence_max_len=25):
 
     return k_beam[-1:]
 
-for input_seq in input_s:
-    k_beam = search(model, input_seq, k=5, sequence_max_len=30)
-    print(k_beam)
+if load_old:
+    for input_seq in input_s:
+        output_seq = decode_sequence(input_seq)
+        print('argmax result: ', output_seq)
+
+
+    for input_seq in input_s:
+        k_beam = search(model, input_seq, k=5, sequence_max_len=30)
+        print('beam result: ', k_beam)
