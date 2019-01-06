@@ -54,6 +54,7 @@
             this.options.positionLeft = options.positionLeft || false; // toast position - left or right
             this.options.backgroundColor = options.backgroundColor || "linear-gradient(135deg, #73a5ff, #5477f5)"; // toast position - left or right
             this.options.avatar = options.avatar || ""; // toast position - left or right
+            this.options.feedback = options.feedback || false; // show feedback button
 
             // Returning the current object for chaining functions
             return this;
@@ -61,7 +62,7 @@
 
         // Building the DOM element
         buildToast: function () {
-
+            
             // Validating if the options are defined
             if (!this.options) {
                 throw "Toastify is not initialized";
@@ -141,6 +142,23 @@
 
             }
 
+            if (this.options.feedback === true) {
+                var buttons = document.createElement('div');
+                buttons.className = 'toast-buttons';
+
+                var yesButton = document.createElement('button');
+                yesButton.innerHTML = 'Yes'
+                yesButton.className = 'toast-yes';
+                var noButton = document.createElement('button');
+                noButton.innerHTML = 'No'
+                noButton.className = 'toast-no'
+                
+                buttons.appendChild(yesButton)
+                buttons.appendChild(noButton)
+                divElement.appendChild(buttons)
+                console.log('button added')
+            }
+
             // Adding an on-click destination path
             if (typeof this.options.destination !== 'undefined') {
 
@@ -183,7 +201,6 @@
 
         // Displaying the toast
         showToast: function () {
-
             // Creating the DOM object for the toast
             var toastElement = this.buildToast();
 

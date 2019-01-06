@@ -6,9 +6,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, cohen_kappa_score
 from sklearn.manifold import TSNE
 from sklearn.decomposition import PCA
+from sklearn.ensemble import ExtraTreesClassifier
 import matplotlib.pyplot as plt
 import seaborn as sns
 from mpl_toolkits.mplot3d import Axes3D
+from mlxtend.plotting import plot_decision_regions
+import seaborn as sns
+sns.set(style='ticks')
 
 norm = True
 # norm = False
@@ -18,27 +22,27 @@ age = [1,4,1,0,2,4,3,0,3,1,1,1]
 types = ['goal_amazon', 'fuzzy_amazon', 'exploring_amazon', 'goal_medium', 'fuzzy_medium', 'exploring_medium', 'goal_dribbble', 'fuzzy_dribbble', 'exploring_dribbble']
 markers = ['^', 'o', '*', 'x', '+', 'D', '1', 'H', 's']
 task_color = np.array([
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
-    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'burlywood', 'chartreuse'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
+    ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'steelblue', '#82a67d'],
 ])
 task_type = np.array([
     ['goal_amazon', 'fuzzy_amazon', 'exploring_amazon', 'goal_medium', 'fuzzy_medium', 'exploring_medium', 'goal_dribbble', 'fuzzy_dribbble', 'exploring_dribbble'],
@@ -225,13 +229,13 @@ if norm:
     # task_efficiency = task_efficiency / (maximim - minimum)
     task_efficiency = normalize(task_efficiency)
 
-task_goal = difficulty.T[[0, 3, 6]].T
-task_fuzzy = difficulty.T[[1, 4, 7]].T
-task_exploring = difficulty.T[[2, 5, 8]].T
+# task_goal = difficulty.T[[0, 3, 6]].T
+# task_fuzzy = difficulty.T[[1, 4, 7]].T
+# task_exploring = difficulty.T[[2, 5, 8]].T
 
-# task_goal = task_efficiency.T[[0, 3, 6]].T
-# task_fuzzy = task_efficiency.T[[1, 4, 7]].T
-# task_exploring = task_efficiency.T[[2, 5, 8]].T
+task_goal = task_efficiency.T[[0, 3, 6]].T
+task_fuzzy = task_efficiency.T[[1, 4, 7]].T
+task_exploring = task_efficiency.T[[2, 5, 8]].T
 
 print('mean efficiency_goal: ', np.mean(task_goal))
 print('mean efficiency_fuzzy: ', np.mean(task_fuzzy))
@@ -407,13 +411,13 @@ def significant_tests():
 # idx = [0,  2]
 
 def get_data_by_task_id(idx):
-    x = difficulty[:,idx].flatten()
-    xx = task_efficiency[:,idx].flatten()
+    # x = difficulty[:,idx].flatten()
+    x = task_efficiency[:,idx].flatten()
     y = visit_length[:,idx].flatten()
     z = visit_duration[:,idx].flatten()
     w = np.multiply(y, 1/z)
     data = np.concatenate((
-        x[np.newaxis].T,y[np.newaxis].T,z[np.newaxis].T,xx[np.newaxis].T
+        x[np.newaxis].T,y[np.newaxis].T,z[np.newaxis].T,
     ), axis=1)
     data_avg = np.concatenate((x[np.newaxis].T,w[np.newaxis].T), axis=1)
 
@@ -422,22 +426,56 @@ def get_data_by_task_id(idx):
     colorlabel = np.concatenate((colors[np.newaxis].T, labels[np.newaxis].T), axis=1)
     return data, colorlabel
 
-def plot_2d(x, y, labels, path, xlabel, ylabel, xlim, ylim, title):
+def plot_2d(x, y, labels, path, xlabel, ylabel, xlim, ylim, title, region=False):
     fig = plt.figure()
     ax = fig.add_subplot(111)
+
+    if region:
+        xx = np.expand_dims(np.array(x), axis=1)
+        yy = np.expand_dims(np.array(y), axis=1)
+        X = np.concatenate((xx, yy), axis=1)
+        yy = []
+        colors = []
+        for idx, _ in enumerate(labels[:,1]):
+            if 'goal' in labels[:,1][idx]:
+                yy.append(0)
+                colors.append(labels[:,0][idx])
+            elif 'fuzzy' in labels[:,1][idx]:
+                yy.append(1)
+                colors.append(labels[:,0][idx])
+            elif 'exploring' in labels[:,1][idx]:
+                yy.append(2)
+                colors.append(labels[:,0][idx])
+
+        try:
+            yy = np.array(yy)
+            clf = svm.SVC(kernel='rbf', gamma='scale')
+            clf.fit(X, yy)
+
+            x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
+            y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
+            xx, yyy = np.meshgrid(np.arange(x_min, x_max, 0.01),
+                                np.arange(y_min, y_max, 0.01))
+            Z = clf.predict(np.c_[xx.ravel(), yyy.ravel()])
+            Z = Z.reshape(xx.shape)
+            plt.contourf(xx, yyy, Z, colors=list(set(colors)))
+        except:
+            pass
+
     for i, l in enumerate(types):
         xx = [value for index, value in enumerate(x) if labels[:,1][index] == l]
         yy = [value for index, value in enumerate(y) if labels[:,1][index] == l]
         cc = [value for index, value in enumerate(labels[:,0]) if labels[:,1][index] == l]
         if len(xx) > 0:
             ax.scatter(xx, yy, c=cc, marker=markers[i], label=l)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+
     ax.set_title(title, y=1.0)
     ax.legend()
     plt.xlim(xlim)
     plt.ylim(ylim)
-    plt.xlabel(xlabel)
-    plt.ylabel(ylabel)
-    plt.savefig(path)
+    plt.savefig(path, bbox_inches='tight')
     plt.close(fig)
 
 def plot_2dtsne(data, labels, path):
@@ -445,31 +483,31 @@ def plot_2dtsne(data, labels, path):
     amin = np.amin(X_tsne)
     amax = np.amax(X_tsne)
     plot_2d(X_tsne[:,0],X_tsne[:,1], labels, path, '', '', (amin, amax), (amin, amax),
-    "t-SNE visualization")
+    "t-SNE visualization", region=False)
 
 def plot_2d_len_dur(idx, category):
     data, colorlabel = get_data_by_task_id(idx)
     xtrain, xtest, ytrain, ytest = train_test_split(data, colorlabel, test_size=0.0, random_state=42)
     plot_2d(xtrain[:,1],xtrain[:,2], ytrain, 
-    f'2d-len-dur-{category}.png', 'number of actions in a clickstream', 
-    'total time duration of a clickstream', (0, 1), (0, 1),
-    "")
+    f'2d-len-dur-{category}.png', 'number of actions in a session', 
+    'total time duration of a session', (0, 1), (0, 1),
+    "", region=False)
 
-def plot_2d_dif_len(idx, category):
+def plot_2d_eff_len(idx, category):
     data, colorlabel = get_data_by_task_id(idx)
     xtrain, xtest, ytrain, ytest = train_test_split(data, colorlabel, test_size=0.0, random_state=42)
     plot_2d(xtrain[:,0],xtrain[:,1], ytrain, 
-    f'2d-dif-len-{category}.png', 'subjective difficulty score', 
-    'visited pages of a clickstream', (0, 1), (0, 1),
-    "")
+    f'2d-eff-len-{category}.png', 'task completion efficiency', 
+    'number of actions in a session', (0, 1), (0, 1),
+    "", region=False)
 
 def plot_2d_dif_dur(idx, category):
     data, colorlabel = get_data_by_task_id(idx)
     xtrain, xtest, ytrain, ytest = train_test_split(data, colorlabel, test_size=0.0, random_state=42)
     plot_2d(xtrain[:,0],xtrain[:,2], ytrain, 
-    f'2d-dif-dur-{category}.png', 'subjective difficulty score', 
-    'total time duration of clickstream of the task', (0, 1), (0, 1),
-    "")
+    f'2d-eff-dur-{category}.png', 'task completion efficiency', 
+    'total time duration of a session', (0, 1), (0, 1),
+    "", region=False)
 
 def plot_tsne(idx, category):
     data, colorlabel = get_data_by_task_id(idx)
@@ -495,13 +533,17 @@ def plot_3d(data, labels, path, xlabel, ylabel, zlabel):
     ax.set_zlim((0,1))
     # plt.show()
     # plt.close()
-    plt.savefig(path)
+    plt.savefig(path, bbox_inches='tight')
     plt.close(fig)
 
 def plot_3draw(idx, category):
     data, colorlabel = get_data_by_task_id(idx)
     xtrain, xtest, ytrain, ytest = train_test_split(data, colorlabel, test_size=0.0, random_state=42)
-    plot_3d(xtrain, ytrain, f'3d-len-dur-{category}.png', 'subjective difficulty score', 'number of actions in a clickstream', 'total time duration of a clickstream')
+    plot_3d(xtrain, ytrain, f'3d-len-dur-{category}.png', 
+        'task completion efficiency', 
+        'number of actions in a session', 
+        'total time duration of a session'
+    )
 
 def plot_features():
     idxs_by_type = {
@@ -517,14 +559,14 @@ def plot_features():
 
     for category, idx in idxs_by_type.items():
         plot_2d_len_dur(idx, category)
-        plot_2d_dif_len(idx, category)
+        plot_2d_eff_len(idx, category)
         plot_2d_dif_dur(idx, category)
         plot_tsne(idx, category)
         plot_3draw(idx, category)
 
     for category, idx in idxs_by_website.items():
         plot_2d_len_dur(idx, category)
-        plot_2d_dif_len(idx, category)
+        plot_2d_eff_len(idx, category)
         plot_2d_dif_dur(idx, category)
         plot_tsne(idx, category)
         plot_3draw(idx, category)
@@ -549,6 +591,11 @@ def clf_report(data, labels):
         clf.fit(xtrain, ytrain[:, 1])
         ypred = clf.predict(xtest)
         v = classification_report(ytest[:, 1], ypred)
+
+        #importance
+        model = ExtraTreesClassifier()
+        model.fit(xtrain, ytrain)
+        print('task_efficiency/visited_length/visited_duration importance: ', list(set(ytrain[:, 1])), model.feature_importances_)
         return v
 
 
@@ -589,70 +636,83 @@ def main():
 # 结论：
 
 # - difficulty: fuzzy > goal > exploring
-# - productivity: 1 - predict precition of goal-oriented task
-# - 
 
 #                 tp / (tp + fp)
 #                              tp / (tp + fn)       The number of occurrences of each label in y_true.
+
+# feature importance
+
+# task_efficiency/visited_length/visited_duration importance:  ['goal_amazon', 'fuzzy_amazon', 'exploring_amazon'] 
+# [0.26795169 0.36754544 0.36450287] length
+# task_efficiency/visited_length/visited_duration importance:  ['fuzzy_medium', 'goal_medium', 'exploring_medium'] 
+# [0.29025323 0.39860784 0.31113893] length
+# task_efficiency/visited_length/visited_duration importance:  ['fuzzy_dribbble', 'exploring_dribbble', 'goal_dribbble'] 
+# [0.24160315 0.39226943 0.36612743] length
+# task_efficiency/visited_length/visited_duration importance:  ['goal_amazon', 'goal_medium', 'goal_dribbble'] 
+# [0.30868672 0.32416932 0.36714397] duration
+# task_efficiency/visited_length/visited_duration importance:  ['fuzzy_medium', 'fuzzy_dribbble', 'fuzzy_amazon'] 
+# [0.3426562  0.30083865 0.35650515] duration
+# task_efficiency/visited_length/visited_duration importance:  ['exploring_medium', 'exploring_amazon', 'exploring_dribbble'] 
+# [0.31325273 0.38611585 0.30063142] length
+
 #                   precision    recall  f1-score   support
 
-# exploring_amazon       1.00      0.75      0.86         4
-#     fuzzy_amazon       0.22      0.67      0.33         3
-#      goal_amazon       0.00      0.00      0.00         6
+# exploring_amazon       0.39      0.88      0.54         8
+#     fuzzy_amazon       0.00      0.00      0.00        12
+#      goal_amazon       0.36      0.42      0.38        12
 
-#        micro avg       0.38      0.38      0.38        13
-#        macro avg       0.41      0.47      0.40        13
-#     weighted avg       0.36      0.38      0.34        13
+#        micro avg       0.38      0.38      0.38        32
+#        macro avg       0.25      0.43      0.31        32
+#     weighted avg       0.23      0.38      0.28        32
 
 #                   precision    recall  f1-score   support
 
-# exploring_medium       0.67      0.80      0.73         5
-#     fuzzy_medium       0.75      1.00      0.86         3
-#      goal_medium       0.67      0.40      0.50         5
+# exploring_medium       0.35      0.70      0.47        10
+#     fuzzy_medium       0.00      0.00      0.00        12
+#      goal_medium       0.42      0.50      0.45        10
 
-#        micro avg       0.69      0.69      0.69        13
-#        macro avg       0.69      0.73      0.69        13
-#     weighted avg       0.69      0.69      0.67        13
+#        micro avg       0.38      0.38      0.38        32
+#        macro avg       0.26      0.40      0.31        32
+#     weighted avg       0.24      0.38      0.29        32
 
 #                     precision    recall  f1-score   support
 
-# exploring_dribbble       0.50      0.50      0.50         4
-#     fuzzy_dribbble       1.00      0.20      0.33         5
-#      goal_dribbble       0.38      0.75      0.50         4
+# exploring_dribbble       0.50      0.10      0.17        10
+#     fuzzy_dribbble       0.30      1.00      0.46         9
+#      goal_dribbble       0.00      0.00      0.00        13
 
-#          micro avg       0.46      0.46      0.46        13
-#          macro avg       0.62      0.48      0.44        13
-#       weighted avg       0.65      0.46      0.44        13
+#          micro avg       0.31      0.31      0.31        32
+#          macro avg       0.27      0.37      0.21        32
+#       weighted avg       0.24      0.31      0.18        32
 
 #                precision    recall  f1-score   support
 
-#   goal_amazon       0.62      0.83      0.71         6
-# goal_dribbble       0.50      0.33      0.40         3
-#   goal_medium       1.00      0.75      0.86         4
+#   goal_amazon       1.00      0.15      0.27        13
+# goal_dribbble       0.53      1.00      0.69        10
+#   goal_medium       0.73      0.89      0.80         9
 
-#     micro avg       0.69      0.69      0.69        13
-#     macro avg       0.71      0.64      0.66        13
-#  weighted avg       0.71      0.69      0.69        13
+#     micro avg       0.62      0.62      0.62        32
+#     macro avg       0.75      0.68      0.59        32
+#  weighted avg       0.78      0.62      0.55        32
 
 #                 precision    recall  f1-score   support
 
-#   fuzzy_amazon       0.50      0.17      0.25         6
-# fuzzy_dribbble       0.33      0.67      0.44         3
-#   fuzzy_medium       0.60      0.75      0.67         4
+#   fuzzy_amazon       0.38      0.60      0.46        10
+# fuzzy_dribbble       0.58      0.78      0.67         9
+#   fuzzy_medium       0.75      0.23      0.35        13
 
-#      micro avg       0.46      0.46      0.46        13
-#      macro avg       0.48      0.53      0.45        13
-#   weighted avg       0.49      0.46      0.42        13
+#      micro avg       0.50      0.50      0.50        32
+#      macro avg       0.57      0.54      0.49        32
+#   weighted avg       0.59      0.50      0.48        32
 
 #                     precision    recall  f1-score   support
 
-#   exploring_amazon       0.67      0.50      0.57         4
-# exploring_dribbble       0.50      0.75      0.60         4
-#   exploring_medium       1.00      0.80      0.89         5
+#   exploring_amazon       0.82      0.82      0.82        11
+# exploring_dribbble       1.00      0.42      0.59        12
+#   exploring_medium       0.56      1.00      0.72         9
 
-#          micro avg       0.69      0.69      0.69        13
-#          macro avg       0.72      0.68      0.69        13
-#       weighted avg       0.74      0.69      0.70        13
-
+#          micro avg       0.72      0.72      0.72        32
+#          macro avg       0.79      0.74      0.71        32
+#       weighted avg       0.81      0.72      0.70        32
 if __name__ == "__main__":
     main()

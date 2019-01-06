@@ -120,15 +120,16 @@ function displayDestination(url, message) {
 
 function lowProductivity(prod) {
   Toastify({
-    text: 'Your current productivity is low: ' + prod + '%',
-    duration: 3000,
+    text: 'You seems confusing, do you need help?',
+    duration: 30000,
     destination: url,
     newWindow: true,
-    close: true,
+    close: false,
     gravity: "top", // `top` or `bottom`
     positionLeft: false, // `true` or `false`
     // backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
     backgroundColor: "linear-gradient(to right, #b02900, #c9703d)",
+    feedback: true,
   }).showToast();
 }
 

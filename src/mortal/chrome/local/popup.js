@@ -25,13 +25,15 @@ function makeUL(arr) {
   return list
 }
 
-// add productivity
-document.getElementById('prod-val').innerHTML = history.productivity.toString() + '%'
+// add behavior
 if (history.productivity < 40) {
-  document.getElementById('prod-val').style.color = 'red'
+  document.getElementById('prod-val').innerHTML = 'Exploring'
+  document.getElementById('prod-val').style.color = '#ba592e'
 } else if (history.productivity >= 40 && history.productivity <= 60) {
-  document.getElementById('prod-val').style.color = 'gray'
+  // document.getElementById('prod-val').innerHTML = ''
+  // document.getElementById('prod-val').style.color = 'gray'
 } else {
+  document.getElementById('prod-val').innerHTML = 'Goal-oriented viewing'
   document.getElementById('prod-val').style.color = '#38ad76'
 }
 

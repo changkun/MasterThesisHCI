@@ -16,37 +16,43 @@ type Jump struct {
 func CalculateNext() *[]Jump {
 	j := []Jump{
 		Jump{
-			URL:         "https://google.com",
-			Description: "Search engine",
-			Confidence:  rand.Intn(100),
+			URL:         "https://github.com/changkun?tab=repositories",
+			Description: "List of changkun's repositories",
+			Confidence:  90,
 		},
 		Jump{
-			URL:         "https://github.com",
-			Description: "Github",
-			Confidence:  rand.Intn(100),
+			URL:         "https://github.com/changkun/MasterThesisHCI",
+			Description: "changkun/MasterThesisHCI",
+			Confidence:  80,
 		},
-		Jump{
-			URL:         "https://medium.com",
-			Description: "Ideas and stories",
-			Confidence:  rand.Intn(100),
-		},
-		Jump{
-			URL:         "https://news.ycombinator.com/news",
-			Description: "Venture capital and hacker news",
-			Confidence:  rand.Intn(100),
-		},
-		Jump{
-			URL:         "https://youtube.com",
-			Description: "Videos",
-			Confidence:  rand.Intn(100),
-		},
+		// Jump{
+		// 	URL:         "https://github.com",
+		// 	Description: "Github",
+		// 	Confidence:  rand.Intn(100),
+		// },
+		// Jump{
+		// 	URL:         "https://medium.com",
+		// 	Description: "Ideas and stories",
+		// 	Confidence:  rand.Intn(100),
+		// },
+		// Jump{
+		// 	URL:         "https://news.ycombinator.com/news",
+		// 	Description: "Venture capital and hacker news",
+		// 	Confidence:  rand.Intn(100),
+		// },
+		// Jump{
+		// 	URL:         "https://youtube.com",
+		// 	Description: "Videos",
+		// 	Confidence:  rand.Intn(100),
+		// },
 	}
 	sort.Slice(j, func(i, k int) bool {
 		return j[i].Confidence > j[k].Confidence
 	})
-	length := rand.Intn(len(j))
-	r := j[0:length]
-	return &r
+	// length := rand.Intn(len(j))
+	// r := j[0:length]
+	// return &r
+	return &j
 }
 
 // CalculateDestination ...
@@ -88,5 +94,6 @@ func CalculateDestination() *[]Jump {
 
 // CalculateProductivity ...
 func CalculateProductivity() int {
-	return rand.Intn(100)
+	// return rand.Intn(100)
+	return 100
 }
