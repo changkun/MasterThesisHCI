@@ -69,7 +69,7 @@ num_decoder_tokens = len(vocabs)
 
 # hyperparams
 latent_dim = 10
-split_ratio = 0.98
+split_ratio = 0.99
 batch_size = 32
 epochs = 1500
 
@@ -223,8 +223,9 @@ model, encoder, decoder = build_model(load_old=load_old)
 model.summary()
 
 history = None
+train_ratio = 0.92
 if not load_old:
-    history = model.fit([input_s, output_s], output_s_one_shot, batch_size=batch_size, 
+    history = model.fit([input_s[:int(input_s.shape[0]*train_ratio)], output_s[:int(output_s.shape[0]*train_ratio)]], output_s_one_shot[:int(output_s_one_shot.shape[0]*train_ratio)], batch_size=batch_size, 
             epochs=epochs,
             validation_split=0.2,
             shuffle=True,
@@ -235,8 +236,8 @@ if not load_old:
                 EarlyStopping(monitor="val_loss", patience=epochs),
                 plot_losses,
             ])
-
-score = model.evaluate([input_s, output_s], output_s_one_shot)
+# test
+score = model.evaluate([input_s[int(input_s.shape[0]*train_ratio):], output_s[int(output_s.shape[0]*train_ratio):]], output_s_one_shot[int(output_s_one_shot.shape[0]*train_ratio):])
 print('accuracy: ', score[1])
 
 def decode_sequence(input_seq):

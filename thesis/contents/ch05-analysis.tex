@@ -52,16 +52,28 @@ which was described in section \ref{sec:recurrent-unit} and \ref{sec:mark-interp
 
 \subsubsection{Interpretation based on General Features}
 
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.49\textwidth]{figures/amazon-general}
+%     \includegraphics[width=0.49\textwidth]{figures/medium-general}
+%     \includegraphics[width=0.49\textwidth]{figures/dribbble-general}
+%     \caption{XXXXX}
+%     \label{fig:general}
+% \end{figure}
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.49\textwidth]{figures/amazon-general}
-    \includegraphics[width=0.49\textwidth]{figures/medium-general}
-    \includegraphics[width=0.49\textwidth]{figures/dribbble-general}
-    \caption{XXXXX}
-    \label{fig:general}
+    \includegraphics[width=0.48\textwidth]{figures/tsne-amazon}
+    \includegraphics[width=0.48\textwidth]{figures/2d-eff-dur-amazon}
+    \includegraphics[width=0.48\textwidth]{figures/2d-eff-len-amazon}
+    \includegraphics[width=0.48\textwidth]{figures/2d-len-dur-amazon}
+    \caption{TODO:}
+    \label{fig:general-amazon}
 \end{figure}
 
-TODO:
+TODO: table of classification report
+
+more U-test, feature importance.
 
 \subsubsection{Intepretation based on Action Path}
 
@@ -99,12 +111,33 @@ only designed for three type of behavior, and the learning curve
 shows the model still has capacity to classify more precise categories of browsing behavior,
 perform a future investigation may be significance.
 
-\subsection{Optimal Action Path Context}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/acc}
+    \caption{TODO:}
+    \label{fig:acc}
+\end{figure}
 
-This section we evaluates our model with limited action path context, where the feeding action path
-are limited based on a split ratio. For instance, if a split ratio is 0.8 then we feed 80\% of 
-an action path into the model, then predict the rest of 20\% actions. Figure \ref{} illustrates
-the best accuracy we archieved for when use different split ratio.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/loss1}
+    \caption{TODO:}
+    \label{fig:loss1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/loss2}
+    \caption{TODO:}
+    \label{fig:loss2}
+\end{figure}
+
+% \subsection{Optimal Action Path Context}
+
+% This section we evaluates our model with limited action path context, where the feeding action path
+% are limited based on a split ratio. For instance, if a split ratio is 0.8 then we feed 80\% of 
+% an action path into the model, then predict the rest of 20\% actions. Figure \ref{} illustrates
+% the best accuracy we archieved for when use different split ratio.
 
 
 \subsection{Action Path Visualization}
@@ -114,6 +147,58 @@ Note that we collected 189 clickstream in total, which is not possible to illust
 in the thesis, we selected three typical clickstreams to discuss and provided a visualization tool
 to help readers to explore them.
 
+\subsection{Individual Common Patterns}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/vis-goal1}
+    \caption{TODO:}
+    \label{fig:vis-goal1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/vis-goal2}
+    \caption{TODO:}
+    \label{fig:vis-goal2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/vis-fuzzy-explore1}
+    \caption{TODO:}
+    \label{fig:vis-fuzzy-explore1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/vis-fuzzy-explore2}
+    \caption{TODO:}
+    \label{fig:vis-fuzzy-explore1}
+\end{figure}
+
+\subsubsection{Cross-user Overlap Patterns}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/overlap1}
+    \caption{TODO:}
+    \label{fig:overlap1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/overlap2}
+    \caption{TODO:}
+    \label{fig:overlap2}
+\end{figure}
+
+\subsection{Discussion}
+
+% 讨论 google 的一步 prefetching
+
+% 讨论这些数据在移动端的使用
+
+% 讨论这些模式对用户的帮助
 
 \cleardoublepage
