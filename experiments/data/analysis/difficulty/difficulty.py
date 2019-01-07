@@ -628,9 +628,9 @@ def clf():
     # 0.0
 
 def main():
-    significant_tests()
+    # significant_tests()
     plot_features()
-    clf()
+    # clf()
 
 
 # 结论：

@@ -1,16 +1,12 @@
 \section{Experiment}
 \label{ch:exp}
 
+The following of this chapter, we rationalize the process of our lab study then construe the purpose of context given web browsing tasks for our subjects.
+
 The lab study took place during the last two weeks of November, from 14/11/2018 to 29/11/2018
 in Frauenlobstrasse 7a, a faculty building of Ludwig-Maximillians-Universitaet Muenchen.
 Data was collected from the mainstream browser Google Chrome on a self provided 
 desktop computer and a laptop.
-
-The following of this chapter, we present the process of our lab study then construe the purpose of context given web browsing tasks for our subjects.
-
-% - 介绍实验的具体细节，包括所有的实验任务
-% - 为搜集任务的设计进行辩护，为什么任务是合理的，clickstream 和 searchstream 之间有什么区别
-% - 在这里陈述搜集到的实验结果，包括 subjects 的总体数据
 
 In lab study, we select three mainstream websites, Amazon/Medium/Dribbble 
 that covers categories for shopping, media consuming and design brainstorming. 
@@ -19,13 +15,12 @@ context-given browsing tasks (three for each website) to simulate three differen
 Each task requires participant start from a starting page of a given website, and
 all tasks do not restrict participants use the given website, but also allow they 
 access websites outside the landing page to help they complete the task.
-Participants start browsing after they completely understand the requirements of each task,
-and no interruption or question answering during the task
-except exceeding time limit of a task, however subjects can either acquire more time to accomplish
-the task or give up directly.
+Participants start browsing after they completely understand the requirements of 
+each task, and no interruption or question answering during the task
+except exceeding time limit of a task, however subjects can either acquire more time 
+to accomplish the task or give up directly.
 
-The study is designed as a within-subject study, thus every participant performs all tasks.
-To eliminate the learning effect due to the long time of using same websites, 
+The study is designed as a within-subject study, thus every participant performs all tasks. To eliminate the learning effect due to the long time of using same websites, 
 we use Latin square \cite{cochran1950experimental} 
 for the device and tasks participation order to our participants.
 
@@ -115,28 +110,53 @@ browser selection.
 % \footnote{\url{https://medien.ifi.lmu.de}}
 % .... TODO discuss how we go here?
 
-\subsection{Tasks Design}
-\label{sec:task-design}
+
+\subsection{Browsing Behaviors}
+\label{sec:behavior}
 
 Before we explain the design reason of our context-given browsing task, we first present
-and discusses the common three types of daily browsing behavior: goal-oriented, exploring and fuzzy. 
+and discusses the common three types of daily browsing behavior: goal-oriented, exploring and fuzzy.
 
-\textbf{Goal-oriented Task}: A user opens a browser caused by a determined purpose for bussiness work, communication,
+These three terminologies are aggregated from behaviors that discussed in former qualitative researches, all these terminologies are based a fundmental theory of interdisciplinary perspective information seeking behavior \cite{wilson1997information} as we discussed in Chapter \ref{sec:info-seek}.
+Table \ref{table:info-seek} compares the differences between former research and ours.
+
+\begin{table}[H]
+    \small
+    \centering
+    % \setlength{\belowcaptionskip}{10pt}
+    \caption{Terminologies comparison of information behavior on the web}
+    \begin{adjustbox}{width=\textwidth}
+        \begin{tabular}{ccccc}
+            \toprule
+            \textbf{Author} & \textbf{Terminologies} & \textbf{Terminologies} & \textbf{Terminologies} & \textbf{Main Factors} \\
+            \hline
+            \cite{choo1999information} & Formal search & \makecell{Conditioned viewing; \\ Informal search} & Undirected viewing & \makecell{Psychological; demographic;\\ role-related environmental; \\source characteristics} \\
+            \cite{johnson2017patterns} & \makecell{Directed browsing; \\Known-item search} & \makecell{Semi-directed browsing; \\Explorative seeking; \\``You do not know what you need''; \\Re-finding} & Undirected Browsing & Behavior \\
+            \textbf{This thesis} & \textbf{Goal-oriented} & \textbf{Fuzzy} & \textbf{Exploring} & \textbf{Purpose} \\
+            \bottomrule
+        \end{tabular}
+        \label{table:info-seek}
+    \end{adjustbox}
+\end{table}
+
+\paragraph{Goal-oriented behavior} A user opens a browser caused by a determined purpose for bussiness work, communication,
 school study, literature research and etc.
 For instance, a college student has a goal of downloading latest lecture slide, the student then
 access college website and navigates to the lecture homepage. Finally, the student exit 
 browsing after download the slides.
 
-\textbf{Exploring Task}: A user opens a browser aimlessly, the person explores and consumes the content
+\paragraph{Exploring behavior} A user opens a browser aimlessly, the person explores and consumes the content
 on the Web. For instance, a person who accesses an utility web application, he/she explores
 what functions are provided and what he/she can do while using the application.
 
-\textbf{Fuzzy Task}: A user opens a browser with a fuzzy expectation, the clearness of the access purpose
-is less than goal-oriented task but stronger than exploring task.
+\paragraph{Fuzzy behavior} A user opens a browser with a fuzzy expectation, the clearness of the access purpose
+is in between of goal-oriented behavior and exploring behavior.
 For instance, a researcher heared a new technique proposed in other field that may influence he/she's study, 
 then the person opens a search engine to seek existing follow up researches.
 
-Note that these three type of tasks sometimes implies the familiarity of a user to the website.
+
+\subsection{Tasks Design}
+\label{sec:task-design}
 
 We designed 35 browsing tasks, after conduct a pilot study, 
 9 tasks are selected for three websites: Amazon.com, Medium.com and Dribbble.com 
