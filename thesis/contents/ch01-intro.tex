@@ -10,10 +10,10 @@
 % 起源
 
 The word "clickstream" \cite{friedman1995} was first coined in 1995, a media comments article 
-introduced a novel concept of tracing cyberlife of users over the nowadays "Internet". Informally,
-a "clickstream" contains a sequence of hyperlinks clicked by a website user over time.
-At the same year, the most popular server software Apache HTTP \cite{apache1995http} proxy on the Web was developed with a feature
-that records access log of entries.
+introduced a novel concept of tracing cyberlife of users over the nowadays "Internet". 
+Informally, a "clickstream" contains a sequence of hyperlinks clicked by a website user over time.
+At the same year, the most popular server software Apache HTTP \cite{apache1995http} proxy 
+on the Web was developed with a feature that records access log of entries.
 Afterwards, people realized the potential danger and value of tracing cyberspace, which  a
 large discussion of clickstream influences, such as frequency based mining of clickstream \cite{brodwin1995},
 privacy concerns \cite{reidenberg1996governing}, and database schema of session based time series data \cite{courtheoux2000database}.
@@ -76,7 +76,19 @@ but focus and contributes to a client side collected clickstream data for real v
 % 本文将视线移出服务端点击流数据，将焦点转移到客户端点击流数据，尝试对客户端独立用户的点击流进行解释。
 % 本thesis 由以下几个部分组成。
 
-The main part of the thesis is structured in different chapters.
+The main part of the thesis is structured in different chapters, and answers the following
+research questions:
+\textbf{Understanding}: Why collecting clickstream on client-side differs from server-side collecting?
+What are the most significant, identifiable user behaviors and activity patterns 
+can be observed or algorithmically detected in the context of web browsing that 
+indicates information needs,
+and in which form of quantitative data can characterize a definitive boundary to 
+distinguish browsing behaviors of a user?
+\textbf{Classification}: How accurate or how affirmative we can model or identify 
+the proposed browsing behaviors progressively that makes an intelligent system 
+serves proactively? \textbf{Prediction}: How much future movements of a user can be accurately inferred 
+from the context of web browsing, and how much context is required for the prediction?
+
 % 第二章讨论了目前已有的客户端点击流研究。
 Chapter \ref{ch:relate} discusses the exitsting user behavior research based on clickstream data firstly. Then discussed the evolution of theory regarding information seeking behavior as our experiment foundation.
 In addition, we summaried the reason of recent raise of neural approach in different scientific 
