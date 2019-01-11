@@ -1,7 +1,7 @@
 \section{Action Path Models}
 \label{ch:model}
 
-In this chapter, we first formalize few concepts and metrics in clickstream data,
+In this chapter, we formalize few concepts and metrics in clickstream data,
 and then describe a proposed clickstream model named \emph{Action Path model} 
 based on recurrent nerual network that models a client side clickstream behavior. 
 The action path is different than clickstream since 
@@ -96,7 +96,7 @@ we have the range of $E$ is $[0, 1]$.
 which is the problem of finding a path between the starting page and exiting page
  in a action path (directed cyclic graph) such taht the sum of
 the stay duration of its constitunent pages in minimized.
-The problem can be solved by Dijkstra's algorithm \cite{dijkstra1959note}.
+The problem can be solved by Dijkstra's shortest-path algorithm \cite{dijkstra1959note}.
 
 \paragraph{Remark 2} An action path may increases with more nodes (pages) over time.
 The starting page of an action path is always the first page when browser was opened.
@@ -130,7 +130,7 @@ performance for infrequent words. We convey similar idea from these models and p
 The purpose of url2vec model is to construct URL representations to better predict 
 the surrounding URLs in a clickstream. Briefly, given a clickstream of urls 
 $\text{URL}_1, \text{URL}_2, ..., \text{URL}_T$, the objective of url2vec is to maximize the average
-log softmax probability
+log softmax probability:
 
 \begin{align}
 \label{eqn:url2vecprob}
@@ -148,8 +148,10 @@ where $c$ is the size of embedding context, which is a function of starting page
 $v_{\text{URL}_t}$ is one-hot encoded representation of input URLs, and 
 $v_{\text{URL}_{t+i}}$ is the vector embedding of output representations.
 
-\paragraph{Remark 1} This model described by Equation \ref{eqn:url2vecprob} is actually
-a three layer neural network: input layer of one-hot encoded URLs, a hidden layer of
+\paragraph{Remark 1} This model described by Equation \ref{eqn:url2vecprob} is essentially
+a three layer neural network: input layer of \emph{one-hot} encoded URLs (a group of binaries
+that a component of a one-hot encoded vector is a representative of a URL under a finite set
+of existing URLs), a hidden layer of
 feature representation and an output layer share weights to the learned embeddings of 
 input URLs.
 
@@ -158,18 +160,16 @@ $\nabla \log{p(\text{URL}_{t+i} | \text{URL}_t)}$ is large because of expnential
 two numerical optimizations based on Hofmann Tree and Negative Sampling are proposed 
 by Mikolv et al. \cite{mikolv2013embedding}.
 
-\paragraph{Remark 3} The probability can also be interpretat in Bayesian perspective,
+\paragraph{Remark 3} The probability can also be interpret in Bayesian perspective,
 which provides a intuition of this definition. $p(\text{URL}_{t+i} | \text{URL}_t)$
-can be considered as a posterial probability. Since $v_{\text{URL}_t}$ was initialized
-as a one-hot encoded vector input to the embedding neural network, the item can be treat
+can be considered as a posterior probability. Since $v_{\text{URL}_t}$ was initialized
+as an one-hot encoded vector input to the embedding neural network, the item can be treat
 as a prior and the denominator is a normalization term.
 Furthermore, the dot product between $v_{\text{URL}_{t+i}} ^\top$
 and $v_{\text{URL}_t}$ is a representation of consine similarity, which represents
 the closest surrounding URLs in same direction of vectors.
 
 \subsection{Action Path Model}
-
-% - 阐述基于 RNN 的点击流模型，介绍如何通过这个模型对点击流进行预测，这个预测结果包括后续整个点击流的预测
 
 Recurrent Neural Network (RNN) was describe by Werbos \cite{werbos1990rnn} and 
 Rumelhart et al. \cite{Rumelhart:1988:LRB:65669.104451}, the original RNN 
@@ -189,13 +189,13 @@ by interating the activation function Equation \ref{eqn:bptt}:
 where $\sigma(x) = \frac{1}{1+\exp\{-x\}}$,
 and $W_{oh}, W_{hh}, W_{hi}$ are weight parameters between output, hidden and input layers.
 
-The original RNN transfers and maps a sequence to another sequence if and only if the inputs
-and the outputs are aligned with equal length. Apparently, the major issue of the original RNN
+The vanilla RNN transfers and maps a sequence to another sequence if and only if the inputs
+and the outputs are aligned with equal length. Apparently, the major constrains of the vanilla RNN
 is the model cannot address a problem if inputs and outputs provided in different length with 
 complicated and non-monotonic relationships.
 
 Stutskever et al. \cite{DBLP:journals/corr/SutskeverVL14} present a general end-to-end approach
-to sequence learning and estimates the conditional probability of 
+to sequence learning model in machine translation that estimates the conditional probability of 
 $p(o_1, o_2, ..., o_{T'} | i_1, i_2, ..., i_T)$ where $(i_1, i_2, ..., i_T)$ is an input sequence,
 $(o_1, o_2, ..., o_{T'})$ is a corresponding output sequence, and $T$ is not required to be equal with $T'$.
 Our model convey similar idea from it.
@@ -260,7 +260,8 @@ Long Short-term Memory unit (LSTM)
 \cite{hochreiter1997lstm} or 
 Gated Recurrent unit (GRU) \cite{DBLP:journals/corr/ChoMGBSB14}.
 
-The original LSTM recurrent unit has a context cell and three regulators: Input gate, output gate and forget gate.
+The original LSTM recurrent unit has a context cell and three regulators: Input gate, 
+output gate and forget gate.
 The context cell keeps dependencies between inputs of the unit as long term memory. 
 Input gate take historical hidden state and current input and controls the input value to
 the recurrent unit, output gate responsible for the control of output activations, and
@@ -302,14 +303,14 @@ in to update gate $Z_t$, and others (reset gate $R_t$, hidden state $h_t$) stay 
 where $t = 1, 2, ..., n; P^{(Z)}, Q^{(Z)}, P^{(R)}, Q^{(R)}, P^{(H)}, Q^{(H)}$ are shared weight parameters, 
 $\circ$ represents element-wise product of two matrices.
 
-\textbf{Remark 1}. The units we described in this section is neither LSTM nor GRU since
+\paragraph{Remark 1} The units we described in this section is neither LSTM nor GRU since
 the input gate $I_t$ or update gate $Z_t$ introduces time duration $d^{ij}_t$ as input,
-which is completely different than the original learnable bias in these gates. 
+which is different than a simple constant bias in the original learnable bias in these gates. 
 It is worth mentioning that adding bias to the gates are helpful to 
 improve learning performance in LSTM \cite{Jozefowicz:2015:EER:3045118.3045367}, 
-we also use the trick in our model.
+we also use the trick in our model as shown in $F_t$ of Equation \ref{eqn:lstm}.
 
-\textbf{Remark 2}. The term $\frac{d^{ij}_t}{d^{ij}_t + 1}$ is a squashing mechanism,
+\paragraph{Remark 2} The term $\frac{d^{ij}_t}{d^{ij}_t + 1}$ is a squashing mechanism,
 it normalizes $d^{ij}_t$ from $(0, \infty)$ to $(0, 1)$.
 
 \subsubsection{Ending Mark Interpretation}
@@ -317,10 +318,10 @@ it normalizes $d^{ij}_t$ from $(0, \infty)$ to $(0, 1)$.
 
 In context decoder, we mentioned an ending mark ``<EOA>'' that indicates the termination 
 decoding process. However, the ending mark is different than other marks, since in practice,
-``<EOA>'' is represented in different symbols of categorical clickstream, which as a label to
+``<EOA>'' is represented in different symbols of behavior-based categorical clickstream, which as a label to
 involve classification of user actions.
 
-Assume action paths are labeled by ont-hot encoded ending marks 
+Assume action paths are labeled by one-hot encoded ending marks 
 $\text{EOA}_1, \text{EOA}_2, ..., \text{EOA}_m$ and the last output
 of decoder hidden state is $h_n$, we have:
 
@@ -355,10 +356,11 @@ a conditional probability under the input clickstream, i.e. we need to solve an 
 \end{split}
 \end{align}
 
-Heuristic approach can solve the optimization problem efficiently, namely beam search \cite{DBLP:journals/corr/abs-1211-3711}. 
+A heuristic approach can solve the optimization problem efficiently, 
+namely beam search \cite{DBLP:journals/corr/abs-1211-3711}. 
 In each step of decoder output, we reserve the top-$k$ best combinations of URLs and eliminate the rest of
 URLs from evaluation, and finally selects $k$ best clickstreams.
-The pseudocode is given in Algorithm \ref{algo:optimize}.
+The pseudocode is given that adapts vanilla beam search to URL prediction search in Algorithm \ref{algo:optimize}.
 
 ~\\
 
@@ -387,14 +389,12 @@ The pseudocode is given in Algorithm \ref{algo:optimize}.
 
 ~\\
 
-\textbf{Remark}. The algorithm produces an heuristic output 
+\paragraph{Remark} The algorithm produces an heuristic output 
 with given clickstream context. Combining with \emph{url2vec} model, the prediction
 can heuristically optimize the click path of a specific user since the embeddings are trained 
 over all possible action path. For instance, a distraction advertisement page will not appear
 after optimization because the embedding of advertisement page is far from a desired page
 if embeddings are learned correctly.
-
-% \\
 
 % This chapter proposed several models that characterized a method to modeling user actions
 % on the Web.
