@@ -76,7 +76,7 @@ Assume the total stay duration of the shortest path from starting page to existi
 is $d_s$, and the total stay duration of the action path is $D$, 
 the number of nodes in the shortest path is $n_s$, the total nodes 
 in an action path is $N$, the \emph{completion effeciency $E$} is defined 
-as follows equation \ref{eqn:completion-effeciency}:
+as follows Equation \ref{eqn:completion-effeciency}:
 
 \begin{align}
 \label{eqn:completion-effeciency}
@@ -92,17 +92,20 @@ it is easy to prove the range of $E$ is $(0, 1]$. As a complement, we define \em
 completion efficiency} if and only if a user cannot complete a clickstream. Therefore
 we have the range of $E$ is $[0, 1]$.
 
-\textbf{Remark 1}. The definition of completion effeciency uses the term of shortest path,
+\paragraph{Remark 1} The definition of completion effeciency uses the term of shortest path,
 which is the problem of finding a path between the starting page and exiting page
  in a action path (directed cyclic graph) such taht the sum of
 the stay duration of its constitunent pages in minimized.
 The problem can be solved by Dijkstra's algorithm \cite{dijkstra1959note}.
 
-\textbf{Remark 2}. An action path may increases with more nodes (pages) over time.
+\paragraph{Remark 2} An action path may increases with more nodes (pages) over time.
 The starting page of an action path is always the first page when browser was opened.
 However, one can always treat the current visited page is the exiting page due to we
 do not know when an user will exit browsing over time. Consequently, $E$ is changing over
 browsing.
+
+\paragraph{Remark 3} We uses completion efficiency as a
+feature for a classification task in Section \ref{sec:inter-general-feature}.
 
 % TODO: 考虑是否还需要这个
 % \subsection{Clickstream Overlap Ratio}
@@ -145,15 +148,24 @@ where $c$ is the size of embedding context, which is a function of starting page
 $v_{\text{URL}_t}$ is one-hot encoded representation of input URLs, and 
 $v_{\text{URL}_{t+i}}$ is the vector embedding of output representations.
 
-\textbf{Remark 1}. This model described by equation \ref{eqn:url2vecprob} is actually
+\paragraph{Remark 1} This model described by Equation \ref{eqn:url2vecprob} is actually
 a three layer neural network: input layer of one-hot encoded URLs, a hidden layer of
 feature representation and an output layer share weights to the learned embeddings of 
 input URLs.
 
-\textbf{Remark 2}. The probability in \ref{eqn:url2vecprob} is impractical due to
-$\nabla \log{p(\text{URL}_{t+i} | \text{URL}_t)}$ is as large as $10^5$ to $10^7$,
+\paragraph{Remark 2} The probability in Equation \ref{eqn:url2vecprob} is impractical due to
+$\nabla \log{p(\text{URL}_{t+i} | \text{URL}_t)}$ is large because of expnential items,
 two numerical optimizations based on Hofmann Tree and Negative Sampling are proposed 
 by Mikolv et al. \cite{mikolv2013embedding}.
+
+\paragraph{Remark 3} The probability can also be interpretat in Bayesian perspective,
+which provides a intuition of this definition. $p(\text{URL}_{t+i} | \text{URL}_t)$
+can be considered as a posterial probability. Since $v_{\text{URL}_t}$ was initialized
+as a one-hot encoded vector input to the embedding neural network, the item can be treat
+as a prior and the denominator is a normalization term.
+Furthermore, the dot product between $v_{\text{URL}_{t+i}} ^\top$
+and $v_{\text{URL}_t}$ is a representation of consine similarity, which represents
+the closest surrounding URLs in same direction of vectors.
 
 \subsection{Action Path Model}
 
@@ -164,7 +176,8 @@ Rumelhart et al. \cite{Rumelhart:1988:LRB:65669.104451}, the original RNN
 generalize feedforward neural network for sequence based data.
 
 Given a sequence of input $(i_1, i_2, ..., i_T)$, the original RNN computes a
-sequence of outputs $(o_1, o_2, ..., o_T)$ by interating the activation function \ref{eqn:bptt}:
+sequence of outputs $(o_1, o_2, ..., o_T)$ 
+by interating the activation function Equation \ref{eqn:bptt}:
 
 \begin{align}
 \label{eqn:bptt}
@@ -191,21 +204,22 @@ An \emph{action path} from user $i$ in session $j$ consist of
 a sequence of \emph{url2vec} embedded vectors $(U^{ij}_1, U^{ij}_2, ..., U^{ij}_n)$ 
 and a sequence of time duration $(d^{ij}_1, d^{ij}_2, ..., d^{ij}_n)$, since each URL 
 has a corresponding number that represents the time duration of a user spent on a given page.
+Our action path model consist a context encoder and a context decoder. 
 
 \subsubsection{Context Encoder}
 
-Our action path model consist a context encoder and a context decoder. Context encoder
-encodes URLs one by one and produces a context tensor that encodes the historical user actions, 
-shown in Figure \ref{fig:encoder}. In the encoder, we insert a starting mark "<SOA>" (\emph{Start of Action})
-as a sign of start feeding URLs, and a trigger mark "<COI>" (\emph{Change of Intention}) as
+Context encoder encodes URLs one by one and produces a context tensor that encodes 
+the historical user actions, as shown in Figure \ref{fig:encoder}. 
+In the encoder, we insert a starting mark ``<SOA>'' (\emph{Start of Action})
+as a sign of start feeding URLs, and a trigger mark ``<COI>'' (\emph{Change of Intention}) as
 a sign to trigger decoder to decodes encoded context tensor.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/encoder}
     \caption{Context encoder of Action Path Model. In the encoder, 
-    a starting mark "<SOA>" is used as a sign of start feeding URLs, 
-    and a trigger mark "<COI>" as
+    a starting mark ``<SOA>'' is used as a sign of start feeding URLs, 
+    and a trigger mark ``<COI>'' as
     a sign to trigger decoder to decodes encoded context tensor.
     The trigger mark is automatically inserted after the $k$-th URL in the end
     of encoder model over time, $k$ is increasing over time.
@@ -216,16 +230,16 @@ a sign to trigger decoder to decodes encoded context tensor.
 \subsubsection{Context Decoder}
 
 Context decoder decodes the context tensor produced by encoder. We feed a prediction mark
-"<SOP>" (\emph{Start of Prediction})as a sign to initiate the decoding of encoded context.
-In the end of decoder, decoder produces an ending mark "<EOA>" (\emph{End of Action}) that
+``<SOP>'' (\emph{Start of Prediction})as a sign to initiate the decoding of encoded context.
+In the end of decoder, decoder produces an ending mark ``<EOA>'' (\emph{End of Action}) that
 terminates the decoding process.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/decoder}
     \caption{Context decoder of Action Path Model. In the decoder, 
-    a prediction mark "<SOP>" is used to initiate decoding process, 
-    and an ending mark "<EOA>" as a sign to terminate decode process.
+    a prediction mark ``<SOP>'' is used to initiate decoding process, 
+    and an ending mark ``<EOA>'' as a sign to terminate decode process.
     The output of decoder uses a softmax intermediate operation to magnify and normalize
     the probability of predicted URL embedding.
     In addition, the recurrent unit is not detailly describeed in the figure but afterwards.}
@@ -233,21 +247,30 @@ terminates the decoding process.
 \end{figure}
 
 Note that the decoder model in training phase and prediction phase is different.
-In the training phase, teacher forcing algorithm \cite{williams1989learning} is used, 
-it supplying observed user actions as inputs.
+In the training phase, teacher forcing strategy \cite{williams1989learning} is used, 
+the strategy supplys observed user actions as inputs.
 In the testing phase, decoder uses the output from recurrent unit as input, shown through 
 dashed lines in Figure \ref{fig:decoder}.
-
 
 \subsubsection{Recurrent Unit}
 \label{sec:recurrent-unit}
 
-The recurrent unit in the Action Path model is not as standard as original Long Short-term Memory unit (LSTM)
-\cite{hochreiter1997lstm} or Gated Recurrent unit (GRU) \cite{DBLP:journals/corr/ChoMGBSB14}.
+The recurrent unit in the Action Path model is not as standard as original 
+Long Short-term Memory unit (LSTM)
+\cite{hochreiter1997lstm} or 
+Gated Recurrent unit (GRU) \cite{DBLP:journals/corr/ChoMGBSB14}.
 
-When using LSTM as recurrent unit, we feed time duration $(d^{ij}_1, d^{ij}_2, ..., d^{ij}_n)$
-into input gate $I_t$, and others (forget gate $F_t$, output gate $O_t$, memory cell $C_t$ and hidden state $h_t$) 
-remains the same:
+The original LSTM recurrent unit has a context cell and three regulators: Input gate, output gate and forget gate.
+The context cell keeps dependencies between inputs of the unit as long term memory. 
+Input gate take historical hidden state and current input and controls the input value to
+the recurrent unit, output gate responsible for the control of output activations, and
+forget gate resets and decides retaining values of the recurrent unit as a short term memory.
+Similarly in GRU, it simplyfies the structure of LSTM into a update gate and a reset gate.
+
+In our recurrent unit, when using LSTM as recurrent unit base, we also 
+feed time duration $(d^{ij}_1, d^{ij}_2, ..., d^{ij}_n)$
+into input gate $I_t$, and others (forget gate $F_t$, output gate $O_t$, 
+memory cell $C_t$ and hidden state $h_t$) remains the same:
 
 \begin{align}
 \label{eqn:lstm}
@@ -264,7 +287,7 @@ where $t = 1, 2, ..., n; P^{(I)}, Q^{(I)}, P^{(F)}, Q^{(F)}, P^{(O)}, Q^{(O)}$ a
 $b^{(F)}$ is a bias in forget gate $F_t$,
 $\circ$ represents element-wise product of two matrices.
 
-When using GRU as recurrent unit, we feed time duration $(d^{ij}_1, d^{ij}_2, ..., d^{ij}_n)$
+When using GRU as recurrent unit base, we feed time duration $(d^{ij}_1, d^{ij}_2, ..., d^{ij}_n)$
 in to update gate $Z_t$, and others (reset gate $R_t$, hidden state $h_t$) stay the same:
 
 \begin{align}
@@ -281,9 +304,10 @@ $\circ$ represents element-wise product of two matrices.
 
 \textbf{Remark 1}. The units we described in this section is neither LSTM nor GRU since
 the input gate $I_t$ or update gate $Z_t$ introduces time duration $d^{ij}_t$ as input,
-which completely different than introduce learnable bias in these gates. It is worth mentioning that
-adding bias to the gates are helpful to improve learning performance in LSTM
- \cite{Jozefowicz:2015:EER:3045118.3045367}, we also use the trick in our model.
+which is completely different than the original learnable bias in these gates. 
+It is worth mentioning that adding bias to the gates are helpful to 
+improve learning performance in LSTM \cite{Jozefowicz:2015:EER:3045118.3045367}, 
+we also use the trick in our model.
 
 \textbf{Remark 2}. The term $\frac{d^{ij}_t}{d^{ij}_t + 1}$ is a squashing mechanism,
 it normalizes $d^{ij}_t$ from $(0, \infty)$ to $(0, 1)$.
@@ -291,9 +315,9 @@ it normalizes $d^{ij}_t$ from $(0, \infty)$ to $(0, 1)$.
 \subsubsection{Ending Mark Interpretation}
 \label{sec:mark-interpretation}
 
-In context decoder, we mentioned an ending mark "<EOA>" that indicates the termination 
+In context decoder, we mentioned an ending mark ``<EOA>'' that indicates the termination 
 decoding process. However, the ending mark is different than other marks, since in practice,
-"<EOA>" is represented in different symbols of categorical clickstream, which as a label to
+``<EOA>'' is represented in different symbols of categorical clickstream, which as a label to
 involve classification of user actions.
 
 Assume action paths are labeled by ont-hot encoded ending marks 
@@ -313,7 +337,7 @@ where $W^{(M)}$ is a weight parameter, and $m$ is the number of ending mark cate
 \subsection{Action Path Optimization}
 
 In traditional classification models, the arguments of the maxima (argmax) is used to select
-labels with highest probability, scilicet, argmax selects predicted pages with highest probability
+labels with highest probability, scilicet, argmax selects predicted URLs with highest probability
 of user action from decoder outputs. However, this method is under the condition of all outputs
 are independent in probability, which is not suitable to our senario.
 
@@ -332,8 +356,8 @@ a conditional probability under the input clickstream, i.e. we need to solve an 
 \end{align}
 
 Heuristic approach can solve the optimization problem efficiently, namely beam search \cite{DBLP:journals/corr/abs-1211-3711}. 
-In each step of decoder output, we reserve the top-$k$ best combinations of pages and eliminate the rest of
-pages from evaluation, and finally selects $k$ best clickstreams.
+In each step of decoder output, we reserve the top-$k$ best combinations of URLs and eliminate the rest of
+URLs from evaluation, and finally selects $k$ best clickstreams.
 The pseudocode is given in Algorithm \ref{algo:optimize}.
 
 ~\\

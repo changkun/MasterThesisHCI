@@ -77,17 +77,23 @@ but focus and contributes to a client side collected clickstream data for real v
 % 本thesis 由以下几个部分组成。
 
 The main part of the thesis is structured in different chapters, and answers the following
-research questions:
-\textbf{Understanding}: Why collecting clickstream on client-side differs from server-side collecting?
-What are the most significant, identifiable user behaviors and activity patterns 
-can be observed or algorithmically detected in the context of web browsing that 
-indicates information needs,
-and in which form of quantitative data can characterize a definitive boundary to 
-distinguish browsing behaviors of a user?
-\textbf{Classification}: How accurate or how affirmative we can model or identify 
-the proposed browsing behaviors progressively that makes an intelligent system 
-serves proactively? \textbf{Prediction}: How much future movements of a user can be accurately inferred 
-from the context of web browsing, and how much context is required for the prediction?
+three research question groups:
+
+\begin{enumerate}
+    \item \textbf{Understanding}: Why collecting clickstream on client-side differs 
+        from server-side collecting?
+        What are the most significant, identifiable user behaviors and activity patterns 
+        can be observed or algorithmically detected in the context of web browsing that 
+        indicates information needs,
+        and in which form of quantitative data can characterize a definitive boundary to 
+        distinguish browsing behaviors of a user?
+    \item \textbf{Classification}: How accurate or how affirmative we can model or identify 
+        the proposed browsing behaviors progressively that makes an intelligent system 
+        serves proactively?
+    \item \textbf{Prediction}: How much future movements of a user can be accurately inferred 
+        from the context of web browsing, and how much context is required for the prediction?
+
+\end{enumerate}
 
 % 第二章讨论了目前已有的客户端点击流研究。
 Chapter \ref{ch:relate} discusses the exitsting user behavior research based on clickstream data firstly. Then discussed the evolution of theory regarding information seeking behavior as our experiment foundation.
@@ -98,11 +104,11 @@ Chapter \ref{ch:model} first defined the completion effeciency of a clickstream,
 formalizes our proposed sequence to sequence encoder/decoder model for client side
 clickstream as well as the training techniques for the proposed model.
 % 第四章详细描述了实验的设计，介绍了每个所设计任务的原因和考虑，讨论了每个所设计的任务中潜在的数据的搜集和分析工作。
-In subsequent chapter, chapter \ref{ch:exp}, we present our experiment for a lab study,
+In subsequent chapter, Chapter \ref{ch:exp}, we present our experiment for a lab study,
 and construe the design reason of context given web browsing tasks for our subjects.
 % 第五章分析了第四章描述中搜集到的数据，基于 SVM、t-SNE 分析了除了点击流之外的几个特征，定量分析，得出了结论。。。。
 % 然后基于第三章中提出的模型，分析了。。。。的结果，得出了。。。的结论。
-Afterwards, in chapter \ref{ch:eval}, based on SVM, t-SNE and our proposed model, 
+Afterwards, in Chapter \ref{ch:eval}, based on SVM, t-SNE and our proposed model, 
 we conducte a quantitative analysis with described data from our lab study, 
 the evaluation shows a very promising result and the result suggests TODO:. % 还要介绍评估得分。
 % 最后对用户在任务下的点击流进行了可视化，定性分析，进一步讨论了用户的行为，从而进一步验证了我们的结论。。。
@@ -110,7 +116,7 @@ Moreover, we visualizes the clickstream through directed graph, by combining our
 we also performs a qualitative analysis to all graphs, the analysis gives evidences that further 
 verified the correctness of our model.
 % 第六章首先介绍了浏览器插件的工作原理，讨论了我们插件的工作架构。介绍了插件的客户端和服务端的实现方案。
-In chapter \ref{ch:app}, as a consequence of our analysis, we developed a browser plugin 
+In Chapter \ref{ch:app}, as a consequence of our analysis, we developed a browser plugin 
 for Google Chrome as a possible application to our model. The plugin can fairly predict 
 the next possible visiting pages of a user. In addition, we generalize the design of
 our plugin architecture into a communication protocol between client and server,
