@@ -2,39 +2,96 @@
 \label{ch:app}
 
 This chapter we first introduces a possible application of our proposed model
-and how it could benefit user, the proposed design of the application including frontend, backend architecture as well as database that mostly suitable for the data collection.
-Then we formalize and discusse the possibility and benefits as a standard Web API for developers.
+including the implemeted feature, how it could benefit user, as well as the 
+architecture and dataflow within the application.
+Then in the second part of this chapter, we formalize and discusse 
+the possibility and benefits as a standard Web API to web developers and website designer.
 
 \subsection{Client-side Browser Plugin}
 \label{sec:plugin}
 
 We developed a client-side browser plugin is an illustration of our model applications.
-The plugin proactively serves its user, and providing proactive notification
-based on the historical actions in a session.
-
-
+The plugin is an intellegent system that proactively serves its user, 
+and it provides proactive notification based on the historical actions in a session
+when browsing behavior is detected as goal-oriented or fuzzy behavior, 
+as illustrated in Figure \ref{fig:proactive-noti}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/proactive-noti}
-    \caption{TODO:}
+    \caption{Proactive notification:
+    The plugin inject monitor script when the page is loaded, and then surve user giving
+    notification when detect fuzzy browsing behavior.}
     \label{fig:proactive-noti}
 \end{figure}
 
+The user can either select ``Yes'' and navigates to the most likely page that he/she will visit
+in the future, or select ``No'' to ignore the notification.
+The plugin surves user only if the browsing behavior is detected as fuzzy behavior because
+of the forbear of notification. We argue that the plugin is only a supplementary of improving
+browsing experience but not always necessary, for instance in exploring behavior, information
+need of a user may not be clearly observed and the recommendations is not usefulness. 
+One of benefits of the plugin is to proactively help user become efficient
+and reach the destination as fast as possible in goal-oriented browsing.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/plugin-predicting-result}
-    \caption{TODO:}
+    \caption{The plugin provided popup page: users can always open the page
+    to understand the current status of browsing and predicted needs based on
+    historical actions in a browsing session. In this case, the detected borwsing behavior
+    is under a goal-oriented browsing, and predicted actions
+    are accessing the page of public repositories and accessing a specific repository.}
     \label{fig:plugin-predict}
 \end{figure}
+
+In Figure \ref{fig:plugin-predict}, except proactive notification, 
+users can always open a popup page that provided by the plugin.
+The popup page provides another interaction that gives the predicted needs 
+based on historical user actions. A user can always interact with the plugin and
+retrieve the possible needs and browsing status in the current session.
+These information is helpful to the plugin user because the user can understand
+what is the current status of web browsing, which implicitly aware the person better focus
+if the person detected as exploring browsing behavior.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/arch}
-    \caption{TODO:}
+    \caption{The implemented architecture of our plugin}
     \label{fig:arch}
 \end{figure}
+
+The implementation and architecture is not simple
+despite it provides a small feature that exhibit context and future inforamtion to the user.
+Figure \ref{fig:arch} illustrates the implemented architecture of the plugin.
+
+First of all, the plugin daemon process will inject monitoring script (\emph{step2}) to 
+the newly opened page (\emph{step1}).
+When user start browsing and interacting (\emph{step3}), the injected script will report the referring of
+previous visited URL, current URL and stay duration to the daemon process of the plugin (\emph{step4}).
+
+Afterwards, the daemon process will report the referring information to the plguin server webhook (\emph{step5}),
+and then the webhook will immediatelly request the intra prediction microservice (\emph{step6}) and resulting a 
+prediction (\emph{step7}) then response a prediction result to the daemon process 
+by using a pre-trained model (\emph{step8}). Therefore the daemon process can decide 
+if a proactive notification should be presented to the user or simply update its popup page
+just for illustration (\emph{step9}).
+
+Since the prediction service received a new user action, it stores the action into database
+subsequently for model update (\emph{step10}). Because of the cost of train a new model,
+the prediction service can decide to trigger training service to retrain the model 
+if already received enough new data (\emph{step11}). 
+Further, the training service uses the pre-trained model as
+a base model to initiate the training by request newly created data from databse (\emph{step12} and \emph{step13}), 
+similar to the idea of transfer learning.
+After the training achieved a compatible performance comparing to the pre-trained model,
+the training service will update the newly trained model to the prediction service (\emph{step14}), which 
+serves future prediciton requests.
+
+As we can see in the architecture, the infrastructure is not as simple as the plugin feature
+intent to provide, therefore we argue that it is a feature that only browser manufactures
+can provide. In the following section, we formalize and discuss 
+the possibilities of the plugin feature as a Web API.
 
 \subsection{Web API Standardization and Platform-as-a-Service}
 
@@ -64,7 +121,7 @@ actions, as the diagram shown in Figure \ref{fig:webapi}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\textwidth]{figures/webapi}
-    \caption{TODO:}
+    \caption{Usage overview of standadized BrowsingBehavior API}
     \label{fig:webapi}
 \end{figure}
 
