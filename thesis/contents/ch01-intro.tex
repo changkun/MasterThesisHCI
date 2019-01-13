@@ -1,24 +1,22 @@
 \section{Introduction}
 \label{ch:intro}
 
-\subsection{The Origin of Clickstream Research}
-
-% 讨论 clickstream 的起源，讨论 clickstream 的影响，
-% 为什么 clickstream 变得重要，为什么 clickstream 是一个值得研究的类别，
-% clickstream 的价值都体现在哪些方面，以前的一些 clickstream 都有些什么内容。
+\subsection{A Brief History of Clickstream Research}
 
 % 起源
 
-The word "clickstream" \cite{friedman1995} was first coined in 1995, a media comments article 
-introduced a novel concept of tracing cyberlife of users over the nowadays "Internet". 
-Informally, a "clickstream" contains a sequence of hyperlinks clicked by a website user over time.
-At the same year, the most popular server software Apache HTTP \cite{apache1995http} proxy 
-on the Web was developed with a feature that records access log of entries.
-Afterwards, people realized the potential danger and value of tracing cyberspace, which  a
-large discussion of clickstream influences, such as frequency based mining of clickstream \cite{brodwin1995},
-privacy concerns \cite{reidenberg1996governing}, and database schema of session based time series data \cite{courtheoux2000database}.
+The word "clickstream" \cite{friedman1995} was first coined in 1995, a media comments 
+article introduced a novel concept of tracing cyberlife of users over the nowadays 
+"Internet". Informally, a "clickstream" contains a sequence of hyperlinks clicked by a 
+website user over time. At the same year, the most popular server software 
+Apache HTTP \cite{apache1995http} proxy on the Web was developed with a feature that 
+records access log of entries. Afterwards, people realized the potential danger and value 
+of tracing cyberspace, which a large discussion of clickstream influences, such as 
+frequency based mining of clickstream \cite{brodwin1995}, privacy concerns 
+\cite{reidenberg1996governing}, and database schema of session based time series data 
+\cite{courtheoux2000database}.
 
-% 搜集 clickstream 带来的
+% 搜集 clickstream 带来的推动
 
 Privacy discussion concludes collecting traces over net clearly offence the rights of users,
 the practice violates the openness and transparency of a service to a user.
@@ -49,17 +47,18 @@ suggests personalize user based on association rule from their web usage data. C
 first proposed E-commerce websites should use clickstream to tracking customer navigation pattern instead of essential choice, 
 associating and binding products for observing responses of a customer.
 
-With the arise of characterizing and behavior understanding on clickstream data, more and more
-research proposes methods for the understanding of given server clickstream data.
+With the arise of characterizing and behavior understanding on clickstream data, more 
+and more research proposes methods for the understanding of given server clickstream data.
 Padmanabhan et al. \cite{Padmanabhan:2001:PID:502512.502535}
 proposed an algorithm to address personalization from incomplete clickstream data, which implies
 a security problem potential information leak from clickstream data. 
 Moreover, affected by search engine indexing, Lourenco at al. \cite{Lourenco:2006:CWC:1145581.1145634} recommends an approach for
 the detection and containment of web crawler based on server side recorded visiting log file.
 
-After a short review of clickstream history, almost all research putforwards their method 
-based on server recorded clickstream data. Note that a daily user is always allowed accesses parallel pages simultaneously and even switching across multiple websites for 
-a browsing purpose.
+TODO: rephrase here
+
+After a short review of clickstream history, almost all research putforwards their 
+methodology based on server recorded clickstream data. Note that a daily user is always allowed accesses parallel pages simultaneously and even switching across multiple websites for a browsing purpose.
 An obvious missing aspect of those papers is the server log data is incomplete to 
 a characterizing visited user, and the log data only appropriate for a specific website. 
 As an observation, our research no longer surves server side clickstream, 

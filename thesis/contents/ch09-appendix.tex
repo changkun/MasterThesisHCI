@@ -18,16 +18,24 @@ The other parts of the thesis (such as program source code) are licensed
 under a MIT Public License
 \footnote{\url{https://github.com/changkun/MasterThesisHCI/blob/master/LICENSE}}.
 
-\section{Content of enclosed CD-ROM}
+\section{Content of enclosed CD}
 \label{appendix:a}
 
 \begin{enumerate}
-    \item $/docs/$ - Scheduling of 
-    \item $/documents/$ - TODO
-    \item $/documents/$ - TODO
-    \item $/documents/$ - TODO
+    \item $/docs/$ - Documents regarding scheduling and discussion during the thesis
+    \item $/experiments/$ - Raw user study designs, raw datasets collected from field study, pilot study and lab study in the thesis. Besides, analysis code to the collected dataset are located in this folder.
+    \item $/keynotes/$ - The raw keynote files of thesis commencement and 
+                        defence presentation slides.
+    \item $/src/$ - Developed applications. This folder contains four applications that produced in the thesis: \emph{crawler} is a web spider that collects then entire link
+    relationships in medien.ifi.lmu.de; \emph{gink} is a website that reponsible for 
+    crowdsourcing labeling tasks in the wild; \emph{mortal} is the developed web plugin 
+    that mentioned in the chapter of application, it has a microservice server and three browser plugin derivatives including lab study collector, field study collector and browsing predictor;
+    \item $/thesis/$ - The \LaTeX source code of the thesis, as well as a compiled PDF version.
+    \item $/LICENSE$ - An MIT License to all enclosed source code in the CD
+    \item $/README.md$ - A brief description of the content enclosed in the CD
 \end{enumerate}
 
+\cleardoublepage
 
 \section{Tasks and Questionnaire in Lab Study}
 \label{appendix:b}
@@ -204,6 +212,9 @@ This section lists all designed tasks but unselected to lab study.
 
 \subsection{Subjective Difficulty Score from Lab Study}
 
+Table \ref{table:diff-raw} illustrates the raw subjective difficulty score from all of our 
+participants.
+
 \begin{table}[H]
       \small
       \centering
@@ -237,5 +248,39 @@ This section lists all designed tasks but unselected to lab study.
             20 & 3, 3, 2 & 3, 5, 4 & 2, 3, 5 \\
             \bottomrule
       \end{tabular}
-      \label{table:diff}
+      \label{table:diff-raw}
 \end{table}
+
+\subsection{Raw clickstream data}
+
+Code \ref{lst:raw-clickstream} is an illustration of the collected clickstream data.
+
+\begin{lstlisting}[
+      language={JavaScript},
+      caption={Formation of browser collections},
+      label={lst:raw-clickstream}
+]
+
+[
+    {
+        "task_id": 1,
+        "clickstream": [
+            {"user_id":1,"previous_url":"","current_url":"https://www.amazon.com/","stay_seconds":26.214,"time":"2018-12-03T19:44:19Z"},
+            {"user_id":1,"previous_url":"https://www.amazon.com/","current_url":"https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps\u0026field-keywords=iphone","stay_seconds":10.712,"time":"2018-12-03T19:54:19Z"},
+            {"user_id":1,"previous_url":"https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps\u0026field-keywords=iphone","current_url":"https://www.amazon.com/s/ref=nb_sb_noss?url=node%3D7072561011\u0026field-keywords=iphone+xs\u0026rh=n%3A7072561011%2Ck%3Aiphone+xs","stay_seconds":6.099,"time":"2018-12-03T19:54:25Z"},
+            ...
+            {"user_id":1,"previous_url":"https://www.amazon.com/gp/product/handle-buy-box/ref=dp_start-bbf_1_glance","current_url":"https://www.amazon.com/gp/huc/view.html?ie=UTF8\u0026increasedItems=C788d76cc-7a30-44cc-8041-85993f4d6716\u0026newItems=C788d76cc-7a30-44cc-8041-85993f4d6716%2C1","stay_seconds":10.282,"time":"2018-12-03T19:57:40Z"},
+            {"user_id":1,"previous_url":"https://www.amazon.com/gp/huc/view.html?ie=UTF8\u0026increasedItems=C788d76cc-7a30-44cc-8041-85993f4d6716\u0026newItems=C788d76cc-7a30-44cc-8041-85993f4d6716%2C1","current_url":"https://www.amazon.com/gp/cart/view.html/ref=lh_cart_vc_btn","stay_seconds":1.886,"time":"2018-12-03T19:57:41Z"},
+            {"user_id":1,"previous_url":"https://www.amazon.com/gp/cart/view.html/ref=lh_cart_vc_btn","current_url":"https://www.amazon.com/ap/signin","stay_seconds":71.552,"time":"2018-12-03T19:58:53Z"},
+        ]
+    },
+    {
+        ...
+    },
+    ...
+]
+
+\end{lstlisting}
+
+
+\cleardoublepage

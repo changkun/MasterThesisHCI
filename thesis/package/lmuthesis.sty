@@ -18,6 +18,50 @@
 \usepackage{float}
 \usepackage{rotating}
 \usepackage[ruled,vlined]{algorithm2e}
+\usepackage{multirow}
+
+\usepackage{color}
+\usepackage{xcolor}
+\definecolor{keyword}{HTML}{BA2CA3}
+\definecolor{string}{HTML}{D12F1B}
+\definecolor{comment}{HTML}{008400}
+
+% code env
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Code}
+\lstset{
+  basicstyle={\small\ttfamily},
+  keywordstyle={\bfseries\color{NavyBlue}},
+  breaklines=true,
+  emphstyle={\bfseries\color{Rhodamine}},
+  commentstyle={\color{PineGreen!60!black}},
+  stringstyle={\rmfamily\color{YellowOrange}},
+  showstringspaces=false,
+  frame=shadowbox,
+  breakatwhitespace=false,
+  captionpos=b,
+  extendedchars=true,
+  keepspaces=true,
+  numbers=left,
+  numberstyle=\tiny,
+  rulecolor=\color{black},
+  rulesepcolor={\color{blue!20!white}},
+  showspaces=false,
+}
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray}\ttfamily,
+  stringstyle=\color{red!50!yellow}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
 
 % break urls
 \usepackage{url}

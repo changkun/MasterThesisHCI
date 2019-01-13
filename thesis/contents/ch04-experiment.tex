@@ -44,9 +44,8 @@ a complete clickstream of during the study.
 A major issue of mobile devices is the operating system installed in mobile phone does not
 authorize the permission of allowance to collect data precisely over pages or user actions.
 Though Android device can overpass system permission to privilge, the user behavior 
-between iOS and Android device is still completely different with different models (TODO: cite support). 
-Subjects shows abnormal behavior when they use a newly provided device. 
-Therefore we stick our study environment to desktop devices, 
+between iOS and Android device has different personalities \cite{sandoio2018android}, and subjects shows \cite{reinfelder2014androidios} abnormal awareness behavior regarding security and privacy issues when they handling a newly provided Android device when switch from iOS device.
+Therefore, to eliminate this awareness, we stick our study environment to desktop devices,
 which empower us easily collects the clickstream data from browsers with plugin supports.
 
 Although all modern browsers support plugin development, considering the usage share of 
@@ -124,15 +123,16 @@ browser selection.
 \subsection{Browsing Behaviors}
 \label{sec:behavior}
 
-Before we explain the foundation theory and design reason of our context-given browsing task, 
-we first present and discusses three common types of user browsing behavior: \textbf{goal-oriented}, 
+Before we explain the design reason of our context-given browsing task, 
+we first present and discusses three common types of user browsing process as behavior: \textbf{goal-oriented}, 
 \textbf{exploring} and \textbf{fuzzy}.
 
-These three terminologies are aggregated and incorporated from behaviors that concluded in former 
-qualitative researches, all these terminologies are based on a fundmental theory of 
-interdisciplinary perspective information seeking behavior and human information behavior\cite{wilson1997information} 
-as we discussed in Section \ref{sec:info-seek}. TODO:
-Table \ref{table:info-seek} compares the differences between former research and ours.
+These three terminologies are aggregated and incorporated from behaviors that concluded 
+in former qualitative research for web browsing behavior research, 
+all these terminologies are based on a fundmental theory of 
+interdisciplinary perspective information seeking behavior \cite{wilson1997information},
+which was discussed in Section \ref{sec:info-seek}.
+Table \ref{table:info-seek} compares the terminology differences between former research and our thesis.
 
 \begin{table}[H]
     \small
@@ -153,8 +153,9 @@ Table \ref{table:info-seek} compares the differences between former research and
     \end{adjustbox}
 \end{table}
 
-As justification, we combines Ellis' Model and ``information use'' behavior proposed in
-information behavior theory to justify our summarized behaviors:
+To justify our terminology, we combines the six qualitative activities from Ellis' Model 
+\cite{ellis1989behavioural} and ``information use'' in information behavior theory 
+to represent our summarized browsing behaviors:
 
 \paragraph{Goal-oriented behavior} occurs when a user initiate 
 visiting session on the web caused by a determined objective in a specific context, 
@@ -201,24 +202,27 @@ opens a search engine (\emph{starting} and \emph{chaining}) to seek (\emph{brows
 follow up researches (\emph{monitoring}). The browsing may ends without information use
 because of the technique is irrelevant to he/she's research.
 
-\paragraph{Remark} Table \ref{table:ellis} illustrates a mapping from these three
-browsing behavior to the complete human information behavior.
-Note that ``information needs'' is not suggested in T. Wilson's theory since
-``information needs'' is not 
+\paragraph{Remark} Table \ref{table:ellis} illustrates the exist activities of our three
+browsing behavior. Note that ``information needs'' is not suggested in Wilson's theory \cite{wilson1981user} 
+since ``information needs'' can not be clearly observed before information seeking but sometimes
+observed after information use. Therefore we do not take information need into the 
+consideration of our terminologies.
 
 \begin{table}[H]
     \small
     \centering
     % \setlength{\belowcaptionskip}{10pt}
-    \caption{Terminologies comparison of information behavior on the web}
+    \caption{Existence of activities from Ellis' Model and information use in 
+    goal-oriented, exploring and fuzzy browsing behavior}
     \begin{adjustbox}{width=\textwidth}
-        \begin{tabular}{ccccc}
+        \begin{tabular}{ccccccccc}
             \toprule
-            \textbf{Author} & \textbf{Terminologies} & \textbf{Terminologies} & \textbf{Terminologies} & \textbf{Main Factors} \\
+            \multicolumn{1}{c}{\multirow{2}{*}{\textbf{Behaviors}}}  & \multicolumn{1}{c}{\multirow{2}{*}{\textbf{Information Need}}} & \multicolumn{6}{c}{\textbf{Information Seeking}}                                    & \multicolumn{1}{c}{\multirow{2}{*}{\textbf{Information Use}}} \\ \cline{3-8}
+            \multicolumn{1}{c}{}                                     & \multicolumn{1}{c}{}                                  & \textbf{Starting} & \textbf{Chaining} & \textbf{Browsing} & \textbf{Differentiating} & \textbf{Monitoring} & \textbf{Extracting} & \multicolumn{1}{c}{}  \\
             \hline
-            \cite{choo1999information} & Formal search & \makecell{Conditioned viewing; \\ Informal search} & Undirected viewing & \makecell{Psychological; demographic;\\ role-related environmental; \\source characteristics} \\
-            \cite{johnson2017patterns} & \makecell{Directed browsing; \\Known-item search} & \makecell{Semi-directed browsing; \\Explorative seeking; \\``You do not know what you need''; \\Re-finding} & Undirected Browsing & Behavior \\
-            \textbf{This thesis} & \textbf{Goal-oriented} & \textbf{Fuzzy} & \textbf{Exploring} & \textbf{Purpose} \\
+            Goal-oriented                                            &   N/A                                                 &     Exist         &      Exist        &   Exist           &        Exist               &       Exist           &        Exist          &      Exist              \\
+            Exploring                                                &   N/A                                                 &     Exist         &      Exist        &   Exist           &        Exist               &       Exist           &                     &                       \\
+            Fuzzy                                                    &   N/A                                                 &     Exist         &      Exist        &   Exist           &                          &                     &                     &                       \\
             \bottomrule
         \end{tabular}
         \label{table:ellis}
@@ -239,118 +243,115 @@ because of the following reasons:
         massive professional domain knowledge for using.
 \end{enumerate}
 
-Moreover, the unselected tasks are listed in Appendix \ref{appendix:unselected}.
+In addition, the unselected tasks are listed in Appendix \ref{appendix:unselected}.
 
 \subsubsection{Goal-oriented Task}
 
 We designed and selected an appropriate goal-oriented task for selected websites respectively,
-and each task is designed with three determined goal.
+and each task is designed with three specifically designed information need as
+the cause of information use.
 
-\begin{itemize}
-    \item \textbf{Amazon.com}: \emph{Assume your smartphone was broken and you have 1200 euros 
+\paragraph{Amazon.com} \emph{Assume your smartphone was broken and you have 1200 euros 
     as your budget. You want to buy an iPhone, a protection case, and a wireless 
     charging dock. Look for these items and add them to your cart.}
 
-        This task contains three determined purpose since a subject is required to add three items
-        to the cart. There are few hidden consideration behind the task, which makes the task
-        more realistic: a) There is a budget of this task, which requires subjects must consider the
-        price of items instead of simply add the first recommended item to cart; 
-        b) the starting page is amazon.com instead of amazon.de. This decision requires
-        subjects must also consider the currency rate between US dollars and Euros for budget.
-        c) There are some items cannot be shipped to Germany (the study took place in Germany).
-        As a result, subjects cannot add these items to cart and they should find other alternatives.
+This task initiate from the homepage of Amazon (\emph{starting} and \emph{chaining}), 
+and it contains three determined objective since 
+a subject is required to add three specific items to the cart (\emph{information use}). 
+There are few hidden consideration behind the task (\emph{browsing} and \emph{differentiating}),
+which makes the task more realistic (\emph{monitoring} and \emph{extracting}): 
+a) There is a budget of this task, which requires subjects must consider the
+price of items instead of simply add the first recommended item to cart; 
+b) the starting page is amazon.com instead of amazon.de. This decision requires
+subjects must also consider the currency rate between US dollars and Euros for budget.
+c) There are some items cannot be shipped to Germany (the study took place in Germany).
+As a result, subjects cannot add these items to cart and they should find other alternatives.
 
-    \item \textbf{Medium.com}: \emph{Assume you were making plans for your summer vacation. 
+\paragraph{Medium.com} \emph{Assume you were making plans for your summer vacation. 
         You want to visit Tokyo, Kyoto, and Osaka. You want to find out what kind of experience other people made 
         when traveling to these three places in Japan. Your task is to find three posts 
         for traveling tips regarding these cities. Elevate a post if it is one of your choices.}
 
-        This task contains three determined purpose since there are three fixed traveling destination.
-        The task also implies few considerations that increase the required interaction of the task to subjects:
-        a) The website only offers English version, some Japanese character may appear in an article,
-        thus, a translation util may be used while the study;
-        b) An article may apears numerous noun, such as toponym. Search engine may used while the study;
-        c) the articles, those require a membership to unlock reading, cannot be elevated. 
+This task contains three determined purpose since there are three fixed traveling destination.
+The task also implies few considerations that increase the required interaction of the task to subjects:
+a) The website only offers English version, some Japanese character may appear in an article,
+thus, a translation util may be used while the study;
+b) An article may apears numerous noun, such as toponym. Search engine may used while the study;
+c) the articles, those require a membership to unlock reading, cannot be elevated. 
 
 
-    \item \textbf{Dribbble.com}: \emph{You are hired to a Cloud Computing startup company. You get an assignment to 
+\paragraph{Dribbble.com} \emph{You are hired to a Cloud Computing startup company. You get an assignment to 
         designing the logo of the company. Search for existing logos for inspiration and 
         download three candidate logos you like the most.}
 
-        The task also has three determined prupose since subjects are quired to download three candicate trademarks.
-        While the participation, subjects still need take few implicit facts in to account:
-        a) Subjects who unfamiliar with the term "Cloud Computing" need visit other explainations to figure out
-        the vision and mission of this type of company, and subjects whom already familiar with the term
-        still need to compares the designed made by other competitors.
-        b) Subjects should aware some of the designs shared on the website are not suitable for trademark or icon design.
-\end{itemize}
+The task also has three determined prupose since subjects are quired to download three candicate trademarks.
+While the participation, subjects still need take few implicit facts in to account:
+a) Subjects who unfamiliar with the term "Cloud Computing" need visit other explainations to figure out
+the vision and mission of this type of company, and subjects whom already familiar with the term
+still need to compares the designed made by other competitors.
+b) Subjects should aware some of the designs shared on the website are not suitable for trademark or icon design.
 
 \subsubsection{Exploring Task}
 
 Exploring tasks simply do not provides any deterministic objective,
 and all websites has a designed exploring task for subjects.
 
-\begin{itemize}
-    \item \textbf{Amazon.com}: \emph{Look for a product category that you are interested in and start browsing. 
+\paragraph{Amazon.com} \emph{Look for a product category that you are interested in and start browsing. 
         Add three items to your cart that you would like to buy.}
 
-        Although the task do not require any specific items to the subjects, the task remains three different
-        purpose because participants need add three items to the cart. This designed task 
-        is aimlessly because: all tasks is not formerly informed to participants, 
-        they either do not have needs of buying items or 
-        formerly exist needs of buying a specific category but do not have a product candicate yet.
-        Besides, the description of the task ask participants start from a product category, which avoids 
-        goal-oriented buying a specific product.
+Although the task do not require any specific items to the subjects, the task remains three different
+purpose because participants need add three items to the cart. This designed task 
+is aimlessly because: all tasks is not formerly informed to participants, 
+they either do not have needs of buying items or 
+formerly exist needs of buying a specific category but do not have a product candicate yet.
+Besides, the description of the task ask participants start from a product category, which avoids 
+goal-oriented buying a specific product.
 
-    \item \textbf{Medium.com}: \emph{Visit a category you are interested in and elevate three post you like.}
+\paragraph{Medium.com} \emph{Visit a category you are interested in and elevate three post you like.}
 
-        Similar reason as discussed in Amazon.com's exploring task. It is well to be remined that Medium is a media
-        website, visiting a specific article formerly read before participation is relatively difficult 
-        since all contents showed to users are daily updated. Thus the task can be directly consider as an exploring task.
+Similar reason as discussed in Amazon.com's exploring task. It is well to be remined that Medium is a media
+website, visiting a specific article formerly read before participation is relatively difficult 
+since all contents showed to users are daily updated. Thus the task can be directly consider as an exploring task.
 
-    \item \textbf{Dribbble.com}: \emph{Explore dribbble and download three images you like the most while you browse.}
+\paragraph{Dribbble.com} \emph{Explore dribbble and download three images you like the most while you browse.}
 
-        Dribbble illustrates designs by using image gallery. The major difference between Dribbble and Google Image Search
-        is dribbble is a user-centered content aggregation website, but Google Image Search is a simple content aggregation engine.
-        As a result, there will be two different interaction in Dribbble: exploring designs based on keywords and categories,
-        or exploring designs based on users. The latter can helps its user finding similar designing style.
-        The task is aimlessly since the task simply describes nothing and completely let participants explore their preferences.
-
-\end{itemize}
+Dribbble illustrates designs by using image gallery. The major difference between Dribbble and Google Image Search
+is dribbble is a user-centered content aggregation website, but Google Image Search is a simple content aggregation engine.
+As a result, there will be two different interaction in Dribbble: exploring designs based on keywords and categories,
+or exploring designs based on users. The latter can helps its user finding similar designing style.
+The task is aimlessly since the task simply describes nothing and completely let participants explore their preferences.
 
 \subsubsection{Fuzzy Task}
 
 Each of our selected websites also has an fuzzy task respectively, and there are three major goals per task.
 
-\begin{itemize}
-    \item \textbf{Amazon.com}: \emph{You want to buy a gift for your best friend as a birthday present.
+\paragraph{Amazon.com} \emph{You want to buy a gift for your best friend as a birthday present.
         Add three items to your cart as candidate.}
 
-        The clearness of the task is stronger than exploring task but weaker than goal-oriented task, because
-        The task restricts participants adding items for a specific purpose (birthday present) but not points
-        any specific product.
+The clearness of the task is stronger than exploring task but weaker than goal-oriented task, because
+The task restricts participants adding items for a specific purpose (birthday present) but not points
+any specific product.
 
-    \item \textbf{Medium.com}: \emph{Assume you got an occasion to visit China for business. 
+\paragraph{Medium.com} \emph{Assume you got an occasion to visit China for business. 
         You are free to travel to China for a week. 
         You want to make a travel plan for touring China within a week. Your task is to find out what kind 
         of experience other how people made when going to secondary cities or towns in China, then decide 
         on three cities you want to visit (excluding  Beijing, Shanghai, Guangzhou, and Shenzhen). 
         Elevate if a post helped you make a decision.}
 
-        The clearness of the task is stronger than exploring task, because it asks a participant 
-        to exploring a non-deterministic direction of looking for secondary cities.
-        But the clearness of the task is weaker than goal-oriented task due to secondary cities described
-        in Medium's user posts is unclear, participants suppose to make decision themselves.
-        Furthermore, this ask is asking regarding traveling China around a week. Cities cannot be randomly
-        selected because to make traveling plan requires consider geographic location of the city.
+The clearness of the task is stronger than exploring task, because it asks a participant 
+to exploring a non-deterministic direction of looking for secondary cities.
+But the clearness of the task is weaker than goal-oriented task due to secondary cities described
+in Medium's user posts is unclear, participants suppose to make decision themselves.
+Furthermore, this ask is asking regarding traveling China around a week. Cities cannot be randomly
+selected because to make traveling plan requires consider geographic location of the city.
 
-    \item \textbf{Dribbble.com}: \emph{You are preparing a presentation and need one picture for each of these animals: 
+\paragraph{Dribbble.com} \emph{You are preparing a presentation and need one picture for each of these animals: 
     cat, dog, and ant. Download the three pictures you like the most.}
 
-        The task has three purpose of downloading images of animals, which restrict participant to a specific direction,
-        thus, the clearness of the task is stronger than exploring task. However, the task describes a scenario of using
-        these images in a presentation, and hence participants must consider continuity of design style, which makes
-        the clearness of the task is weaker than goal-oriented task. 
-\end{itemize}
+The task has three purpose of downloading images of animals, which restrict participant to a specific direction,
+thus, the clearness of the task is stronger than exploring task. However, the task describes a scenario of using
+these images in a presentation, and hence participants must consider continuity of design style, which makes
+the clearness of the task is weaker than goal-oriented task.
 
 \cleardoublepage
