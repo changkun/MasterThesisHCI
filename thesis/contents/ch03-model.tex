@@ -234,6 +234,12 @@ Context decoder decodes the context tensor produced by encoder. We feed a predic
 In the end of decoder, decoder produces an ending mark ``<EOA>'' (\emph{End of Action}) that
 terminates the decoding process.
 
+Note that the decoder model in training phase and prediction phase is different.
+In the training phase, teacher forcing strategy \cite{williams1989learning} is used, 
+the strategy supplys observed user actions as inputs.
+In the testing phase, decoder uses the output from recurrent unit as input, shown through 
+dashed lines in Figure \ref{fig:decoder}.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/decoder}
@@ -245,12 +251,6 @@ terminates the decoding process.
     In addition, the recurrent unit is not detailly describeed in the figure but afterwards.}
     \label{fig:decoder}
 \end{figure}
-
-Note that the decoder model in training phase and prediction phase is different.
-In the training phase, teacher forcing strategy \cite{williams1989learning} is used, 
-the strategy supplys observed user actions as inputs.
-In the testing phase, decoder uses the output from recurrent unit as input, shown through 
-dashed lines in Figure \ref{fig:decoder}.
 
 \subsubsection{Recurrent Unit}
 \label{sec:recurrent-unit}

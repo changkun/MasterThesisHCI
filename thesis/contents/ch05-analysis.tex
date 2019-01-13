@@ -53,14 +53,18 @@ which was described in Section \ref{sec:recurrent-unit} and \ref{sec:mark-interp
 \subsubsection{Interpretation based on General Features}
 \label{sec:inter-general-feature}
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.49\textwidth]{figures/amazon-general}
-%     \includegraphics[width=0.49\textwidth]{figures/medium-general}
-%     \includegraphics[width=0.49\textwidth]{figures/dribbble-general}
-%     \caption{XXXXX}
-%     \label{fig:general}
-% \end{figure}
+As a baseline of our classification performance, we use the \textbf{completion efficiency}, 
+\textbf{total time duration of a task} 
+as well as \textbf{total number of actions of a task} as the three features for
+browsing behavior classification.
+
+Note that the completion efficiency is defined by the shortest path of entire clickstream,
+ and the completion efficiency cannot can only be determined if and only if the clickstream
+ is given, in a sense, it carries a latent information of browsing behavior.
+
+We applied gird-search on support vector machine (SVM) with polynomial kernel,
+the best classification precision is 0.53 ($C=4.5, \gamma = 1.5$),
+and the micro average F1 score is also 0.53, which is better than random (0.33).
 
 \begin{figure}[H]
     \centering
@@ -86,21 +90,103 @@ which was described in Section \ref{sec:recurrent-unit} and \ref{sec:mark-interp
         \label{fig:2d-len-dur-amazon}
     \end{subfigure}
 
-    \caption{TODO:}
+    \caption{In these figures, \ref{fig:tsne-amazon} shows the t-SNE projection
+    of completion efficiency, total time duration and number of actions for three different behavior;
+    \ref{fig:2d-eff-dur-amazon} is a 2D comparasion of using completion efficiency and total time duration;
+    \ref{fig:2d-eff-len-amazon} provides a 2D comparasion of using completion efficiency and number of actions;
+    \ref{fig:2d-len-dur-amazon} shows a 2D comparasion of using number of actions and total time duration.
+    From t-SNE visualization, we observed that exploring tasks tend to centralized on the right and goal-oriented
+    tasks and fuzzy tasks tend to centralized on the left, which indicates that exploring behaviors tend to classifiable
+    comparing to other two behaviors. According the rest of feature comparasion visualizations, the completion effeciency and total time duration
+    contributes more on interpret exploring behavior, and the number of actions tent to
+    contributes more on interpret goal-oriented task.}
     \label{fig:general-amazon}
 \end{figure}
 
-TODO: table of classification report
+To understand the meaning of classification, we also applies a randomized decision tree
+that gives the importance of the used features: \emph{total time duration and number of actions
+of a task is more important than our self defined completion efficiency.}
 
-more U-test, feature importance.
+More specifically, we applies one-tailed Mann-Whitney U test for each of the features,
+for instance the null hypothesis ($H_0$): the completion efficiency of goal-oriented task 
+is not greater than exploring task, we have $p = 0.0019 < 0.05$ reject $H_0$, which means
+the completion efficiency of goal-oriented task is significant efficient than than exploring task.
+
+Similarly, we conduct the significant test with similar hypothesis 
+to all comparable combinations as showed in Table \ref{table:sig-test-efficiency}, \ref{table:sig-test-duration}, and \ref{table:sig-test-actions}.
+
+\begin{table}[H]
+    \small
+    \centering
+    \caption{One-tailed significant test for completion efficiency in different browsing behaviors.
+    The null hypothesis in this table, for instance, completion efficiency of fuzzy task
+    is \emph{not} significant efficient than goal-oriented task, the result $p=0.45>0.05$ which means
+    accept $H0$. Similar to others.}
+        \begin{tabular}{cccc}
+            \toprule
+              v.s.             & efficiency goal & efficiency fuzzy & efficiency explore \\
+            efficiency goal    & N/A             & reject           & reject             \\
+            efficiency fuzzy   & accept          & N/A              & reject             \\
+            efficiency explore & accept          & accept           & N/A                \\
+            \bottomrule
+        \end{tabular}
+        \label{table:sig-test-efficiency}
+\end{table}
+
+\begin{table}[H]
+    \small
+    \centering
+    \caption{One-tailed significant test for total stay duration of a task in different browsing behaviors.
+    The null hypothesis in this table, for instance, total stay duration of fuzzy task
+    is \emph{not} significant stay longer than goal-oriented task, the result $p=0.41>0.05$ which means
+    accept $H0$. Similar to others.}
+        \begin{tabular}{cccc}
+            \toprule
+              v.s.             & duration goal & duration fuzzy & duration explore \\
+            duration goal      & N/A & reject & reject \\
+            duration fuzzy     & accept & N/A & reject \\
+            duration explore   & accept & accept & N/A \\
+            \bottomrule
+        \end{tabular}
+        \label{table:sig-test-duration}
+\end{table}
+
+\begin{table}[H]
+    \small
+    \centering
+    \caption{One-tailed significant test for total number of actions of a task in different browsing behaviors.
+    The null hypothesis in this table, for instance, total number of actions of fuzzy task
+    is \emph{not} significant performs more actions than goal-oriented task, the result $p=0.019<0.05$ which means
+    reject $H0$. Similar to others.}
+        \begin{tabular}{cccc}
+            \toprule
+              v.s.             & actions goal & actions fuzzy & actions explore \\
+              actions goal      & N/A & accept & reject \\
+              actions fuzzy     & reject & N/A & accept \\
+              actions explore   & accept & reject & N/A \\
+            \bottomrule
+        \end{tabular}
+        \label{table:sig-test-actions}
+\end{table}
+
+As conclusions, we summarized that:
+
+\begin{itemize}
+    \item \textbf{Completion efficiency}: the completion efficiency of goal-oriented and fuzzy behavior is significant efficient than exploring behavior;
+    \item \textbf{Number of actions}: the number of actions of goal-oriented behavior is significant lower than fuzzy and exploring behaviors.
+    \item \textbf{Total stay duration}: the total stay duration of explroing behavior is significant higher than goal-oriented and fuzzy behaviors.
+\end{itemize}
+
+Furthermore, the completion efficiency and total stay duration are the more important than others for indication of exploring behavior,
+and number of actions are more important than others for indication of goal-oriented behavior.
 
 \subsubsection{Intepretation based on Action Path}
 \label{sec:inter-action-path}
 
 To use full capacity of our data, this section uses the entire clickstream and its corresponding
-page-level stay time duration as input, three ending mark (<EOA\_GOAL>, <EOA\_FUZZY>, and <EOA\_EXPLORE>) 
+page-level stay duration as input, three ending mark (<EOA\_GOAL>, <EOA\_FUZZY>, and <EOA\_EXPLORE>) 
 as classification outputs, and then implements a single GRU layer action path model 
-to classify the three type of tasks.
+to classify the three type of browsing behaviors.
 
 Our training parameters are: 
 The GRU latent dimension is 10, training process feeds 132 clickstreams as training data,
@@ -108,8 +194,8 @@ The GRU latent dimension is 10, training process feeds 132 clickstreams as train
 propagates 500 epochs with batch size of 32. In the training process, we use Adam optimizer,
  categorical corss-entropy loss as well as L1 and L2 regularizer with early stopping.
 
-In the end of training, evaluate on 19 clickstreams as testing dataset and 
-archieved \textbf{100.00\% accuracy}.
+In the end of training, we evaluates 19 clickstreams as testing dataset and 
+archieved \textbf{100.00\% accuracy} of browsing behaviors classification.
 
 \begin{figure}[H]
     \centering
@@ -126,35 +212,62 @@ remains a large expressive generalization performance
 we expect to collect more data to verify whether the model applicable to a large dataset.
 
 In addition, the action path model feeds the entire clickstream and time duration as inputs, 
-therfore the entire clickstream contains informations regarding the number of visit actions
-as well as completion effeciency and etc. Consequently, we conclude that the model works
-perfectly on the classification of three different browsing behavior. Since our experiment is
-only designed for three type of behavior, and the learning curve
-shows the model still has capacity to classify more precise categories of browsing behavior,
-perform a future investigation may be significance.
+therfore the entire clickstream contains informations regarding the number of actions
+as well as completion effeciency and more latent informations. 
+Consequently, we conclude that the model works
+\emph{perfectly on the classification of three different browsing behavior}. 
+Since our experiment is only designed for three type of behavior, and the learning curve
+shows the model still has capacity and generalization ability to 
+classify more precise categories of browsing behavior, a future investigation on
+more categories may be worthwhile.
 
 \subsection{Optimal Action Path Context}
 
 This section we evaluates our model with limited action path context, where the feeding action path
-are limited based on a split ratio. For instance, if a split ratio is 0.8 then we feed 80\% of 
-an action path into the model, then predict the rest of 20\% actions. Figure \ref{} illustrates
-the best accuracy we archieved for when use different split ratio.
+are limited based on a split ratio. 
+For instance, if a split ratio is 0.8 then we feed 80\% of an action path into the model, 
+then predict the rest of 20\% actions. Figure \ref{fig:acc} illustrates the best accuracy 
+we archieved from a single layer action path model when use with different split ratio.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/acc}
-    \caption{TODO:}
+    \caption{Prediction accuracy with limited context of input. This figure illustrates, wih more context of clickstream
+    known to the action path model, more information to the model, and therefore much higher accuracy we can archieve.
+    The accuracy we evaluated here is a greedy search accuracy, and thus higher than 25\% of prediction accurate is acceptable,
+    i.e. a quater of future movements are predicted correctly.
+    On the right side of the figure, we archieved >60\% accuracy of 3 to 5 future steps prediction.
+    Classification is a special case in this figure where split ratio is equal to 0.99.}
     \label{fig:acc}
 \end{figure}
 
+This figure illustrates, wih more context of clickstream
+feeds into the action path model, the model receive more informations of the clickstream, 
+and therefore much higher accuracy we can archieve for prediction.
+The accuracy we evaluated here is a greedy search accuracy, which performs element-wise comparasion
+between predicted clickstream and ground trueth clickstream, and the accuracy is the number of
+corrected predictions divided by total number of prediction steps.
+
+An accuracy that higher than 25\% is acceptable in our prediction task, since it indicates
+a quater of future movements are predicted correctly.
+On the right side of the figure, we archieved >60\% accuracy of 3 to 5 future steps prediction.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/loss1}
-    \includegraphics[width=0.45\textwidth]{figures/loss2}
-    \caption{TODO:}
+    \includegraphics[width=0.55\textwidth]{figures/loss2}
+    \caption{Validation loss curve when split ratio is 0.97. The loss indicates
+    the model may be reparameterized while training and archieve better performance
+    for predictions.}
     \label{fig:loss}
 \end{figure}
 
+Note that the prediction is still not an overfitting to the dataset. Figure \ref{fig:loss}
+illustrates the loss curve while training over 1500 epochs with 3 steps of prediction (split ratio 0.97).
+The loss starts increase after almost 200 epochs, which may be represent to overfitting,
+nevertheless, one can observe that the loss decreases down to similar level of early training 
+and archieved a better performance (almost 60.0\% of precision) than previous, which indicates
+the training process may reparameterize the action path model while training and archieve better performance
+for predictions.
 
 \subsection{Action Path Visualization}
 

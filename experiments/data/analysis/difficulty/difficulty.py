@@ -2,7 +2,7 @@ import numpy as np
 from scipy import stats
 from sklearn import svm
 from sklearn.preprocessing import normalize
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.metrics import classification_report, cohen_kappa_score
 from sklearn.manifold import TSNE
 from sklearn.decomposition import PCA
@@ -286,10 +286,24 @@ def significant_tests():
             'p': 0.05
         },
         {
+            'name1': 'task_exploring',
+            'name2': 'task_fuzzy',
+            'data1': task_exploring,
+            'data2': task_fuzzy,
+            'p': 0.05
+        },
+        {
             'name1': 'task_goal',
             'name2': 'task_exploring',
             'data1': task_goal,
             'data2': task_exploring,
+            'p': 0.05
+        },
+        {
+            'name1': 'task_exploring',
+            'name2': 'task_goal',
+            'data1': task_exploring,
+            'data2': task_goal,
             'p': 0.05
         },
         {
@@ -299,12 +313,26 @@ def significant_tests():
             'data2': task_goal,
             'p': 0.05
         },
+        {
+            'name1': 'task_goal',
+            'name2': 'task_fuzzy',
+            'data1': task_goal,
+            'data2': task_fuzzy,
+            'p': 0.05
+        },
 
         {
             'name1': 'length_fuzzy',
             'name2': 'length_exploring',
             'data1': length_fuzzy,
             'data2': length_exploring,
+            'p': 0.05
+        },
+        {
+            'name1': 'length_exploring',
+            'name2': 'length_fuzzy',
+            'data1': length_exploring,
+            'data2': length_fuzzy,
             'p': 0.05
         },
         {
@@ -315,10 +343,24 @@ def significant_tests():
             'p': 0.05
         },
         {
+            'name1': 'length_exploring',
+            'name2': 'length_goal',
+            'data1': length_exploring,
+            'data2': length_goal,
+            'p': 0.05
+        },
+        {
             'name1': 'length_fuzzy',
             'name2': 'length_goal',
             'data1': length_fuzzy,
             'data2': length_goal,
+            'p': 0.05
+        },
+        {
+            'name1': 'length_goal',
+            'name2': 'length_fuzzy',
+            'data1': length_goal,
+            'data2': length_fuzzy,
             'p': 0.05
         },
 
@@ -330,6 +372,13 @@ def significant_tests():
             'p': 0.05
         },
         {
+            'name1': 'duration_exploring',
+            'name2': 'duration_fuzzy',
+            'data1': duration_exploring,
+            'data2': duration_fuzzy,
+            'p': 0.05
+        },
+        {
             'name1': 'duration_goal',
             'name2': 'duration_exploring',
             'data1': duration_goal,
@@ -337,10 +386,24 @@ def significant_tests():
             'p': 0.05
         },
         {
+            'name1': 'duration_exploring',
+            'name2': 'duration_goal',
+            'data1': duration_exploring,
+            'data2': duration_goal,
+            'p': 0.05
+        },
+        {
             'name1': 'duration_fuzzy',
             'name2': 'duration_goal',
             'data1': duration_fuzzy,
             'data2': duration_goal,
+            'p': 0.05
+        },
+        {
+            'name1': 'duration_goal',
+            'name2': 'duration_fuzzy',
+            'data1': duration_goal,
+            'data2': duration_fuzzy,
             'p': 0.05
         }
     ]
@@ -399,6 +462,28 @@ def significant_tests():
 # length:     goal < {exploring, fuzzy}
 # duration:   {goal, fuzzy} < {exploring}
 
+# --------------------
+# task_fuzzy      v.s. task_exploring:    reject H0, p:  0.011788697299481078
+# task_goal       v.s. task_exploring:    reject H0, p:  0.00807642818541409
+# task_fuzzy      v.s. task_goal:         accept H0, p:  0.4572587141788157
+# mean efficiency_goal:  0.3155495214949707
+# mean efficiency_fuzzy:  0.31535927230532934
+# mean efficiency_exploring:  0.2616832072891674
+# goal, fuzzy > explore
+
+# length_fuzzy    v.s. length_exploring:  accept H0, p:  0.1272871022325392
+# length_goal     v.s. length_exploring:  reject H0, p:  0.0013358879723053818
+# length_fuzzy    v.s. length_goal:       reject H0, p:  0.019054238958144867
+# mean length_goal:  0.2585755837403175
+# mean length_fuzzy:  0.3098150772361861
+# mean length_exploring:  0.33711495680528586
+
+# duration_fuzzy  v.s. duration_exploring:        reject H0, p:  0.0014820821231660728
+# duration_goal   v.s. duration_exploring:        reject H0, p:  0.0008245462175663894
+# duration_fuzzy  v.s. duration_goal:     accept H0, p:  0.4093092558875775
+# mean duration_goal:  0.28224403385520425
+# mean duration_fuzzy:  0.28587927211314296
+# mean duration_exploring:  0.35275456730571414
 # -------------------------------------------------------------------------------------
 
 # idx = [0,1,2]
@@ -582,13 +667,24 @@ def learn_svm_f1(data, labels):
         v = cohen_kappa_score(ytest[:, 1], ypred)
         return v
 
+def svc_param_selection(X, y, nfolds):
+    Cs = np.arange(0.5, 10, 0.5) # [0.001, 0.01, 0.1, 1, 10,]
+    gammas = np.arange(0.5, 10, 0.5) # [0.001, 0.01, 0.1, 1]
+    param_grid = {'C': Cs, 'gamma' : gammas}
+    grid_search = GridSearchCV(svm.SVC(kernel='poly'), param_grid, cv=nfolds)
+    grid_search.fit(X, y)
+    print('best: ', grid_search.best_params_)
+    return grid_search
+
 def clf_report(data, labels):
     while True:
         xtrain, xtest, ytrain, ytest = train_test_split(data, labels, test_size=0.5)
         if len(list(set(ytrain[:, 1]))) < 3 or len(list(set(ytest[:, 1]))) < 3:
             continue
-        clf = svm.SVC(kernel='rbf', gamma='scale')
-        clf.fit(xtrain, ytrain[:, 1])
+
+        clf = svc_param_selection(xtrain, ytrain[:, 1], 10)
+        # clf = svm.SVC(C=0.1, kernel='rbf', gamma='scale')
+        # clf.fit(xtrain, ytrain[:, 1])
         ypred = clf.predict(xtest)
         v = classification_report(ytest[:, 1], ypred)
 
@@ -628,8 +724,8 @@ def clf():
     # 0.0
 
 def main():
-    # significant_tests()
-    plot_features()
+    significant_tests()
+    # plot_features()
     # clf()
 
 
@@ -655,64 +751,72 @@ def main():
 # task_efficiency/visited_length/visited_duration importance:  ['exploring_medium', 'exploring_amazon', 'exploring_dribbble'] 
 # [0.31325273 0.38611585 0.30063142] length
 
+
+# best:  {'C': 4.5, 'gamma': 1.5}
 #                   precision    recall  f1-score   support
 
-# exploring_amazon       0.39      0.88      0.54         8
-#     fuzzy_amazon       0.00      0.00      0.00        12
-#      goal_amazon       0.36      0.42      0.38        12
+# exploring_amazon       0.60      0.90      0.72        10
+#     fuzzy_amazon       0.47      0.80      0.59        10
+#      goal_amazon       0.00      0.00      0.00        12
 
-#        micro avg       0.38      0.38      0.38        32
-#        macro avg       0.25      0.43      0.31        32
-#     weighted avg       0.23      0.38      0.28        32
+#        micro avg       0.53      0.53      0.53        32
+#        macro avg       0.36      0.57      0.44        32
+#     weighted avg       0.33      0.53      0.41        32
 
+# best:  {'C': 0.5, 'gamma': 2.5}
 #                   precision    recall  f1-score   support
 
-# exploring_medium       0.35      0.70      0.47        10
-#     fuzzy_medium       0.00      0.00      0.00        12
-#      goal_medium       0.42      0.50      0.45        10
+# exploring_medium       0.00      0.00      0.00        10
+#     fuzzy_medium       0.00      0.00      0.00        14
+#      goal_medium       0.25      1.00      0.40         8
 
-#        micro avg       0.38      0.38      0.38        32
-#        macro avg       0.26      0.40      0.31        32
-#     weighted avg       0.24      0.38      0.29        32
+#        micro avg       0.25      0.25      0.25        32
+#        macro avg       0.08      0.33      0.13        32
+#     weighted avg       0.06      0.25      0.10        32
 
+# best:  {'C': 0.5, 'gamma': 0.5}
 #                     precision    recall  f1-score   support
 
-# exploring_dribbble       0.50      0.10      0.17        10
-#     fuzzy_dribbble       0.30      1.00      0.46         9
+# exploring_dribbble       0.22      1.00      0.36         7
+#     fuzzy_dribbble       0.00      0.00      0.00        12
 #      goal_dribbble       0.00      0.00      0.00        13
 
-#          micro avg       0.31      0.31      0.31        32
-#          macro avg       0.27      0.37      0.21        32
-#       weighted avg       0.24      0.31      0.18        32
+#          micro avg       0.22      0.22      0.22        32
+#          macro avg       0.07      0.33      0.12        32
+#       weighted avg       0.05      0.22      0.08        32
 
+# best:  {'C': 4.5, 'gamma': 9.5}
 #                precision    recall  f1-score   support
 
-#   goal_amazon       1.00      0.15      0.27        13
-# goal_dribbble       0.53      1.00      0.69        10
-#   goal_medium       0.73      0.89      0.80         9
+#   goal_amazon       0.88      0.64      0.74        11
+# goal_dribbble       0.79      0.92      0.85        12
+#   goal_medium       0.80      0.89      0.84         9
 
-#     micro avg       0.62      0.62      0.62        32
-#     macro avg       0.75      0.68      0.59        32
-#  weighted avg       0.78      0.62      0.55        32
+#     micro avg       0.81      0.81      0.81        32
+#     macro avg       0.82      0.81      0.81        32
+#  weighted avg       0.82      0.81      0.81        32
 
+# best:  {'C': 0.5, 'gamma': 7.0}
 #                 precision    recall  f1-score   support
 
-#   fuzzy_amazon       0.38      0.60      0.46        10
-# fuzzy_dribbble       0.58      0.78      0.67         9
-#   fuzzy_medium       0.75      0.23      0.35        13
+#   fuzzy_amazon       0.50      0.36      0.42        11
+# fuzzy_dribbble       0.50      0.88      0.64         8
+#   fuzzy_medium       0.90      0.69      0.78        13
 
-#      micro avg       0.50      0.50      0.50        32
-#      macro avg       0.57      0.54      0.49        32
-#   weighted avg       0.59      0.50      0.48        32
+#      micro avg       0.62      0.62      0.62        32
+#      macro avg       0.63      0.64      0.61        32
+#   weighted avg       0.66      0.62      0.62        32
 
+# best:  {'C': 0.5, 'gamma': 6.0}
 #                     precision    recall  f1-score   support
 
-#   exploring_amazon       0.82      0.82      0.82        11
-# exploring_dribbble       1.00      0.42      0.59        12
-#   exploring_medium       0.56      1.00      0.72         9
+#   exploring_amazon       0.75      0.82      0.78        11
+# exploring_dribbble       0.62      0.38      0.48        13
+#   exploring_medium       0.50      0.75      0.60         8
 
-#          micro avg       0.72      0.72      0.72        32
-#          macro avg       0.79      0.74      0.71        32
-#       weighted avg       0.81      0.72      0.70        32
+#          micro avg       0.62      0.62      0.62        32
+#          macro avg       0.62      0.65      0.62        32
+#       weighted avg       0.64      0.62      0.61        32
+
 if __name__ == "__main__":
     main()
