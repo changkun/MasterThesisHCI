@@ -25,8 +25,8 @@ with respect to all tasks.
     Medium Exploring Task, Dribbble Goal Oriented Task, Dribbble Fuzzy Task and Dribbble Exploring Task
     respectively.
     From this heat map, we clearly observes Medium Fuzzy Task is the most difficulty task
-    according to the subjects voted subjective difficulty, a significant test confirmed this observation.
-    Further, Mann-Whitney U significant test justifies our result.}
+    according to the subjects voted subjective difficulty, a Mann-Whitney U significant 
+    test justifies this observation.}
     \label{fig:difficulty}
 \end{figure}
 
@@ -64,10 +64,28 @@ which was described in Section \ref{sec:recurrent-unit} and \ref{sec:mark-interp
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.25\textwidth]{figures/tsne-amazon}
-    \includegraphics[width=0.25\textwidth]{figures/2d-eff-dur-amazon}
-    \includegraphics[width=0.25\textwidth]{figures/2d-eff-len-amazon}
-    \includegraphics[width=0.25\textwidth]{figures/2d-len-dur-amazon}
+
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=1\textwidth]{figures/tsne-amazon}
+        \caption{}
+        \label{fig:tsne-amazon}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=1\textwidth]{figures/2d-eff-dur-amazon}
+        \caption{}
+        \label{fig:2d-eff-dur-amazon}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=1\textwidth]{figures/2d-eff-len-amazon}
+        \caption{}
+        \label{fig:2d-eff-len-amazon}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=1\textwidth]{figures/2d-len-dur-amazon}
+        \caption{}
+        \label{fig:2d-len-dur-amazon}
+    \end{subfigure}
+
     \caption{TODO:}
     \label{fig:general-amazon}
 \end{figure}
@@ -85,16 +103,17 @@ as classification outputs, and then implements a single GRU layer action path mo
 to classify the three type of tasks.
 
 Our training parameters are: 
-The GRU latent dimension is 10, training process feeds 151 clickstreams and 
-propagates 500 epochs with batch size of 32.
-In the end of training, we use Adam optimizer, evaluate on 38 clickstreams and 
-archieved 100\% accuracy on our validation set.
+The GRU latent dimension is 10, training process feeds 132 clickstreams as training data,
+38 clickstreams as validation, then 
+propagates 500 epochs with batch size of 32. In the training process, we use Adam optimizer,
+ categorical corss-entropy loss as well as L1 and L2 regularizer with early stopping.
 
-The validation loss during the training is as shown in Figure \ref{fig:class-loss}.
+In the end of training, evaluate on 19 clickstreams as testing dataset and 
+archieved \textbf{100.00\% accuracy}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/class-loss}
+    \includegraphics[width=0.55\textwidth]{figures/class-loss}
     \caption{Categorical Cross-Entropy Validation loss curve while 500 epoches. 
     The curves indicates the training process is not an overfitting since the loss is not increasing.}
     \label{fig:class-loss}
@@ -102,8 +121,9 @@ The validation loss during the training is as shown in Figure \ref{fig:class-los
 
 One can observed that the training process is not an overfit, and the validation loss is 
 still not increase after 500 epoches, thus, single GRU layer action path model 
-remains a large expressive performance (100\% of three class classification in this dataset) 
-when we have more data.
+remains a large expressive generalization performance 
+(100\% accuate for three browsing behavior classification), therefore
+we expect to collect more data to verify whether the model applicable to a large dataset.
 
 In addition, the action path model feeds the entire clickstream and time duration as inputs, 
 therfore the entire clickstream contains informations regarding the number of visit actions
@@ -147,8 +167,16 @@ to help readers to explore them.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/vis-goal1}
-    \includegraphics[width=0.45\textwidth]{figures/vis-goal2}
+    \begin{subfigure}[b]{0.60\textwidth}
+        \includegraphics[width=1\textwidth]{figures/vis-goal1}
+        \caption{}
+        \label{fig:vis-goal1}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.60\textwidth}
+        \includegraphics[width=1\textwidth]{figures/vis-goal2}
+        \caption{}
+        \label{fig:vis-goal2}
+    \end{subfigure}
     \caption{TODO:}
     \label{fig:vis-goal}
 \end{figure}
@@ -156,8 +184,16 @@ to help readers to explore them.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/vis-fuzzy-explore1}
-    \includegraphics[width=0.45\textwidth]{figures/vis-fuzzy-explore2}
+    \begin{subfigure}[b]{0.60\textwidth}
+        \includegraphics[width=1\textwidth]{figures/vis-fuzzy-explore1}
+        \caption{}
+        \label{fig:vis-fuzzy-explore1}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.60\textwidth}
+        \includegraphics[width=1\textwidth]{figures/vis-fuzzy-explore2}
+        \caption{}
+        \label{fig:vis-fuzzy-explore2}
+    \end{subfigure}
     \caption{TODO:}
     \label{fig:vis-fuzzy-explore}
 \end{figure}
@@ -166,12 +202,56 @@ to help readers to explore them.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/overlap1}
-    \includegraphics[width=0.45\textwidth]{figures/overlap2}
-    \caption{TODO:}
-    \label{fig:overlap}
+
+    \begin{subfigure}[b]{0.60\textwidth}
+        \includegraphics[width=1\textwidth]{figures/overlap1}
+        \caption{Example of ``overlap'' pattern: this figure visualize the clickstream intersection 
+        of four participants at Medium's goal-oriented task. Each color represents an
+        individual clickstream except black nodes, which represents the overlapping of different clickstreams.
+        The overlap ratio of this graph is 9.43\%.}
+        \label{fig:overlap-example-1}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.60\textwidth}
+        \includegraphics[width=1\textwidth]{figures/overlap2}
+        \caption{Example of ``overlap'' pattern: this fugure visualize the clickstream intersection
+        of four participants at Dribbble's exploring task. Each color represents an
+        individual clickstream except blacken nodes, which represents the overlapping of different clickstreams.
+        The overlap ratio of this graph is 1.15\%.}
+        \label{fig:overlap-example-1}
+    \end{subfigure}
+
+    \caption{Example of ``overlap'' pattern: In this two figures, the raw clickstreams in
+    Medium's goal-oriented task and Dribbble's exploring task are vidualized
+    for same four participants, which intent to compare and analysis for two type of browsing behavior.
+    Blacken nodes represent the overlap of different clickstreams, and the highest overlap ratio
+    in our dataset is 11.84\% and lowest overlap ratio is 0.00\%. Besides, the number of a node
+    is a representative of chronological serial number of user actions.
+    }
+    \label{fig:overlap-examples}
 \end{figure}
 
+\paragraph{Remark}
 
+\begin{table}[H]
+    \small
+    \centering
+    \caption{Existence of activities from Ellis' Model and information use in the observed patterns}
+    \begin{adjustbox}{width=\textwidth}
+        \begin{tabular}{ccccccccc}
+            \toprule
+            \multicolumn{1}{c}{\multirow{2}{*}{\textbf{Behaviors}}}  & \multicolumn{1}{c}{\multirow{2}{*}{\textbf{Information Need}}} & \multicolumn{6}{c}{\textbf{Information Seeking}}                                    & \multicolumn{1}{c}{\multirow{2}{*}{\textbf{Information Use}}} \\ \cline{3-8}
+            \multicolumn{1}{c}{}                                     & \multicolumn{1}{c}{}                                  & \textbf{Starting} & \textbf{Chaining} & \textbf{Browsing} & \textbf{Differentiating} & \textbf{Monitoring} & \textbf{Extracting} & \multicolumn{1}{c}{}  \\
+            \hline
+            cluster    &   observed &       &       &       & Exist & Exist & Exist & Exist \\
+            star       &            &       & Exist & Exist & Exist &       &       &       \\
+            ring       &            & Exist & Exist &       &       &       &       &       \\
+            hesitation &   observed &       &       &       & Exist & Exist &       &       \\
+            overlap    &   observed &       &       &       &       &       & Exist & Exist \\
+            \bottomrule
+        \end{tabular}
+        \label{table:ellis}
+    \end{adjustbox}
+\end{table}
 
 \cleardoublepage

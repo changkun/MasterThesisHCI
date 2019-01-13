@@ -475,7 +475,7 @@ def plot_2d(x, y, labels, path, xlabel, ylabel, xlim, ylim, title, region=False)
     ax.legend()
     plt.xlim(xlim)
     plt.ylim(ylim)
-    plt.savefig(path, bbox_inches='tight')
+    plt.savefig(path, bbox_inches='tight', format='eps')
     plt.close(fig)
 
 def plot_2dtsne(data, labels, path):
@@ -489,7 +489,7 @@ def plot_2d_len_dur(idx, category):
     data, colorlabel = get_data_by_task_id(idx)
     xtrain, xtest, ytrain, ytest = train_test_split(data, colorlabel, test_size=0.0, random_state=42)
     plot_2d(xtrain[:,1],xtrain[:,2], ytrain, 
-    f'2d-len-dur-{category}.png', 'number of actions in a session', 
+    f'2d-len-dur-{category}.eps', 'number of actions in a session', 
     'total time duration of a session', (0, 1), (0, 1),
     "", region=False)
 
@@ -497,7 +497,7 @@ def plot_2d_eff_len(idx, category):
     data, colorlabel = get_data_by_task_id(idx)
     xtrain, xtest, ytrain, ytest = train_test_split(data, colorlabel, test_size=0.0, random_state=42)
     plot_2d(xtrain[:,0],xtrain[:,1], ytrain, 
-    f'2d-eff-len-{category}.png', 'task completion efficiency', 
+    f'2d-eff-len-{category}.eps', 'task completion efficiency', 
     'number of actions in a session', (0, 1), (0, 1),
     "", region=False)
 
@@ -505,14 +505,14 @@ def plot_2d_dif_dur(idx, category):
     data, colorlabel = get_data_by_task_id(idx)
     xtrain, xtest, ytrain, ytest = train_test_split(data, colorlabel, test_size=0.0, random_state=42)
     plot_2d(xtrain[:,0],xtrain[:,2], ytrain, 
-    f'2d-eff-dur-{category}.png', 'task completion efficiency', 
+    f'2d-eff-dur-{category}.eps', 'task completion efficiency', 
     'total time duration of a session', (0, 1), (0, 1),
     "", region=False)
 
 def plot_tsne(idx, category):
     data, colorlabel = get_data_by_task_id(idx)
     xtrain, xtest, ytrain, ytest = train_test_split(data, colorlabel, test_size=0.0, random_state=42)
-    plot_2dtsne(xtrain, ytrain, f'tsne-{category}.png')
+    plot_2dtsne(xtrain, ytrain, f'tsne-{category}.eps')
 
 def plot_3d(data, labels, path, xlabel, ylabel, zlabel):
     fig = plt.figure()
