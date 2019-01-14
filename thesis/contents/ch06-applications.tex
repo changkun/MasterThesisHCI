@@ -1,8 +1,8 @@
 \section{Applications}
 \label{ch:app}
 
-This chapter we first introduces a possible application of our proposed model
-including the implemeted feature, how it could benefit user, as well as the 
+This chapter we first introduce a possible application of our proposed model
+including the implemented feature, how it could benefit a user, as well as the 
 architecture and dataflow within the application.
 Then in the second part of this chapter, we formalize and discusse 
 the possibility and benefits as a standard Web API to web developers and website designer.
@@ -11,7 +11,7 @@ the possibility and benefits as a standard Web API to web developers and website
 \label{sec:plugin}
 
 We developed a client-side browser plugin is an illustration of our model applications.
-The plugin is an intellegent system that proactively serves its user, 
+The plugin is an intelligent system that proactively serves its user, 
 and it provides proactive notification based on the historical actions in a session
 when browsing behavior is detected as goal-oriented or fuzzy behavior, 
 as illustrated in Figure \ref{fig:proactive-noti}.
@@ -20,18 +20,18 @@ as illustrated in Figure \ref{fig:proactive-noti}.
     \centering
     \includegraphics[width=0.7\textwidth]{figures/proactive-noti}
     \caption{Proactive notification:
-    The plugin inject monitor script when the page is loaded, and then surve user giving
-    notification when detect fuzzy browsing behavior.}
+    The plugin injects monitor script when the page is loaded, and then serve user giving
+    notification when detecting fuzzy browsing behavior.}
     \label{fig:proactive-noti}
 \end{figure}
 
 The user can either select ``Yes'' and navigates to the most likely page that he/she will visit
 in the future, or select ``No'' to ignore the notification.
-The plugin surves user only if the browsing behavior is detected as fuzzy behavior because
+The plugin serves user only if the browsing behavior is detected as fuzzy behavior because
 of the forbear of notification. We argue that the plugin is only a supplementary of improving
 browsing experience but not always necessary, for instance in exploring behavior, information
-need of a user may not be clearly observed and the recommendations is not usefulness. 
-One of benefits of the plugin is to proactively help user become efficient
+need of a user may not be clearly observed and the recommendations are not usefulness. 
+One of the benefits of the plugin is to proactively help the user become efficient
 and reach the destination as fast as possible in goal-oriented browsing.
 
 \begin{figure}[H]
@@ -39,18 +39,18 @@ and reach the destination as fast as possible in goal-oriented browsing.
     \includegraphics[width=0.7\textwidth]{figures/plugin-predicting-result}
     \caption{The plugin provided popup page: users can always open the page
     to understand the current status of browsing and predicted needs based on
-    historical actions in a browsing session. In this case, the detected borwsing behavior
-    is under a goal-oriented browsing, and predicted actions
+    historical actions in a browsing session. In this case, the detected browsing behavior
+    is under goal-oriented browsing, and predicted actions
     are accessing the page of public repositories and accessing a specific repository.}
     \label{fig:plugin-predict}
 \end{figure}
 
 In Figure \ref{fig:plugin-predict}, except proactive notification, 
-users can always open a popup page that provided by the plugin.
+users can always open a popup page provided by the plugin.
 The popup page provides another interaction that gives the predicted needs 
 based on historical user actions. A user can always interact with the plugin and
 retrieve the possible needs and browsing status in the current session.
-These information is helpful to the plugin user because the user can understand
+These information are helpful to the plugin user because the user can understand
 what is the current status of web browsing, which implicitly aware the person better focus
 if the person detected as exploring browsing behavior.
 

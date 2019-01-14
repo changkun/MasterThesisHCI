@@ -273,58 +273,95 @@ for predictions.
 
 This section visualizes the actual action path of users and discusses the behavior qualitatively.
 In total, we collected 189 clickstream, which is not possible to illustrate all of them
-in the thesis, we selected three typical clickstreams to discuss and provided a visualization tool
-(see Appendix \ref{appendix:a}) to help readers to explore them.
+in the thesis, we selects the typical clickstreams to discuss and provids a visualization tool
+(see Appendix \ref{appendix:a}) to help readers to explore all action paths.
 
 \subsubsection{Individual Common Patterns}
 
-The first pattern one can observe from the goal-oriented task clickstream is ``cluster''.
-In Figure \ref{fig:vis-goal1} and \ref{fig:vis-goal2}, the visualization shows different clustered intents in
-Amazon's goal-oriented task. We can easily discriminate the user browsing for 
+\paragraph{Pattern of ``cluster''}
+The first pattern one can observe from the goal-oriented task clickstream is called ``cluster''.
+In Figure \ref{fig:vis-goal1} and \ref{fig:vis-goal2}, 
+the visualization shows different clustered intents in Amazon's goal-oriented task. 
+Formally, \emph{a pattern is called ``cluster'' if and noly if it is a partition of an action path
+that is connected with rest of the action path through a single node.}
+
+We can easily discriminate the user browsing for 
 different intent in different cluster, and then finally went to the cart without
 backtracking.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{figures/vis-goal1}
+    \caption{Patterns of cluster and hesitation of an action path. This figure visualizes an action path in
+    goal-oriented Amazon's task. The visualized graph can be partitioned into four subgraphs
+    and three of them are cluster pattern that is a representing of different shopping intent, 
+    which is exactly as same as the task design. Further, each cluster contains a hesitation pattern
+    as labeled in the figure, for instance, node labeled with 4, 8, 14 are hesitation. 
+    Besides, the number of a node is a representative of chronological serial number of user actions.}
+    \label{fig:vis-goal1}
+\end{figure}
+
+\paragraph{Pattern of ``hesitation''}
 Beyound the cluster pattern, we also observes ``hesitation'' pattern in goal-oriented tasks
 where a short child path branch from its parent node in each intent cluster, e.g. node
 4, 8, 14 in Figure \ref{fig:vis-goal1} and node 5, 16 in Figure \ref{fig:vis-goal2},
 which suggests ``hesitation'' is a pattern that more often appears in goal-oriented task
-within a ``cluster''.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.55\textwidth]{figures/vis-goal1}
-    \caption{Validation loss curve when split ratio is 0.97. The loss indicates
-    the model may be reparameterized while training and archieve better performance
-    for predictions.}
-    \label{fig:vis-goal1}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.55\textwidth]{figures/vis-goal2}
-    \caption{Validation loss curve when split ratio is 0.97. The loss indicates
-    the model may be reparameterized while training and archieve better performance
-    for predictions.}
-    \label{fig:vis-goal2}
-\end{figure}
-
-Similarly, in fuzzy and exploring task, we observed two common pattern ``ring'' and ``star''
-pattern is more often to appear in fuzzy and exploring tasks.
+within a ``cluster''. Formally, \emph{a pattern is called ``hesitation'' if and only if it
+is a acyclic list and not in a star that joint with a cluster or a ring and the number of its nodes is less than any 
+of existed cluster.}
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.60\textwidth}
-        \includegraphics[width=1\textwidth]{figures/vis-patterns1}
-        \caption{}
-        \label{fig:vis-fuzzy-explore1}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.60\textwidth}
-        \includegraphics[width=1\textwidth]{figures/vis-patterns2}
-        \caption{}
-        \label{fig:vis-fuzzy-explore2}
-    \end{subfigure}
-    \caption{TODO:}
-    \label{fig:vis-fuzzy-explore}
+    \includegraphics[width=0.55\textwidth]{figures/vis-goal2}
+    \caption{Patterns of cluster and hesitation of an action path. This figure visualizes an action path in
+    goal-oriented Amazon's task. The visualized graph can be partitioned into four subgraphs
+    and three of them are cluster pattern that is a representing of different shopping intent, 
+    which is exactly as same as the task design. Further, two of the clusters contain a hesitation pattern
+    as labeled in the figure, for instance, node labeled with 5, 16 are hesitation. 
+    Besides, the number of a node
+    is a representative of chronological serial number of user actions.}
+    \label{fig:vis-goal2}
+\end{figure}
+
+\paragraph{Pattern of ``ring'' and ``star''}
+Similarly, in fuzzy and exploring task, we observed two common pattern ``ring'' and ``star''
+pattern is more often to appear in fuzzy and exploring tasks.
+Formally, \emph{a pattern is called ``ring'' if and only if it is a list without connect to a cluster
+and starting node is not joint with ending node; a pattern is called ``star'' if and only if 
+it is a spanning tree of an action path that a non-leaf node contains more than one child.}
+
+Figure \ref{fig:vis-fuzzy-explore1} illustrates an action path of Amazon's fuzzy task (purple nodes)
+and an action path of Dribbble's exploring task, both from same participants.
+One can observe ``ring'' and ``star'' patterns in the figure as highlighted through 
+gray area surrounded by dashed line.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{figures/vis-patterns1}
+    \caption{Patterns of ring and star of an action path. This figure visualizes an action path in
+    goal-oriented Amazon's task. The visualized graph can be partitioned into four subgraphs
+    and three of them are cluster pattern that is a representing of different shopping intent, 
+    which is exactly as same as the task design. Further, two of the clusters contain a hesitation pattern
+    as labeled in the figure, for instance, node labeled with 5, 16 are hesitation. 
+    Besides, the number of a node
+    is a representative of chronological serial number of user actions.}
+    \label{fig:vis-fuzzy-explore1}
+\end{figure}
+
+Similarly, as one more illustration, Figure \ref{fig:vis-fuzzy-explore2} gives action paths 
+in same tasks but from another participant.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{figures/vis-patterns2}
+    \caption{Patterns of ring and str of an action path. This figure visualizes an action path in
+    goal-oriented Amazon's task. The visualized graph can be partitioned into four subgraphs
+    and three of them are cluster pattern that is a representing of different shopping intent, 
+    which is exactly as same as the task design. Further, two of the clusters contain a hesitation pattern
+    as labeled in the figure, for instance, node labeled with 5, 16 are hesitation. 
+    Besides, the number of a node
+    is a representative of chronological serial number of user actions.}
+    \label{fig:vis-fuzzy-explore2}
 \end{figure}
 
 \subsubsection{Cross-user Overlap Patterns}
