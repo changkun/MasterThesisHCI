@@ -331,40 +331,66 @@ and starting node is not joint with ending node; a pattern is called ``star'' if
 it is a spanning tree of an action path that a non-leaf node contains more than one child.}
 
 Figure \ref{fig:vis-fuzzy-explore1} illustrates an action path of Amazon's fuzzy task (purple nodes)
-and an action path of Dribbble's exploring task, both from same participants.
+and an action path of Dribbble's exploring task (orange nodes), both from same participants.
 One can observe ``ring'' and ``star'' patterns in the figure as highlighted through 
 gray area surrounded by dashed line.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.55\textwidth]{figures/vis-patterns1}
-    \caption{Patterns of ring and star of an action path. This figure visualizes an action path in
-    goal-oriented Amazon's task. The visualized graph can be partitioned into four subgraphs
-    and three of them are cluster pattern that is a representing of different shopping intent, 
-    which is exactly as same as the task design. Further, two of the clusters contain a hesitation pattern
-    as labeled in the figure, for instance, node labeled with 5, 16 are hesitation. 
-    Besides, the number of a node
+    \caption{Patterns of ring and star of an action path. The figure visualizes an action path in
+    Amazon's fuzzy browsing task (purple nodes) and Dribbble's exploring tasks (orange nodes). 
+    The visualized action path of exploring task is an linked list with few hesitations (node 3 and 10).
+    The action path of fuzzy task contains two star patterns (roots are 4 and 7).
+    As same as other visualizations, the number of a node
     is a representative of chronological serial number of user actions.}
     \label{fig:vis-fuzzy-explore1}
 \end{figure}
 
 Similarly, as one more illustration, Figure \ref{fig:vis-fuzzy-explore2} gives action paths 
-in same tasks but from another participant.
+in same tasks but from another participant that the purple nodes represents actions in Amazon's fuzzy task action path
+and orange nodes represents actions in Dribbble's exploring task action path.
+
+In addition, even though we observed that the number of star pattern is more often to appear
+in fuzzy tasks and ring pattern is more often to appear in exploring tasks.
+We argue that this is because in fuzzy tasks, participants are able to identify the
+information uses, therefore the star pattern is more often to appear since it produces many backtracking
+behavior and causes the ``differentiating'' activity. However, in the exploring task,
+there is no explicit information uses described the exploring task, therefore participants
+keep exploring deeper and deeper from the starting page without backtracking, the star pattern
+appears when participant has multiple interests on different pages that referred from the same page.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.55\textwidth]{figures/vis-patterns2}
-    \caption{Patterns of ring and str of an action path. This figure visualizes an action path in
-    goal-oriented Amazon's task. The visualized graph can be partitioned into four subgraphs
-    and three of them are cluster pattern that is a representing of different shopping intent, 
-    which is exactly as same as the task design. Further, two of the clusters contain a hesitation pattern
-    as labeled in the figure, for instance, node labeled with 5, 16 are hesitation. 
-    Besides, the number of a node
+    \caption{Patterns of ring and star of an action path. The figure visualizes an action path
+    of a different participant in
+    Amazon's fuzzy browsing task (purple nodes) and Dribbble's exploring tasks (orange nodes). 
+    The visualized action path of exploring task contains a star pattern where root is 9.
+    The action path of fuzzy task contains a cyclic ring pattern that with a single hesitation
+    in node 22.
+    As same as other visualizations, the number of a node
     is a representative of chronological serial number of user actions.}
     \label{fig:vis-fuzzy-explore2}
 \end{figure}
 
+In summary, we conclude that:
+
+\begin{enumerate}
+    \item Goal-oriented browsing behavior contains common patterns of ``cluster'', and each cluster tend to indicate a specific intent;
+    \item Fuzzy and exploring behavior two common pattern of ``ring'' and ``star'', however, ring pattern is more often to appear 
+          in exploring behavior and star pattern is more often to appear in fuzzy behavior;
+    \item Pattern of ``hesitation'' usually attached to a cluster or a ring but not appear in a star.
+\end{enumerate}
+
 \subsubsection{Cross-user Overlap Patterns}
+
+In the previous discussion we discovered the common patterns that appears in individuals.
+Nevertheless, it is still interesting to see how action paths are manifestation for multiple
+participants. Fortunately, we observed there are intersections among multiple subjects.
+
+\paragraph{Pattern of ``overlap''}
+occurs when we observe the intersection of multiple participants.
 
 \begin{figure}[H]
     \centering
