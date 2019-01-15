@@ -383,49 +383,64 @@ In summary, we conclude that:
     \item Pattern of ``hesitation'' usually attached to a cluster or a ring but not appear in a star.
 \end{enumerate}
 
-\subsubsection{Cross-user Overlap Patterns}
+\subsubsection{Cross user Overlap Patterns}
 
 In the previous discussion we discovered the common patterns that appears in individuals.
-Nevertheless, it is still interesting to see how action paths are manifestation for multiple
+Nevertheless, it is still interesting to explore how action paths are manifest to multiple
 participants. Fortunately, we observed there are intersections among multiple subjects.
 
 \paragraph{Pattern of ``overlap''}
-occurs when we observe the intersection of multiple participants.
+occurs when we observing action paths on multiple participants. Figure \ref{fig:overlap-example-1}
+and \ref{fig:overlap-example-2} are the the action paths visualized for same four participants
+in Medium's goal-oriented task and Dribbble's exploring task respectively.
+One can define a $n-$overlap ratio is the number of blacken nodes devided by total number of nodes
+in the action paths of $n$ participants. Obviously, the maximum number of $4-$overlap ratio
+is 100.0\%, and the minimum $4-$overlap ratio is 0.00\%.
 
 \begin{figure}[H]
     \centering
-
-    \begin{subfigure}[b]{0.60\textwidth}
-        \includegraphics[width=1\textwidth]{figures/overlap1}
-        \caption{Example of ``overlap'' pattern: this figure visualize the clickstream intersection 
-        of four participants at Medium's goal-oriented task. Each color represents an
-        individual clickstream except black nodes, which represents the overlapping of different clickstreams.
-        The overlap ratio of this graph is 9.43\%.}
-        \label{fig:overlap-example-1}
-    \end{subfigure}
-
-    \begin{subfigure}[b]{0.60\textwidth}
-        \includegraphics[width=1\textwidth]{figures/overlap2}
-        \caption{Example of ``overlap'' pattern: this fugure visualize the clickstream intersection
-        of four participants at Dribbble's exploring task. Each color represents an
-        individual clickstream except blacken nodes, which represents the overlapping of different clickstreams.
-        The overlap ratio of this graph is 1.15\%.}
-        \label{fig:overlap-example-1}
-    \end{subfigure}
-
-    \caption{Example of ``overlap'' pattern: In this two figures, the raw clickstreams in
-    Medium's goal-oriented task and Dribbble's exploring task are vidualized
-    for same four participants, which intent to compare and analysis for two type of browsing behavior.
-    Blacken nodes represent the overlap of different clickstreams, and the highest overlap ratio
-    in our dataset is 11.84\% and lowest overlap ratio is 0.00\%. Besides, the number of a node
-    is a representative of chronological serial number of user actions.
-    }
-    \label{fig:overlap-examples}
+    \includegraphics[width=1\textwidth]{figures/overlap1}
+    \caption{Example of ``overlap'' pattern in Medium's goal-oriented task: 
+    this figure visualize the clickstream intersection 
+    of four participants at Medium's goal-oriented task. Each color represents an
+    individual clickstream except black nodes, which represents the overlapping of different clickstreams.
+    The overlap ratio of this graph is 9.43\%.}
+    \label{fig:overlap-example-1}
 \end{figure}
 
-\paragraph{Remark}
+However, the highest $4-$overlap ratio and the lowest $4-$overlap ratio we observed from our
+dataset is 11.84\% in goal-oriented task and 0.00\% when compare two different tasks, 
+therefore we argue that, the browsing behavior tend to be \emph{user-specific} even users has same
+goal in a task, however they still share similar overlaps which suggests a \emph{common interests}.
 
-\begin{table}[H]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/overlap2}
+    \caption{Example of ``overlap'' pattern in Dribbble's exploring task: \
+    this fugure visualize the clickstream intersection
+    of four participants at Dribbble's exploring task. Each color represents an
+    individual clickstream except blacken nodes, which represents the overlapping of different clickstreams.
+    The overlap ratio of this graph is 1.15\%.}
+    \label{fig:overlap-example-2}
+\end{figure}
+
+In exploring task, the $4-$highest overlap ratio is 1.15\%, which is showed in Figure \ref{fig:overlap-example-2}.
+The only common blacken node is the starting page.
+This observation suggests us that explroing browsing behavior is highly user-specific.
+Therefore, in conclusion, the overlap pattern of action path among multiple users suggests:
+
+\begin{itemize}
+    \item Browsing behavior tend to be user specific, however we cannot confirm whether it is 
+    user\-specifc because we have an issue with lack of data.
+    \item Specifically, in goal-oriented browsing behavior, 
+    one can observe common interests between multiple subjects,
+    whereas the exploring tasks has no intersection between subjects.
+\end{itemize}
+
+\paragraph{Remark} Table \ref{table:ellis-pattern} shows an analysis of all observed patterns
+based on Ellis' model, which explains why these patterns exists and how they contributes to our action path model.
+
+\begin{table}
     \small
     \centering
     \caption{Existence of activities from Ellis' Model and information use in the observed patterns}
@@ -438,12 +453,28 @@ occurs when we observe the intersection of multiple participants.
             cluster    &   observed &       &       &       & Exist & Exist & Exist & Exist \\
             star       &            &       & Exist & Exist & Exist &       &       &       \\
             ring       &            & Exist & Exist &       &       &       &       &       \\
-            hesitation &   observed &       &       &       & Exist & Exist &       &       \\
+            hesitation &   observed &       & Exist &       & Exist & Exist &       &       \\
             overlap    &   observed &       &       &       &       &       & Exist & Exist \\
             \bottomrule
         \end{tabular}
-        \label{table:ellis}
+        \label{table:ellis-pattern}
     \end{adjustbox}
 \end{table}
+
+\begin{itemize}
+    \item For cluster pattern, as we discussed before, information need can be observed from action path behavior,
+    and the differentiating and monitoring contributes to the partitioning characer of the pattern
+    and extracting and information then contributes to the short ring and single hesitations
+    because the information are specified clearly.
+    \item For star pattern, we can neither observe information need from action path nor did the participant uses
+    information that find in star pattern. In Ellis' model, chaining, browsing and differentiating contributes to this pattern
+    since the deptch from root to leaf node are small.
+    \item For ring pattern, we also can neither observe information need or information use, the user explores deeper and deeper
+    along the ring until the user exit the browsing session.
+    \item For hesitation, it connects to ring and cluster pattern, therefore they have common activities of chaining, differentiating and monitoring.
+    However, information from hesitations are not used but one can easily observe the hesitation.
+    \item For overlap, we can observe common interests, which indicates inforamtion needs and use, the extracting
+    and information use contributes more to represent this behavior.
+\end{itemize}
 
 \cleardoublepage
