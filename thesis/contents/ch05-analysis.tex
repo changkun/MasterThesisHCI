@@ -192,7 +192,8 @@ Our training parameters are:
 The GRU latent dimension is 10, training process feeds 132 clickstreams as training data,
 38 clickstreams as validation, then 
 propagates 500 epochs with batch size of 32. In the training process, we use Adam optimizer,
- categorical corss-entropy loss as well as L1 and L2 regularizer with early stopping.
+ categorical corss-entropy loss as well as L1 and L2 regularizer with early stopping,
+the total number of trainable parameters is 90323.
 
 In the end of training, we evaluates 19 clickstreams as testing dataset and 
 archieved \textbf{100.00\% accuracy} of browsing behaviors classification.
@@ -476,5 +477,11 @@ based on Ellis' model, which explains why these patterns exists and how they con
     \item For overlap, we can observe common interests, which indicates inforamtion needs and use, the extracting
     and information use contributes more to represent this behavior.
 \end{itemize}
+
+Combining with Table \ref{table:ellis}, cluster pattern and overlap pattern essentially contributes to goal-oriented browsing behavior since they share common
+activities in this behavior, star and ring patterns contributes more on fuzzy and exploring tasks since their activities are more close to these browsing behaviors,
+besides, as we discussed before, these patterns can not observe a clear information use. 
+In addition, the hesitation pattern appears in star, ring and cluster pattern becuase of 
+they have common activities, such as chaining and differentiating.
 
 \cleardoublepage

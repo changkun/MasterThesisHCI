@@ -1,19 +1,93 @@
 \section{Discussion}
 \label{ch:discuss}
-% 1. limitations
 
-% 2. what could improve
+We proposed an action path model that models a sequence of user actions
+and their decision time of each action simultaneously.
+Then we designed and conducted a user study that collects action paths
+from participants with different browsing behavior.
+We discuss our main findings and the limitations of this work in this chapter.
 
-% 3. whats next
+\subsection{Main Findings}
+
+\paragraph{Clickstream Modeling}
+
+The action path model combines an entire action level clickstream, 
+and the stay duration of each action into action path encoder.
+Our quantitative results indicate that 
+a simply model can easily classify existing three type of browsing
+behaviors with 100\% of accuracy, i.e. goal-oriented, fuzzy and exploring.
+Even further, the model is able to universally (corss-user) predict 3 to 5 future visit 
+page with given 95 percent of browsing context.
+
+\paragraph{Browsing Behaviors and Patterns}
+
+We concluded three browsing behaviors based on information behavior theory that describes
+three process of web browsing.
+Our qualitative analysis 
+first interpret the total number of actions 
+are more important to contributes the indication of goal-oriented behavior,
+and the toal stay duration and completion efficiency are more important to indicate exploring behavior.
+
+Afterwards, we also observed five patterns from client-side clickstream, the ring and star patterns
+appears in fuzzy and exploring tasks, ring pattern is more often in exploring task,
+and the star pattern is more often in fuzzy task because of differentiating of information use.
+A cluster pattern is an indiccation of an individual intent while browsing, and it may connects
+few hesitation pattern.
+The overlap pattern discovered in the collected action path gains a low overlap ratio,
+which suggests action path tend to be a user-specific behavior but reserve a small region as
+common interest in goal-oriented browsing behavior.
+Next, an analysis based on Ellis' model and Wilson's theory explose the relationship 
+of these patterns to the proposed browsing behaviors, and these patterns partially represents a browsing behavior.
+Finally, since the model encodes the entire client-side clickstream and stay duration,
+the analysis also explains the reason why our model archieves such a good performance.
+
+\subsection{Limitations and Future Works}
+
+\paragraph{Lack of data} 
+This thesis has a limitation of the lack of data. 
+Though we collected 189 clickstreams from 21 subjects, however, 
+comparing to the baseline action path model with 90323 parameters in Chapter \ref{ch:eval},
+the dataset is still an tiny dataset for the training and learning task.
+Moreover, the validation loss (in Figure \ref{fig:class-loss}) suggests our model remains large capacity to learn more
+categories of browsing behavior, and prediction performance may be improved
+via reparematrization (in Figure \ref{fig:loss}), 
+it is still very interesting to see the performance of our model on a large dataset,
+and how the this model can adapts to more informations on the web, such as the topic of 
+a page, and interpret more detail with attention mechanism.
+
+\paragraph{Data collection}
+Our work simulates three proposed browsing behavior through carefully designed browsing tasks.
+This method only limit to a small group of users, which is not an appropariate apparoch for
+a large dataset collection.
+We planed to conducting a field study that install a clickstream collector while a week, 
+however there are only two subjects after our lab study
+are willing to participate to the field study.
+
+\paragraph{Reinforcement learning appraoch}
+As described in Chapter \ref{ch:model}, the dataset that applies to our action path model
+is an action-level dataset, which means the sequence of URLs are essentially an series of 
+user actions. This could inspire us to use reinforcement learning appraoch to train
+an agent that could explore and learn the environment of the web. Eventually,
+the agent will be able to learn and optimize the experience of browsing on the web,
+which implicitlly solves the problem of data collection and the lack of supervised data.
+
+\paragraph{Privacy}
+This work monitors an action level of clickstream, which stores all browsing history of an
+individual person on a thirdparty databases, and hence brings a trust and privacy issue of
+the application. We positively argue that this is an trust issue between users and service providers.
+As we discussed in Chapter \ref{ch:app}, browser providers collect the data anonymously,
+and users use the browser because of trusts, then world wide web consortium formalizes
+a standardized web API to developers for using this information, and as a browser user can
+either authorize developers to use this API or give an explicit rejection.
+
+\paragraph{Proactive serving} 
 We are in the era that intellegent system surrounding us. The way we interact with intellegent system
-is not as nature as we interact with other human being. Though the proactive serving requires
-always-on monitoring that may cause privacy concerns, it eliminated 
-the unature ``trigger word'' interaction.
-
-% 讨论 google 的一步 prefetching
-
-% 讨论这些数据在移动端的使用
-
-% 讨论这些模式对用户的帮助
+is not as nature as we interact with other people. 
+Communications or interactions between humans in a context does not require any trigger word,
+and a person can brush out a needs or reacts to another immediately.
+The action path prediction gives an working example that shows proactive serving is possible
+if we monitors the environment of web browsing. Therefore, it is interesting to study
+how this feature could be used by a user and how users reacts to the elimination of interaction trigger
+of an intellegent system.
 
 \cleardoublepage
