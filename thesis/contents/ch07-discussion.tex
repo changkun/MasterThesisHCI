@@ -1,7 +1,7 @@
 \section{Discussion}
 \label{ch:discuss}
 
-We proposed an action path model that models a sequence of user actions
+We proposed an action path model that models a sequence of user actions over web browsing
 and their decision time of each action simultaneously.
 Then we designed and conducted a user study that collects action paths
 from participants with different browsing behavior.
@@ -15,7 +15,7 @@ The action path model combines an entire action level clickstream,
 and the stay duration of each action into action path encoder.
 Our quantitative results indicate that 
 a simply model can easily classify existing three type of browsing
-behaviors with 100\% of accuracy, i.e. goal-oriented, fuzzy and exploring.
+behaviors with 100.00\% of accuracy, i.e. goal-oriented, fuzzy and exploring.
 Even further, the model is able to universally (corss-user) predict 3 to 5 future visit 
 page with given 95 percent of browsing context.
 
@@ -43,7 +43,27 @@ the analysis also explains the reason why our model archieves such a good perfor
 
 \paragraph{\emph{Why the task difficulty is not measured through NASA-TLX?}}
 
+As we analysed in Section \ref{sec:task-diff}, the major purpose of the measurement of 
+task difficulty is to identify inproperate tasks design (i.e. abnormal ourlier) 
+rather than the purpose of measuring cognitive load by using NASA-TLX.
+Our significant tests to the subjective self-rating score of task difficulty supports
+our argument that these tasks are significant different than one another.
+
+Whether NASA-TLX for cognitive load or self-rating score for task difficulty is not able to be used in
+a our machine learning model since they are impossible to be collected from unseen users from bootstrap.
+Though it is possible to construct a single subjective socre as one of the inputs to the action path model,
+the model learns browsing behaviors from all collected data, which means if the model is trained based on 
+a dataset with subjective score, then the dataset is biased by these scores and eventually reduces the 
+generalization ability in a user-independent context.
+
 \paragraph{\emph{Why leave-one-out cross validation is not applied in classification task?}}
+
+Research in a context of HCI performs a special leave-one-subject-out cross validation (LosoCV)
+for a purpose of claiming a model is tested in which it has not seen any unseened user data before.
+\cite{}, and arguing this evaluation is a representative of bootstrapping performance of a model.
+
+
+
 
 \subsection{Limitations and Future Works}
 

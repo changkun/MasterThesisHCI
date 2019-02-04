@@ -2,13 +2,15 @@
 \usepackage{package/lmuthesis}
 
 \prof{Prof.\ Dr.\ Heinrich Hu{\ss}mann}
-\title{Understanding and Predicting\\Client-side User Clickstream}
+\title{Understanding and Predicting\\Web Browsing Behavior}
 \author{Changkun Ou}
 \email{hi@changkun.us}
 \bearbeitungszeitraum{12.8.2018 bis 12.2.2019}
 \betreuer{Malin Eiband and Dr. Daniel Buschek}
 \aufgabenstellung{
     \begin{description}
+        \item[Understanding and Predicting User Browsing Behavior]
+ 
         \item[Problem Statement] To be added
         % Under standing user behavior helps designer optimize 
         % their product user experiences. Meanwhile, users can benefit more productive 
@@ -23,12 +25,16 @@
         % Based on the literature review, a intent model should be developed ...
         % Then a system should implements the ...
         % Nevertheless, user intents becomes clear step by step after performs a series of actions in a given context. 
-        \item[Tasks] To be added
-        % conduct a literature review to identify research questions regarding
-        % clickstream research, 
-        \item[Requirements] To be added
+        \item[Tasks] (1) Conduct a literature review to identify research questions regarding
+        clickstream research that are of interest to researchers and practitioners \\
+        (2) Design a machine learning based model in clickstream modeling and 
+        creating an appropriate experiment with theoretical support to justify model performance and its interpretability \\
+        (3) Develop an web application as a demonstration of the model and evolving it as a generic architecture
+        for the proposed model.
+        \item[Requirements] Strong skills in mathematical modeling and machine learning approaches, independent scientific work and creative problem solving,
+        industrial experience in web development and architecting.
         %asdfasdf
-        \item[Keywords] Clickstream, User Browsing Behavior, Sequence Learning, Information Seeking Behavior
+        \item[Keywords] Clickstream, User Browsing Behavior, Machine Learning, Web
     \end{description}
 }
 \acknoledgement{
@@ -47,39 +53,41 @@
     Early clickstream research emerges since the end of last century and 
     has proliferated in the heart of our Internet world.
     Trades, public opinions, and almost every traces are precisely recorded 
-    on server side log files.
-    The fundamental interaction between client and server stands immutably, 
+    on server side web request log files.
+    The fundamental interaction between web service client and server stands immutably, 
     despite the fact that mobile devices have governed our daily life.
-    In this thesis, we proposed a model to characterize user browsing behavior 
-    while involving clickstream with multi-tab branching and backtrack actions on the Web, 
-    and we call it Action Path model.
+    In this thesis, we propose a machine learning model that characterize user browsing behavior 
+    while involving multi-tab branching and backtrack actions in a browser instead of
+    web requests based clickstreams, and we call it the Action Path model.
     To justify our model, we first established a lab study and collected clickstream data
     of individuals, consists of chronologic URLs and corresponding stay durations of each URL,
-    with manually designed nine different web browsing task for three mainstream websites 
+    with designed nine different context given web browsing tasks for three mainstream websites 
     based on the theory of information behavior.
     Each website has three types of tasks, including goal-oriented, fuzzy and 
-    exploring browsing task, which characterized the corresponding three browsing 
+    exploring browsing task, and they characterize the corresponding three browsing 
     behaviors.
     By analyzing the subjects trace from our lab study, we seek to archive these goals:
     1) Understanding: identify if browsing behaviors are distinguishable and 
-    finding common patterns that appears in client-side clickstreams from subjects.
+    finding common patterns that appears in an action path.
     2) Classification: to separate and report browsing behaviors on the web, that help 
     users better understanding their status.
     3) Prediction: present the future click path more than one step with given context of
     browsing history in a session.
     To archive these goals, our quantitative analysis indicates that goal-oriented, fuzzy and exploring
-    browsing behaviors are almost 100\% classifiable based on chronologic URLs, and the prediction
-    performance of our model suggests higher than 60\% of accuracy for 3-5 steps of future clickstream prediction.
+    browsing behaviors are classifiable with precision of 100.00\% based on the combination of 
+    chronologic URLs and stay duration. 
+    The prediction performance of our model shows higher than 60\% of accuracy for 
+    3 to 5 steps of future clickstream prediction.
     Meanwhile, our qualitative analysis to the clickstream indicates 5 observed patterns, 
     including ``ring'',``star'', ``overlap'', ``hesitation'' and ``cluster'' patterns, which 
-    represents the patterns of client-side clickstream. 
+    represents the patterns of an action path. 
     As an illustration of application, we also developed a browser plugin that proactively serves users,
     as well as suggesting predictions of the possible future clicks to a user.
     Furthermore, a generalized design of our model and plugin communication protocol 
     are discussed for possibility of formalizing them as standard Web APIs to help designer and 
     developers to improve and monitor user experience of their products.
     To the best of our knowledge, this is the first such detailed study regarding web browsing 
-    behavior modeling based on client-side clickstream.
+    behavior modeling based on client-side collected clickstreams.
 }
 
 \begin{document}
