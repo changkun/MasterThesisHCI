@@ -1,6 +1,8 @@
 \section{Action Path Models}
 \label{ch:model}
 
+\epigraph{It is impossible to separate a cube into two cubes, or a fourth power into two fourth powers, or in general, any power higher than the second, into two like powers. I have discovered a truly marvelous proof of this, which this margin is too narrow to contain.}{Pierre de Fermat}
+
 In this chapter, we formalize few concepts and metrics in clickstream data,
 and then describe a proposed clickstream model named \emph{Action Path model} 
 based on recurrent nerual network that models a client side clickstream behavior. 
@@ -9,8 +11,9 @@ a user may uses \emph{back button} or \emph{switch browser tabs} then jumps to v
 or parallel web pages, namely, a user performed a visit action.
 A server side clickstream does not containing such detailed level of user clickstream. 
 The term \emph{action path} is a generalized concept of clickstream, which replaces individual URLs 
-to user actions (with backbutton and browser tab switch effects) in a browser. Figure \ref{fig:clickstream}
-illustrates an simplified version of action path that compares vanilla clickstream.
+to chronological ordered user actions (with backbutton and browser tab switch effects) in a browser. 
+Figure \ref{fig:clickstream} illustrates a simplified version of action path that 
+compares vanilla clickstream.
 
 \begin{figure}[H]
     \centering
@@ -33,9 +36,9 @@ illustrates an simplified version of action path that compares vanilla clickstre
     \label{fig:clickstream}
 \end{figure}
 
-For a convinience of discussion, we indiscriminate the use of 
+For a convinience of discussion, \textbf{we indiscriminate the use of 
 term \emph{action path} and \emph{clickstream} in
-this chapter to indicate a series of user actions.
+this thesis to indicate a chronological ordered user actions}.
 
 \subsection{Completion Effeciency}
 

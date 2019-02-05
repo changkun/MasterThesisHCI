@@ -1,6 +1,8 @@
 \section{Conclusions}
 \label{ch:final}
 
+\epigraph{Every age has its own myths and calls them higher truths.}{Anonymous}
+
 % \subsection{Summary}
 
 % 1. what has been done
@@ -17,26 +19,33 @@ Subsequently, we also visualized these data and closely discovered the common,
 individual and intersection patterns among client-side clickstream.
 As an application show case, we illustrated a browser plugin that monitors client-side 
 user clickstream to predict future movements of web browsing and discussed the benifits of this plugin.
-Futhermore, we presented a generic architecture communication flow and architecture of the plugin, 
+Futhermore,
+ architecture of the plugin, 
 as well as the possibilities of standardize the plugin feature as browser Web APIs to other developers.
 
 % 2. what are the findings
 
 Our finding answers the research questions that motivates this thesis:
 
-\begin{itemize}
-    \item Understanding: 
-        \begin{enumerate}
-            \item client-side clickstream is different than server side clickstream because of the existence of
-            parallel visiting and multiple website visiting, three suggested browsing behaviros are: goal-oriented, fuzzy and exploring behaviors;
-            \item number of actions, total stay duration and completion efficiency cannot provide an accurate classifier for these three behaviors, 
-            and the number of actions are more important than others for indication of goal-oriented browsing behavior but other two features are more important for indication of exploring behavior;
-            \item the observed patterns in action path including cluster, hesitation, ring, star and overlap contributes to different browsing behaviors;
-            \item Action path tend to be user-specific but still contains a small group of common interests in goal-oriented behaviors;
-        \end{enumerate}
-    \item Classification: the proposed action path model 100.00\% accuratelly classified three browsing behavior;
-    \item Prediction: three to five future steps prediction can be accuratelly (>60\%) predicted.
-\end{itemize}
+\paragraph{Understanding} (a) client-side collected clickstream is different than 
+server side collected clickstream because of the existence of parallel visiting 
+and multiple website visiting, three suggested browsing behaviros are: 
+goal-oriented, fuzzy and exploring behaviors;
+(b) number of actions, total stay duration and completion efficiency cannot 
+provide an accurate classifier for these three behaviors, 
+but the number of actions are more important than others to indication of 
+goal-oriented browsing behavior and other two features are more important 
+to indicate exploring behavior;
+(c) the observed patterns in action path including cluster, hesitation, ring, 
+star and overlap contributes to different browsing behaviors;
+(d) action path visually tend to be user-specific but remains common interests 
+in goal-oriented behaviors.
+\paragraph{Classification} the proposed action path model is 100.00\% accurate for 
+the classification of three browsing behavior, which is trained on a user-independent dataset.
+\paragraph{Prediction} three to five future steps prediction can be accuratelly (>60\%) predicted
+in a simplest action path model.
+
+\paragraph{}
 
 % 3. emphasize the importance >> place to large context
 Our findings are generic and subservience. The model is an action level model that models
