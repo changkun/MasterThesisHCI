@@ -5,14 +5,17 @@
 
 In this chapter, we formalize few concepts and metrics in clickstream data,
 and then describe a proposed clickstream model named \emph{Action Path model} 
-based on recurrent nerual network that models a client side clickstream behavior. 
-The action path is different than clickstream since 
-a user may uses \emph{back button} or \emph{switch browser tabs} then jumps to visited web pages 
-or parallel web pages, namely, a user performed a visit action.
-A server side clickstream does not containing such detailed level of user clickstream. 
-The term \emph{action path} is a generalized concept of clickstream, which replaces individual URLs 
-to chronological ordered user actions (with backbutton and browser tab switch effects) in a browser. 
-Figure \ref{fig:clickstream} illustrates a simplified version of action path that 
+based on recurrent nerual network that models a client side web browsing behavior. 
+An \emph{action path} is different than the original clickstream concept since 
+a user may \emph{switch browser tabs} for parallel viewing \cite{huang2010parallel} or uses \emph{back button} 
+for backtracking viewing \cite{huang2012no} as we discussed in Chapter \ref{ch:relate}, 
+namely, a user performes a visit action.
+A server side collected clickstream does not containing such detailed level of 
+user clickstream.
+The term \emph{action path} is a generalized concept of clickstream, 
+which replaces individual URLs to chronological ordered user actions 
+(with backbutton and browser tab switch effects) in a browser.
+Figure \ref{fig:clickstream} illustrates a simplified version of an action path that 
 compares vanilla clickstream.
 
 \begin{figure}[H]
@@ -25,14 +28,15 @@ compares vanilla clickstream.
     However the actual user actions are: 
     / $\rightarrow$ /a $\rightarrow$ /out $\rightarrow$ /a $\rightarrow$ /a/c $\rightarrow$ /a/d 
     $\rightarrow$ /a/c $\rightarrow$ /a $\rightarrow$ / $\rightarrow$ /goal. 
-    The records on server side lost interaction details between users and browsers.
+    The records from server side lost the interaction details between users and browsers.
     Node that /out is a distraction page in the graph, 
     which may located in a different website (e.g. advertisement), 
-    and dashed arrorws are wasted user
+    and black dashed arrorws are wasted user
     actions. The /goal page may not clear in the beginning of the clickstream, one can generate
     a shortcut optimization navigation to the /goal page while more clickstream context
-    be presented, i.e. an optimized user actions is 
-    / $\rightarrow$ /a $\rightarrow$ /a/c $\rightarrow$ /a/d $\rightarrow$ /goal.}
+    be presented, i.e. an optimized user action is 
+    / $\rightarrow$ /a $\rightarrow$ /a/c $\rightarrow$ /a/d $\rightarrow$ /goal. In this case,
+    the demand page of the visit session is discovered in /a/d.}
     \label{fig:clickstream}
 \end{figure}
 
@@ -43,14 +47,15 @@ this thesis to indicate a chronological ordered user actions}.
 \subsection{Completion Effeciency}
 
 An action path of a visiting session starts from a starting page and ends on a exiting page.
-Since we consider the effect of browser back button and browser tab swtich, previous page could
-easily be visited twice, if a user clicked the back button. Therefore, a page may directs
-to multiple pages. \emph{For instance, an action path could degrade to a linked list if a user
-click through to different pages without using back button and switching tabs; or an action
-path could become a 1-to-n bipartite graph if a user use back button back to previous page
+Since we consider the effect of browser back button and browser tab swtichs, 
+a previous page could easily be visited twice, if a user clicked the back button. 
+Therefore, a page may directs to multiple pages. 
+\emph{For instance, an action path can degrade to a linked list if the user
+click through different pages without using back button and switching tabs; or an action
+path can become a 1-to-n bipartite graph if a user use back button back to previous page
 after clicked a page,} as shown in Figure \ref{fig:sim-action-path}.
 
-As a result, we define the \emph{completion effeciency} based on shortest path from starting page
+As a result, we define a term \emph{completion effeciency} based on shortest path from starting page
 to exiting page, and stay duration of the action path. 
 
 \begin{figure}[H]
@@ -68,17 +73,17 @@ to exiting page, and stay duration of the action path.
     \label{fig:sim-action-2}
 \end{subfigure}
 
-\caption{Two special case of an action path: linked list action path \ref{fig:sim-action-1}, and 
-1-to-n bipartite graph action path \ref{fig:sim-action-2}.}
+\caption{Two special case of an action path: linked list action path (\ref{fig:sim-action-1}), and 
+1-to-n bipartite graph action path (\ref{fig:sim-action-2}).}
 \label{fig:sim-action-path}
 \end{figure}
 
-Let an action path is represented on directed cyclic graph, each node represents a visited page,
+Let an action path is represented by a directed cyclic graph, each node represents a visited page,
 and each edge has a weight that represents the stady duration of its tail node.
 Assume the total stay duration of the shortest path from starting page to existing page
 is $d_s$, and the total stay duration of the action path is $D$, 
 the number of nodes in the shortest path is $n_s$, the total nodes 
-in an action path is $N$, the \emph{completion effeciency $E$} is defined 
+in an action path is $N$, we define the \emph{completion effeciency $E$} is 
 as follows Equation \ref{eqn:completion-effeciency}:
 
 \begin{align}
@@ -90,22 +95,25 @@ as follows Equation \ref{eqn:completion-effeciency}:
 \end{align}
 
 where $w_1$, $w_2$ are hyperparameters to balancing the importance of action path 
-and stay duration. According to the duscussion of two special case of action path,
-it is easy to prove the range of $E$ is $(0, 1]$. As a complement, we define \emph{zero
-completion efficiency} if and only if a user cannot complete a clickstream. Therefore
-we have the range of $E$ is $[0, 1]$.
+and stay duration. According to the discussion of two special case of action path,
+it is trivial to show the range of $E$ is $(0, 1]$. As a complement, we define \emph{zero
+completion efficiency} if and only if a user cannot complete a clickstream 
+in a browsering session. Therefore we have the range of $E$ is $[0, 1]$.
 
 \paragraph{Remark 1} The definition of completion effeciency uses the term of shortest path,
 which is the problem of finding a path between the starting page and exiting page
  in a action path (directed cyclic graph) such taht the sum of
-the stay duration of its constitunent pages in minimized.
-The problem can be solved by Dijkstra's shortest-path algorithm \cite{dijkstra1959note}.
+the stay duration of its constituent pages in minimized.
+The problem can be solved by Dijkstra's \cite{dijkstra1959note} shortest-path algorithm. It 
+selectes the unvisited nodes with the smallest weights, calculates the distance 
+through it to each unvisited neighbor, then updates the distance of neighbor distance 
+if the distance is smaller than one another. The process converges to the shortest path.
 
-\paragraph{Remark 2} An action path may increases with more nodes (pages) over time.
+\paragraph{Remark 2} An action path may increases with more nodes (web pages) over time.
 The starting page of an action path is always the first page when browser was opened.
 However, one can always treat the current visited page is the exiting page due to we
-do not know when an user will exit browsing over time. Consequently, $E$ is changing over
-browsing.
+do not know when an user will exit browsing over time at the moment. 
+Consequently, function $E$ is changing over browsing.
 
 \paragraph{Remark 3} We uses completion efficiency as a
 feature for a classification task in Section \ref{sec:inter-general-feature}.
@@ -122,18 +130,13 @@ feature for a classification task in Section \ref{sec:inter-general-feature}.
 
 \subsection{\emph{url2vec} Embedding}
 
-The distributed representation of word2vec models achieve better performance 
-in natural language processing,
-Mikolov et al. \cite{DBLP:journals/corr/abs-1301-3781} introduced 
-continous bag-of-word (CBOW) and skip-gram model as an efficient method for learning high-quality
-vector representation of words, and CBOW is faster while skip-gram is slower but get better
-performance for infrequent words. We convey similar idea from these models and propose our
-\emph{url2vec} model for client side clickstream data.
+As we discussed in Chapter \ref{sec:seq-learn}, we convey similar idea from word2vec model 
+and propose our \emph{url2vec} model for client side clickstream data.
 
-The purpose of url2vec model is to construct URL representations to better predict 
+The purpose of url2vec model is to construct URL representations that better predict 
 the surrounding URLs in a clickstream. Briefly, given a clickstream of urls 
-$\text{URL}_1, \text{URL}_2, ..., \text{URL}_T$, the objective of url2vec is to maximize the average
-log softmax probability:
+$\text{URL}_1, \text{URL}_2, ..., \text{URL}_T$, the objective of url2vec is to maximize 
+the average log softmax probability:
 
 \begin{align}
 \label{eqn:url2vecprob}
@@ -151,15 +154,14 @@ where $c$ is the size of embedding context, which is a function of starting page
 $v_{\text{URL}_t}$ is one-hot encoded representation of input URLs, and 
 $v_{\text{URL}_{t+i}}$ is the vector embedding of output representations.
 
-\paragraph{Remark 1} This model described by Equation \ref{eqn:url2vecprob} is essentially
+\paragraph{Remark 1} The model described by Equation \ref{eqn:url2vecprob} is essentially
 a three layer neural network: input layer of \emph{one-hot} encoded URLs (a group of binaries
 that a component of a one-hot encoded vector is a representative of a URL under a finite set
-of existing URLs), a hidden layer of
-feature representation and an output layer share weights to the learned embeddings of 
-input URLs.
+of existing URLs), a hidden layer of feature representation and an output layer 
+share weights to the learned embeddings of input URLs.
 
 \paragraph{Remark 2} The probability in Equation \ref{eqn:url2vecprob} is impractical due to
-$\nabla \log{p(\text{URL}_{t+i} | \text{URL}_t)}$ is large because of expnential items,
+$\nabla \log{p(\text{URL}_{t+i} | \text{URL}_t)}$ is large because of exponential terms,
 two numerical optimizations based on Hofmann Tree and Negative Sampling are proposed 
 by Mikolv et al. \cite{mikolv2013embedding}.
 
