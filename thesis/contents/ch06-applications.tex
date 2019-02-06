@@ -19,15 +19,6 @@ and provides proactive notifications based on the historical actions in a sessio
 when browsing behavior is detected to goal-oriented or fuzzy behavior, 
 as illustrated in Figure \ref{fig:proactive-noti}.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/proactive-noti}
-    \caption{Proactive notification:
-    The plugin injects monitor script when the page is loaded, and then serve user giving
-    notification when detecting fuzzy browsing behavior.}
-    \label{fig:proactive-noti}
-\end{figure}
-
 The user can either select ``Yes'' and navigate to the most likely page that they 
 will visit in the future, or select ``No'' to ignore the notification and mark it as an invalid detection.
 The plugin serves the user only if the browsing behavior is clearly detected 
@@ -40,6 +31,15 @@ One of the benefits of the plugin is to proactively help the user become efficie
 and reach the destination as fast as possible in the goal-oriented browsing.
 
 \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/proactive-noti}
+    \caption{Proactive notification:
+    The plugin injects monitor script when the page is loaded, and then serve user giving
+    notification when detecting fuzzy browsing behavior.}
+    \label{fig:proactive-noti}
+\end{figure}
+
+\begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{figures/plugin-predicting-result}
     \caption{The plugin provided popup page: users can always open the page
@@ -58,17 +58,6 @@ retrieve the possible needs and browsing status in the current session.
 This information is helpful to the plugin user because a user can understand
 the current status of web browsing, which implicitly allows the person to better focus
 on whether the person is detected as a form of exploring browsing behavior.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/arch}
-    \caption{The implemented architecture of our plugin: This is the data flow illustration,
-    Step 1 and 3 are user actions, and the rest of the steps are automatically triggered by
-    each component of the plugin. For instance, the browser deamon process
-    and plugin background process as two part of client-side components, the webhook,
-    prediction service and training service are backend microservices running on a server.}
-    \label{fig:arch}
-\end{figure}
 
 The implementation and architecture is not simple
 although it provides a small feature that exhibits context and future information for the user.
@@ -90,6 +79,17 @@ Since the prediction service received a new user action, it stores the action in
 subsequently for the model update (\emph{step10}). Because of the cost of training a new model,
 the prediction service can decide to trigger the training service to retrain the model 
 if it has already received enough new data (\emph{step11}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/arch}
+    \caption{The implemented architecture of our plugin: This is the data flow illustration,
+    Step 1 and 3 are user actions, and the rest of the steps are automatically triggered by
+    each component of the plugin. For instance, the browser deamon process
+    and plugin background process as two part of client-side components, the webhook,
+    prediction service and training service are backend microservices running on a server.}
+    \label{fig:arch}
+\end{figure}
 
 Furthermore, the training service uses the pre-trained model as
 a base model to initiate the training by requesting newly created data from database (\emph{step12} and \emph{step13}), 

@@ -243,7 +243,7 @@ dashed lines in Figure \ref{fig:decoder}.
     \label{fig:decoder}
 \end{figure}
 
-Note that a decoder first outputs vectors, and we have two strategy in translating vectors to URLs. 
+In our model, a decoder outputs vectors first, and we have two strategy in translating vectors to URLs. 
 The first strategy is to use argmax function to select the component with maximum 
 probability of a vector, we use this strategy for performance evaluation in 
 Section \ref{sec:eval-optimal}. Another strategy is to select
@@ -253,8 +253,9 @@ we discusse and use this strategy for action path optimization in Section \ref{s
 \subsubsection{Recurrent Unit}
 \label{sec:recurrent-unit}
 
-The recurrent unit in the Action Path model is not as standard as original 
-LSTM or GRU. In our recurrent unit, when using LSTM as recurrent unit base, we also 
+\textbf{The recurrent unit in the Action Path model is not as standard as original 
+LSTM or GRU}, which is one of the major contributions of the thesis. 
+In our recurrent unit, when using LSTM as recurrent unit base, we also 
 feed time duration $(d^{ij}_1, d^{ij}_2, ..., d^{ij}_n)$
 into input gate $I_t$, and others (forget gate $F_t$, output gate $O_t$, 
 memory cell $C_t$ and hidden state $h_t$) remains the same:
