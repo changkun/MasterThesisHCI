@@ -6,7 +6,7 @@
 % - 讨论现有的 client-side clickstream 研究分别是针对什么方向的，他们的结论主要是什么，都有什么样的改进空间。
 % - 以前的 clickstream 只有类别级的分配模型，通过人工设计某个特定网站的马尔科夫模型来学习用户在不同类别之间的跳转概率。但当变为客户端后，数据变得更加充分，用户在一段时间内可能不局限于某个特定的网站，同时可能被其他网站干扰。
 
-In this chapter, we discuss the former research that releats to our work, including
+In this chapter, we discuss the former research that relates to our work, including
 the existing approaches to clickstream behavior modeling, the evolution of information 
 behavior theory regarding how it adapts to our digital world, as well as the 
 most related recent advances regarding sequence learning.
@@ -14,46 +14,55 @@ most related recent advances regarding sequence learning.
 \subsection{Clickstream Behavior Modeling}
 
 Clickstream behavior research can be traced back to the year when the word ``clickstream''
-was invented. Eearly clickstream behavior research studied the navigational behavior
+was invented. Early clickstream behavior research studied the navigational behavior
 of user \cite{mandese1995clickstreams, brodwin1995} and 
 they binary classified clickstream based on the degree of linearity.
 
-Mobasher et al. discovered the effective and scalable techniques \cite{Mobasher:2001:EPB:502932.502935} for Web personalization
-by using association rules and built a recommondation system. Goldfrab invistigates \cite{goldfarb2002analyzing} 
-the website choice behavior based on clickstream data and suggests that clickstream simulate company strategy changes.
-Afterwards, 
-Chatterjee et al. \cite{chatterjee2003modeling} first conduct 
+Mobasher et al. discovered the effective and scalable techniques \cite{Mobasher:2001:EPB:502932.502935} 
+for Web personalization by using association rules and built a recommendation system. 
+Goldfrab investigates \cite{goldfarb2002analyzing} the website choice behavior based on 
+clickstream data and suggests that clickstream simulate company strategy changes.
+Afterwards, Chatterjee et al. \cite{chatterjee2003modeling} first conduct 
 the previous research regarding clickstream to an actual commercial website.
 They found that clickstream represents an implication that dynamic advertising
 based on customer clickstream history influence the future clickstream of the customer
 and increase the interaction with the dynamic advertisement.
-More techniquely, Ting et al. uses common sequences to find unexpected browsing behavior \cite{Ting:2005:UMF:1092358.1092469},
+More technically, Ting et al. uses common sequences to find 
+unexpected browsing behavior \cite{Ting:2005:UMF:1092358.1092469},
 and then use their findings to improve website design. 
 
 The most recent research evolved the approach of clickstream modeling,
-Wang et al.\cite{Wang:2016:UCC:2858036.2858107} proposed a unsupervised appraoch to model clickstream without labeling.
-Chi et al. proposed an analysis framework \cite{chi2017towards} for the general understanding of online information behavior
-in a specific page. However, their framework only fits for server side collected clickstream other than a real user clickstream.
-Then, Wang et al. \cite{Wang:2017:CUB:3127338.3068332} improved their unsupervised appraoch,
-and summarized more approaches for clickstream behavior modeling that identifies span ad abuse
-for a specific website. Park et al. models and detects a behavior change among student while learning 
+Wang et al.\cite{Wang:2016:UCC:2858036.2858107} proposed an unsupervised approach 
+to model clickstream without labeling.
+Chi et al. proposed an analysis framework \cite{chi2017towards} for the general understanding 
+of online information behavior in a specific page. 
+However, their framework only fits for server side collected clickstream other than 
+a real user clickstream.
+
+Then, Wang et al. \cite{Wang:2017:CUB:3127338.3068332} improved their unsupervised approach,
+and summarized more comprehensive review to the existing approaches, 
+such as common subsequences of clickstreams and graph clustering based classification 
+for clickstream behavior modeling that identifies spam and abuse for a specific website. 
+Park et al. models and detects a behavior change among student while learning 
 based on Poisson process \cite{Park:2017:DCS:3027385.3027430} to
 help improve online learning experience. Amo et al. \cite{amo2018learning} further visualizes search-stream
-behavior based on student clickstream on a class, and Shimada et al. proves \cite{Shimada:2018:OCD:3170358.3170412}
+behavior that serves student clickstream data from a class, 
+and Shimada et al. proves \cite{Shimada:2018:OCD:3170358.3170412}
 online change detection while monitoring on student behavior is possible based on a sliding window.
 
-Zaloudek gives an review on the comparasion \cite{mastersthesis} traditional method to model clickstream data,
+Zaloudek gives an review on the comparison \cite{mastersthesis} traditional method to model clickstream data,
 then proposed a principle component analysis based method for a semi-supervised learning
 of clickstream data, however their approach does not work well on clustering task, and 
 the best performance is obtained by traditional multilayer perceptron algorithm.
-Chandramohan and Ravindran then further investigate the neural approach on clicksteam mining \cite{N:2018:NAB:3152494.3152505},
-they verified that complexy LSTM with Attention mechanism is able to capture whether a user
+Chandramohan and Ravindran then further investigate the neural approach on clickstream mining \cite{N:2018:NAB:3152494.3152505},
+they verified that complex LSTM with Attention mechanism is able to capture whether a user
 is intent to buy a product or not based on server side collected clickstream.
 Surprisingly, Gundala and Spezzano \cite{Gundala:2018:RDH:3184558.3191644} simply use a Lasso
-regression based on sofisticated feature engineering 
+regression based on sophisticated feature engineering 
 archived AOC score 0.769 for reader demand hyperlink prediction on Wikipedia clickstream dataset.
 
-Kammenhuber et al. is the first study regarding client side clickstream \cite{Kammenhuber:2006:WSC:1177080.1177110}.
+Kammenhuber et al. is the first study \cite{Kammenhuber:2006:WSC:1177080.1177110} 
+regarding client side clickstream. 
 They proposed a finite-state Markov model that models user's search behavior on a level of
 topic categories. Unfortunately their dataset are collected from network package traffic,
 and did not consider the time a user spend in each page.
@@ -79,25 +88,24 @@ and did not consider the time a user spend in each page.
 Liu et al. \cite{liu2010understanding} studied a specific user behavior on dwell time on web pages, and concluded that
 Weibull distribution is the most appropriate distribution to characterize this behavior. 
 Huang et al. \cite{huang2010parallel, huang2012no} further 
-noticed the behavior of branching parallel browssing and backtracking browsing
+noticed the behavior of branching parallel browsing and backtracking browsing
 behavior on modern browsers, as shown in Figure \ref{fig:backtrace}, 
 and presented an frequent analysis for the distribution of these two behavior individually.
 
 Unfortunately, as we discussed above, the existed research regarding clickstream 
-behavior modeling are either server-side modeling for an individual client or 
+behavior modeling are either server-side modeling for an individual website or 
 individually modelized for client-side behaviors with limited information of clickstream,
-which does not stands for a real user behavior. 
+which does not stands for a ground truth of user behavior. 
 Besides, the existed approaches are based on self-constructed features, 
 the property of Markov memoryless and etc. Though the most recent
 approach use neural networks, their findings only applies to specific context.
-
 From the point of view of user behavior, they 
 neither unambiguously justifies the foundation of their model, 
-nor providing a significative performance of their model.
+nor providing a large performance improvement of their model.
 
 We, in this thesis, serialize the client side chronologic URL sequences with combines all 
 these individually studied phenomena including the branching and backtracking browser 
-feature. With this chronologic URLs, we seek to model and understand the essential user 
+feature. With this chronologic URLs, we seek to understand and model the essential user 
 behaviors patterns while browsing on the Web.
 
 
@@ -113,7 +121,7 @@ generalize feedforward neural network for sequence based data.
 
 Given a sequence of input $(i_1, i_2, ..., i_T)$, the original RNN computes a
 sequence of outputs $(o_1, o_2, ..., o_T)$ 
-by interating the activation function Equation \ref{eqn:bptt}:
+by iterating the activation function Equation \ref{eqn:bptt}:
 
 \begin{align}
 \label{eqn:bptt}
@@ -127,17 +135,20 @@ and $W_{oh}, W_{hh}, W_{hi}$ are weight parameters between output, hidden and in
 
 The origin RNN simply use a linear weights and a $\sigma$ non-linear transformation between 
 inputs and outputs as a recurrent unit. The most widely used recurrent unit in RNN is the
-Long Short Term Memory (LSTM) unit \cite{hochreiter1997lstm} or Gated Recurrent unit (GRU) \cite{DBLP:journals/corr/ChoMGBSB14}.
+Long Short Term Memory (LSTM) unit \cite{hochreiter1997lstm} 
+or Gated Recurrent unit (GRU) \cite{DBLP:journals/corr/ChoMGBSB14}, they provides a game-changing
+performance than traditional hidden Markov models in machine translation\cite{DBLP:journals/corr/abs-1901-01122}.
+
 LSTM has a context cell and three regulators: Input gate, 
 output gate and forget gate.
 The context cell keeps dependencies between inputs of the unit as long term memory. 
 Input gate take historical hidden state and current input and controls the input value to
 the recurrent unit, output gate responsible for the control of output activations, and
 forget gate resets and decides retaining values of the recurrent unit as a short term memory.
-Similarly in GRU, it simplyfies the structure of LSTM into a update gate and a reset gate.
+Similarly in GRU, it simplifies the structure of LSTM into a update gate and a reset gate.
 
 On the other hand, the vanilla RNN transfers and maps a sequence to another sequence if and only if the inputs
-and the outputs are aligned with equal length. Apparently, the major constrains of the vanilla RNN
+and the outputs are aligned with equal length. Apparently, the major constraints of the vanilla RNN
 is the model cannot address a problem if inputs and outputs provided in different length with 
 complicated and non-monotonic relationships.
 
@@ -153,7 +164,7 @@ The initial vectors of word were one-hot encoded vectors and get updated over tr
 The recent advances of representation learning uses a distributed representation 
 of word2vec model \cite{DBLP:journals/corr/abs-1301-3781}, which achieve better 
 performance in natural language processing. The word2vec model introduced 
-continous bag-of-word and skip-gram model as an efficient method for learning high-quality
+continuous bag-of-word and skip-gram model as an efficient method for learning high-quality
 vector representation of words, and bag-of-word is faster while skip-gram is slower but get better
 performance for infrequent words.
 
@@ -182,7 +193,7 @@ was proposed.
     \label{fig:wilson-info-seek}
 \end{figure}
 
-Wilson's model has been envolved many years since its origin, and it was revised 
+Wilson's model has been involved many years since its origin, and it was revised 
 and adapted to our digital world since the digital systems learns user preferences and 
 changes \cite{giannini1998receiving} the way we receiving information.
 
@@ -193,8 +204,8 @@ In addition, his analysis was
 based on grounded theory approach \cite{aceto1994grounded} and semi-structured interviews. 
 
 Afterwards, Choo et al. adapts Ellis' Model and discussed \cite{choo1999information}
-the information seeking behavior on the web through different activities rather 
-than a single process, the applied activities are:
+the information seeking behavior on the web through different activities rather than 
+a single process, the applied activities are:
 starting, chaining, browsing, differentiating, monitoring, and extracting.
 
 ``\emph{Starting}'' on the web indicates that a user identifies websites or pages
@@ -213,9 +224,11 @@ Johnson further describes \cite{johnson2017patterns} seven more detailed behavio
 patterns on the web, but did not given a working study that verify or prove their formation.
 
 Although Wilson's model and Ellis' model are revised in recent works, however these improvements
-are more generic and too complexy for describing user information behavior on the web.
-Therefore, in this thesis, we only uses the an antecessor of Wilson's framework \cite{wilson1997information} and 
-Ellis' model \cite{ellis1997modelling} to formalize and justify our lab study experiment later in Chapter \ref{ch:exp}, 
-as a fundation of our work.
+are more generic and too complex for describing user information behavior on the web,
+which cannot adapts to our experiment design (discuss detailly in Chapter \ref{ch:exp}
+and Section \ref{sec:decision}).
+In this thesis, we only uses the an antecessor of Wilson's framework \cite{wilson1997information} and 
+Ellis' model \cite{ellis1997modelling} to formalize and justify our lab study experiment 
+later in Chapter \ref{ch:exp}, as a foundation of our work.
 
 \cleardoublepage

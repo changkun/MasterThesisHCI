@@ -7,7 +7,7 @@ We proposed an action path model that models a sequence of user actions over web
 and their decision time of each action simultaneously.
 Then we designed and conducted a user study that collects action paths
 from participants with different browsing behavior.
-We discuss our main findings and the limitations of this work in this chapter.
+We discuss our main findings, decisions and the limitations of this work in this chapter.
 
 \subsection{Main Findings}
 
@@ -18,7 +18,7 @@ and the stay duration of each action into action path encoder.
 Our quantitative results indicate that 
 a simply model can easily classify existing three type of browsing
 behaviors with 100.00\% of accuracy, i.e. goal-oriented, fuzzy and exploring.
-Even further, the model is able to universally (corss-user) predict 3 to 5 future visit 
+Even further, the model is able to universally (cross-user) predict 3 to 5 future visit 
 page with given 95 percent of browsing context.
 
 \paragraph{Browsing Behaviors and Patterns}
@@ -28,51 +28,50 @@ three process of web browsing.
 Our qualitative analysis 
 first interpret the total number of actions 
 are more important to contributes the indication of goal-oriented behavior,
-and the toal stay duration and completion efficiency are more important to indicate exploring behavior.
+and the total stay duration and completion efficiency are more important to indicate exploring behavior.
 
 Afterwards, we also observed five patterns from client-side clickstream, the ring and star patterns
 appears in fuzzy and exploring tasks, ring pattern is more often in exploring task,
 and the star pattern is more often in fuzzy task because of differentiating of information use.
-A cluster pattern is an indiccation of an individual intent while browsing, and it may connects
+A cluster pattern is an indication of an individual intent while browsing, and it may connects
 few hesitation pattern.
 The overlap pattern discovered in the collected action path gains a low overlap ratio,
 which suggests action path tend to be a user-specific behavior but reserve a small region as
 common interest in goal-oriented browsing behavior.
-Next, an analysis based on Ellis' model and Wilson's theory explose the relationship 
+Next, an analysis based on Ellis' model and Wilson's theory explored the relationship 
 of these patterns to the proposed browsing behaviors, and these patterns partially represents a browsing behavior.
 Finally, since the model encodes the entire client-side clickstream and stay duration,
-the analysis also explains the reason why our model archieves such a good performance.
+the analysis also explains the qualitative reason of why our model archives such a good performance.
 
 \subsection{Decisions}
+\label{sec:decision}
 
 \paragraph{\emph{Why the task difficulty is measured by self-rating scale rather than NASA-TLX?}}
 
-
 NASA-TLX does not providing more insights than action path to our model.
 As we analysed in Section \ref{sec:task-diff}, the major purpose of the measurement of 
-task difficulty is to identify inproperate tasks design (i.e. abnormal ourlier) 
+task difficulty is to identify inappropriate tasks design (i.e. abnormal outlier) 
 rather than the purpose of measuring cognitive load by using NASA-TLX.
 Our significant tests to the subjective self-rating scale of task difficulty supports
 our argument that these tasks are significant different than one another.
 
 Whether NASA-TLX for cognitive load or self-rating scale for task difficulty is not able to be used in
 our machine learning model since they are impossible to be collected from unseen users in bootstrap phase.
-Though it is possible to construct a single subjective socre as one of the inputs to the action path model,
+Though it is possible to construct a single subjective score as one of the inputs to the action path model,
 the model learns browsing behaviors from all collected data, which means if the model is trained based on 
 a dataset with subjective score, then the dataset is biased by these scores and eventually reduces the 
 generalization ability in a user-independent context.
 
 \paragraph{\emph{Why leave-one-subject-out cross validation (LosoCV) is not applied in classification task?}}
 
-
 LosoCV is not necessary in our case. Research in a context of HCI performs a special LosoCV
 for a purpose of claiming a model is tested in which it has not seen any unseened user data before,
 and arguing this evaluation is a representative of bootstrapping performance of a model.
 However, this is an unfortunately inappropriate approach for model performance justification.
-LosoSV has been researched many years, statistical research \cite{xu2012asymptotic} proves 
-that LosoSV is asymptotically equivalent to k-Fold cross validation, which verifies 
+LosoCV has been researched many years, statistical research \cite{xu2012asymptotic} proves 
+that LosoCV is asymptotically equivalent to k-Fold cross validation, which verifies 
 a traditional wisdom that the performance of 
-a model that evaluated by LosoCV tend to worth than k-Fold cross validation becuase
+a model that evaluated by LosoCV tend to worth than k-Fold cross validation because
 LosoCV increases the variance of generalization error \cite{bengio2004no}. Therefore, Gao et al. uses 
 model averaging technique (ensemble multiple models that trained through LosoCV when 
 leave different subjects) developed a novel regularization technique \cite{gao2016139} 
@@ -87,28 +86,27 @@ with a part of subjects.
 This is not claiming that LosoCV is unnecessary in any cases, the theoretical insights indicates
 that LosoCV is critical when a model must be applied in a security context since 
 LosoCV provides how well could a model interpret highly correlated clusters 
-to individual users and how good of a model could defense an unseened attacker.
+to individual users and how good of a model could defense an unseen attacker.
 
 For bootstrapping, it is completely non-interests and trivial to the industrial 
-becuase the bootstrap in a context of recommending (our application) is valueable if and only if
+because the bootstrap in a context of recommending (our application) is valuable if and only if
 users do not leave the platform after their first arrival. Therefore, one can solve
 the bootstrapping by giving mainstream selection and mainstream preferences, then provide
 personalized recommendations after collecting a minimum required dataset since 
-collecting data becomes faily easy when a user continuously using a platform.
+collecting data becomes fairly easy when a user continuously using a platform.
 
 \paragraph{\emph{Why the experiment is designed under three aggregated browsing behavior instead of
-using the existing concluded four or more information seeking behavioris?}}
-
+using the existing concluded four or more information seeking behaviors?}}
 
 The main reason of aggregating existing information seeking behaviors is to find the best 
 classification ability and expand tasks design scope.
-In a intellegent system, we argue that acting a human being through machine must be precise enough,
-otherwise, it will reduce the user's motivation of using a intellegent system since
+In a intelligent system, we argue that acting a human being through machine must be precise enough,
+otherwise, it will reduce the user's motivation of using a intelligent system since
 it mis-acting a fallible human behavior. Therefore we expect the system must work
 extremely accurate in any cases for a simple classification task.
-In the prespective task design scope, the information seeking behaviors on the web 
-are concluded in a general senario for all kinds of websites. Designing a suitable task 
- to characterize a browsing behavior in a specific website requires sofisticated thinking 
+In the perspective task design scope, the information seeking behaviors on the web 
+are concluded in a general scenario for all kinds of websites. Designing a suitable task 
+ to characterize a browsing behavior in a specific website requires sophisticated thinking 
 and clearly formalization of all stages separates two different behaviors.
 The boundary of existing behaviors are not qualitatively defined and a browsing behavior
 can assign in multiple categories simultaneously.
@@ -120,8 +118,8 @@ The formal search and undirected viewing are similar to goal-oriented and explor
 which discriminate two extremes of web browsing.
 However, informal search was describing and conditioned viewing was describing
 ``a good-enough search is satisfactory'' and ``browse in pre-selected sources'' respectively.
-The fuzzyness of ``good-enough search'', ``satisfactory'' and ``browse in pre-selected''
-are not clear enough and subjectively concluded. This fuzzyness in different categories of browsing
+The fuzziness of ``good-enough search'', ``satisfactory'' and ``browse in pre-selected''
+are not clear enough and subjectively concluded. This fuzziness in different categories of browsing
 behavior are magnified in Johnson's patterns \cite{johnson2017patterns}.
 Therefore, to avoid this uncertainty of our task design, we indiscriminate the browsing behaviors
 in between of goal-oriented and exploring behaviors as an individual fuzzy behavior.
@@ -132,47 +130,48 @@ in between of goal-oriented and exploring behaviors as an individual fuzzy behav
 This thesis has a limitation of the lack of data. 
 Though we collected 189 clickstreams from 21 subjects, however, 
 comparing to the baseline action path model with 90323 parameters in Chapter \ref{ch:eval},
-the dataset is still an tiny dataset for the training and learning task.
-Moreover, the validation loss (in Figure \ref{fig:class-loss}) suggests our model remains large capacity to learn more
-categories of browsing behavior, and prediction performance may be improved
-via reparematrization (in Figure \ref{fig:loss}), 
-it is still very interesting to see the performance of our model on a large dataset,
-and how the this model can adapts to more informations on the web, such as the topic of 
+the dataset is still a small dataset for the training and learning task.
+Moreover, the validation loss (in Figure \ref{fig:class-loss}) suggests our model remains 
+large capacity to learn more
+categories of browsing behavior and prediction performance may be improved
+via reparametrization (in Figure \ref{fig:loss}), 
+it is still fascinating to see the performance of our model on a large dataset,
+moreover, how this model can adapts to more information on the web, such as the topic of 
 a page, and interpret more detail with attention mechanism.
 
 \paragraph{Data collection}
 Our work simulates three proposed browsing behavior through carefully designed browsing tasks.
-This method only limit to a small group of users, which is not an appropariate apparoch for
+This method only limit to a small group of users, which is not an appropriate approach for
 a large dataset collection.
-We planed to conducting a field study that install a clickstream collector while a week, 
-however there are only two subjects after our lab study
-are willing to participate to the field study.
+We planned to conduct a field study that installs a clickstream collector during a week, 
+however, there are only two subjects after our lab study
+are willing to participate in the field study.
 
 \paragraph{Reinforcement learning appraoch}
 As described in Chapter \ref{ch:model}, the dataset that applies to our action path model
-is an action-level dataset, which means the sequence of URLs are essentially an series of 
-user actions. This could inspire us to use reinforcement learning appraoch to train
+is an action-level dataset, which means the sequence of URLs is necessarily a series of 
+user actions. This could inspire us to use reinforcement learning approach to train
 an agent that could explore and learn the environment of the web. Eventually,
 the agent will be able to learn and optimize the experience of browsing on the web,
-which implicitlly solves the problem of data collection and the lack of supervised data.
+which implicitly solves the problem of data collection and the lack of supervised data.
 
 \paragraph{Privacy}
-This work monitors an action level of clickstream, which stores all browsing history of an
-individual person on a thirdparty databases, and hence brings a trust and privacy issue of
-the application. We positively argue that this is an trust issue between users and service providers.
+This work monitors an action level of clickstream, which stores all browsing history of 
+a person on a third-party database, and hence brings a trust and privacy issue of
+the application. We positively argue that this is a trust issue between users and service providers.
 As we discussed in Chapter \ref{ch:app}, browser providers collect the data anonymously,
 and users use the browser because of trusts, then world wide web consortium formalizes
 a standardized web API to developers for using this information, and as a browser user can
 either authorize developers to use this API or give an explicit rejection.
 
 \paragraph{Proactive serving} 
-We are in the era that intellegent system surrounding us. The way we interact with intellegent system
+We are in the era that intelligent system surrounding us. The way we interact with intelligent system
 is not as nature as we interact with other people. 
 Communications or interactions between humans in a context does not require any trigger word,
 and a person can brush out a needs or reacts to another immediately.
 The action path prediction gives an working example that shows proactive serving is possible
 if we monitors the environment of web browsing. Therefore, it is interesting to study
 how this feature could be used by a user and how users reacts to the elimination of interaction trigger
-of an intellegent system.
+of an intelligent system.
 
 \cleardoublepage
