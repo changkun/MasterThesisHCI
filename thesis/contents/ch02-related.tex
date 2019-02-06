@@ -100,6 +100,63 @@ these individually studied phenomena including the branching and backtracking br
 feature. With this chronologic URLs, we seek to model and understand the essential user 
 behaviors patterns while browsing on the Web.
 
+
+\subsection{Sequence to Sequence Learning}
+\label{sec:seq-learn}
+
+Sequence learning is a large scope of research and has been applied to many fields such as 
+typical application machine translation in nature language processing. 
+
+Recurrent Neural Network (RNN) was describe by Werbos \cite{werbos1990rnn} and 
+Rumelhart et al. \cite{Rumelhart:1988:LRB:65669.104451}, the original RNN 
+generalize feedforward neural network for sequence based data.
+
+Given a sequence of input $(i_1, i_2, ..., i_T)$, the original RNN computes a
+sequence of outputs $(o_1, o_2, ..., o_T)$ 
+by interating the activation function Equation \ref{eqn:bptt}:
+
+\begin{align}
+\label{eqn:bptt}
+\begin{split}
+    o_t = W_{oh} \sigma \left( W_{hi}i_{t} + W_{hh}i_{t-1}\right), t=1,2,...,T
+\end{split}
+\end{align}
+
+where $\sigma(x) = \frac{1}{1+\exp\{-x\}}$,
+and $W_{oh}, W_{hh}, W_{hi}$ are weight parameters between output, hidden and input layers.
+
+The origin RNN simply use a linear weights and a $\sigma$ non-linear transformation between 
+inputs and outputs as a recurrent unit. The most widely used recurrent unit in RNN is the
+Long Short Term Memory (LSTM) unit \cite{hochreiter1997lstm} or Gated Recurrent unit (GRU) \cite{DBLP:journals/corr/ChoMGBSB14}.
+LSTM has a context cell and three regulators: Input gate, 
+output gate and forget gate.
+The context cell keeps dependencies between inputs of the unit as long term memory. 
+Input gate take historical hidden state and current input and controls the input value to
+the recurrent unit, output gate responsible for the control of output activations, and
+forget gate resets and decides retaining values of the recurrent unit as a short term memory.
+Similarly in GRU, it simplyfies the structure of LSTM into a update gate and a reset gate.
+
+On the other hand, the vanilla RNN transfers and maps a sequence to another sequence if and only if the inputs
+and the outputs are aligned with equal length. Apparently, the major constrains of the vanilla RNN
+is the model cannot address a problem if inputs and outputs provided in different length with 
+complicated and non-monotonic relationships.
+
+Stutskever et al. \cite{DBLP:journals/corr/SutskeverVL14} present a general end-to-end approach
+to sequence learning model in machine translation that estimates the conditional probability of 
+$p(o_1, o_2, ..., o_{T'} | i_1, i_2, ..., i_T)$ where $(i_1, i_2, ..., i_T)$ is an input sequence,
+$(o_1, o_2, ..., o_{T'})$ is a corresponding output sequence, and $T$ is not required to be equal with $T'$.
+
+In machine translation, a series of words are considered as a sequence of
+vectors, neural network based models considered representation learning of nature languages.
+The initial vectors of word were one-hot encoded vectors and get updated over training and learning.
+
+The recent advances of representation learning uses a distributed representation 
+of word2vec model \cite{DBLP:journals/corr/abs-1301-3781}, which achieve better 
+performance in natural language processing. The word2vec model introduced 
+continous bag-of-word and skip-gram model as an efficient method for learning high-quality
+vector representation of words, and bag-of-word is faster while skip-gram is slower but get better
+performance for infrequent words.
+
 \subsection{Theory of Information Behavior on the Web}
 \label{sec:info-seek}
 
@@ -118,7 +175,7 @@ activities of a conscious effort while information needs
 and uses. Figure \ref{fig:wilson-info-seek} illustrate the model of information behavior 
 was proposed.
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{figures/wilson-info-behavior}
     \caption{Wilson's information seeking behavior model \cite{wilson1981user}}
@@ -160,20 +217,5 @@ are more generic and too complexy for describing user information behavior on th
 Therefore, in this thesis, we only uses the an antecessor of Wilson's framework \cite{wilson1997information} and 
 Ellis' model \cite{ellis1997modelling} to formalize and justify our lab study experiment later in Chapter \ref{ch:exp}, 
 as a fundation of our work.
-
-\subsection{Theory of Sequence to Sequence Learning}
-\label{sec:seq-learn}
-
-Sequence learning is a large scope of research and has been applied to many fields such as 
-machine translation. In machine translation, a series of words are considered as a sequence of
-vectors, neural network based models considered representation learning of nature languages.
-The initial vectors of word were one-hot encoded vectors and get updated over training and learning.
-
-The recent advances of representation learning uses a distributed representation 
-of word2vec model \cite{DBLP:journals/corr/abs-1301-3781}, which achieve better 
-performance in natural language processing. The word2vec model introduced 
-continous bag-of-word and skip-gram model as an efficient method for learning high-quality
-vector representation of words, and bag-of-word is faster while skip-gram is slower but get better
-performance for infrequent words.
 
 \cleardoublepage

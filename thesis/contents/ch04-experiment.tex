@@ -4,12 +4,12 @@
 \epigraph{We must know. We will know.}{David Hilbert}
 
 In this chapter, we rationalize the process of our lab study based on the theory of
-human information behavior, then construe 
-the purpose of context given web browsing tasks to our subjects.
+human information behavior, then construe the purpose of context given web browsing tasks 
+to our subjects.
 
 The lab study took place during the last two weeks of November, from 14/11/2018 to 29/11/2018
 in Frauenlobstrasse 7a, a faculty building of Ludwig-Maximillians-Universitaet Muenchen.
-Client-side user clickstream data was collected by a embedded collector plugin installed in 
+Our action path data was collected by a self-devloped embedded collector plugin installed in 
 the mainstream browser, i.e. Google Chrome, on a self provided desktop computer and a laptop.
 
 In lab study, we select three mainstream websites, Amazon/Medium/Dribbble, 
@@ -18,24 +18,25 @@ reasons (discuss later in Section \ref{sec:task-design}).
 Then we manually designed 35 reasonable tasks and finally selected 9 
 context-given browsing tasks (three for each website, discuss in 
 Section \ref{sec:task-design}) to simulate three different proposed browsing behavior,
-namely goal-oriented/fuzzy/exploring behaviors.
+namely \emph{goal-oriented, fuzzy and exploring behaviors}.
+
 Each task requires participant start from a starting page of a given website, and
-all tasks do not restrict participants use the given website, but also allow they 
-access websites outside the landing page to help they complete the task (explicitly informed to 
-participants before participation).
+all tasks do not restrict participants only use the given website, but also allow they 
+access websites outside the domain of landing page to help they complete the task 
+(this offer is explicitly informed to participants before participation).
 Participants start browsing after they completely understand the requirements of 
 each task, and no interruption or question answering during the task
 except exceeding time limit of a task, however subjects can either acquire more time 
-to accomplish the task or give up directly.
+to accomplish the task or give up directly when feel a task are too difficult to he or she.
 
 The study is designed as a within-subject study, thus every participant performs all tasks. 
-To eliminate the learning effect due to the long time of using same websites, 
+To eliminate the learning effect due to a long time of using same websites, 
 we use Latin square \cite{cochran1950experimental} 
-for the device (Desktop/Laptop) and tasks participation order to our participants.
+for the device (Desktop/Laptop) and tasks participation order to our subjects.
 
-Our lab study obtained 21 participants with a mean age of 23.04 (standard deviation of 3.216, min=18 and max=19) 
-took part in the study, 10 male and 11 female, whom are recruit anonymously and 
-randomly via a mailing list.
+Our lab study obtained 21 participants with a mean age of 23.04 (standard deviation of 3.216, 
+min=18 and max=19) took part in the study, 10 male and 11 female, whom are recruit 
+anonymously and randomly arrived via a mailing list.
 
 \subsection{Environment}
 
@@ -46,7 +47,10 @@ a complete clickstream of during the study.
 A major issue of mobile devices is the operating system installed in mobile phone does not
 authorize the permission of allowance to collect data precisely over pages or user actions.
 Though Android device can overpass system permission to privilge, the user behavior 
-between iOS and Android device has different personalities \cite{sandoio2018android}, and subjects shows \cite{reinfelder2014androidios} abnormal awareness behavior regarding security and privacy issues when they handling a newly provided Android device when switch from iOS device.
+between iOS and Android device has different personalities \cite{sandoio2018android}, 
+and subjects shows \cite{reinfelder2014androidios} abnormal awareness behavior 
+regarding security and privacy issues when they handling a newly provided Android device 
+after switch from iOS device.
 Therefore, to eliminate this awareness, we stick our study environment to desktop devices,
 which empower us easily collects the clickstream data from browsers with plugin supports.
 
@@ -126,15 +130,16 @@ browser selection.
 \label{sec:behavior}
 
 Before we explain the design reason of our context-given browsing task, 
-we first present and discusses three common types of user browsing process as behavior: \textbf{goal-oriented}, 
-\textbf{exploring} and \textbf{fuzzy}.
+we first present and discusses three types of user browsing behavior: 
+\textbf{goal-oriented}, \textbf{exploring} and \textbf{fuzzy}.
 
 These three terminologies are aggregated and incorporated from behaviors that concluded 
-in former qualitative research for web browsing behavior research, 
+in former qualitative research for web browsing behavior, 
 all these terminologies are based on a fundmental theory of 
 interdisciplinary perspective information seeking behavior \cite{wilson1997information},
 which was discussed in Section \ref{sec:info-seek}.
-Table \ref{table:info-seek} compares the terminology differences between former research and our thesis.
+Table \ref{table:info-seek} compares the terminology differences between former research 
+and our thesis.
 
 \begin{table}[H]
     \small
@@ -156,11 +161,12 @@ Table \ref{table:info-seek} compares the terminology differences between former 
 \end{table}
 
 To justify our terminology, we combines the six qualitative activities from Ellis' Model 
-\cite{ellis1989behavioural} and ``information use'' from Wilson's framework \cite{wilson1997information} in information behavior theory 
+\cite{ellis1989behavioural} and ``information use'' from Wilson's framework 
+\cite{wilson1997information} in information behavior theory 
 to represent our summarized browsing behaviors:
 
-\paragraph{Goal-oriented behavior} occurs when a user initiate 
-visiting session on the web caused by a determined objective in a specific context, 
+\paragraph{Goal-oriented behavior} \emph{occurs when a user initiate 
+visiting session on the web caused by a determined objective in a specific context}, 
 such as bussiness work, 
 social communication, university study, literature research and etc. 
 
@@ -169,44 +175,47 @@ Instead of \emph{formal search}, that only covers the phase of ``monitoring'' an
 (or \emph{directed browsing} and \emph{known-item search} that covers ``browsing'' and ``differentiating'' or 
 ``monitoring'' and ``extracting'' respectively), 
 goal-oriented browsing behavior contains the entire life cycle of human information behavior starts
-from ``starting''. Under browsing behavior, a determined ``information use'' can be observed
-or concluded.
+from ``starting'' phase. By observing a browsing behavior, a determined ``information use'' 
+can be overserved and concluded.
 
 For instance, a college student intentionally need a latest lecture slide (\emph{information use} observed), 
 the student then opens web browser, access college website (\emph{starting}) and navigates to the lecture homepage 
 (\emph{chaining}, \emph{browsing}, and \emph{differentiating}).
 Finally, the student exit browsing after download the slides (\emph{monitoring} and \emph{extracting}).
 
-\paragraph{Exploring behavior} occurs when a user initiates browsing session aimlessly with no clear observed
-extracting or information use during the session, the person greedily or breadth-first consumes and the content on the Web without 
-any information extracting and information use, such as media consuming, learning before using and etc.
+\paragraph{Exploring behavior} \emph{occurs when a user initiates browsing session 
+aimlessly with no clear observed extracting or information use during the session, 
+the person greedily or breadth-first consumes and the content on the Web without 
+any information extracting and information use}, such as media consuming, learning 
+before using and etc.
 
 Exploring browsing behavior indicates a complete opposite behavior comparing to 
 goal-oriented borwsing behavior. More formally describing exploring behavior using Ellis' model, 
 the behavior represents ``chaining'' and ``browsing''
 without ``differentiating'' and ``extracting'' from ``starting'' while information seeking.
 
-For instance, a person who accesses an unknown utility web application (\emph{starting}), he/she explores
-what functions are provided one by one and what he/she can do while using the application
-(\emph{chaining} and \emph{browsing}).
+For instance, a person who accesses an unknown utility web application (\emph{starting}), 
+he or she explores what functions are provided one by one and 
+what he or she can do while using the application (\emph{chaining} and \emph{browsing}).
 
-\paragraph{Fuzzy behavior} occurs when a user initiate visiting session for information use
+\paragraph{Fuzzy behavior} \emph{occurs when a user initiate visiting session for information use
  with non-systematic, incomplete prior knowledge that may browsing ongoing for updating 
-the framework of knowledge until final acquisition or abandon.
+the framework of knowledge until final acquisition or abandon.}
 
 Fuzzy behavior in a browsing behavior in between of goal-oriented and exploring behaviors.
 Instead of only ``chaining'' and ``browsing'' from ``starting'', fuzzy behavior also do
 ``differentiating'' or ``monitoring'' while information seeking.
 
 For instance, a researcher heared a new technique proposed in another scientific field 
-that may influence he/she's research, then the person 
-opens a search engine (\emph{starting} and \emph{chaining}) to seek (\emph{browsing}) existing (\emph{differentiating}) 
-follow up researches (\emph{monitoring}). The browsing may ends without information use
-because of the technique is irrelevant to he/she's research.
+that may influence he or she's research, then the person 
+opens a search engine (\emph{starting} and \emph{chaining}) to seek (\emph{browsing}) 
+existing (\emph{differentiating}) follow up researches (\emph{monitoring}). 
+The browsing may ends without information use because of the technique is irrelevant 
+to he or she's research.
 
-\paragraph{Remark} Table \ref{table:ellis} illustrates the exist activities of our three
+\paragraph{Remark} Table \ref{table:ellis} illustrates the existence of activities of our three
 browsing behavior. Note that ``information needs'' is not suggested in Wilson's theory \cite{wilson1981user} 
-since ``information needs'' can not be clearly observed before information seeking but sometimes
+since ``information needs'' can not be clearly observed beforehand information seeking but sometimes
 observed after information use. Therefore we do not take information need into the 
 consideration of our terminologies.
 
@@ -247,7 +256,7 @@ because of the following reasons:
 
 In addition, the unselected tasks are listed in Appendix \ref{appendix:unselected}.
 
-\subsubsection{Goal-oriented Task}
+\subsubsection{Tasks of Goal-oriented Behavior}
 
 We designed and selected an appropriate goal-oriented task for selected websites respectively,
 and each task is designed with three specifically designed information need as
@@ -274,8 +283,10 @@ As a result, subjects cannot add these items to cart and they should find other 
         when traveling to these three places in Japan. Your task is to find three posts 
         for traveling tips regarding these cities. Elevate a post if it is one of your choices.}
 
-This task contains three determined purpose since there are three fixed traveling destination (\emph{extracting} and \emph{information use}).
-The task also implies few considerations that increase the required interaction of the task to subjects:
+This task contains three determined purpose since there are three fixed traveling 
+destination (\emph{extracting} and \emph{information use}).
+The task also implies few considerations that increase the required interaction of 
+the task to subjects:
 a) The website only offers English version, some Japanese character may appear in an article,
 thus, a translation util may be used while the study (\emph{starting} and \emph{chaining});
 b) An article may apears numerous noun, such as toponym. Search engine may used while the study (\emph{browsing});
@@ -292,7 +303,7 @@ the vision and mission of this type of company (\emph{starting}), and subjects w
 still need to compares the designed made by other competitors (\emph{chaining}, \emph{browsing} and \emph{differentiating}).
 b) Subjects should aware some of the designs shared on the website are not suitable for trademark or icon design (\emph{monitoring}).
 
-\subsubsection{Exploring Task}
+\subsubsection{Tasks of Exploring Behavior}
 
 Exploring tasks simply do not provides any deterministic objective,
 and all websites has a designed exploring task for subjects.
@@ -319,14 +330,16 @@ since all contents showed to users are daily updated. Thus the task can be direc
 
 Dribbble illustrates designs by using image gallery (\emph{starting} and \emph{chaining}). 
 The major difference between Dribbble and Google Image Search
-is dribbble is a user-centered content aggregation website, however Google Image Search is a simple content aggregation engine.
+is that dribbble is a user-centered content aggregation website, however Google Image Search is a simple content aggregation engine.
 As a result, there will be two different interaction in Dribbble: exploring designs based on keywords and categories,
-or exploring designs based on users. The latter can helps its user finding similar designing style.
-The task is aimlessly since the task simply describes nothing and completely let participants explore their preferences.
+or exploring designs based on users. The latter helps its user finding similar designing style.
+The task is aimlessly since the task simply describes nothing and completely let participants explore their preferences
+of design styles.
 
-\subsubsection{Fuzzy Task}
+\subsubsection{Tasks of Fuzzy Behavior}
 
-Each of our selected websites also has an fuzzy task respectively, and there are three major goals per task.
+Each of our selected websites also has an fuzzy task respectively, and there are three major goals per task
+as control condition to subject action path in our experiment.
 
 \paragraph{Amazon.com} \emph{You want to buy a gift for your best friend as a birthday present.
         Add three items to your cart as candidate.}
