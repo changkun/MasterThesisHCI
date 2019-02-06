@@ -3,19 +3,20 @@
 
 \epigraph{Simplicity is Complicated.}{Rob Pike}
 
-This chapter we first introduce a possible application of our proposed model
-including the implemented features, how it could benefit a user, as well as the 
-architecture and data flow within the application.
-Then in the second part of this chapter, we formalize and discuss 
-the possibility and benefits as a standard Web API to web developers and website designer.
+In this chapter, we first introduce a possible application of our proposed model.
+This includes the implemented features, how the model could benefit a user, 
+as well as the architecture and data flow of the application.
+In the second part of this chapter, we formalize and discuss 
+the possibilities and benefits of being a standard web API for web developers 
+and website designer.
 
 \subsection{Client-side Browser Plugin}
 \label{sec:plugin}
 
-We developed a client-side browser plugin as an illustration of our model applications.
-The plugin is an intelligent system that proactively serves its user, 
-and it provides proactive notification based on the historical actions in a session
-when browsing behavior is detected as goal-oriented or fuzzy behavior, 
+We developed a client-side browser plugin as a illustration of our model application.
+The plugin is an intelligent system that proactively serves its user
+and provides proactive notifications based on the historical actions in a session
+when browsing behavior is detected to goal-oriented or fuzzy behavior, 
 as illustrated in Figure \ref{fig:proactive-noti}.
 
 \begin{figure}[H]
@@ -27,12 +28,14 @@ as illustrated in Figure \ref{fig:proactive-noti}.
     \label{fig:proactive-noti}
 \end{figure}
 
-The user can either select ``Yes'' and navigates to the most likely page that he or she 
-will visit in the future, or select ``No'' to ignore the notification and mark as an invalid detection.
-The plugin serves user only if the browsing behavior is detected as fuzzy behavior because
-of the forbear of notification. We argue that the plugin is only a supplementary of improving
-browsing experience but not always necessary, for instance in the exploring behavior, an information
-need of a user may not be clearly observed and the recommendations are not usefulness. 
+The user can either select ``Yes'' and navigate to the most likely page that they 
+will visit in the future, or select ``No'' to ignore the notification and mark it as an invalid detection.
+The plugin serves the user only if the browsing behavior is clearly detected 
+to forbear massive notification that disturb the user. 
+We argue that the plugin is only a supplement for improving
+browsing experience but is not always necessary. For instance in exploring behavior, 
+a user's information need may not be clearly observed and the recommendations may not 
+useful. 
 One of the benefits of the plugin is to proactively help the user become efficient
 and reach the destination as fast as possible in the goal-oriented browsing.
 
@@ -47,14 +50,14 @@ and reach the destination as fast as possible in the goal-oriented browsing.
     \label{fig:plugin-predict}
 \end{figure}
 
-In Figure \ref{fig:plugin-predict}, except proactive notification, 
+In Figure \ref{fig:plugin-predict}, other than proactive notification, 
 users can always open a popup page provided by the plugin.
-The popup page provides another interaction that gives the predicted needs 
+The popup page enables another interaction that privides the predicted needs 
 based on historical user actions. A user can always interact with the plugin and
 retrieve the possible needs and browsing status in the current session.
-These information are helpful to the plugin user because a user can understand
-what is the current status of web browsing, which implicitly aware the person better focus
-if the person detected as a exploring browsing behavior.
+This information is helpful to the plugin user because a user can understand
+the current status of web browsing, which implicitly allows the person to better focus
+on whether the person is detected as a form of exploring browsing behavior.
 
 \begin{figure}[H]
     \centering
@@ -68,61 +71,62 @@ if the person detected as a exploring browsing behavior.
 \end{figure}
 
 The implementation and architecture is not simple
-despite it provides a small feature that exhibit context and future information to the user.
+although it provides a small feature that exhibits context and future information for the user.
 Figure \ref{fig:arch} illustrates the implemented architecture of the plugin.
 
-First of all, the plugin daemon process will inject monitoring script (\emph{step2}) to 
+First of all, the plugin daemon process will inject monitoring script (\emph{step2}) intoto 
 the newly opened page (\emph{step1}).
-When user start browsing and interacting (\emph{step3}), the injected script will report the referring of
+When the user starts browsing and interacting (\emph{step3}), the injected script will report the referring of
 previous visited URL, current URL and stay duration to the daemon process of the plugin (\emph{step4}).
 
-Afterwards, the daemon process will report the referring information to the plugin server webhook (\emph{step5}),
-and then the webhook will immediately request the intra prediction microservice (\emph{step6}) and resulting a 
-prediction (\emph{step7}) then response a prediction result to the daemon process 
-by using a pre-trained model (\emph{step8}). Therefore the daemon process can decide 
-if a proactive notification should be presented to the user or simply update its popup page
-only for illustration (\emph{step9}).
+Afterwards, the daemon process will report the referring information to the plugin server webhook (\emph{step5}).
+Next, the webhook will immediately request the intra prediction microservice (\emph{step6}) and result in a 
+prediction (\emph{step7}), which will then respond the prediction result to the daemon process 
+with a pre-trained model (\emph{step8}). Therefore the daemon process can decide 
+if a proactive notification should be presented to the user or whether it should simply update its popup page
+for illustration (\emph{step9}).
 
-Since the prediction service received a new user action, it stores the action into database
-subsequently for model update (\emph{step10}). Because of the cost of training a new model,
-the prediction service can decide to trigger training service to retrain the model 
-if already received enough new data (\emph{step11}). 
-Further, the training service uses the pre-trained model as
-a base model to initiate the training by request newly created data from database (\emph{step12} and \emph{step13}), 
+Since the prediction service received a new user action, it stores the action into a database
+subsequently for the model update (\emph{step10}). Because of the cost of training a new model,
+the prediction service can decide to trigger the training service to retrain the model 
+if it has already received enough new data (\emph{step11}).
+
+Furthermore, the training service uses the pre-trained model as
+a base model to initiate the training by requesting newly created data from database (\emph{step12} and \emph{step13}), 
 similar to the idea of transfer learning.
-After the training achieved a compatible performance comparing to the pre-trained model,
+After the training has achieved performance that is competitive to the pre-trained model,
 the training service will update the newly trained model to the prediction service (\emph{step14}), which 
 serves future prediction requests.
 
 As we can observe from the architecture, the infrastructure is not as simple as 
-the plugin feature intent to provide, therefore we argue that it is a feature that 
-only browser manufactures can provide. In the following section, we formalize and discuss 
-the possibilities of the plugin feature as a Web API.
+the plugin feature intends to provide. Therefore, we argue that the plugin feature is a feature that
+only browser manufacturers can provide. In the following section, we formalize and discuss 
+the possibilities of the plugin feature as a web API.
 
 \subsection{Web API Standardization and Platform-as-a-Service}
 
-Web APIs is a generic term used in various fields of development.
-Web APIs in a context of web browsers mainly indicates the APIs provided
-by browser manufactures to developers that helps web application can even close
-to manipulate hardwares, for instance, WebAssembly \cite{w3c2018ws}.
+Web API is a generic term used in various fields of development.
+Web API in the context of web browsers refer to the APIs provided
+by browser manufacturers to developers that helps with web applications.
+These APIs can even close
+help with manipulating hardware, for instance, WebAssembly \cite{w3c2018ws}.
 
-Nowadays, there are experimental standard Web APIs integrates complex features to 
-web developers, e.g. Web Speech APIs \cite{mozilla2019speech}, and 
-only Google Chrome (after version 24) support. 
-The specification proposal was initiated by Google, according to 
+Currently, there are experimental standard web APIs such as web speech APIs \cite{mozilla2019speech}
+that integrate complex features to web developers and only have 
+Google Chrome (after version 24) support. 
+The specification proposal was initiated by Google. According to 
 the source code of Chromium Kernel, the APIs are implemented based on 
-the speech recognition service provided 
-by Google Cloud Platform 
+the speech recognition service provided by Google Cloud Platform 
 \footnote{\url{https://github.com/chromium/chromium/blob/83928864c18362a4b0f84bad9bee4104f4655430/content/browser/speech/speech\_recognition\_engine.cc\#L35}, last accessed on January 03, 2019},
-which provides us a signal that browser APIs does not only giving interfaces to
-the hardware, but also access cloud platform services, i.e. Platform-as-a-Service integrated 
+which indicates that browser APIs do not only privide interfaces to
+the hardware but also access cloud platform services, i.e. Platform-as-a-Service integrated 
 APIs.
 
-The plugin we illustrated in Section \ref{sec:plugin} can also be integrated as a PaaS API
-that embedded into web browsers, which simplifies the infrastructure of the plugin. 
-As a developer, one can simply call the standardized API to report current user actions
-then get a response of current behavior status and the prediction of future movement or 
-actions, as the diagram shown in Figure \ref{fig:webapi}.
+The plugin that was illustrated in Section \ref{sec:plugin} can also be integrated as a PaaS API
+that is embedded into web browsers, which simplifies the infrastructure of the plugin. 
+Developers can simply call the standardized API to report current user actions and
+obtain a response about current behavior status as well as the prediction of future movement or 
+actions; see Figure \ref{fig:webapi} for the diagrams.
 
 \begin{figure}[H]
     \centering
@@ -132,10 +136,12 @@ actions, as the diagram shown in Figure \ref{fig:webapi}.
 \end{figure}
 
 Defining the specification of the PaaS API aims enable web developers to
-monitoring, in a web browser, the future actions of their users.
-Developers can use the predicted actions to dynamically change the UI elements then improve
-the user experience of their product. To keep the API to a minimum, we breifly discuss the
-non-normative web API design of the browsing behavior predictor.
+use a web browser to monitor the future actions of their users.
+Developers can use the predicted actions to dynamically change the UI elements
+and improve
+the user experience of their product. 
+We breifly discuss the non-normative web API design of the browsing behavior predictor,
+which seeks to keep the API to a minimum. 
 
 \subsubsection{The \emph{BrowsingBehavior} Interface}
 
