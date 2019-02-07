@@ -50,81 +50,87 @@ the analysis also explains the qualitative reason why our model achives such a s
 
 \paragraph{\emph{Why the task difficulty is measured by self-rating scale rather than NASA-TLX?}}
 
-NASA-TLX does not providing more insights than action path to our model.
+NASA-TLX does not provide more insights than the action path regarding our model.
 As we analysed in Section \ref{sec:task-diff}, the major purpose of the measurement of 
-task difficulty is to identify inappropriate tasks design (i.e. abnormal outlier) 
-rather than the purpose of measuring cognitive load by using NASA-TLX.
-Our significant tests to the subjective self-rating scale of task difficulty supports
-our argument that these tasks are significant different than one another.
+task difficulty is to identify inappropriate tasks design (i.e., abnormal outlier) 
+rather than to measure cognitive load by using NASA-TLX.
+Our significant tests of the subjective self-rating scale of task difficulty supports
+our argument that these tasks are significantly different from one another.
 
 Whether NASA-TLX for cognitive load or self-rating scale for task difficulty is not able to be used in
 our machine learning model since they are impossible to be collected from unseen users in bootstrap phase.
 Though it is possible to construct a single subjective score as one of the inputs to the action path model,
-the model learns browsing behaviors from all collected data, which means if the model is trained based on 
-a dataset with subjective score, then the dataset is biased by these scores and eventually reduces the 
+the model learns browsing behaviors from all collected data. This means that if the model is trained based on 
+a dataset with subjective scores, then the dataset is biased by these scores and eventually reduces the 
 generalization ability in a user-independent context.
 
 \paragraph{\emph{Why is leave-one-subject-out cross validation (LosoCV) is not applied in classification task?}}
 
-LosoCV is not necessary in our case. Research in a context of HCI performs a special LosoCV
-for a purpose of claiming a model is tested in which it has not seen any unseened user data before,
-and arguing this evaluation is a representative of bootstrapping performance of a model.
-However, this is an unfortunately inappropriate approach for model performance justification.
-LosoCV has been researched many years, statistical research \cite{xu2012asymptotic} proves 
-that LosoCV is asymptotically equivalent to k-Fold cross validation, which verifies 
-a traditional wisdom that the performance of 
-a model that evaluated by LosoCV tend to worth than k-Fold cross validation because
-LosoCV increases the variance of generalization error \cite{bengio2004no}. Therefore, Gao et al. uses 
-model averaging technique (ensemble multiple models that trained through LosoCV when 
-leave different subjects) developed a novel regularization technique \cite{gao2016139} 
-to help a model generalize better.
+In our case, LosoCV is not necessary. Research in the context of human-computer interaction 
+performed a LosoCV for the purpose of claiming a model is tested then it has not previously viewed 
+any unseen user data,
+This evaluation is a arguably a representative of a model's bootstrapping performance.
+However, this is an inappropriate approach for model performance justification in some cases.
+For many years, LosoCV has been researched, statistical research \cite{xu2012asymptotic} has provens 
+that LosoCV is asymptotically equivalent to k-Fold cross validation. This verifies 
+the traditional wisdom that the performance of 
+a model that is evaluated by LosoCV tends to worse than k-Fold cross validation because
+LosoCV increases the variance of generalization error \cite{bengio2004no}. Therefore, Gao et al. have used 
+the model averaging technique (ensemble of multiple models that trained through LosoCV when 
+leaving different subjects) to develope a novel regularization technique \cite{gao2016139} 
+that helps a model generalize better.
 Intuitively, when a model that intend to work in a user independent case, 
 we are only interested in how well a model could fit universally, 
-and how the performance could be changed when a model with fixed architecture applied to more subjects.
-More precisely, one can observe that LosoCV is essentially trained on a partial of dataset, 
-which is a biased dataset to the training process of the model. Therefore, when we use 
+and how the performance could be changed when a model with fixed architecture is applied to more subjects.
+More precisely, one can observe that LosoCV is essentially trained on a part of a dataset, 
+that is biased to the training process of the model. Therefore, when we use 
 the best model that gains minimum generalization bound is nothing else but a biased learning 
-with a part of subjects.
-This is not claiming that LosoCV is unnecessary in any cases, the theoretical insights indicates
+with a part of the subjects.
+This is not claim that LosoCV is unnecessary in any cases. The theoretical insights indicate
 that LosoCV is critical when a model must be applied in a security context since 
-LosoCV provides how well could a model interpret highly correlated clusters 
-to individual users and how good of a model could defense an unseen attacker.
+LosoCV indicates how well a model could interpret highly correlated clusters 
+to individual users and how effective of a model could defend from an unseen attacker.
 
-For bootstrapping, it is completely non-interests and trivial to the industrial 
-because the bootstrap in a context of recommending (our application) is valuable if and only if
+Bootstrapping is completely trivial and not relevant to the industry 
+because the bootstrap in the context of recommendation (our application) is valuable if and only if
 users do not leave the platform after their first arrival. Therefore, one can solve
 the bootstrapping by giving mainstream selection and mainstream preferences, then provide
-personalized recommendations after collecting a minimum required dataset since 
-collecting data becomes fairly easy when a user continuously using a platform.
+personalized recommendations after collecting a minimal required dataset because 
+collecting data becomes fairly easy when a user continuously uses a platform.
 
 \paragraph{\emph{Why is the experiment designed under three aggregated browsing behaviors instead of
 using the existing four or more information seeking behaviors?}}
 
-The main reason for aggregating existing information seeking behaviors is to find the best 
-classification ability and expand tasks design scope.
-In a intelligent system, we argue that acting a human being through machine must be precise enough,
-otherwise, it will reduce the user's motivation of using a intelligent system since
-it mis-acting a fallible human behavior. Therefore we expect the system must work
-extremely accurate in any cases for a simple classification task.
-In the perspective task design scope, the information seeking behaviors on the web 
-are concluded in a general scenario for all kinds of websites. Designing a suitable task 
- to characterize a browsing behavior in a specific website requires sophisticated thinking 
-and clearly formalization of all stages separates two different behaviors.
-The boundary of existing behaviors are not qualitatively defined and a browsing behavior
-can assign in multiple categories simultaneously.
+The main reason of aggregating existing information seeking behaviors is to find the best 
+classification ability and expand the task's design scope.
+We argue that in an intelligent system, using machines to acts as human beings must be 
+precise enough. Otherwise, doing so will reduce the user's motivation for using 
+an intelligent system since it mis-acts fallible human behavior. 
+Therefore, we expect the system to work extremely accurately in any cases 
+for a simple classification task.
+From the perspective of a task design scope, 
+the information seeking behaviors on the web 
+are concluded in a general scenario for all kinds of websites. 
+Designing a suitable task to characterize browsing behavior 
+in a specific website requires sophisticated thinking 
+and clear formalization of all stages that separates the two different behaviors.
+The boundary of existing behaviors are not qualitatively defined and browsing behavior
+can be assigned in multiple categories simultaneously.
 
 For instance, in Choo's theory \cite{choo1999information}, web browsing behaviors 
-are categorized in four aspects:
+are categorized into four aspects:
 formal search, conditioned viewing, informal search and undirected viewing.
 The formal search and undirected viewing are similar to goal-oriented and exploring behaviors,
-which discriminate two extremes of web browsing.
-However, informal search was describing and conditioned viewing was describing
+which discriminate between two extremes of web browsing.
+However, informal search and conditioned viewing was described by
 ``a good-enough search is satisfactory'' and ``browse in pre-selected sources'' respectively.
 The fuzziness of ``good-enough search'', ``satisfactory'' and ``browse in pre-selected''
-are not clear enough and subjectively concluded. This fuzziness in different categories of browsing
-behavior are magnified in Johnson's patterns \cite{johnson2017patterns}.
-Therefore, to avoid this uncertainty of our task design, we indiscriminate the browsing behaviors
-in between of goal-oriented and exploring behaviors as an individual fuzzy behavior.
+is not clear enough and is subjectively concluded. 
+This fuzziness in different categories of browsing
+behavior is magnified in Johnson's patterns \cite{johnson2017patterns}.
+Therefore, we mix the browsing behaviors
+of goal-oriented and exploring behaviors as an individual fuzzy behavior
+to avoid this uncertainty in our task design.
 
 \subsection{Limitations and Future Works}
 
