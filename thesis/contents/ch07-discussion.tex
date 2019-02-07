@@ -3,45 +3,47 @@
 
 \epigraph{I think; therefore I am.}{Ren\'e Descartes}
 
-We proposed an action path model that models a sequence of user actions over web browsing
-and their decision time of each action simultaneously.
-Then we designed and conducted a user study that collects action paths
+We proposed an action path model that simultaneously models a sequence of user actions 
+over web browsing and their decision time for each action.
+We also designed and conducted a user study that collects action paths
 from participants with different browsing behavior.
-We discuss our main findings, decisions and the limitations of this work in this chapter.
+In this chapter, we discuss our main findings, decisions, and the limitations of this work.
 
 \subsection{Main Findings}
 
 \paragraph{Clickstream Modeling}
 
-The action path model combines an entire action level clickstream, 
-and the stay duration of each action into action path encoder.
+The action path model combines an entire action-level clickstream,
+and the stay duration of each action into an action path encoder.
 Our quantitative results indicate that 
-a simply model can easily classify existing three type of browsing
-behaviors with 100.00\% of accuracy, i.e. goal-oriented, fuzzy and exploring.
-Even further, the model is able to universally (cross-user) predict 3 to 5 future visit 
-page with given 95 percent of browsing context.
+a simple model can easily classify the existing three types of browsing
+behaviors (i.e., goal-oriented, fuzzy, and exploring) with 100.00\% of accuracy.
+The model is also able to universally (cross-user) predict three to five future visit 
+page with given 95\% of the browsing context.
 
 \paragraph{Browsing Behaviors and Patterns}
 
-We concluded three browsing behaviors based on information behavior theory that describes
-three process of web browsing.
-Our qualitative analysis 
-first interpret the total number of actions 
-are more important to contributes the indication of goal-oriented behavior,
-and the total stay duration and completion efficiency are more important to indicate exploring behavior.
+We concluded three browsing behaviors based on information behavior theory which describes
+three processes of web browsing.
+Our qualitative analysis indicates that the total number of actions are more important 
+for contributing to indication of goal-oriented behavior.
+The total stay duration and completion efficiency are more important for indicating 
+exploring behavior.
 
-Afterwards, we also observed five patterns from client-side clickstream, the ring and star patterns
-appears in fuzzy and exploring tasks, ring pattern is more often in exploring task,
-and the star pattern is more often in fuzzy task because of differentiating of information use.
-A cluster pattern is an indication of an individual intent while browsing, and it may connects
-few hesitation pattern.
-The overlap pattern discovered in the collected action path gains a low overlap ratio,
-which suggests action path tend to be a user-specific behavior but reserve a small region as
-common interest in goal-oriented browsing behavior.
+Afterwards, we observed five patterns from the client-side clickstream. 
+The ring and star patterns appear in the fuzzy and exploring tasks. 
+The ring pattern appeared more often in the exploring task,
+and the star pattern appeared more often in the fuzzy task 
+because differentiating of the information use.
+A cluster pattern is an indication of individual intent while browsing, and may connects
+with few hesitation patterns.
+The overlap pattern discovered in the collected action path has a low overlap ratio,
+which suggests that action paths tend to be user-specific behavior but may reserve a small region as
+a common interest in goal-oriented browsing behavior.
 Next, an analysis based on Ellis' model and Wilson's theory explored the relationship 
-of these patterns to the proposed browsing behaviors, and these patterns partially represents a browsing behavior.
+between these patterns and the proposed browsing behaviors. These patterns partially represent a form of browsing behavior.
 Finally, since the model encodes the entire client-side clickstream and stay duration,
-the analysis also explains the qualitative reason of why our model archives such a good performance.
+the analysis also explains the qualitative reason why our model achives such a strong performance.
 
 \subsection{Decisions}
 \label{sec:decision}
@@ -62,7 +64,7 @@ the model learns browsing behaviors from all collected data, which means if the 
 a dataset with subjective score, then the dataset is biased by these scores and eventually reduces the 
 generalization ability in a user-independent context.
 
-\paragraph{\emph{Why leave-one-subject-out cross validation (LosoCV) is not applied in classification task?}}
+\paragraph{\emph{Why is leave-one-subject-out cross validation (LosoCV) is not applied in classification task?}}
 
 LosoCV is not necessary in our case. Research in a context of HCI performs a special LosoCV
 for a purpose of claiming a model is tested in which it has not seen any unseened user data before,
@@ -95,10 +97,10 @@ the bootstrapping by giving mainstream selection and mainstream preferences, the
 personalized recommendations after collecting a minimum required dataset since 
 collecting data becomes fairly easy when a user continuously using a platform.
 
-\paragraph{\emph{Why the experiment is designed under three aggregated browsing behavior instead of
-using the existing concluded four or more information seeking behaviors?}}
+\paragraph{\emph{Why is the experiment designed under three aggregated browsing behaviors instead of
+using the existing four or more information seeking behaviors?}}
 
-The main reason of aggregating existing information seeking behaviors is to find the best 
+The main reason for aggregating existing information seeking behaviors is to find the best 
 classification ability and expand tasks design scope.
 In a intelligent system, we argue that acting a human being through machine must be precise enough,
 otherwise, it will reduce the user's motivation of using a intelligent system since

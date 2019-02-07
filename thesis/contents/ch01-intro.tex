@@ -7,64 +7,69 @@
 
 % 起源
 
-The word ``clickstream'' \cite{friedman1995} was first coined in 1995, a media comments 
-article introduced a novel concept of tracing cyberlife of users over the nowadays 
-``Internet''. Informally, a ``clickstream'' contains a sequence of hyperlinks clicked by a 
-website user over time. At the same year, the most popular server software 
+The word ``clickstream'' \cite{friedman1995} was first coined in 1995 when a media 
+article introduced the novel concept of tracing the cyberlife of users over what is currently known
+as the ``Internet''. ``clickstream'' contains a sequence of hyperlinks clicked by a 
+website user over time. In 1995, the most popular server software 
 Apache HTTP \cite{apache1995http} proxy on the Web was developed with a feature that 
-records access log of entries. Afterwards, people realized the potential danger and value 
-of tracing cyberspace, which a large discussion of clickstream influences, such as 
-frequency based mining of clickstream \cite{brodwin1995}, privacy concerns 
-\cite{reidenberg1996governing}, and database schema of session based time series data 
+recorded the access log of entries. Afterwards, people realized the potential danger and value 
+of tracing cyberspace. A major discussion was concluded over clickstream issues, such as 
+the frequency-based mining of clickstream \cite{brodwin1995}, privacy concerns
+\cite{reidenberg1996governing}, and the database schema of session-based time series data 
 \cite{courtheoux2000database}.
 
 % 搜集 clickstream 带来的推动
 
-Privacy discussion concludes collecting traces over net clearly offence the rights of users,
-the practice violates the openness and transparency of a service to a user.
-Serious criticism arise the tracing becomes a loss of democratic governance \cite{gindin1997lost}.
+The privacy discussion concluded that collecting traces over the internet clearly violates 
+the rights of users and,
+breaches the openness and transparency of a service.
+Serious criticism arose that traces damage democratic governance \cite{gindin1997lost}.
 
-Technologies is not guilty. After years of discussion, positive opinion proposes the rules 
+Technology is not guilty. Years of discussion have produced, rules 
 \cite{reidenberg1996governing} and regulations \cite{skok1999establishing} in cyberspace,
 means of protecting information privacy in cyberspace transactions \cite{kang1997information},
-and approaches to resolve conflicting international data privacy \cite{reidenberg1999resolving}.
+and approaches to resolve conflicting issues in international data privacy \cite{reidenberg1999resolving}.
 
-Meanwhile, bussinessman agilely responses to the concept and immediately initiate 
-commercial tracking of their customer to improving marketing affects \cite{novick1995}, 
-customer service and precise advertisement\cite{reagle1999platform, bucklin2000sticky}, 
-even measuring product success \cite{schonberg2000measuring}.
+Meanwhile, bussinessmen have agilely reasponded to the concept of collecting clickstream 
+and immediately initiated commercial tracking of their customers to measure product success \cite{schonberg2000measuring}
+and improve marketing effects \cite{novick1995}, customer service, and precise advertisements\cite{reagle1999platform, bucklin2000sticky}.
 
-At the turn of this century, common reviews start accept the technology of clickstream,
-clickstream data has confirmed by industrial practice, which opens a new era in 
-customer service \cite{walsh2000internet}, most of website users start accept their click path data 
-be aggregate analysed on the server side \cite{carr2000hypermediation}.
+At the turn of this century, there has been common acceptance of the technology of clickstream.
+Clickstream data has been confirmed by industrial practice, which has opened up a new era in 
+customer service \cite{walsh2000internet}. Most websites' users habe begun to accept that 
+their click path data will be aggregated and analysed on the server side \cite{carr2000hypermediation}.
 
-Clickstream data grows fast and becomes plentiful, researchers start convey the original concept of clickstream,
-tracking customer selections, into various applications, such as usability testing \cite{Waterson:2002:LOW:506443.506602},
-understanding social network sentiment \cite{Schneider:2009:UOS:1644893.1644899}, and developed visualizing
-technique to better interpret clickstream data \cite{Waterson:2002:DTU:1556262.1556276}.
+Clickstream data grows and becomes plentiful quickly. Researchers have begun to convey 
+track customer selections, which it the original idea behind of clickstream,
+into various applications, such as usability testing \cite{Waterson:2002:LOW:506443.506602}
+and understanding social network sentiment \cite{Schneider:2009:UOS:1644893.1644899}.
+Researchers have also developed visualizing
+techniques to better interpret clickstream data \cite{Waterson:2002:DTU:1556262.1556276}.
 
-Analysis, reports and characterizing of clickstream gains its popularity, Mobasher et al. \cite{Mobasher:2001:EPB:502932.502935}
-suggests personalize user based on association rule from their web usage data. Chatterjee et al. \cite{chatterjee2003modeling} 
-first proposed E-commerce websites should use clickstream to tracking customer navigation pattern instead of essential choice, 
-associating and binding products for observing responses of a customer.
+Analysis, reports, and characterizing of clickstream have gained in popularity. 
+Mobasher et al. \cite{Mobasher:2001:EPB:502932.502935}
+have suggested personalizing users based on association rules from their web usage data. 
+Chatterjee et al. \cite{chatterjee2003modeling} 
+have first proposed that e-commerce websites should use clickstream instead of essential choice 
+to track customer navigation patterns, thereby 
+associating and binding products for the observing responses of a customer.
 
-With the arise of characterizing and behavior understanding on clickstream data, more 
-and more research proposes methods for the understanding of given server clickstream data.
-Padmanabhan et al. \cite{Padmanabhan:2001:PID:502512.502535}
+As characterization and the understanding of behavior based on clickstream data have become popular, 
+more research have proposed methods to understand server clickstream data.
+Padmanabhan et al. \cite{Padmanabhan:2001:PID:502512.502535} have
 proposed an algorithm to address personalization from incomplete clickstream data, which implies
-a security problem potential information leak from clickstream data. 
-Moreover, affected by search engine indexing, Lourenco at al. \cite{Lourenco:2006:CWC:1145581.1145634} recommends an approach for
-the detection and containment of web crawler based on server side recorded visiting log file.
+the security problem potential of a potential information leak from clickstream data. 
+Regarding search engine indexing, Lourenco at al. \cite{Lourenco:2006:CWC:1145581.1145634} recommends an approach for
+the detection and containment of web crawlers based on server-side recorded visiting log files.
 
-After a short review of clickstream history, almost all research put forward their 
-methodology based on server recorded clickstream data.
-Note that a daily user is always allowed accesses parallel pages and windows simultaneously,
-even allow switching across multiple websites for a browsing purpose.
-An obvious missing aspect of those papers is the server recorded data tend to incomplete for 
-characterizing a visited user, and the log data can only applied on a specific website. 
-As an observation, our research no longer serves server side clickstream, 
-but focus and contributes to a client side collected clickstream data 
+A short review of clickstream history has indicated that almost all research have formulated their 
+methodology based on server-recorded clickstream data.
+A daily user is always allowed simultaneous accesses to parallel pages and windows and may even be allowed,
+to switch across multiple websites for a browsing purpose.
+An obvious missing aspect of those papers is that server-recorded data tends to be incomplete for 
+characterizing a visiting user, and the log data can only applied to on a specific website. 
+Our research no longer serves the server-side clickstream; instead, it
+focuses and contributes to client-side collected clickstream data 
 for a real visiting session of a user in a browser.
 
 \subsection{This Thesis}
@@ -79,54 +84,59 @@ for a real visiting session of a user in a browser.
 % 本thesis 由以下几个部分组成。
 
 The main part of the thesis is structured in different chapters, and answers the following
-three research question groups:
+three research questions:
 
 \begin{enumerate}
-    \item \textbf{Understanding}: Why collecting clickstream on client-side differs 
-        from server-side collecting?
-        What are the most significant, identifiable user behaviors and activity patterns 
-        can be observed or algorithmically detected in the context of web browsing that 
-        indicates information needs,
-        and in which form of quantitative data can characterize a definitive boundary to 
-        distinguish browsing behaviors of a user?
-    \item \textbf{Classification}: How accurate or how affirmative we can model or identify 
-        the proposed browsing behaviors progressively that makes an intelligent system 
-        serves proactively?
-    \item \textbf{Prediction}: How much future movements of a user can be accurately inferred 
+    \item \textbf{Understanding}: Why does collecting clickstream on the client-side differ 
+        from on the server-side?
+        What are the most significant and identifiable user behaviors and activity patterns 
+        that can be observed or algorithmically detected in the context of web browsing that 
+        indicate information needs?
+        Which form of quantitative data can characterize a definitive boundary for 
+        distinguishing a user's browsing behaviors?
+    \item \textbf{Classification}: How accurately or affirmatively can we progressively model 
+        or identify the proposed browsing behaviors that makes an intelligent system 
+        serve proactively?
+    \item \textbf{Prediction}: How many future movements of a user can be accurately inferred 
         from the context of web browsing, and how much context is required for the prediction?
 
 \end{enumerate}
 
 % 第二章讨论了目前已有的客户端点击流研究。
-Chapter \ref{ch:relate} discusses the existing user behavior research based on clickstream data firstly. 
-Then discussed the evolution of theory regarding information seeking behavior as our experiment foundation.
-In addition, we summarized the reason of recent raise of neural approach in different scientific 
-area and the state-of-the-art direction for sequence learning, whose proposed in neural network research.
+Chapter \ref{ch:relate} first discusses the existing user behavior research based on clickstream data. 
+Next, the chapter discusses the evolution of the theory regarding information seeking behavior 
+as our experiment's foundation.
+In addition, we summarize the reason for the recent increase of the neural approach 
+in different scientific area and the state-of-the-art direction for sequence learning, 
+that have been proposed in neural network research.
 % 第三章介绍了我们的数据类型、模型的设计。
-Chapter \ref{ch:model} defined the completion efficiency of a clickstream first, then we
-formalizes our proposed sequence to sequence encoder and decoder models for client-side
-clickstream as well as the training techniques for the proposed model.
+Chapter \ref{ch:model} defines the completion efficiency of a clickstream. Next, we
+formalize our proposed sequence to sequence encoder and decoder models for client-side
+clickstreams. We also present the training techniques for the proposed model.
 % 第四章详细描述了实验的设计，介绍了每个所设计任务的原因和考虑，讨论了每个所设计的任务中潜在的数据的搜集和分析工作。
-In subsequent chapter, Chapter \ref{ch:exp}, we present our experiment for a lab study,
-and construe the design reason of context given web browsing tasks for our subjects based on information behavior theory.
+In Chapter \ref{ch:exp}, we present our experiment for a lab study
+and construe the design justification for context-given web browsing tasks for our subjects 
+based on information behavior theory.
 % 第五章分析了第四章描述中搜集到的数据，基于 SVM、t-SNE 分析了除了点击流之外的几个特征，定量分析，得出了结论。。。。
 % 然后基于第三章中提出的模型，分析了。。。。的结果，得出了。。。的结论。
-Afterwards, in Chapter \ref{ch:eval}, based on SVM, t-SNE and our proposed action path model, 
-we conducted a quantitative analysis with described data from our lab study, 
-the evaluation shows a very promising results.
+In Chapter \ref{ch:eval},
+we conduct a quantitative analysis with described data from our lab study, based on support
+vector machine (SVM), t-SNE, and our proposed action path model.
+The evaluation produces very promising results.
 % 最后对用户在任务下的点击流进行了可视化，定性分析，进一步讨论了用户的行为，从而进一步验证了我们的结论。。。
-Moreover, we visualize the clickstream through directed graph, by combining our training model outputs,
-we also performs a qualitative analysis to all clickstreams, and the analysis gives evidences that further 
-verified the correctness of our model.
+Moreover, we visualize the clickstream through a directed graph by combining our training model outputs.
+We also perform a qualitative analysis on all clickstreams, and the analysis provides evidence 
+that further verifies the correctness of our model.
 % 第六章首先介绍了浏览器插件的工作原理，讨论了我们插件的工作架构。介绍了插件的客户端和服务端的实现方案。
-In Chapter \ref{ch:app}, as a consequence of our analysis, we developed a browser plugin 
-for Google Chrome as a possible application to our model. The plugin can fairly predict 
-the next possible visiting pages of a user. In addition, we generalize the design of
-our plugin architecture between client and server,
-and then discuss the possibilities of being a standard web API to web developers.
+Chapter \ref{ch:app} describes how we developed a browser plugin 
+for Google Chrome as a possible application for our model. The plugin can accurately predict 
+the next possible visiting pages of a user. 
+In addition, we generalize the design of our plugin architecture between the client and server.
+We also discuss the possibilities for that architecture to serve as a standard web API 
+for web developers.
 
 % 第七章对整个 thesis 进行了总结，讨论了本文工作中存在的不足以及未来可改进的方向。
-In the last two chapters, we discuss our decisions made in the thesis and limitations of this work, 
-summarize the findings of our thesis, as well as the possible future improvements and 
-directions of the thesis in the final chapter.
+In the last two chapters, we discuss this thesis' decisions, the limitations of this work, and
+summarize the findings of our thesis, and any the possible future improvements and 
+directions for research.
 \cleardoublepage
