@@ -7,61 +7,64 @@
 
 % 1. what has been done
 
-This thesis proposed an action path model that describes client-side user clickstream,
-as known as action path.
+This thesis proposes an action path model that describes client-side user clickstreams,
+which are also known as action paths.
 To justify our model, we designed nine browsing tasks for three qualitatively
-discussed browsing behavior based on the theory of information behavior, then 
-held a user study for these tasks that simulates the behaviors. 
-Afterwards, we applied the collected data from user study to our action path model and
-analysed the model performance to these data with comparison to traditional machine 
+discussed types of browsing behavior based on the theory of information behavior. We then 
+held a user study for these tasks that simulated those behaviors. 
+Afterwards, we applied the data collected from user study to our action path model and
+analysed the model performance for this data with comparisons to the traditional machine 
 learning approach.
-Subsequently, we also visualized these data and closely discovered the common, 
-individual and intersection patterns among client-side clickstream.
+We also visualized these data and discovered the common, 
+individual, and intersection patterns among the client-side clickstream.
 As an application showcase, we illustrated a browser plugin that monitors client-side 
-user clickstream to predict future movements of web browsing and discussed the benefits of this plugin.
-Furthermore, we presented a generic architecture communication flow and architecture of the plugin, 
-as well as the possibilities of standardize the plugin feature as browser Web APIs to other developers.
+user clickstreams to predict future movements of web browsing. 
+We also discussed the benefits of this plugin.
+Furthermore, we presented a generic architecture communication flow, the architecture of the plugin, 
+as well as the possibilities to standardize the plugin feature in the form of browser 
+Web APIs for other developers.
 
 % 2. what are the findings
 
-Our finding answers the research questions that motivates this thesis:
+Our findings answer the research questions that underlie this this thesis:
 
-\paragraph{Understanding} (a) client-side collected clickstream is different than 
-server side collected clickstream because of the existence of parallel visiting 
-and multiple website visiting, three suggested browsing behaviors are: 
-goal-oriented, fuzzy and exploring behaviors;
-(b) number of actions, total stay duration and completion efficiency cannot 
-provide an accurate classifier for these three behaviors, 
-but the number of actions are more important than others to indication of 
-goal-oriented browsing behavior and other two features are more important 
-to indicate exploring behavior;
-(c) the observed patterns in action path including cluster, hesitation, ring, 
-star and overlap contributes to different browsing behaviors;
-(d) action path visually tend to be user-specific but remains common interests 
+\paragraph{Understanding} 
+(a) A client-side collected clickstream is different from the 
+server-side collected clickstream because of parallel visiting 
+and multiple website visiting. The three types of suggested browsing behaviors are
+goal-oriented, fuzzy and exploring behaviors.
+(b) The number of actions, total stay duration and completion efficiency cannot 
+provide an accurate classifier for these three behaviors. However, 
+the number of actions is more important than the others for indicating 
+goal-oriented browsing behavior and the other two features are more important 
+for indicating exploring behavior;
+(c) The observed patterns in the action path, which include cluster, hesitation, ring, 
+star and overlap contribute to different browsing behaviors;
+(d) Action paths visually tend to be user-specific but remain common interests 
 in goal-oriented behaviors.
 \paragraph{Classification} the proposed action path model is 100.00\% accurate for 
-the classification of three browsing behavior, which is trained on a user-independent dataset.
-\paragraph{Prediction} three to five future steps prediction can be accurately (>60\%) predicted
+the classification of the three types of browsing behavior, which is trained on a user-independent dataset.
+\paragraph{Prediction} prediction of three to five future steps can be accurately (>60\%) predicted
 in a simplest action path model.
 
 \paragraph{}
 
 % 3. emphasize the importance >> place to large context
-Our findings are generic and subservience. The model is an action level model that models
-sequence of user actions and time of decision makings (stay duration), which means it
-can be use on desktop and also can be implemented in context of a mobile devices, 
-or even a outside the context of web browsing.
-Similar to other user behavior data, client-side user clickstream or user actions 
-directly indicates movements of a user and how they making decisions. Understanding, 
-interpreting and predicting these data not only improves the user experience when doing
-web browsing, but also useful to help users reducing useless browsing, better controls 
-and manages their time. Moreover, by standardize the data processing process can formalize
-the feature to developers, and then help them using the behavior predictions to
-improve user experience of their products.
+Our findings are generic. The model is an action-level model that models
+a sequence of user actions and the time of decision making (stay duration). This means 
+that it can be used on desktop, and also can be implemented in context of mobile devices, 
+or even outside the context of web browsing.
+Similar to other user behavior data, a client-side user clickstream or user actions 
+directly indicate movements of a user and how they make decisions. Understanding, 
+interpreting and predicting these data not only improves the user experience of
+web browsing, but also useful to help users to reduce useless browsing, which 
+manages their time more efficiently. Moreover, standardizing the data processing process 
+can formalize this feature for developers, which will help them to use the behavior predictions to
+improve the user experience of their products.
 
 % 4. summarize / conclude
-Traditional server collected clickstream data has been proved its high value in many 
-fields. With our work we exposit the value one-step forward, and contributes to models 
+Traditional server collected clickstream data has proved its high value in many 
+fields. Our work exposit the value one-step forward, and contributes to models 
 and approaches that hope to bring ponderable research to the community and industry.
 
 \cleardoublepage
