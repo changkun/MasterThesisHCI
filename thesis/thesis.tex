@@ -1,6 +1,14 @@
 \documentclass[11pt,a4paper,twoside]{article}
 \usepackage{package/lmuthesis}
 
+\input{condition}
+\ifthenelse{\boolean{release}}{
+}{
+    \usepackage{draftwatermark}
+    \SetWatermarkText{DRAFT}
+    \SetWatermarkScale{1}
+}
+
 \prof{Prof.\ Dr.\ Heinrich Hu{\ss}mann}
 \title{Understanding and Predicting\\Web Browsing Behavior}
 \author{Changkun Ou}

@@ -68,17 +68,16 @@
 \def\UrlBreaks{\do\/\do-}
 \usepackage{breakurl}
 
-% TODO: comment here after finished
-\usepackage{draftwatermark}
-\SetWatermarkText{DRAFT}
-\SetWatermarkScale{1}
+\usepackage{ifthen}
+\newboolean{release}
 
 \usepackage{color}
 \definecolor{darkred}{rgb}{.25,0,0}
 \definecolor{darkgreen}{rgb}{0,.2,0}
 \definecolor{darkmagenta}{rgb}{.2,0,.2}
-\definecolor{darkcyan}{rgb}{0,.15,.15}
-\definecolor{bbbbb}{HTML}{00008B}
+% \definecolor{darkcyan}{rgb}{0,.15,.15}
+% \definecolor{bbbbb}{HTML}{00008B}
+\definecolor{bbbbb}{HTML}{000000}
 \usepackage[
     breaklinks=true,
     plainpages=false,
