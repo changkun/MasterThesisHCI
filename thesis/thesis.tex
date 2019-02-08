@@ -19,29 +19,34 @@
     \begin{description}
         \item[Understanding and Predicting User Browsing Behavior]
  
-        \item[Problem Statement] To be added
-        % Under standing user behavior helps designer optimize 
-        % their product user experiences. Meanwhile, users can benefit more productive 
-        % from it. Since user intents are elusive, changeable and sometimes even undetermined, 
-        % predict their behavior usually difficult and impoissible. In most cases, a user may 
-        % performs a series of wasted actions before reach an intent destination. 
-        % Nevertheless, user intents becomes clear step by step after performs a series of 
-        % actions in a given context. 
-        \item[Scope of the Thesis] To be added
-        % To tackle the aforementioned challenges, the objective of this thesis is to develop a system that tracking user actions within a website, 
-        % As a first step, literature review ...
-        % Based on the literature review, a intent model should be developed ...
-        % Then a system should implements the ...
-        % Nevertheless, user intents becomes clear step by step after performs a series of actions in a given context. 
-        \item[Tasks] (1) Conduct a literature review to identify research questions regarding
-        clickstream research that are of interest to researchers and practitioners \\
-        (2) Design a machine learning based model in clickstream modeling and 
-        creating an appropriate experiment with theoretical support to justify model performance and its interpretability \\
-        (3) Develop an web application as a demonstration of the model and evolving it as a generic architecture
-        for the proposed model.
-        \item[Requirements] Strong skills in mathematical modeling and machine learning approaches, independent scientific work and creative problem solving,
-        industrial experience in web development and architecting.
-        %asdfasdf
+        \item[Problem Statement]
+        Understanding user behavior helps the designer optimize their product user experiences. Meanwhile, the user can benefit from a better product. Since user intents are elusive, changeable and sometimes even undetermined, 
+        predict their behavior usually tricky and impossible. In most cases, a user may perform a series of wasted actions before reach an intended destination. 
+        Nevertheless, user intents become clear step by step after performs a series of actions in a given context.
+
+        \item[Scope of the Thesis] 
+        Applying machine learning approaches in human-computer interaction gains its popularity. 
+        The objective of this thesis is to use machine learning to develop techniques that 
+        help a user better understand the user's behavior and benefits from it.
+        As a first step, a literature review is needed for finding research questions in
+        a specific research field.
+        Based on the literature review, an interpretable machine learning model should be developed.
+        Afterward, the thesis should design a reasonable experiment with 
+        a suitable theoretical foundation for a user study of the developed model, 
+        and give a comprehensive analysis of the developed model. 
+        A demonstration software may be developed for explaining the model application.
+
+        \item[Tasks] (1) Conduct a literature review to identify research questions 
+        regarding a specific field of research that are of interest to researchers and practitioners.
+        (2) Design a machine learning model and
+        design an appropriate experiment with theoretical support to 
+        justify model performance. A comprehensive analysis is needed for evaluating 
+        its interpretability.
+        (3) Develop an application as a demonstration of the model.
+        \item[Requirements] Profound knowledge in human-computer interaction, 
+        strong skills in mathematical modeling and machine learning approaches, 
+        independent scientific work and creative problem solving,
+        industrial experience in web development, and architecting.
         \item[Keywords] Clickstream, User Browsing Behavior, Machine Learning, Web
     \end{description}
 }
@@ -52,50 +57,52 @@
     The thesis would not be accomplished without them. Afterward, I am full of gratitude to 
     Prof. Hussmann and Prof. Butz for offering me an unexpected opportunity to study aboard in Germany 
     as well as their kindly helps regarding study and living in my academic period.
-    Next, I wish to thank my best friend Yi, schoolfellow Yifei and Xingying, 
-    and former colleague Jin for their inspiring discussions surrounding my thesis. 
+    Next, I wish to thank my best friend Yi Xia, schoolfellow Yifei Zhan and Xingying Chen, 
+    former colleague Jin Luo, and prior supervisor Yingding Wang in a Master's course ``Human Computation''
+    for their inspiring discussions, proofreading, and giving feedbacks surrounding the contents of my thesis.
     Finally, I will forever be beholden to my parents for their continuous supports 
     while my postgraduate study, since they dedicated their live to my better future.
 }
 \abstract{
 Clickstream applications appeared at the end of last century and 
-have proliferated at the heart of our Internet world.
+have proliferated the heart of our Internet world.
 Trades, public opinions, and almost every web requests are precisely recorded 
 on server-side log files.
 The fundamental interaction between a web service client and server stands immutably, 
 even though mobile devices have governed our daily life.
-In this thesis, we propose a machine learning model that characterizes user browsing behavior 
+This thesis proposes a machine learning model that characterizes user browsing behavior 
 while including multi-tab branching and backtrack actions in a browser instead of
-web request-based clickstreams. We call this model the Action Path model.
-To justify our model, we established a lab study and collected individuals' clickstream data, 
+web request-based clickstreams. The model is named the Action Path model (APM).
+To justify the APM, a lab study is established and individuals' clickstream data is collected,
 which consisted of chronologic URLs and corresponding stay durations for each URL.
-We designed nine different contexts given web browsing tasks for three mainstream websites 
+The thesis designed nine different contexts given web browsing tasks for three mainstream websites 
 based on the theory of information behavior.
 Each website has three types of tasks: a goal-oriented task, fuzzy task and 
 exploring browsing task. They characterize the corresponding three browsing 
 behaviors.
-We seek to achieve the following goals by analyzing the subject's trace from our lab study:
+The thesis seeks to achieve the following goals by analyzing the subject's trace from a lab study:
 1) Understanding: identify if browsing behaviors are distinguishable and 
 find common patterns that appear in an action path.
 2) Classification: separate and report browsing behaviors on the web, which will help 
 users to better understand their status.
 3) Prediction: present the future click path in more than one step with the given context of
 the browsing history in a session.
-Our quantitative analysis indicates that goal-oriented, fuzzy, and exploring
-browsing behaviors are classifiable with 100.00\% precision based on the combination of 
+The quantitative analysis in this thesis indicates that goal-oriented, fuzzy, and exploring
+browsing behaviors are classifiable with 100\% accuracy based on the combination of 
 chronologic URLs and stay duration. 
-The prediction performance of our model indicates higher than 60\% accuracy for 
+The prediction performance of APM indicates higher than 60\% accuracy for 
 three to five steps of future clickstream prediction.
-Our qualitative analysis of the clickstream indicates five observed patterns, 
+The qualitative analysis of the APM indicates five observed patterns, 
 including ``ring'',``star'', ``overlap'', ``hesitation'' and ``cluster'' patterns, which 
 represent the patterns of an action path. 
-To illustrate the application, we also developed a browser plugin that proactively serves users,
+To illustrate the application, a browser plugin is developed that proactively serves users,
 and suggests predictions for the possible future user clicks.
-Furthermore, we discuss a generalized design of our model and plugin communication protocol. 
+Furthermore, the thesis discusses a generalized design of APM and plugin communication protocol. 
 This discussion explores the possibility of formalizing the model and protocol as standard 
 Web APIs to help designers and developers to improve and monitor the user experience of their products.
-To the best of our knowledge, this is the first detailed study regarding web browsing 
-behavior modeling based on clickstreams collected from the client side.
+To the best knowledge of the author of the thesis, the proposed APM is the first model 
+with a detailed study regarding web browsing behavior modeling 
+based on clickstreams collected from the client side.
 }
 
 \begin{document}

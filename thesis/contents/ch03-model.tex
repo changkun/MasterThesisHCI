@@ -6,16 +6,16 @@ two fourth powers, or in general, any power higher than the second, into two lik
 I have discovered a truly marvelous proof of this, which this margin is too narrow 
 to contain.}{Pierre de Fermat}
 
-In this chapter, we formalize few concepts and metrics in clickstream data,
-and then describe a proposed clickstream model named \emph{Action Path model} 
-based on a recurrent neural network that models a client-side web browsing behavior. 
+In this chapter, few concepts and metrics are formalized for clickstream data,
+and then \textbf{a proposed clickstream model named \emph{Action Path model (APM)}} is described
+based on a recurrent neural network that models client-side web browsing behavior. 
 An \emph{action path} is different than the original clickstream concept since 
 a user may \emph{switch browser tabs} for parallel viewing \cite{huang2010parallel} 
 or uses \emph{back button} 
-for backtracking viewing \cite{huang2012no} as we discussed in Chapter \ref{ch:relate}, 
-namely, a user performes a visit action.
-A server-side collected clickstream does not contain such detailed level of user clickstream.
-The term \emph{action path} is a generalized concept of clickstream, 
+for backtracking viewing \cite{huang2012no} as discussed in Chapter \ref{ch:relate}, 
+namely, \textbf{an action path contains a series of browsing action performed by a user}.
+Server-side collected clickstream does not contain such detailed level of user clickstream.
+The term action path is a generalized concept of clickstream, 
 which replaces individual URLs to chronological ordered user actions 
 (with back button and browser tab switch effects) in a browser.
 Figure \ref{fig:clickstream} illustrates a simplified version of an action path 
@@ -34,7 +34,7 @@ that compares vanilla clickstream.
     The records from server side lost the interaction details between users and browsers.
     Node that /out is a distraction page in the graph, 
     which may located in a different website (e.g. advertisement), 
-    and black dashed arrorws are wasted user
+    and black dashed arrows are wasted user
     actions. The /goal page may not clear in the beginning of the clickstream, one can generate
     a shortcut optimization navigation to the /goal page while more clickstream context
     be presented, i.e. an optimized user action is 
@@ -43,14 +43,14 @@ that compares vanilla clickstream.
     \label{fig:clickstream}
 \end{figure}
 
-For the convenience of discussion, \textbf{we mix the use of 
-term \emph{action path} and \emph{clickstream} in
-this thesis to indicate a chronologically ordered user actions}.
+For the convenience of discussion, \textbf{the thesis mix the use of 
+term \emph{action path} and \emph{clickstream} to indicate a chronologically ordered user actions
+in web browsing}.
 
-\subsection{Completion Effeciency}
-
+\subsection{Completion Efficiency}
+\label{sec:efficiency}
 An action path of a visiting session starts from a starting page and ends on an existing page.
-Since we consider the effect of browser back button and browser tab switches, 
+Since the thesis consider the effect of browser back button and browser tab switches, 
 a previous page could easily be visited twice, if a user clicked the back button. 
 Therefore, a page may direct to multiple pages. \emph{For instance, 
 an action path can degrade to a linked list if the user clicks through different pages 
@@ -59,8 +59,9 @@ a 1-to-n bipartite graph if a user use back button back to the previous page aft
 clicking a page or only switching tabs from a specific page to one another}, 
 as shown in Figure \ref{fig:sim-action-path}.
 
-As a result, we define a term \emph{completion effeciency} based on shortest path from 
-starting page to exiting page, and stay duration of the action path. 
+As a result, The definition of \emph{completion efficiency} is based on shortest path from 
+starting page to exiting page, and stay duration is an arc weight that represents 
+the number of seconds that a user spend on an arc tail in an action path.
 
 \begin{figure}[H]
     \centering
@@ -86,11 +87,11 @@ clicking a page or only switching tabs from a specific page to one another (\ref
 \end{figure}
 
 Let a directed cyclic graph represents an action path, each node represents a visited page, 
-and each edge has a weight that represents the study duration of its tail node.
+and each arc has a weight that represents the study duration of its tail node.
 Assume the total stay duration of the shortest path from the starting page to 
 the existing page is $d_s$, and the total stay duration of the action path is $D$, 
 the number of nodes in the shortest path is $n_s$, the total nodes in an action path is $N$, 
-we define the \emph{completion efficiency $E$} is as follows Equation \ref{eqn:completion-effeciency}:
+the \emph{completion efficiency $E$} is defined as follows Equation \ref{eqn:completion-effeciency}:
 
 \begin{align}
 \label{eqn:completion-effeciency}
@@ -100,20 +101,21 @@ we define the \emph{completion efficiency $E$} is as follows Equation \ref{eqn:c
 \end{split}
 \end{align}
 
-where $w_1$, $w_2$ are hyperparameters to balancing the importance of action path and 
+where $w_1$, $w_2$ are hyper-parameters to balancing the importance of action path and 
 stay duration. According to the discussion of two special cases of action path, 
-it is trivial to show the range of $E$ is $(0, 1]$. As a compliment, we define 
-\emph{zero completion efficiency} if and only if a user cannot complete a clickstream 
-in a browsing session. Therefore we have a range of $E$ is $[0, 1]$.
+it is trivial to show the range of $E$ is $(0, 1]$. As a compliment,
+\emph{zero completion efficiency} is defined if a user cannot complete a clickstream 
+in a browsing session. Therefore the range of $E$ is in $[0, 1]$.
 
-\paragraph{Remark 1} The definition of completion efficiently uses the term of shortest path,
+\paragraph{Remark 1} The definition of completion efficiently uses the term of \emph{shortest path},
 which is the problem of finding a path between the starting page and exiting page 
-in an action path (directed cyclic graph) such that the sum of the stay duration of 
-its constituent pages in minimized.
+in an action path (consider as directed cyclic graph) such that the sum of the stay duration of 
+its constituent pages is minimized.
 The problem can be solved by Dijkstra's \cite{dijkstra1959note} shortest-path algorithm. 
 It selects the unvisited nodes with the smallest weights, calculates the distance 
 through it to each unvisited neighbor, then updates the distance of neighbor distance 
-if the distance is smaller than one another. The process converges to the shortest path.
+if the distance is smaller than one another. The process is proven that 
+converges to result in the shortest path.
 
 \paragraph{Remark 2} An action path may increases with more nodes (web pages) over time.
 The starting page of an active path was always the first page when the browser was opened.
@@ -121,18 +123,19 @@ However, one can always treat the currently visited page is the exiting page due
 do not know when a user will exit browsing overtime at the moment. 
 Consequently, function $E$ is changing over browsing.
 
-\paragraph{Remark 3} We use completion efficiency as a feature for a classification task 
-in Section \ref{sec:inter-general-feature}.
+\paragraph{Remark 3} The completion efficiency is a feature that handcrafted 
+for a classification task in Section \ref{sec:inter-general-feature}, 
+it is created that intend to uses the structure information (arc weights) of a clickstream.
 
 \subsection{\emph{url2vec} Embedding}
 
-As we discussed in Section \ref{sec:seq-learn}, we convey similar idea from word2vec model 
-and propose our \emph{url2vec} model for client side clickstream data.
+As discussed in Section \ref{sec:seq-learn}, similar idea is conveyed from \emph{word2vec} model.
+This thesis proposes a \emph{url2vec} model for client-side clickstream data.
 
-The purpose of url2vec model is to construct URL representations that better predict 
-the surrounding URLs in a clickstream. Briefly, given a clickstream of urls 
-$\text{URL}_1, \text{URL}_2, ..., \text{URL}_T$, the objective of url2vec is to maximize 
-the average log softmax probability:
+The purpose of \emph{url2vec} model is to construct URL representations that better predict 
+the surrounding URLs in a clickstream. Briefly, given an action path of URLs 
+$\text{URL}_1, \text{URL}_2, ..., \text{URL}_T$, the objective of \emph{url2vec} is to maximize 
+the average logarithm softmax probability:
 
 \begin{align}
 \label{eqn:url2vecprob}
@@ -163,23 +166,28 @@ are proposed by Mikolv.
 
 \paragraph{Remark 3} The probability can also be interpreted from a Bayesian perspective,
 which provides an intuition of this definition. $p(\text{URL}_{t+i} | \text{URL}_t)$
-can be considered as a posterior probability. Since $v_{\text{URL}_t}$ was initialized
+can be considered as a posterior probability. \textbf{Since} ${v_{\text{URL}_t}}$ \textbf{was initialized
 as a one-hot encoded vector input to the embedding neural network, the item can be treated
-as a prior, and the denominator is a normalization term.
+as a prior, and the denominator is a normalization term.}.
 Furthermore, the dot product between $v_{\text{URL}_{t+i}} ^\top$
-and $v_{\text{URL}_t}$ is a representation of consine similarity, which represents
+and $v_{\text{URL}_t}$ is a representation of cosine similarity, which represents
 the closest surrounding URLs in same direction of vectors.
+
+\paragraph{Remark 4} The $v_{\text{URL}_t}$ is updated through gradient descent while training 
+from a one-hot encoded sparse high dimensional space to a densely distributed
+$(v_{\text{URL}_t}, v_{\text{URL}_{t+1}})$ pairs. 
+The pair is the ground truth URL relationships in a browsing behavior.
 
 \subsection{Action Path Model}
 
-Our model convey a similar idea from Stutskever's sequence 
-to sequence translation as we discussed in Section \ref{sec:seq-learn}.
+The APM convey a similar idea from Stutskever's sequence 
+to sequence translation as discussed in Section \ref{sec:seq-learn}.
 
 An \emph{action path} from user $i$ in session $j$ consist of 
 a sequence of \emph{url2vec} embedded vectors $(U^{ij}_1, U^{ij}_2, ..., U^{ij}_n)$ 
 and a sequence of time duration $(d^{ij}_1, d^{ij}_2, ..., d^{ij}_n)$, since each URL 
 has a corresponding number that represents the time duration of a user spent on a given page.
-Our action path model consist a context encoder and a context decoder that illustrated in the subsequent
+The APM consist a context encoder and a context decoder that illustrated in the subsequent
 subsections.
 
 \subsubsection{Context Encoder}
@@ -187,7 +195,7 @@ subsections.
 \emph{Context encoder} encodes URLs one by one over timestamp and produces a context tensor 
 that encodes the historical user actions, as shown in Figure \ref{fig:encoder}. 
 
-In the encoder, we practically insert a starting mark (a mark is a special URL vector that 
+In the encoder, a starting mark is practically inserted (a mark is a special URL vector that 
 differ from any other realistic URL one-hot encoded vectors) ``<SOA>'' (\emph{Start of Action})
 as a sign of start feeding URLs to the encoder, and a trigger mark ``<COI>'' (\emph{Change of Intention}) as
 a sign to trigger decoder to decodes encoded context tensor.
@@ -195,12 +203,12 @@ a sign to trigger decoder to decodes encoded context tensor.
 \begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{figures/encoder}
-    \caption{An unrolled illustration of context encoder of Action Path Model. 
+    \caption{An unrolled illustration of context encoder of the APM. 
     In the encoder, a starting mark ``<SOA>'' is used as a sign of start feeding URLs, 
     and a trigger mark ``<COI>'' as a sign to trigger decoder to decodes 
     encoded context tensor. The trigger mark is automatically inserted after the $k$-th URL 
     while training at the end of the encoder model over time, $k$ is increasing over time. 
-    Besides, the recurrent unit is not detailly described in the figure but afterward.}
+    Besides, the recurrent unit is not detail described in the figure but afterward.}
     \label{fig:encoder}
 \end{figure}
 
@@ -211,7 +219,7 @@ densely distributed vectors.
 \subsubsection{Context Decoder}
 
 \emph{Context decoder} decodes the context tensor produced by the encoder into a series of URLs. 
-We practically feed a prediction mark ``<SOP>'' (\emph{Start of Prediction}) 
+A practically fed prediction mark ``<SOP>'' (\emph{Start of Prediction}) is used
 as a sign to initiate the decoding of encoded context. 
 At the end of decoder, decoder produces an ending mark ``<EOA>'' (\emph{End of Action}) 
 that terminates the decoding process.
@@ -225,30 +233,32 @@ shown through dashed lines in Figure \ref{fig:decoder}.
 \begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{figures/decoder}
-    \caption{The context decoder of the Action Path Model. In the decoder, 
+    \caption{The context decoder of the APM. In the decoder, 
     a prediction mark ``<SOP>'' is used to initiate the decoding process, 
     and an ending mark ``<EOA>'' as a sign to terminate decode process. 
     The output of the decoder uses a softmax intermediate operation to magnify 
     and normalize the probability of predicted URL embedding. Also, the recurrent unit 
-    is not detailly described in the figure but afterward.}
+    is not detail described in the figure but afterward.}
     \label{fig:decoder}
 \end{figure}
 
-In our model, a decoder outputs vectors first, and we have two strategies 
+In APM, a decoder outputs vectors first, and it has two strategies 
 in translating vectors to URLs. 
-The first strategy is to use an argmax function to select the component 
-with maximum probability of a vector; we use this strategy for performance evaluation 
+The first strategy is to use an \emph{arguments of the maxima (argmax)} function to select the component 
+with maximum probability of a vector; APM use this strategy for performance evaluation 
 in Section \ref{sec:eval-optimal}. Another strategy is to select a series of URLs 
-that gains the highest joint probability,  we discuss and use this strategy 
+that gains the highest joint probability, APM use this strategy 
 for action path optimization in Section \ref{sec:optimization}.
 
 \subsubsection{Recurrent Unit}
 \label{sec:recurrent-unit}
 
-\textbf{The recurrent unit in the Action Path model is not as standard as original 
+\textbf{The recurrent unit in the APM is not as standard as original 
 LSTM or GRU}, which is one of the major contributions of the thesis. 
-In our recurrent unit, when using LSTM as recurrent unit base, we also 
-feed time duration $(d^{ij}_1, d^{ij}_2, ..., d^{ij}_n)$
+A recurrent unit that is designed for APM must 
+accept two types of data, including chronological URLs and time stay duration.
+
+When using LSTM-like recurrent unit, APM feeds time duration $(d^{ij}_1, d^{ij}_2, ..., d^{ij}_n)$
 into input gate $I_t$, and others (forget gate $F_t$, output gate $O_t$, 
 memory cell $C_t$ and hidden state $h_t$) remains the same:
 
@@ -264,10 +274,9 @@ memory cell $C_t$ and hidden state $h_t$) remains the same:
 \end{align}
 
 where $t = 1, 2, ..., n; P^{(I)}, Q^{(I)}, P^{(F)}, Q^{(F)}, P^{(O)}, Q^{(O)}$ are shared weight parameters, 
-$b^{(F)}$ is a bias in forget gate $F_t$,
-$\circ$ represents element-wise product of two matrices.
+$b^{(F)}$ is a bias in forget gate $F_t$, $\circ$ represents element-wise product of two matrices.
 
-When using GRU as recurrent unit base, we feed time duration $(d^{ij}_1, d^{ij}_2, ..., d^{ij}_n)$
+When using GRU as recurrent unit base, APM feeds time stay duration $(d^{ij}_1, d^{ij}_2, ..., d^{ij}_n)$
 in to update gate $Z_t$, and others (reset gate $R_t$, hidden state $h_t$) stay the same:
 
 \begin{align}
@@ -282,20 +291,25 @@ in to update gate $Z_t$, and others (reset gate $R_t$, hidden state $h_t$) stay 
 where $t = 1, 2, ..., n; P^{(Z)}, Q^{(Z)}, P^{(R)}, Q^{(R)}, P^{(H)}, Q^{(H)}$ are shared weight parameters, 
 $\circ$ represents element-wise product of two matrices.
 
-\paragraph{Remark 1} The units we described in this section is neither LSTM nor GRU since
+\paragraph{Remark 1} The units that described in this section is neither LSTM nor GRU since
 the input gate $I_t$ or update gate $Z_t$ introduces time duration $d^{ij}_t$ as input,
 which is different from a simple constant bias in the first learnable bias in these gates. 
 It is worth mentioning that adding bias to the gates are helpful to 
 improve learning performance in LSTM \cite{Jozefowicz:2015:EER:3045118.3045367}, 
-we also use the trick in our model as shown in $F_t$ of Equation \ref{eqn:lstm}.
+APM also use the trick as shown in $F_t$ of Equation \ref{eqn:lstm}.
 
 \paragraph{Remark 2} The term $\frac{d^{ij}_t}{d^{ij}_t + 1}$ is a squashing mechanism,
 it normalizes $d^{ij}_t$ from $(0, \infty)$ to $(0, 1)$.
 
+% \paragraph{Remark 3} The group of formulas are complex even visualizing how they flow input tensor.
+% The origin research regarding LSTM proposes the four gates for simulating human memory.
+% It can be consider as a black box that takes inputs of URLs and stay durations then outputs
+% a possible immediate future URL.
+
 \subsubsection{Ending Mark Interpretation}
 \label{sec:mark-interpretation}
 
-In context decoder, we mentioned an ending mark ``<EOA>'' that indicates the 
+In context decoder, APM mentioned an ending mark ``<EOA>'' that indicates the 
 termination decoding process. However, the ending mark is different from other marks, 
 since in practice, ``<EOA>'' is represented in different symbols of 
 behavior-based categorical clickstream, which as a label to 
@@ -303,7 +317,7 @@ involve classification of user actions.
 
 Assume action paths are labeled by one-hot encoded ending marks 
 $\text{EOA}_1, \text{EOA}_2, ..., \text{EOA}_m$ and the last output
-of decoder hidden state is $h_n$, we have:
+of decoder hidden state is $h_n$, thus:
 
 \begin{align}
 \label{eqn:mark}
@@ -318,17 +332,17 @@ where $W^{(M)}$ is a weight parameter, and $m$ is the number of ending mark cate
 \subsection{Action Path Optimization}
 \label{sec:optimization}
 
-In traditional classification models, the arguments of the maxima (argmax) are used 
+In traditional classification models, the argmax are used 
 to select labels with the highest probability, scilicet, argmax selects predicted URLs 
 with the highest probability of user action from decoder outputs. However, this method 
 is under the condition of all outputs are independent in probability, which 
-is not suitable for our action path optimization scenario.
+is not suitable for the action path optimization scenario.
 
-In previous sections, our model feeds an input clickstream $(U^{ij}_1, U^{ij}_2, ..., U^{ij}_t)$,
+In previous sections, APM feeds an input clickstream $(U^{ij}_1, U^{ij}_2, ..., U^{ij}_t)$,
 and produce an output $(o_1, o_2, ..., o_{m})$ that expect close to actual clickstream 
 $(U^{ij}_{t+1}, U^{ij}_{t+2}, ..., U^{ij}_n)$.
 Then the probability of expected clickstream is a conditional probability under 
-the input clickstream. In other words, we need to solve an optimization problem:
+the input clickstream. In other words, APM needs to solve an optimization problem:
 
 \begin{align}
 \label{eqn:optimize}
@@ -341,8 +355,8 @@ the input clickstream. In other words, we need to solve an optimization problem:
 
 A heuristic approach can solve the optimization problem efficiently, namely beam search 
 \cite{DBLP:journals/corr/abs-1211-3711}.
-In each step of decoder output, we reserve the top-$k$ best combinations of URLs and 
-eliminate the rest of URLs from evaluation, and finally selects $k$ best clickstreams.
+In each step of decoder output, \textbf{the approach reserves the top-$k$ best combinations of URLs and 
+eliminate the rest of URLs from evaluation, and finally selects $k$ best clickstreams.}
 The pseudocode is given that adapts vanilla beam search to URL prediction search 
 in Algorithm \ref{algo:optimize}.
 
@@ -360,11 +374,13 @@ in Algorithm \ref{algo:optimize}.
     \For{$o$ $\in$ $(o_1, o_2, ..., o_{m})$}{
         Initialize empty $candidates$ list \\
         \For{$\text{clickstream}$ $\in$ $\text{clickstreams}$}{
-            \For{page $\in$ $o$)}{
-                candidates.append([clickstream.append(page), $log(p(\text{clickstream})) + log(p(\text{page}))$]) \\
+            \For{page $\in$ $o$}{
+                clickstream.append(page) \\
+                $p(\text{clickstream})$ = $log(p(\text{clickstream})) + log(p(\text{page}))$ \\
+                candidates.append([clickstream, $p(\text{clickstream})$]) \\
             }
         }
-        ordered = descending order sort candidates by score \\
+        ordered = sort(candidates, score in descending order) \\
         clickstreams = ordered[:k]
     }
 }
@@ -373,12 +389,31 @@ in Algorithm \ref{algo:optimize}.
 
 ~\\
 
-\paragraph{Remark} The algorithm produces a heuristic output with given clickstream context. 
-Combining with the \emph{url2vec} model, the prediction
+\paragraph{Remark} The algorithm produces a heuristic output with given clickstream context.
+The $p(\text{clickstream})$ was initialized as zero, and $p(\text{page})$ is produced by APM outputs.
+Combining with the \emph{url2vec} embeddings, the prediction
 can heuristically optimize the click path of a specific user since the embeddings 
 are trained over all possible action path. For instance, 
 a distraction advertisement page will not appear
 after optimization because the embedding of the advertisement page 
 is far from the desired page if embeddings are learned correctly.
+
+\paragraph{}
+
+\textbf{As a reminder, readers should aware that the APM is only similar but different 
+from sequence to sequence model, the major differences are:}
+
+\begin{enumerate}
+    \item URL embeddings are self-trained because they are not in a context of nature language. 
+    A pre-trained language model cannot be used based on transfer learning approaches.
+    The embedding training initialize URL vectors one-hot encoded but get updated 
+    into a dense space before feeding into recurrent unit.
+    \item The hidden layer (recurrent unit) is not a standard LSTM or GRU 
+    because it also feeds scalar value of ``time duration'' into the network.
+    This is a special processing of combining vectors and scalar inputs into APM, 
+    which makes the structure is different than LSTM or GRU.
+    \item The network is required to produce a behavior category token at the end of decoding, 
+    which needs categorial cross entropy.
+\end{enumerate}
 
 \cleardoublepage

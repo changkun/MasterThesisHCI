@@ -6,7 +6,7 @@
 \subsection{History of Clickstream Research}
 
 % 起源
-The word ``clickstream'' \cite{friedman1995} was first coined in 1995 when a media 
+The notion ``clickstream'' \cite{friedman1995} was first coined in 1995 when a media 
 article introduced the novel concept of tracing the cyberlife of users over what is currently known
 as the ``Internet''. ``clickstream'' contains a sequence of hyperlinks clicked by a 
 website user over time. In 1995, the most popular server software 
@@ -66,7 +66,7 @@ A daily user is always allowed simultaneous accesses to parallel pages and windo
 to switch across multiple websites for a browsing purpose.
 An obvious missing aspect of those papers is that server-recorded data tends to be incomplete for 
 characterizing a visiting user, and the log data can only applied to on a specific website. 
-Our research no longer serves the server-side clickstream; instead, it
+The research thesis no longer serves the server-side clickstream; instead, it
 focuses and contributes to client-side collected clickstream data 
 for a real visiting session of a user in a browser.
 
@@ -89,51 +89,53 @@ three research questions:
         What are the most significant and identifiable user behaviors and activity patterns 
         that can be observed or algorithmically detected in the context of web browsing that 
         indicate information needs?
-        Which form of quantitative data can characterize a definitive boundary for 
-        distinguishing a user's browsing behaviors?
+        Which form of quantitative data and what quantitative measures derivable 
+        from the client-side clickstream to distinguish or define the different 
+        browsing behaviors of a user.
     \item \textbf{Classification}: How accurately or affirmatively can we progressively model 
-        or identify the proposed browsing behaviors that makes an intelligent system 
-        serve proactively?
+        or identify the proposed browsing behaviors that makes an intelligent system can
+        serve a user proactively without requiring the user inquire the system?
     \item \textbf{Prediction}: How many future movements of a user can be accurately inferred 
         from the context of web browsing, and how much context is required for the prediction?
 
 \end{enumerate}
 
 % 第二章讨论了目前已有的客户端点击流研究。
-Chapter \ref{ch:relate} first discusses the existing user behavior research based on clickstream data. 
+Firstly, the existing existing user behavior research based on clickstream data is discussed in Chapter \ref{ch:relate}.
 Next, the chapter discusses the evolution of the theory regarding information seeking behavior 
-as our experiment's foundation.
-In addition, we summarize the reason for the recent increase of the neural approach 
+as the experiment's foundation.
+In addition, the chapter summarizes the reason for the recent increase of the neural approach 
 in different scientific area and the state-of-the-art direction for sequence learning, 
 that have been proposed in neural network research.
 % 第三章介绍了我们的数据类型、模型的设计。
-Chapter \ref{ch:model} defines the completion efficiency of a clickstream. Next, we
-formalize our proposed sequence to sequence encoder and decoder models for client-side
-clickstreams. We also present the training techniques for the proposed model.
+In Chapter \ref{ch:model}, several handcrafted features are defined for a clickstream,
+such as completion efficiency. Next, the thesis
+formalize the proposed sequence to sequence encoder and decoder \emph{Action Path model (APM)} 
+for client-side clickstreams as well as the training techniques for the proposed APM.
 % 第四章详细描述了实验的设计，介绍了每个所设计任务的原因和考虑，讨论了每个所设计的任务中潜在的数据的搜集和分析工作。
-In Chapter \ref{ch:exp}, we present our experiment for a lab study
-and construe the design justification for context-given web browsing tasks for our subjects 
-based on information behavior theory.
+In Chapter \ref{ch:exp}, the experiment design is presented for the lab study held in this thesis.
+Based on information behavior theory, the chapter construes the design justification 
+of context-given web browsing tasks for the subjects recruited in the thesis.
 % 第五章分析了第四章描述中搜集到的数据，基于 SVM、t-SNE 分析了除了点击流之外的几个特征，定量分析，得出了结论。。。。
 % 然后基于第三章中提出的模型，分析了。。。。的结果，得出了。。。的结论。
 In Chapter \ref{ch:eval},
-we conduct a quantitative analysis with described data from our lab study, based on support
-vector machine (SVM), t-SNE, and our proposed action path model.
-The evaluation produces very promising results.
+a quantitative analysis with described data from the lab study is conducted, based on support
+vector machine (SVM), t-SNE, and the proposed APM.
+The evaluation produces up to 100\% of accuracy in classification task.
 % 最后对用户在任务下的点击流进行了可视化，定性分析，进一步讨论了用户的行为，从而进一步验证了我们的结论。。。
-Moreover, we visualize the clickstream through a directed graph by combining our training model outputs.
-We also perform a qualitative analysis on all clickstreams, and the analysis provides evidence 
-that further verifies the correctness of our model.
+Moreover, the chapter visualizes the clickstream through a directed graph 
+by combining the training model outputs,
+and it also performs a qualitative analysis on all clickstreams, 
+and the analysis provides evidence that further verifies the correctness of APM.
 % 第六章首先介绍了浏览器插件的工作原理，讨论了我们插件的工作架构。介绍了插件的客户端和服务端的实现方案。
-Chapter \ref{ch:app} describes how we developed a browser plugin 
-for Google Chrome as a possible application for our model. The plugin can accurately predict 
+Chapter \ref{ch:app} describes how a browser plugin is developed
+for Google Chrome as a possible application for APM. The plugin can accurately predict 
 the next possible visiting pages of a user. 
-In addition, we generalize the design of our plugin architecture between the client and server.
-We also discuss the possibilities for that architecture to serve as a standard web API 
-for web developers.
+In addition, the chapter generalizes the design of the plugin's architecture between the client and server.
+Furthermore, the possibilities of using the architecture as a standard web API 
+for web developers are discussed.
 
 % 第七章对整个 thesis 进行了总结，讨论了本文工作中存在的不足以及未来可改进的方向。
-In the last two chapters, we discuss this thesis' decisions, the limitations of this work, and
-summarize the findings of our thesis, and any the possible future improvements and 
-directions for research.
+In the last two chapters, the decisions, limitations, and the findings of the thesis
+are discussed for possible future improvements and directions.
 \cleardoublepage
